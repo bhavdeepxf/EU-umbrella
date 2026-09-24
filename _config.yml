@@ -1,5 +1,5 @@
-title: "Mano Bhavdeep Venkatesan | Biomedical & Microsystems Engineer"
-description: "Biomedical and microsystems engineer specializing in AlN thin films, FTIR, XRD, SEM, wafer bow, acoustic MEMS, and medical-device engineering."
+title: "EU Umbrella | MEMS, Biomedical Engineering & MedTech Opportunities"
+description: "A curated opportunity hub for PhD, R&D, MEMS, materials characterization, biomedical engineering, and medical-device careers in Germany and Europe."
 
 url: "https://bhavdeepxf.github.io"
 baseurl: "/EU-umbrella"
@@ -14,7 +14,6 @@ permalink: pretty
 author:
   name: "Mano Bhavdeep Venkatesan"
   email: "bhavdeepmano97@gmail.com"
-  phone: "+49 176 769 534 38"
   location: "Villingen-Schwenningen, Germany"
   linkedin: "https://www.linkedin.com/in/imbhavdeep"
   github: "https://github.com/bhavdeepxf"
@@ -22,7 +21,7 @@ author:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  
+
 exclude:
   - README.md
   - Gemfile

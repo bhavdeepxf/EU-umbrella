@@ -1,0 +1,38 @@
+name: Update live German jobs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1-5"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-score:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch and score vacancies
+        env:
+          BA_JOBS_API_KEY: ${{ secrets.BA_JOBS_API_KEY }}
+        run: python scripts/fetch_and_score_jobs.py
+
+      - name: Commit updated job data
+        run: |
+          git config user.name "EU Umbrella Bot"
+          git config user.email "actions@github.com"
+          git add data/live-jobs.json
+          git diff --staged --quiet || git commit -m "Update live German job matches"
+          git push

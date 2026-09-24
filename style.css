@@ -244,3 +244,12 @@ select {
     flex-direction: column;
   }
 }
+
+.warning-note {
+  margin: 0.85rem 0 0;
+  padding: 0.75rem 0.9rem;
+  border-left: 4px solid #c98200;
+  background: #fff8e8;
+  color: #6f4a00;
+  font-size: 0.92rem;
+}

@@ -42,7 +42,6 @@ function matchedKeywords(job) {
 
 function calculateScore(job) {
   const text = getAllJobText(job);
-
   let score = 0;
 
   candidateProfile.directMatchKeywords.forEach((keyword) => {
@@ -51,7 +50,7 @@ function calculateScore(job) {
     }
   });
 
-  Object.entries(candidateProfile.roleGroups).forEach(([group, keywords]) => {
+  Object.values(candidateProfile.roleGroups).forEach((keywords) => {
     const groupMatches = keywords.filter((keyword) =>
       text.includes(keyword.toLowerCase())
     ).length;
@@ -61,19 +60,27 @@ function calculateScore(job) {
     }
   });
 
-  if (candidateProfile.preferredCountries.some(
-    (country) => normalise(job.country).includes(country.toLowerCase())
-  )) {
+  if (
+    candidateProfile.preferredCountries.some((country) =>
+      normalise(job.country).includes(country.toLowerCase())
+    )
+  ) {
     score += 8;
   }
 
-  if (candidateProfile.priorityLocations.some(
-    (location) => text.includes(location.toLowerCase())
-  )) {
+  if (
+    candidateProfile.priorityLocations.some((location) =>
+      text.includes(location.toLowerCase())
+    )
+  ) {
     score += 5;
   }
 
-  if (/\bphd\b|doctoral|doktorand|research associate|wissenschaftlicher mitarbeiter/.test(text)) {
+  if (
+    /\bphd\b|doctoral|doktorand|research associate|wissenschaftlicher mitarbeiter/.test(
+      text
+    )
+  ) {
     score += 8;
   }
 
@@ -107,7 +114,7 @@ function getMatchReason(job, score, tags) {
     return `Good match through ${topTags.join(", ")}. Review the experience and language requirements before applying.`;
   }
 
-  return `Partial relevance through ${topTags.join(", ") || "general engineering"}; apply only if the original vacancy has suitable entry-level requirements.`;
+  return `Partial relevance through ${topTags.join(", ") || "general engineering"}. Apply only if the original vacancy has suitable entry-level requirements.`;
 }
 
 function scoreClass(score) {
@@ -132,6 +139,7 @@ function renderJobs() {
     .map((job) => {
       const score = calculateScore(job);
       const tags = matchedKeywords(job);
+
       return { ...job, score, tags };
     })
     .filter((job) => {
@@ -146,61 +154,76 @@ function renderJobs() {
       const matchesCategory = !category || job.category === category;
       const matchesScore = job.score >= minimumScore;
 
-      return matchesSearch && matchesCountry && matchesCategory && matchesScore;
+      return (
+        matchesSearch &&
+        matchesCountry &&
+        matchesCategory &&
+        matchesScore
+      );
     })
     .sort((a, b) => b.score - a.score);
 
-  resultsSummary.textContent = `${scoredJobs.length} matching opportunity${scoredJobs.length === 1 ? "" : "ies"} shown`;
+  resultsSummary.textContent =
+    `${scoredJobs.length} matching opportunit${scoredJobs.length === 1 ? "y" : "ies"} shown`;
 
   if (!scoredJobs.length) {
     jobsContainer.innerHTML = `
       <div class="empty">
-        No roles match these filters yet. Try a lower score threshold or add new jobs to <code>jobs.js</code>.
+        No roles match these filters yet. Try a lower score threshold or add new roles to <code>jobs.js</code>.
       </div>
     `;
     return;
   }
 
-  jobsContainer.innerHTML = scoredJobs.map((job) => {
-    const reason = getMatchReason(job, job.score, job.tags);
+  jobsContainer.innerHTML = scoredJobs
+    .map((job) => {
+      const reason = getMatchReason(job, job.score, job.tags);
 
-    return `
-      <article class="job-card">
-        <div class="job-topline">
-          <div>
-            <h2>${job.title}</h2>
-            <p class="company">${job.company}</p>
+      return `
+        <article class="job-card">
+          <div class="job-topline">
+            <div>
+              <h2>${job.title}</h2>
+              <p class="company">${job.company}</p>
+            </div>
+
+            <div class="score ${scoreClass(job.score)}">
+              ${job.score}%<br>
+              <small>${scoreLabel(job.score)}</small>
+            </div>
           </div>
-          <div class="score ${scoreClass(job.score)}">
-            ${job.score}%<br>
-            <small>${scoreLabel(job.score)}</small>
+
+          <div class="meta">
+            <span>📍 ${job.location}</span>
+            <span>💼 ${job.category}</span>
+            <span>🕒 ${job.type}</span>
+            <span>📅 ${job.deadline}</span>
           </div>
-        </div>
 
-        <div class="meta">
-          <span>📍 ${job.location}</span>
-          <span>💼 ${job.category}</span>
-          <span>🕒 ${job.type}</span>
-          <span>📅 ${job.deadline}</span>
-        </div>
+          <div class="job-tags">
+            ${job.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
+          </div>
 
-        <div class="job-tags">
-          ${job.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
-        </div>
+          <p class="match-reason">
+            <strong>Why it matches:</strong> ${reason}
+          </p>
 
-        <p class="match-reason">
-          <strong>Why it matches:</strong> ${reason}
-        </p>
+          <div class="job-footer">
+            <small>Source: ${job.source}</small>
 
-        <div class="job-footer">
-          <small>Source: ${job.source}</small>
-          <a class="apply-button" href="${job.url}" target="_blank" rel="noopener noreferrer">
-            View / Apply ↗
-          </a>
-        </div>
-      </article>
-    `;
-  }).join("");
+            <a
+              class="apply-button"
+              href="${job.url}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View / Apply ↗
+            </a>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
 }
 
 function populateFilters() {
@@ -222,10 +245,12 @@ function populateFilters() {
   });
 }
 
-[searchInput, countryFilter, categoryFilter, scoreFilter].forEach((element) => {
-  element.addEventListener("input", renderJobs);
-  element.addEventListener("change", renderJobs);
-});
+[searchInput, countryFilter, categoryFilter, scoreFilter].forEach(
+  (element) => {
+    element.addEventListener("input", renderJobs);
+    element.addEventListener("change", renderJobs);
+  }
+);
 
 populateFilters();
 renderJobs();

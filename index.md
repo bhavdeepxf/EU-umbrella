@@ -1,50 +1,57 @@
 ---
 layout: home
-title: "Biomedical & Microsystems Engineer"
+title: "MEMS, Biomedical Engineering & MedTech Opportunities"
 ---
 
-# Mano Bhavdeep Venkatesan
+# EU Umbrella
 
-## Biomedical & Microsystems Engineer
+## MEMS · Thin Films · Biomedical Engineering · Medical Technology
 
-### Thin Films · Surface Characterization · Acoustic MEMS · Medical Devices
-
-I am a biomedical and materials engineer working at the interface of **thin-film materials, microsystems, surface analytics, and medical technology**.
-
-My recent work focused on AlN-coated 3D MEMS membranes for acoustic applications, combining FTIR spectroscopy, XRD, SEM, wafer-bow measurements, and Fresnel-based MATLAB simulations.
-
-I also bring more than three years of hospital and clinical-equipment engineering experience, including equipment validation, calibration, preventive maintenance, laboratory operations, and quality-assurance workflows.
+A focused job and research-opportunity hub for PhD candidates, researchers, and engineers interested in microsystems, sensor technologies, materials characterization, medical devices, and biomedical innovation across Germany and Europe.
 
 <div class="hero-actions">
-  <a class="button button-primary" href="{{ '/cv/' | relative_url }}">View CV</a>
-  <a class="button" href="{{ '/research/' | relative_url }}">Explore research</a>
-  <a class="button" href="{{ '/contact/' | relative_url }}">Contact me</a>
+  <a class="button button-primary" href="{{ '/opportunities/' | relative_url }}">Explore opportunities</a>
+  <a class="button" href="{{ '/phd-research/' | relative_url }}">PhD & research roles</a>
+  <a class="button" href="{{ '/profile/' | relative_url }}">My professional profile</a>
 </div>
 
-## Target opportunities
+## Focus areas
 
-I am interested in the following opportunities in Germany and internationally:
+- Acoustic and ultrasonic MEMS.
+- Aluminum Nitride (AlN) thin films.
+- Atomic Layer Deposition (ALD) and sputtering.
+- FTIR, XRD, SEM, wafer bow, and materials characterization.
+- Biomedical engineering and medical-device R&D.
+- Quality assurance, verification, validation, calibration, and clinical equipment.
+- Biomaterials, smart implants, biointerfaces, and osseointegration.
+- Biomedical imaging, MATLAB, Python, and applied machine learning.
 
-- PhD or doctoral researcher positions in acoustic MEMS, thin films, piezoelectric materials, surface characterization, or biomedical microsystems.
-- R&D engineering roles involving AlN, ALD, sputtering, MEMS fabrication, materials analysis, or sensor development.
-- Materials-characterization and laboratory-engineering positions involving FTIR, XRD, SEM, wafer bow, and mechanical testing.
-- Medical-device verification, validation, quality, calibration, and clinical-equipment engineering roles.
+## Opportunity categories
 
-## Profile at a glance
-
-| Area | Experience and value |
+| Category | Relevant examples |
 |---|---|
-| Thin films and MEMS | AlN on Si/SiO₂/Poly-Si structures; comparison of ALD and RF magnetron sputtering |
-| Characterization | Reflection-mode FTIR, XRD θ–2θ and rocking curves, SEM cross-sections, wafer bow |
-| Modelling | Fresnel-based reflectance simulations in MATLAB |
-| Medical technology | Installation, calibration, validation, maintenance, and QA of more than 50 medical systems |
-| Biomedical imaging | MATLAB-based analysis of laparoscopic video and SD-OCT images |
-| Languages | English and Tamil: native/bilingual proficiency; German: professional working proficiency |
+| PhD and research | Doctoral researcher, research associate, scientific employee, PhD candidate |
+| MEMS and sensors | MEMS engineer, sensor-development engineer, microsystems engineer, acoustic-device engineer |
+| Materials and thin films | Thin-film engineer, materials R&D engineer, surface-characterization engineer, process-development engineer |
+| Medical technology | Biomedical engineer, medical-device R&D engineer, verification and validation engineer, quality engineer |
+| Laboratory and applications | Application engineer, characterization engineer, laboratory engineer, spectroscopy specialist |
 
-## Selected technical keywords
+## Current candidate profile
 
-Aluminum Nitride (AlN), ALD, RF magnetron sputtering, acoustic MEMS, FTIR spectroscopy, Bruker Hyperion 2000, XRD, Bruker D8 Advance, SEM, Zeiss Crossbeam 550, wafer bow, E&H MX203, MATLAB, Python, medical-device QA, calibration, validation, preventive maintenance, biomaterials, surface characterization.
+The creator of this hub is a biomedical and microsystems engineer with research experience in AlN-coated 3D MEMS membranes for acoustic applications.
 
-## Based in
+Relevant work includes reflection-mode FTIR, XRD, SEM, wafer-bow measurements, ALD-versus-sputtering comparisons, and Fresnel-based MATLAB simulations. The profile also includes more than three years of hospital and clinical-equipment engineering experience in medical-device installation, calibration, validation, and quality-assurance workflows.
 
-Villingen-Schwenningen, Baden-Württemberg, Germany
+[View the full professional profile]({{ '/profile/' | relative_url }})
+
+## How to use this site
+
+1. Browse opportunities by career direction.
+2. Review target organisations and research institutes.
+3. Use the technical-keyword guide to evaluate job advertisements.
+4. Visit the profile and research pages to understand the candidate fit.
+5. Use the contact page for professional inquiries.
+
+## Geographic focus
+
+Germany is the primary focus, especially Baden-Württemberg and nearby innovation regions. Relevant opportunities across the European Union are also included.

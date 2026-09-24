@@ -1,0 +1,31 @@
+title: "Mano Bhavdeep Venkatesan | Biomedical & Microsystems Engineer"
+description: "Biomedical and microsystems engineer specializing in AlN thin films, FTIR, XRD, SEM, wafer bow, acoustic MEMS, and medical-device engineering."
+
+url: "https://bhavdeepxf.github.io"
+baseurl: ""
+lang: "en"
+
+repository: "bhavdeepxf/bhavdeepxf.github.io"
+
+theme: minima
+markdown: kramdown
+permalink: pretty
+
+author:
+  name: "Mano Bhavdeep Venkatesan"
+  email: "bhavdeepmano97@gmail.com"
+  phone: "+49 176 769 534 38"
+  location: "Villingen-Schwenningen, Germany"
+  linkedin: "https://www.linkedin.com/in/imbhavdeep"
+  github: "https://github.com/bhavdeepxf"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

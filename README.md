@@ -10,7 +10,7 @@ Personal job-discovery dashboard for identifying and ranking high-fit opportunit
    - Thin films, ALD, sputtering, and MEMS fabrication
    - FTIR, XRD, SEM, wafer bow, and surface/materials characterization
    - Biomedical microsystems, sensors, biomaterials, smart implants
-
+   
 2. Industry R&D positions:
    - MEMS / microsystems / sensor-development engineer
    - Thin-film or materials R&D engineer

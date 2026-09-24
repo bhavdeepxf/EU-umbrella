@@ -2,10 +2,10 @@ title: "Mano Bhavdeep Venkatesan | Biomedical & Microsystems Engineer"
 description: "Biomedical and microsystems engineer specializing in AlN thin films, FTIR, XRD, SEM, wafer bow, acoustic MEMS, and medical-device engineering."
 
 url: "https://bhavdeepxf.github.io"
-baseurl: ""
+baseurl: "/EU-umbrella"
 lang: "en"
 
-repository: "bhavdeepxf/bhavdeepxf.github.io"
+repository: "bhavdeepxf/EU-umbrella"
 
 theme: minima
 markdown: kramdown

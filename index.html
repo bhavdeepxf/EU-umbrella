@@ -1,12 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EU Umbrella</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="EU Umbrella: a personalized job finder for MEMS, thin films, biomedical engineering and medical technology opportunities in Germany and Europe."
+  >
+  <title>EU Umbrella | Germany & Europe Job Finder</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>EU Umbrella is live</h1>
-  <p>Germany and Europe job finder for MEMS, thin films, biomedical engineering, and medtech roles.</p>
+  <header>
+    <div class="container">
+      <span class="eyebrow">Germany & Europe · Curated technical opportunities</span>
+
+      <h1>EU Umbrella</h1>
+
+      <p class="subtitle">
+        Find high-fit PhD, R&D, MEMS, thin-film, materials-characterization,
+        biomedical-engineering, and medical-device opportunities.
+      </p>
+
+      <div class="hero-tags">
+        <span class="tag">MEMS</span>
+        <span class="tag">AlN</span>
+        <span class="tag">Thin Films</span>
+        <span class="tag">FTIR</span>
+        <span class="tag">XRD</span>
+        <span class="tag">SEM</span>
+        <span class="tag">Medical Devices</span>
+        <span class="tag">PhD & R&D</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="toolbar" aria-label="Job filters">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search title, skill, company, location..."
+          aria-label="Search jobs"
+        >
+
+        <select id="countryFilter" aria-label="Filter by country">
+          <option value="">All countries</option>
+        </select>
+
+        <select id="categoryFilter" aria-label="Filter by category">
+          <option value="">All role types</option>
+        </select>
+
+        <select id="scoreFilter" aria-label="Filter by match score">
+          <option value="0">All match scores</option>
+          <option value="60">60%+ potential fit</option>
+          <option value="80">80%+ high fit</option>
+        </select>
+      </section>
+
+      <p id="resultsSummary" class="summary"></p>
+
+      <section id="jobsContainer" class="jobs-grid" aria-live="polite"></section>
+
+      <p class="disclaimer">
+        EU Umbrella is a personal job-discovery tool, not an employer or recruitment agency.
+        Always verify the vacancy status, requirements, deadline, and application instructions
+        on the original employer or official job-board page before applying.
+      </p>
+    </div>
+  </main>
+
+  <script src="data/candidate-profile.js"></script>
+  <script src="jobs.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

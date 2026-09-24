@@ -15,8 +15,9 @@ const jobs = [
       Aluminum Nitride, acoustic sensors, FTIR, XRD, SEM,
       microfabrication and materials characterization.
     `,
-    source: "Replace with official employer career page"
+    source: "Demonstration only — replace with an official vacancy URL"
   },
+
   {
     id: 2,
     title: "Materials Characterization Engineer – Thin Films",
@@ -32,8 +33,9 @@ const jobs = [
       R&D role involving thin films, SEM, XRD, FTIR, surface analysis,
       failure analysis, medical devices and laboratory engineering.
     `,
-    source: "Replace with official employer career page"
+    source: "Demonstration only — replace with an official vacancy URL"
   },
+
   {
     id: 3,
     title: "Verification and Validation Engineer – Medical Devices",
@@ -50,6 +52,6 @@ const jobs = [
       test protocols, equipment calibration, quality assurance,
       documentation and engineering analysis.
     `,
-    source: "Replace with official employer career page"
+    source: "Demonstration only — replace with an official vacancy URL"
   }
 ];

@@ -1,0 +1,36 @@
+name: Update live German job matches
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-rank-jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository files
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install script requirements
+        run: pip install -r requirements.txt
+
+      - name: Fetch and rank public job postings
+        env:
+          BA_JOBS_API_KEY: ${{ secrets.BA_JOBS_API_KEY }}
+        run: python scripts/fetch_and_score_jobs.py
+
+      - name: Save updated job data
+        run: |
+          git config user.name "EU Umbrella Job Bot"
+          git config user.email "actions@github.com"
+          git add data/live-jobs.json
+          git diff --staged --quiet || git commit -m "Update live German job matches"
+          git push

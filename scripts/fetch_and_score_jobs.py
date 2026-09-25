@@ -1,7 +1,5 @@
-import base64
 import json
 import os
-import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -9,9 +7,10 @@ import requests
 
 API_BASE = "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service"
 API_KEY = os.getenv("BA_JOBS_API_KEY", "jobboerse-jobsuche")
+
 OUTPUT_FILE = Path("data/live-jobs.json")
 
-SEARCH_QUERIES = [
+SEARCH_TERMS = [
     "MEMS",
     "Mikrosystemtechnik",
     "Dünnschicht",
@@ -54,7 +53,7 @@ DIRECT_KEYWORDS = [
     "oberflächencharakterisierung",
 ]
 
-SECONDARY_KEYWORDS = [
+SUPPORTING_KEYWORDS = [
     "medical device",
     "medizintechnik",
     "biomedical",
@@ -69,12 +68,15 @@ SECONDARY_KEYWORDS = [
     "matlab",
     "python",
     "machine learning",
-    "bildverarbeitung",
     "image processing",
+    "bildverarbeitung",
     "biomaterials",
     "biomaterialien",
     "sensor",
+    "sensorik",
+    "acoustic",
     "akustik",
+    "ultrasonic",
     "ultraschall",
 ]
 
@@ -99,56 +101,106 @@ LANGUAGE_WARNINGS = [
     "verhandlungssicher deutsch",
 ]
 
-def normalize(value):
-    return (value or "").lower()
+PRIORITY_LOCATIONS = [
+    "baden-württemberg",
+    "stuttgart",
+    "freiburg",
+    "tübingen",
+    "tuebingen",
+    "karlsruhe",
+    "ulm",
+    "villingen-schwenningen",
+    "bayern",
+    "bavaria",
+    "münchen",
+    "munich",
+    "nordrhein-westfalen",
+    "north rhine-westphalia",
+    "berlin",
+    "brandenburg",
+    "sachsen",
+    "saxony",
+    "hamburg",
+]
 
-def text_for_job(job):
-    return " ".join(
-        str(job.get(field, ""))
-        for field in [
-            "titel",
-            "beruf",
-            "arbeitgeber",
-            "arbeitsort",
-            "arbeitsort_plz",
-            "arbeitsort_ort",
-            "stellenangebotsbeschreibung",
-            "beschreibung",
-        ]
-    ).lower()
 
-def count_matches(text, keywords):
+def normalise(value):
+    return str(value or "").lower()
+
+
+def unique(items):
+    return list(dict.fromkeys(item for item in items if item))
+
+
+def job_text(job):
+    fields = [
+        job.get("titel"),
+        job.get("beruf"),
+        job.get("arbeitgeber"),
+        job.get("arbeitsort"),
+        job.get("arbeitsort_ort"),
+        job.get("stellenangebotsbeschreibung"),
+        job.get("beschreibung"),
+    ]
+    return " ".join(normalise(field) for field in fields)
+
+
+def matches(text, keywords):
     return [keyword for keyword in keywords if keyword in text]
 
-def calculate_score(job):
-    text = text_for_job(job)
 
-    direct_matches = count_matches(text, DIRECT_KEYWORDS)
-    secondary_matches = count_matches(text, SECONDARY_KEYWORDS)
-    seniority_matches = count_matches(text, SENIORITY_WARNINGS)
-    language_matches = count_matches(text, LANGUAGE_WARNINGS)
+def calculate_score(job):
+    text = job_text(job)
+
+    direct_matches = matches(text, DIRECT_KEYWORDS)
+    supporting_matches = matches(text, SUPPORTING_KEYWORDS)
+    seniority_matches = matches(text, SENIORITY_WARNINGS)
+    language_matches = matches(text, LANGUAGE_WARNINGS)
 
     score = min(len(direct_matches) * 7, 56)
-    score += min(len(secondary_matches) * 3, 24)
+    score += min(len(supporting_matches) * 3, 24)
 
-    if any(term in text for term in ["phd", "doktorand", "doctoral", "wissenschaftlicher mitarbeiter"]):
+    if any(
+        term in text
+        for term in [
+            "phd",
+            "doctoral",
+            "doktorand",
+            "wissenschaftlicher mitarbeiter",
+            "research associate",
+        ]
+    ):
         score += 8
 
-    if any(term in text for term in ["baden-württemberg", "stuttgart", "freiburg", "tübingen", "karlsruhe", "ulm"]):
-        score += 5
+    if any(location in text for location in PRIORITY_LOCATIONS):
+        score += 6
+
+    if any(term in text for term in ["english", "international", "englisch"]):
+        score += 3
 
     score -= len(seniority_matches) * 12
     score -= len(language_matches) * 8
 
-    return max(0, min(100, score)), direct_matches, secondary_matches, seniority_matches, language_matches
+    score = max(0, min(100, score))
 
-def search_jobs(query):
-    headers = {"X-API-Key": API_KEY}
+    return {
+        "score": score,
+        "matchedKeywords": unique(direct_matches + supporting_matches)[:10],
+        "warnings": unique(seniority_matches + language_matches)[:5],
+    }
+
+
+def search_jobs(search_term):
+    headers = {
+        "X-API-Key": API_KEY,
+        "Accept": "application/json",
+    }
+
     params = {
-        "was": query,
+        "was": search_term,
         "angebotsart": 1,
-        "size": 25,
         "page": 1,
+        "size": 25,
     }
 
     response = requests.get(
@@ -157,78 +209,116 @@ def search_jobs(query):
         params=params,
         timeout=30,
     )
+
     response.raise_for_status()
-    payload = response.json()
-    return payload.get("stellenangebote", [])
+    response_data = response.json()
 
-def build_source_url(job):
-    ref = job.get("refnr") or job.get("referenznummer") or ""
-    if ref:
-        return f"https://www.arbeitsagentur.de/jobsuche/suche?angebotsart=1&was={ref}"
-    return "https://www.arbeitsagentur.de/jobsuche/"
+    return response_data.get("stellenangebote", [])
 
-def main():
-    unique_jobs = {}
 
-    for query in SEARCH_QUERIES:
-        try:
-            for job in search_jobs(query):
-                key = job.get("refnr") or job.get("hashId") or f"{job.get('titel', '')}-{job.get('arbeitgeber', '')}"
-                unique_jobs[key] = job
-        except requests.RequestException as error:
-            print(f"Search failed for {query}: {error}")
+def original_job_url(job):
+    reference = job.get("refnr") or job.get("referenznummer") or ""
 
-    output = []
-
-    for key, job in unique_jobs.items():
-        score, direct, secondary, seniority, language = calculate_score(job)
-
-        if score < 25:
-            continue
-
-        title = job.get("titel") or job.get("beruf") or "Untitled role"
-        company = job.get("arbeitgeber") or "Employer not listed"
-        location = job.get("arbeitsort_ort") or job.get("arbeitsort") or "Germany"
-
-        output.append(
-            {
-                "id": key,
-                "title": title,
-                "company": company,
-                "location": location,
-                "country": "Germany",
-                "category": "Live German vacancy",
-                "type": job.get("arbeitszeit") or "See original posting",
-                "datePosted": job.get("aktuelleVeroeffentlichungsdatum") or "",
-                "deadline": job.get("befristung") or "Check original posting",
-                "url": build_source_url(job),
-                "source": "Bundesagentur für Arbeit Jobsuche",
-                "description": job.get("stellenangebotsbeschreibung")
-                or job.get("beruf")
-                or title,
-                "matchScore": score,
-                "matchedKeywords": direct + secondary,
-                "warnings": seniority + language,
-            }
+    if reference:
+        return (
+            "https://www.arbeitsagentur.de/jobsuche/"
+            f"suche?angebotsart=1&was={reference}"
         )
 
-    output.sort(key=lambda item: item["matchScore"], reverse=True)
+    return "https://www.arbeitsagentur.de/jobsuche/"
+
+
+def safe_location(job):
+    city = job.get("arbeitsort_ort") or ""
+    postal_code = job.get("arbeitsort_plz") or ""
+    location = job.get("arbeitsort") or ""
+
+    return ", ".join(
+        item for item in [city, postal_code, location] if item
+    ) or "Germany"
+
+
+def convert_job(job, identifier):
+    match = calculate_score(job)
+
+    title = (
+        job.get("titel")
+        or job.get("beruf")
+        or "Untitled vacancy"
+    )
+
+    description = (
+        job.get("stellenangebotsbeschreibung")
+        or job.get("beschreibung")
+        or title
+    )
+
+    return {
+        "id": identifier,
+        "title": title,
+        "company": job.get("arbeitgeber") or "Employer not listed",
+        "location": safe_location(job),
+        "country": "Germany",
+        "category": "Live German vacancy",
+        "type": job.get("arbeitszeit") or "See original vacancy",
+        "datePosted": job.get("aktuelleVeroeffentlichungsdatum") or "",
+        "deadline": "Check original vacancy",
+        "url": original_job_url(job),
+        "source": "Bundesagentur für Arbeit Jobsuche",
+        "description": description,
+        "matchScore": match["score"],
+        "matchedKeywords": match["matchedKeywords"],
+        "warnings": match["warnings"],
+    }
+
+
+def main():
+    collected_jobs = {}
+
+    for term in SEARCH_TERMS:
+        try:
+            print(f"Searching for: {term}")
+
+            for job in search_jobs(term):
+                identifier = (
+                    job.get("refnr")
+                    or job.get("hashId")
+                    or f"{job.get('titel', '')}-{job.get('arbeitgeber', '')}"
+                )
+
+                collected_jobs[identifier] = job
+
+        except requests.RequestException as error:
+            print(f"Search failed for '{term}': {error}")
+
+    ranked_jobs = []
+
+    for identifier, job in collected_jobs.items():
+        converted_job = convert_job(job, identifier)
+
+        if converted_job["matchScore"] >= 25:
+            ranked_jobs.append(converted_job)
+
+    ranked_jobs.sort(
+        key=lambda job: job["matchScore"],
+        reverse=True,
+    )
+
+    output = {
+        "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "count": len(ranked_jobs),
+        "jobs": ranked_jobs,
+    }
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+
     OUTPUT_FILE.write_text(
-        json.dumps(
-            {
-                "generatedAt": datetime.now(timezone.utc).isoformat(),
-                "count": len(output),
-                "jobs": output,
-            },
-            ensure_ascii=False,
-            indent=2,
-        ),
+        json.dumps(output, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
-    print(f"Wrote {len(output)} ranked jobs to {OUTPUT_FILE}")
+    print(f"Saved {len(ranked_jobs)} ranked jobs to {OUTPUT_FILE}")
+
 
 if __name__ == "__main__":
     main()

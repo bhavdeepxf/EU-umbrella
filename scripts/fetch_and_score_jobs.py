@@ -1,29 +1,19 @@
-import base64
+import html
 import json
-import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 import requests
 
-BASE_URL = "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service"
+API_URL = "https://www.arbeitnow.com/api/job-board-api"
 OUTPUT = Path("data/live-jobs.json")
-MIN_SCORE = 20
-MAX_DETAIL_REQUESTS = 80
 
-SEARCH_TERMS = [
-    "MEMS",
-    "Mikrosystemtechnik",
-    "Dünnschicht",
-    "Materialcharakterisierung",
-    "FTIR",
-    "Medizintechnik",
-    "Sensorik",
-    "Biomedizintechnik",
-]
+MAX_PAGES = 12
+MIN_SCORE = 28
 
-DIRECT_TERMS = {
+CORE = {
     "MEMS": r"\bmems\b|mikrosystemtechnik|microsystem",
     "AlN": r"\baln\b|alumini?um nitride|aluminiumnitrid",
     "thin films": r"thin[\s-]?film|dünnschicht",
@@ -35,10 +25,13 @@ DIRECT_TERMS = {
     "XRD": r"\bxrd\b|röntgendiffrakt",
     "SEM": r"\bsem\b|\brem\b|rasterelektronenmikroskop",
     "wafer bow": r"wafer[\s-]?bow|waferkrümmung",
-    "materials characterization": r"materialcharakterisierung|materials characterization|oberflächencharakterisierung",
+    "materials characterization": (
+        r"materialcharakterisierung|materials characterization|"
+        r"oberflächencharakterisierung"
+    ),
 }
 
-SUPPORT_TERMS = {
+SUPPORT = {
     "medical devices": r"medizintechnik|medical device|medizinprodukt|biomedical",
     "verification/validation": r"verifik|validier|validat|verification",
     "quality assurance": r"qualitätssicherung|quality assurance|\bqa\b",
@@ -48,256 +41,231 @@ SUPPORT_TERMS = {
     "sensors": r"sensorik|\bsensor",
     "biomaterials": r"biomaterial",
     "imaging": r"bildverarbeitung|image processing|medical imaging|\boct\b",
+    "laboratory": r"laboratory|lab engineer|laboringenieur",
 }
 
-PRIORITY_PLACE = re.compile(
-    r"baden-württemberg|stuttgart|freiburg|karlsruhe|tübingen|"
-    r"villingen-schwenningen|ulm|münchen|munich|bayern|bavaria",
+ROLE_TITLE = re.compile(
+    r"mems|mikrosystem|dünnschicht|thin[\s-]?film|material|"
+    r"sensor|medizintechnik|medical device|biomedical|"
+    r"phd|doctoral|doktorand|research|forschung|"
+    r"labor|laboratory|characterization|charakterisierung|"
+    r"validation|validierung|application engineer|"
+    r"applikationsingenieur",
     re.IGNORECASE,
 )
 
-SENIORITY_WARNING = re.compile(
+EXCLUDED_TITLE = re.compile(
+    r"recruit|talent scout|sales|marketing|account manager|"
+    r"finance|accounting|customer service|software tester|"
+    r"frontend|backend|full[\s-]?stack",
+    re.IGNORECASE,
+)
+
+STUDENT_TITLE = re.compile(
+    r"working student|werkstudent|internship|praktikum|praktikant",
+    re.IGNORECASE,
+)
+
+SENIOR_TITLE = re.compile(
     r"\bsenior\b|\bprincipal\b|\bdirector\b|"
-    r"\bteamleiter\b|\babteilungsleiter\b|"
-    r"\b(?:8|9|10)\+?\s*(?:years|jahre)",
+    r"\bhead of\b|\bteam lead\b|\bteamleiter\b",
     re.IGNORECASE,
 )
 
-LANGUAGE_WARNING = re.compile(
+GERMAN_C1 = re.compile(
     r"(?:deutsch|german)\s*c[12]\b|"
     r"\bc[12]\s*(?:deutsch|german)\b|"
     r"verhandlungssicher(?:e|es|en|er)?\s+deutsch",
     re.IGNORECASE,
 )
 
+PRIORITY_LOCATION = re.compile(
+    r"baden-württemberg|stuttgart|freiburg|karlsruhe|"
+    r"tübingen|villingen-schwenningen|ulm|münchen|munich|"
+    r"bayern|bavaria",
+    re.IGNORECASE,
+)
+
 session = requests.Session()
-session.headers.update({
-    "X-API-Key": os.getenv("BA_JOBS_API_KEY") or "jobboerse-jobsuche",
-    "Accept": "application/json",
-})
+session.headers.update({"Accept": "application/json"})
 
 
-def plain_text(value):
-    return re.sub(r"<[^>]+>", " ", str(value or "")).strip()
+def clean_text(value):
+    text = re.sub(r"<[^>]+>", " ", str(value or ""))
+    return re.sub(r"\s+", " ", html.unescape(text)).strip()
 
 
-def search(term):
+def match_labels(text, patterns):
+    return [
+        label
+        for label, pattern in patterns.items()
+        if re.search(pattern, text, re.IGNORECASE)
+    ]
+
+
+def fetch_page(page):
     response = session.get(
-        f"{BASE_URL}/pc/v4/app/jobs",
-        params={
-            "was": term,
-            "angebotsart": 1,
-            "page": 1,
-            "size": 25,
-            "pav": "false",
-            "veroeffentlichtseit": 30,
-        },
+        API_URL,
+        params={"page": page},
         timeout=30,
     )
     response.raise_for_status()
     payload = response.json()
-    listings = payload.get("stellenangebote")
 
-    if not isinstance(listings, list):
+    if not isinstance(payload.get("data"), list):
         raise ValueError(
-            f"Unexpected search response for {term!r}; keys: {list(payload)[:12]}"
+            f"Page {page} did not contain a data list; "
+            f"response keys: {list(payload)[:10]}"
         )
 
-    return listings
+    return payload
 
 
-def job_details(reference):
-    encoded = base64.urlsafe_b64encode(reference.encode("utf-8")).decode("ascii")
-    encoded = encoded.rstrip("=")
+def score_job(raw):
+    title = clean_text(raw.get("title"))
+    description = clean_text(raw.get("description"))
+    location = clean_text(raw.get("location"))
 
-    response = session.get(
-        f"{BASE_URL}/pc/v4/jobdetails/{encoded}",
-        timeout=30,
-    )
-    response.raise_for_status()
-    return response.json()
+    # A matching word buried in a long description is not enough:
+    # require a relevant role title or multiple core skill matches.
+    core_matches = match_labels(f"{title} {description}", CORE)
+    support_matches = match_labels(f"{title} {description}", SUPPORT)
+    relevant_title = bool(ROLE_TITLE.search(title))
 
+    if EXCLUDED_TITLE.search(title):
+        return None
 
-def score_job(title, description, location):
-    text = f"{title} {description}".casefold()
-    matched_direct = [
-        label for label, pattern in DIRECT_TERMS.items()
-        if re.search(pattern, text, re.IGNORECASE)
-    ]
-    matched_support = [
-        label for label, pattern in SUPPORT_TERMS.items()
-        if re.search(pattern, text, re.IGNORECASE)
-    ]
+    if not relevant_title and len(core_matches) < 2:
+        return None
 
-    score = min(len(matched_direct) * 10, 60)
-    score += min(len(matched_support) * 4, 24)
+    if not core_matches and len(support_matches) < 2:
+        return None
 
-    if re.search(
-        r"phd|doctoral|doktorand|wissenschaftlich(?:e|er|en|es)? "
-        r"mitarbeiter|research associate",
-        title,
-        re.IGNORECASE,
-    ):
-        score += 8
+    score = min(len(core_matches) * 11, 55)
+    score += min(len(support_matches) * 4, 24)
 
-    if PRIORITY_PLACE.search(location):
+    if relevant_title:
+        score += 10
+
+    if re.search(r"phd|doctoral|doktorand|research associate", title, re.I):
         score += 6
 
-    warnings = []
-    if SENIORITY_WARNING.search(title):
-        score -= 20
-        warnings.append("Senior/management title")
+    if PRIORITY_LOCATION.search(location):
+        score += 5
 
-    if LANGUAGE_WARNING.search(description):
+    warnings = []
+
+    if STUDENT_TITLE.search(title):
+        score -= 25
+        warnings.append("Requires current student eligibility")
+
+    if SENIOR_TITLE.search(title):
+        score -= 25
+        warnings.append("Senior-level title")
+
+    if GERMAN_C1.search(description):
         score -= 8
         warnings.append("Check German-language requirement")
 
-    return (
-        max(0, min(100, score)),
-        matched_direct + matched_support,
-        warnings,
-    )
+    score = max(0, min(100, score))
 
+    if score < MIN_SCORE:
+        return None
 
-def location_from(search_result, details):
-    search_place = search_result.get("arbeitsort") or {}
-    if not isinstance(search_place, dict):
-        search_place = {}
+    url = raw.get("url")
+    if not isinstance(url, str) or urlparse(url).scheme != "https":
+        return None
 
-    detail_places = details.get("arbeitsorte") or []
-    detail_place = detail_places[0] if detail_places else {}
-    if not isinstance(detail_place, dict):
-        detail_place = {}
+    timestamp = raw.get("created_at")
+    posted = ""
+    if isinstance(timestamp, (int, float)):
+        posted = datetime.fromtimestamp(
+            timestamp, timezone.utc
+        ).date().isoformat()
 
-    city = detail_place.get("ort") or search_place.get("ort") or ""
-    region = detail_place.get("region") or search_place.get("region") or ""
-    return ", ".join(part for part in (city, region, "Germany") if part)
+    job_types = raw.get("job_types") or []
 
-
-def safe_url(search_result, details, reference):
-    for candidate in (
-        search_result.get("externeUrl"),
-        details.get("externeUrl"),
-    ):
-        if isinstance(candidate, str) and candidate.startswith("https://"):
-            return candidate
-
-    return (
-        "https://www.arbeitsagentur.de/jobsuche/suche?"
-        f"was={requests.utils.quote(reference)}"
-    )
+    return {
+        "id": str(raw.get("slug") or url),
+        "title": title,
+        "company": clean_text(raw.get("company_name")) or "Employer not listed",
+        "location": location or "Check posting",
+        "country": "Germany / Europe—verify location",
+        "category": "Live European vacancy",
+        "type": ", ".join(map(str, job_types)) or "See original posting",
+        "datePosted": posted,
+        "deadline": "Check original posting",
+        "url": url,
+        "source": "Arbeitnow job-board API",
+        "description": description[:2500],
+        "matchScore": score,
+        "matchedKeywords": (core_matches + support_matches)[:10],
+        "warnings": warnings,
+    }
 
 
 def main():
-    found = {}
-    successes = 0
-    failures = 0
+    unique_jobs = {}
+    pages_fetched = 0
 
-    for term in SEARCH_TERMS:
+    for page in range(1, MAX_PAGES + 1):
         try:
-            results = search(term)
-            successes += 1
-            print(f"Search {term!r}: {len(results)} listings")
-
-            for result in results:
-                reference = result.get("refnr") or result.get("referenznummer")
-                if reference:
-                    found[reference] = result
-
+            payload = fetch_page(page)
         except (requests.RequestException, ValueError) as error:
-            failures += 1
-            print(f"Search {term!r} failed: {error}")
+            print(f"Page {page} failed: {error}")
+            if pages_fetched == 0:
+                raise SystemExit(
+                    "Job API is unavailable; preserving the deployed site."
+                )
+            break
 
-    print(
-        f"Successful searches: {successes}; "
-        f"failed searches: {failures}; unique listings: {len(found)}"
-    )
+        listings = payload["data"]
+        pages_fetched += 1
+        print(f"Page {page}: {len(listings)} listings")
 
-    if not found:
-        raise SystemExit(
-            "No listings returned. Check the API errors above; "
-            "keeping the previously deployed site unchanged."
-        )
+        for raw in listings:
+            identifier = raw.get("slug") or raw.get("url")
+            if identifier:
+                unique_jobs[identifier] = raw
+
+        if not listings:
+            break
 
     ranked = []
-    detail_successes = 0
-    detail_failures = 0
+    for raw in unique_jobs.values():
+        result = score_job(raw)
+        if result:
+            ranked.append(result)
 
-    for reference, result in list(found.items())[:MAX_DETAIL_REQUESTS]:
-        try:
-            details = job_details(reference)
-            detail_successes += 1
-        except (requests.RequestException, ValueError) as error:
-            detail_failures += 1
-            print(f"Details failed for {reference}: {error}")
-            continue
-
-        title = plain_text(
-            details.get("titel")
-            or details.get("stellenangebotsTitel")
-            or result.get("beruf")
-        )
-        description = plain_text(
-            details.get("stellenbeschreibung")
-            or details.get("stellenangebotsBeschreibung")
-        )
-        location = location_from(result, details)
-        score, keywords, warnings = score_job(title, description, location)
-
-        if score < MIN_SCORE:
-            continue
-
-        ranked.append({
-            "id": reference,
-            "title": title or result.get("beruf") or "Untitled vacancy",
-            "company": plain_text(
-                details.get("arbeitgeber")
-                or result.get("arbeitgeber")
-                or "Employer not listed"
-            ),
-            "location": location,
-            "country": "Germany",
-            "category": "Live German vacancy",
-            "type": "See original posting",
-            "datePosted": (
-                details.get("aktuelleVeroeffentlichungsdatum")
-                or result.get("aktuelleVeroeffentlichungsdatum")
-                or ""
-            ),
-            "deadline": "Check original posting",
-            "url": safe_url(result, details, reference),
-            "source": "Bundesagentur für Arbeit Jobsuche",
-            "description": description[:2500],
-            "matchScore": score,
-            "matchedKeywords": keywords[:10],
-            "warnings": warnings,
-        })
-
-    ranked.sort(key=lambda job: job["matchScore"], reverse=True)
+    ranked.sort(key=lambda item: item["matchScore"], reverse=True)
 
     print(
-        f"Detail requests succeeded: {detail_successes}; "
-        f"failed: {detail_failures}; jobs scoring {MIN_SCORE}+: {len(ranked)}"
+        f"Fetched {pages_fetched} pages; "
+        f"{len(unique_jobs)} unique listings; "
+        f"{len(ranked)} jobs passed the CV filter."
     )
 
     if not ranked:
         raise SystemExit(
-            "Search returned listings but none passed matching. "
-            "Check detail failures and search terms above; "
-            "keeping the previously deployed site unchanged."
+            "No relevant jobs found. The site will not be overwritten "
+            "with empty or fabricated results."
         )
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(
-        json.dumps({
-            "generatedAt": datetime.now(timezone.utc).isoformat(),
-            "count": len(ranked),
-            "jobs": ranked,
-        }, ensure_ascii=False, indent=2),
+        json.dumps(
+            {
+                "generatedAt": datetime.now(timezone.utc).isoformat(),
+                "count": len(ranked),
+                "jobs": ranked,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
         encoding="utf-8",
     )
 
-    print(f"Saved {len(ranked)} real jobs to {OUTPUT}")
+    print(f"Saved {len(ranked)} ranked jobs to {OUTPUT}")
 
 
 if __name__ == "__main__":

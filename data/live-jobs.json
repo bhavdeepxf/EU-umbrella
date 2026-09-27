@@ -1,1 +1,894 @@
-
+{
+  "generatedAt": "2026-09-27T14:22:30.829222+00:00",
+  "count": 42,
+  "sourceStats": {
+    "Arbeitnow": 1646,
+    "Greenhouse": 580
+  },
+  "sourceErrors": [],
+  "scoringNote": "Heuristic CV-fit ranking, not a hiring probability.",
+  "jobs": [
+    {
+      "id": "greenhouse:graphcore:8597205002",
+      "title": "Debug Validation Engineer — Multiple Levels",
+      "company": "Graphcore",
+      "location": "Bristol, UK",
+      "country": "United Kingdom",
+      "category": "MEMS / Materials",
+      "type": "See original posting",
+      "datePosted": "2026-09-15",
+      "deadline": "Check original posting",
+      "url": "https://job-boards.greenhouse.io/graphcore/jobs/8597205002",
+      "source": "Graphcore careers (Greenhouse)",
+      "description": "<h1><strong>About us</strong></h1> <p>At Graphcore, we’re building the future of AI compute.</p> <p>We’re a team of semiconductor, software and AI experts, with deep experience in creating the complete AI compute stack - from silicon and software to infrastructure at datacenter scale.</p> <p>As part of the SoftBank Group, backed by significant long-term investment, we are delivering key technology into the fast-growing SoftBank AI ecosystem.</p> <p>To meet the vast and exciting AI opportunity, Graphcore is expanding its teams around the world.</p> <p>We are bringing together the brightest minds to solve the toughest problems, in a place where everyone has the opportunity to make an impact on the company, our products and the future of artificial intelligence.</p> <p>&nbsp;</p> <h1><strong>Job Summary</strong></h1> <p>Reporting to Senior Director of Post Silicon Validation, the Debug Validation Engineer will drive post-silicon debug and validation activities for next-generation AI compute silicon and systems. You will lead teams passionate about identifying, reproducing, analyzing, and resolving complex silicon, firmware, and system-level issues during bring-up, characterization, and product readiness. This role combines deep technical debugging expertise with strong cross-functional collaboration across multiple engineering fields.</p> <p>&nbsp;</p> <h1><strong>The Team</strong></h1> <p>The Post-Silicon Debug and Validation team manages bring-up, fault diagnosis, and validation of Graphcore silicon and systems. Our team participates throughout the entire product lifecycle, supporting initial silicon bring-up, subsystem validation, system integration, and production readiness tasks. We coordinate closely with hardware, firmware, software, and systems teams to examine complex failures, develop debug strategies, and advance validation infrastructure.</p> <p>&nbsp;</p> <h1><strong>Responsibilities and Duties</strong></h1> <ul> <li>Lead post-silicon debugging and validation efforts for AI compute silicon and platform technologies</li> <li>Contribute to debug and validation activities across multiple projects and achievements</li> <li>Analyze and address intricate silicon, firmware, software, and system-level problems during bring-up and validation</li> <li>Develop structured debug methodologies and failure analysis processes to improve issue resolution efficiency</li> <li>Work in close partnership with architecture, RTL, firmware, software, and systems engineering groups to determine root causes and carry out corrective measures</li> <li>Drive debug of CPU, memory, interconnect, and high-speed I/O subsystems under functional, stress, and workload conditions</li> <li>Develop and improve automated debug, regression, and validation infrastructure using Python and related technologies</li> <li>Analyze logs, traces, telemetry, and hardware data to isolate and characterize system failures and performance issues</li> <li>Support development of validation tests, debug tooling, and custom diagnostics to improve coverage and observability</li> <li>Define validation metrics, debug workflows, and reporting standards to ensure consistent and repeatable analysis</li> <li>Communicate technical risks, status, and recommendations clearly to engineering leadership and cross-functional collaborators</li> <li>Support silicon readiness reviews and contribute to product quality and release decisions</li> <li>Contribute to continuous improvement of debug methodolo",
+      "matchScore": 80,
+      "matchedKeywords": [
+        "materials characterization",
+        "semiconductor process",
+        "verification / quality",
+        "MATLAB / Python / ML",
+        "laboratory engineering"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "greenhouse:graphcore:8223577002",
+      "title": "Post Silicon Validation Engineer",
+      "company": "Graphcore",
+      "location": "Bristol, UK",
+      "country": "United Kingdom",
+      "category": "MEMS / Materials",
+      "type": "See original posting",
+      "datePosted": "2026-09-15",
+      "deadline": "Check original posting",
+      "url": "https://job-boards.greenhouse.io/graphcore/jobs/8223577002",
+      "source": "Graphcore careers (Greenhouse)",
+      "description": "<div class=\"job__description body\"> <h2><strong>About Graphcore</strong></h2> <p><span data-contrast=\"none\"><span data-ccp-charstyle=\"normaltextrun\" data-ccp-charstyle-defn=\"{&quot;ObjectId&quot;:&quot;ac0262f4-8a9e-5820-b908-2d943c5f7113|1&quot;,&quot;ClassId&quot;:1073872969,&quot;Properties&quot;:[201342446,&quot;1&quot;,201342447,&quot;5&quot;,201342448,&quot;1&quot;,201342449,&quot;1&quot;,469777841,&quot;Calibri&quot;,469777842,&quot;&quot;,469777843,&quot;Calibri&quot;,469777844,&quot;Calibri&quot;,201341986,&quot;1&quot;,469769226,&quot;Calibri&quot;,268442635,&quot;24&quot;,469775450,&quot;normaltextrun&quot;,201340122,&quot;1&quot;,134233614,&quot;true&quot;,469778129,&quot;normaltextrun&quot;,335572020,&quot;1&quot;,469778324,&quot;Default Paragraph Font&quot;]}\">Graphcore</span><span data-ccp-charstyle=\"normaltextrun\">&nbsp;is one of the world’s leading innovators in Artificial Intelligence compute.</span><span data-ccp-charstyle=\"eop\" data-ccp-charstyle-defn=\"{&quot;ObjectId&quot;:&quot;920dbcde-2834-5e15-a5fa-062170b236ba|1&quot;,&quot;ClassId&quot;:1073872969,&quot;Properties&quot;:[201342446,&quot;1&quot;,201342447,&quot;5&quot;,201342448,&quot;1&quot;,201342449,&quot;1&quot;,469777841,&quot;Calibri&quot;,469777842,&quot;&quot;,469777843,&quot;Calibri&quot;,469777844,&quot;Calibri&quot;,201341986,&quot;1&quot;,469769226,&quot;Calibri&quot;,268442635,&quot;24&quot;,469775450,&quot;eop&quot;,201340122,&quot;1&quot;,134233614,&quot;true&quot;,469778129,&quot;eop&quot;,335572020,&quot;1&quot;,469778324,&quot;Default Paragraph Font&quot;]}\"> </span></span><span data-ccp-props=\"{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;335559738&quot;:0,&quot;335559739&quot;:0}\">&nbsp;</span></p> <p><span data-contrast=\"none\"><span data-ccp-charstyle=\"normaltextrun\">It is developing hardware, software and systems infrastructure that will unlock the next generation of AI breakthroughs and power the widespread adoption of AI solutions across every industry.</span><span data-ccp-charstyle=\"eop\"> </span></span><span data-ccp-props=\"{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;335559738&quot;:0,&quot;335559739&quot;:0}\">&nbsp;</span></p> <p><span data-contrast=\"none\"><span data-ccp-charstyle=\"normaltextrun\">As part of the SoftBank Group,&nbsp;</span><span data-ccp-charstyle=\"normaltextrun\">Graphcore</span><span data-ccp-charstyle=\"normaltextrun\"> is a member of an elite family of companies responsible for some of the world’s most transformative technologies. Together, they share a bold vision: to enable Artificial Super Intelligence and ensure its benefits are accessible to everyone. </span><span data-ccp-charstyle=\"eop\"> </span></span><span data-ccp-props=\"{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;335559738&quot;:0,&quot;335559739&quot;:0}\">&nbsp;</span></p> <p><span data-contrast=\"none\"><span data-ccp-charstyle=\"normaltextrun\">Graphcore’s</span><span data-ccp-charstyle=\"normaltextrun\">&nbsp;teams are drawn from diverse backgrounds and bring a broad range of skills and perspectives. A melting pot of AI research specialists, silicon designers, software engineers and systems architects,&nbsp;</span><span data-ccp-charstyle=\"normaltextrun\">Graphcore</span><span data-ccp-charstyle=\"normaltextrun\">&nbsp;enjoys a culture of continuous learning and constant innovation.</span><span data-ccp-charstyle=\"eop\"> </span></span><span data-ccp-props=\"{&quot;134233117&quot;:false,&quot;134233118&quot;:fal",
+      "matchScore": 66,
+      "matchedKeywords": [
+        "materials characterization",
+        "verification / quality",
+        "MATLAB / Python / ML",
+        "laboratory engineering"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:research-engineer-machine-learning-medical-imaging-munich-432050",
+      "title": "Research Engineer – Machine Learning & Medical Imaging",
+      "company": "Imfusion",
+      "location": "Munich",
+      "country": "Germany",
+      "category": "PhD / Research",
+      "type": "Experienced, Permanent, Full or part time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/imfusion/research-engineer-machine-learning-medical-imaging-munich-432050",
+      "source": "Arbeitnow",
+      "description": "Your mission As a Research Engineer, you will develop machine learning solutions for challenging medical imaging applications and help turn research ideas into robust, working software. You will contribute across the full machine learning workflow: from understanding the problem and working with medical imaging data to developing, evaluating, and integrating models. This role is ideal for someone who combines a strong research mindset with an interest in programming and engineering and who is motivated by applying technology to meaningful healthcare challenges. Your Responsibilities Develop and evaluate machine learning solutions for medical imaging applications. Contribute to customer projects by understanding and solving their technical and clinical challenges. Translate research ideas and prototypes into robust, reusable and well crafted software solutions. Work across the full machine learning workflow, including data preparation, model development, validation, and integration. Communicate results and technical concepts clearly to internal and external stakeholders. Your profile Must-haves PhD (or MSc degree with industry experience) in a related field, combined with a strong interest in software engineering Strong machine learning skills and a solid understanding of the full machine learning workflow Experience working with medical imaging data and applications Good programming skills in Python A motivated, proactive, team player and solution-oriented working style Strong communication skills and an interest in collaborating with customers Very good English skills Nice-to-haves Experience translating research prototypes into robust software Experience working in customer-facing or interdisciplinary projects Experience with or willingness to learn C++ We are hiring across the European Union. While this role can be performed remotely, being based in or around Munich and interested in regularly joining us in the office would be an advantage. Why us? Work on cutting-edge machine learning and medical imaging technologies with a direct impact on healthcare Exciting projects combining applied research, software engineering, and real-world applications Continuous learning and development, including conferences and professional training Flexible working options within the EU and regular opportunities to connect with the team in Munich Plenty of ownership and room to contribute your own ideas An international, collaborative team with a strong focus on knowledge sharing Find more English Speaking Jobs in Germany on Arbeitnow",
+      "matchScore": 61,
+      "matchedKeywords": [
+        "verification / quality",
+        "medical imaging",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:process-development-engineer-semiconductor-packaging-de-berlin-293555",
+      "title": "Process Development Engineer – Semiconductor Packaging (m/f/d)",
+      "company": "Swissbit",
+      "location": "DE-Berlin",
+      "country": "Germany",
+      "category": "MEMS / Materials",
+      "type": "Experienced, Permanent, Full time",
+      "datePosted": "2026-09-25",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/swissbit/process-development-engineer-semiconductor-packaging-de-berlin-293555",
+      "source": "Arbeitnow",
+      "description": "A Swissbit more you. Bei uns gestaltest du die Zukunft! Swissbit ist der führende europäische Hersteller von Speicher- und Security-Lösungen für Industrie- und IoT-Anwendungen. Wir stärken die digitale und vernetzte Welt, indem wir Daten zuverlässig speichern und schützen. Für diese und viele weitere spannende Projekte suchen wir Kolleg:innen, die gemeinsam mit uns etwas bewegen wollen. Gemeinsam treiben wir die technologischen Innovationen von morgen voran – mit Leidenschaft, Mut und dem Anspruch, immer einen Schritt voraus zu sein. Deine Mission Als Process Technology Engineer (m/f/d) entwickelst du in unserer R&D-Abteilung neue Prozesstechnologien für die Advanced-Packaging-Fertigung. Dabei begleitest du Entwicklungsprojekte, arbeitest eng mit internen Schnittstellen zusammen und trägst dazu bei, innovative Fertigungsprozesse stabil, effizient und qualitätsorientiert umzusetzen. Spannende Aufgaben warten auf Dich Entwicklung neuer Technologieprozesse im Semiconductor Packaging, insbesondere für Wafer-, Substrat- und Panel Processing Auswahl von Lieferanten für neues Prozessequipment sowie Begleitung von Projekten inklusive Reporting Definition von Prozessgrenzen und Design Rules im Rahmen von ADKs sowie Begleitung neuer Produkt- und Prozessprojekte Enge Zusammenarbeit mit Process/Industrial Engineering, Quality Management und Einkauf zur Umsetzung maßgeschneiderter Lösungen Sicherstellung von Qualitätsstandards, Projektzielen und stabilen Fertigungsprozessen Durchführung und Auswertung von Analysen sowie Erstellung von Berichten zu neuen Fertigungsprozessen, z. B. EMPB Dein Profil Abgeschlossenes Studium in Mikrosystemtechnik, Halbleitertechnik, Maschinenbau, Verfahrenstechnik oder vergleichbar Industrielle Erfahrung in der Entwicklung von Packaging-Prozessen , z. B. Substrat-, Panel- oder Wafer-Vereinzelung, Molding sowie Assembly-Prozesse wie Wirebond, Diebond oder Flip Chip Kenntnisse gängiger Aufbau- und Verbindungstechnologien, u. a. Löten, Chip on Board, Trennen, Waferbearbeitung und Molding Fundiertes Verständnis mechanischer Prozesse auf Wafer, Substrat und Metallisierungen sowie deren Einfluss auf Produktqualität, Entwicklungszeit und Kosten Erfahrung mit prozessorientierten Herausforderungen in der Serienfertigung , insbesondere Yield, Stabilität und Reproduzierbarkeit Sehr gute Kenntnisse in statistischen und mathematischen Methoden, datenbasierter Prozessanalyse sowie Spezifikation und Abnahme von Anlagen verhandlungssichere Deutsch - und gute Englischkenntnisse Was wir Dir bieten Sorgfältige Einarbeitung in ein motiviertes Team mit einem angenehmen Arbeitsklima & offener Kommunikationskultur Ideale fußläufige Anbindung über die BVG, S7 Raoul-Wallenberg-Str. / S75 Gehrenseestr. / Bus 154 sowie Parkplatz direkt auf dem Firmengelände Flexible Arbeitszeiten und Jahresarbeitszeitkonto Familienfreundliche Unternehmenskultur Persönliche und fachliche Entwicklungs- und Weiterbildungsmöglichkeiten Sehr guten Kaffee, Kicker, Tischtennis oder den Grill auf der Dachterasse zählen wir gar nicht erst auf, denn es geht uns um Inhalt: das spannende Umfeld bei einem innovativen Mittelständler mit hoher technischer Vielfalt Find more English Speaking Jobs in Germany on Arbeitnow",
+      "matchScore": 56,
+      "matchedKeywords": [
+        "MEMS / microsystems",
+        "semiconductor process"
+      ],
+      "warnings": [
+        "Check German-language requirement"
+      ]
+    },
+    {
+      "id": "arbeitnow:semiconductor-packaging-engineer-process-engineer-advanced-packaging-de-berlin-336271",
+      "title": "Semiconductor Packaging Engineer / Process Engineer Advanced Packaging (m/f/d)",
+      "company": "Swissbit",
+      "location": "DE-Berlin",
+      "country": "Germany",
+      "category": "MEMS / Materials",
+      "type": "Experienced, Permanent, Full time",
+      "datePosted": "2026-09-25",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/swissbit/semiconductor-packaging-engineer-process-engineer-advanced-packaging-de-berlin-336271",
+      "source": "Arbeitnow",
+      "description": "A Swissbit more you. Bei uns gestaltest du die Zukunft! Swissbit ist der führende europäische Hersteller von Speicher- und Security-Lösungen für Industrie- und IoT-Anwendungen. Wir stärken die digitale und vernetzte Welt, indem wir Daten zuverlässig speichern und schützen. Für diese und viele weitere spannende Projekte suchen wir Kolleg:innen, die gemeinsam mit uns etwas bewegen wollen. Gemeinsam treiben wir die technologischen Innovationen von morgen voran – mit Leidenschaft, Mut und dem Anspruch, immer einen Schritt voraus zu sein. Deine Mission In dieser Rolle verantwortest du die Entwicklung und Optimierung von Technologien und Prozessen im Advanced Semiconductor Packaging. Der Schwerpunkt liegt auf der Betreuung externer Kundenprojekte sowie interner Entwicklungsprojekte – von der technischen Lösungsfindung bis zur Umsetzung mit Process Engineering, Quality Management und Sales. Spannende Aufgaben warten auf Dich Entwicklung, Optimierung und Industrialisierung von Technologieprozessen im Advanced Semiconductor Packaging Technische Betreuung und Steuerung externer Kundenprojekte mit Fokus auf Komponentenfertigung, System in Package und Chiplet-Technologien Koordination interner Entwicklungsprojekte inklusive technischer Abstimmung, Fortschrittsverfolgung und internem/externem Reporting Enge fachliche Zusammenarbeit mit Process Engineering, Quality Management und Sales zur Entwicklung kundenspezifischer Lösungen Sicherstellung von Qualitätsstandards, Projektzielen und belastbaren Entscheidungsgrundlagen durch Analysen und Prozessbewertungen Dein Profil Abgeschlossenes Ingenieurstudium , z. B. in Mikrosystemtechnik, Elektrotechnik, Verfahrenstechnik, Maschinenbau, Produktionstechnik oder vergleichbare Qualifikation Mehrjährige Erfahrung in der Entwicklung, Optimierung und Steuerung von Technologieprozessen sowie in der Betreuung technischer Kundenprojekte Kenntnisse in Aufbau- und Verbindungstechnologien , z. B. Löten, Chip on Board, Trennen, Waferbearbeitung oder Molding Idealerweise Know-how in Advanced Packaging, System in Package, Chiplet- oder Substrattechnologien Sicherer Umgang mit Prozesssteuerung , Prozessoptimierung, Analysen und technischen Entscheidungsgrundlagen Verhandlungssichere Deutsch - und gute Englischkenntnisse Was wir Dir bieten Sorgfältige Einarbeitung in ein motiviertes Team mit einem angenehmen Arbeitsklima & offener Kommunikationskultur Ideale fußläufige Anbindung über die BVG, S7 Raoul-Wallenberg-Str. / S75 Gehrenseestr. / Bus 154 sowie Parkplatz direkt auf dem Firmengelände Flexible Arbeitszeiten und Jahresarbeitszeitkonto Familienfreundliche Unternehmenskultur Persönliche und fachliche Entwicklungs- und Weiterbildungsmöglichkeiten Sehr guten Kaffee, Kicker, Tischtennis oder den Grill auf der Dachterasse zählen wir gar nicht erst auf, denn es geht uns um Inhalt: das spannende Umfeld bei einem innovativen Mittelständler mit hoher technischer Vielfalt Find Jobs in Germany on Arbeitnow",
+      "matchScore": 56,
+      "matchedKeywords": [
+        "MEMS / microsystems",
+        "semiconductor process"
+      ],
+      "warnings": [
+        "Check German-language requirement"
+      ]
+    },
+    {
+      "id": "arbeitnow:senior-electrical-characterisation-engineer-london-uk-441418",
+      "title": "Senior Electrical Characterisation Engineer",
+      "company": "Quantum Motion Technologies - Personio",
+      "location": "London, UK",
+      "country": "United Kingdom",
+      "category": "PhD / Research",
+      "type": "Experienced, Permanent, Full time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/quantum-motion-technologies-personio/senior-electrical-characterisation-engineer-london-uk-441418",
+      "source": "Arbeitnow",
+      "description": "About The Role and Team Quantum Motion is a fast-growing quantum computing scale-up based in London founded by internationally renowned researchers from UCL and Oxford University with over 40 years’ experience in developing qubits and quantum computing architectures. Bringing together state-of-the-art cryogenic facilities and an outstanding interdisciplinary team, we are developing quantum processors based on industrial-grade silicon chips, with the potential to radically transform computing power in areas such as materials modelling, medicine, artificial intelligence and more. Our Team Since 2021 our team has been listed every year in the “Top 100 Startups worth watching” in the EE Times in 2021 and 2022, and our technology breakthroughs have been featured in The Telegraph , BBC and the New Statesman . Our founders are internationally renowned researchers from UCL and Oxford University who have pioneered the development of qubits and quantum computing architectures. Our chairman is the co-founder of Cadence and Synopsys, the two leading companies in the area of Electronic Design Automation. We’re backed by a team of top-tier investors, and we have recently closed our Series C funding of $160 million. We bring together the brightest quantum engineers, integrated circuit (IC) engineers, quantum computing theoreticians and software engineers to create a unique, world-leading team, working together closely to maximise our combined expertise. Our collaborative and interdisciplinary culture is an ideal fit for anyone who thrives in a cutting-edge research and development environment focused on tackling big challenges and contributing to the development of scalable quantum computers based on silicon technology. This is a rare and exciting opportunity to be an employee at a scale-up shaping the future of quantum computing. There are vast opportunities for professional growth and to make an impact within the company. Our team of 100+ is based across London, Oxford, San Sebastián and Sydney, with our primary hub in Islington (London). We are looking for a Senior Electrical Characterisation Engineer to join our Process Integration team and play a key role in understanding, qualifying and improving the silicon devices at the heart of our quantum processors. You will sit at a fascinating intersection between semiconductor manufacturing and quantum hardware, working closely with foundries, process engineers and quantum engineers. You will use electrical characterisation and large-scale data analysis to understand manufacturing variability, identify the root causes of device behaviour, and feed those insights directly back into the semiconductor fabrication process. This is an opportunity to have a tangible impact on the yield, quality and scalability of quantum processors, working with some of the most advanced silicon technology being developed for quantum computing. Functions of the Role Drive electrical characterisation of fabricated silicon devices , developing and continuously improving high-throughput screening methods to assess key device parameters including threshold voltage, gate oxide reliability and channel mobility. Turn electrical data into manufacturing insight , identifying patterns, variability and device failures and connecting them back to semiconductor process steps such as photolithography, etching, oxide growth, CMP and doping. Develop automated measurement and test infrastructure , creating robust Python-based test routines an",
+      "matchScore": 54,
+      "matchedKeywords": [
+        "materials characterization",
+        "semiconductor process",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": [
+        "Senior-level title"
+      ]
+    },
+    {
+      "id": "greenhouse:psiquantum:7727655003",
+      "title": "Mechanical Design Engineer – Photonic Hardware",
+      "company": "PsiQuantum",
+      "location": "Daresbury, England, United Kingdom",
+      "country": "United Kingdom",
+      "category": "PhD / Research",
+      "type": "See original posting",
+      "datePosted": "2026-09-25",
+      "deadline": "Check original posting",
+      "url": "https://www.psiquantum.com/apply?gh_jid=7727655003",
+      "source": "PsiQuantum careers (Greenhouse)",
+      "description": "<p><span data-contrast=\"auto\">PsiQuantum’s&nbsp;mission is to build the first useful quantum computers—machines capable of delivering the breakthroughs the field has long promised. Since our founding in 2016, our singular focus has been to build and deploy million-qubit, fault-tolerant quantum systems.</span><span data-ccp-props=\"{}\">&nbsp;</span></p> <p><span data-contrast=\"auto\">Quantum computers harness the laws of quantum mechanics to solve problems that even the most advanced supercomputers or AI systems will never reach. Their impact will span energy, pharmaceuticals, finance, agriculture, transportation, materials, and other foundational industries.</span><span data-ccp-props=\"{}\">&nbsp;</span></p> <p><span data-contrast=\"auto\">Our architecture and approach&nbsp;is&nbsp;based on silicon photonics. By&nbsp;leveraging&nbsp;the advanced semiconductor manufacturing industry—including partners like GlobalFoundries—we use the same high-volume processes that already produce billions of chips for telecom and consumer electronics. Photonics offers natural advantages for scale: photons&nbsp;don’t&nbsp;feel heat, are immune to electromagnetic interference, and integrate with existing cryogenic cooling and standard fiber-optic infrastructure.</span><span data-ccp-props=\"{}\">&nbsp;</span></p> <p><span data-contrast=\"auto\">In 2024,&nbsp;PsiQuantum&nbsp;announced government-funded projects to support the build-out of our first utility-scale quantum computers in Brisbane, Australia, and Chicago, Illinois. These initiatives reflect a growing recognition that quantum computing will be strategically and economically defining—and that now is the time to scale.</span><span data-ccp-props=\"{}\">&nbsp;</span></p> <p><span data-contrast=\"auto\">PsiQuantum&nbsp;also develops the algorithms and software needed to make these systems commercially valuable. Our application, software, and industry teams work directly with leading Fortune 500 companies—including Lockheed Martin, Mercedes-Benz, Boehringer Ingelheim, and Mitsubishi Chemical—to prepare quantum solutions for real-world impact.</span><span data-ccp-props=\"{}\">&nbsp;</span></p> <p><span data-contrast=\"auto\">Quantum computing is not an extension of classical computing. It&nbsp;represents&nbsp;a fundamental shift—and a path to mastering challenges that cannot be&nbsp;solved&nbsp;any other way. The potential is enormous, and we have a clear&nbsp;path&nbsp;to make it real.</span><span data-ccp-props=\"{}\">&nbsp;</span></p> <p><span data-contrast=\"auto\">Come join us.</span><span data-ccp-props=\"{}\">&nbsp;</span></p> <p><strong>Job Summary:</strong></p> <p data-renderer-start-pos=\"1\">We are looking for a Mechanical Design Engineer to support the development of next-generation photonic hardware systems. This is an R&amp;D role focused on the mechanical and thermal design, prototyping and validation of high-specification hardware for demanding optical quantum computing.</p> <p data-renderer-start-pos=\"288\">The role will involve developing robust, testable and manufacturable hardware for controlled operating environments, working closely with photonics, systems and architecture colleagues, as well as external partners and suppliers. It will suit a serious engineer with experience of precision experimental or industrial hardware, who is motivated by solving difficult multidisciplinary engineering problems and translating novel concepts into reliable hardware.</p> <p data-renderer-start-pos=\"749\">We welcome candi",
+      "matchScore": 51,
+      "matchedKeywords": [
+        "materials characterization",
+        "semiconductor process",
+        "verification / quality",
+        "laboratory engineering"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:advanced-rd-analog-design-engineer-saint-sulpice-84194",
+      "title": "Advanced R&D - Analog Design Engineer",
+      "company": "Kandou Ai",
+      "location": "Saint-Sulpice",
+      "country": "Switzerland",
+      "category": "PhD / Research",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/kandou-ai/advanced-rd-analog-design-engineer-saint-sulpice-84194",
+      "source": "Arbeitnow",
+      "description": "At Kandou , we are redeﬁning the economics of AI infrastructure. Our mission is to democratise AI by signiﬁcantly reducing the Total Cost of Ownership (TCO) of hardware systems — a critical barrier to scalable adoption. Our proprietary MIMO-over-copper technology powers a high-performance, chiplet-based AI memory fabric that is both scalable and energy-efficient . Unlike traditional interconnects, our solution reduces power consumption signiﬁcantly while preserving high bandwidth and ultra-low latency — unlocking unprecedented efficiency for AI training and inference at scale. Kandou’s architecture is not just an incremental improvement — it’s a foundational shift in how AI hardware is built for the future. Job Title: Analog Design Engineer (Advanced Research and Development Department) Job Location: Switzerland Key responsibilities Develop block level specifications and models for target designs Develop, model, design, and verify performance of custom analog circuits in advanced technology nodes Layout design and development, including floor-planning, guiding layout engineers, and post-layout verification Design verification at different levels (pre- and post-layout, variation-aware) Support and collaborate with the design team, including other design and layout engineers, architects and chip level integration engineers, modeling and system level designers. Support for post-silicon lab bring-up, debug, characterization and productization. Produce reports (progress report, analysis, design, modeling, and verification reports) Participate in developing concept level architectures and circuits Skills Deep understanding on design and layout techniques for high-speed and high-precision circuits, problem solver, and excellent analytical skills. Experience in developing testbenches and simulation setups to analyze performance of target circuits and systems. Skillful in layout techniques, such as matching, parasitic estimation and reduction, and deep-submicron related issues. Advanced user of EDA tool for design and verification, preferably Cadence Virtuoso, Spectre/HSpice, Calibre/PVS DRC/LVS, parasitic extraction and modelling, EM and IR drop tools, and ESD analysis, among others. Self-motivated, with strong sense of ownership and responsibility. Manage workload, schedules and report to internal management and technical teams. Excellent communication and reporting skills. Experience 5+ years of experience in design and layout of analog and mixed-signal circuits, especially high-speed and high-precision circuits. Examples are: multi-gigabit serial data-link transceivers, RF circuits, equalizers, clock generators, PLLs, clock and data recovery circuits, data converters (ADC or DAC), biasing and bandgap circuits. MSc or PhD in electronics/electrical engineering (equivalent or higher). Experienced with modern semiconductor process technologies, such as CMOS 28nm, and FinFET 16/14nm, 7nm. Experienced in high-level modelling, top-level simulations, and signal integrity. Solid background on Signal Processing and Communications If this is the role you have been looking for and you want to be part of a growing Company, with an exciting future then we would really love to hear from you. Together We Kandou It ! Find more English Speaking Jobs in Switzerland on Arbeitnow",
+      "matchScore": 49,
+      "matchedKeywords": [
+        "materials characterization",
+        "semiconductor process",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:digital-design-engineer-uk-ch-saint-sulpice-33817",
+      "title": "Digital Design Engineer, UK, CH",
+      "company": "Kandou Ai",
+      "location": "Saint-Sulpice",
+      "country": "Switzerland",
+      "category": "MEMS / Materials",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/kandou-ai/digital-design-engineer-uk-ch-saint-sulpice-33817",
+      "source": "Arbeitnow",
+      "description": "At Kandou , we are redeﬁning the economics of AI infrastructure. Our mission is to democratise AI by signiﬁcantly reducing the Total Cost of Ownership (TCO) of hardware systems — a critical barrier to scalable adoption. Our proprietary MIMO-over-copper technology powers a high-performance, chiplet-based AI memory fabric that is both scalable and energy-efficient . Unlike traditional interconnects, our solution reduces power consumption signiﬁcantly while preserving high bandwidth and ultra-low latency — unlocking unprecedented efficiency for AI training and inference at scale. Kandou’s architecture is not just an incremental improvement — it’s a foundational shift in how AI hardware is built for the future. We are actively seeking for a Digital Design Engineer Location: Lausanne (St-Sulpice), Switzerland Responsibility Concept definition, analog to digital interface specification RTL design with basics of Dft and IP verification Logic synthesis, Timing analysis – desired Close interaction with Verification engineers, Analog/Mixed signal designers Develop block level specifications of very high-speed digital circuits that meet key performance targets based on system level requirement Design and verification of very high-speed digital circuits Support for post-silicon lab bring-up, debug, characterization and productization Analysis and understanding of high-speed serial protocols (e.g., USB4, PCIe) Analog/digital interface specification in close cooperation with analog/mixed-signal designers Validation and bring-up of chips in the lab Close interaction with verification and physical implementation engineers to verify circuit functionality and compliance with area, timing, and power requirements Support and interact with customers on requirements, design specifications, performance results and product delivery Support IP and chip level integration Manage workload and schedules and report to internal management team and external customers Required Experience 5-10 years’ experience in digital design of key circuits in multi-Gigabit serial data-link transceivers, DDR and low power high performance modern memory interfaces and experience in the semiconductor industry Strong technical background in design of high-speed digital circuits in deep-submicron CMOS technologies Proven experience in complex digital design and verification of data processing systems Proven experience in design and verification of complex regulation systems (configuration, calibration, and dynamic adaption) Experience in industry standard design EDA tools for design, simulation, and verification Experience in digital high-speed blocks, CMOS High Speed interface competence would be a preference Exposure to the Cadence toolset Experience with multi-Gigabit serial data transceivers is highly desirable Experience with analog/digital control interfaces is valuable Required Skills Strong interest in the design of digital circuits and blocks for multi-Gigabit serial ana parallel data-link transceivers, DDR and low power high performance memory and communication interfaces Strong scripting and tool setup skill Strong analytical skills to translate system-level requirements into design Self-motivated, with strong sense of ownership and responsibility. Good communicator and team player RTL coding skills, CDC and Linting knowledge Understanding of verification tools and methodologies is an advantage Knowledge of synthesis, STA and signal processing techniques is an advantage Advan",
+      "matchScore": 49,
+      "matchedKeywords": [
+        "materials characterization",
+        "semiconductor process",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:ml-data-engineer-sensor-data-pipelines-munich-deu-455358",
+      "title": "ML Data Engineer (m/f/d) - Sensor Data & Pipelines",
+      "company": "autonomous-teaming",
+      "location": "Munich (DEU)",
+      "country": "Germany",
+      "category": "R&D / Engineering",
+      "type": "Experienced, Permanent, Full time",
+      "datePosted": "2026-09-25",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/autonomous-teaming/ml-data-engineer-sensor-data-pipelines-munich-deu-455358",
+      "source": "Arbeitnow",
+      "description": "What we offer Work in an international, agile team creating the future of autonomous systems Grow your career in a expanding and ambitious engineering team Build innovative products using state-of-the-art technologies in AI, robotics, and autonomy Benefit from a steep learning curve and continuous development Enjoy team events and a strong, collaborative culture Your mission This role owns the data foundation of our perception systems end-to-end — the layer that directly determines model performance in real-world environments. You'll set the technical direction for how we collect, curate, and continuously improve the datasets behind object detection, working as a senior technical partner to ML, perception, and robotics teams — turning raw, messy sensor data into reliable, production-grade systems at scale. You will take full ownership of the ML data lifecycle — from architecture decisions on ingestion and pipelines, through labeling strategy and QA, to driving continuous, metrics-informed dataset improvement — and will be expected to bring judgment and prior experience to how this is done, not just execute a defined process. What you'll do: Architect and own scalable pipelines for ingesting, organizing, and preprocessing large volumes of time-series camera and multi-sensor data (RGB, IR, thermal, depth, IMU) Drive the strategy behind our object detection datasets, ensuring quality, diversity, and statistical representativeness at scale Design and operate active learning loops that connect model performance directly to data selection and improvement priorities Own labeling workflows end-to-end — tooling decisions, QA methodology, consistency standards, and coordination of annotation efforts Partner closely with AI Engineers to diagnose model weaknesses, bias, and drift, and translate findings into concrete dataset strategy Plan and lead data collection campaigns (field recordings, drone/video capture) to close gaps with high-value real-world data Build internal tools and dashboards that give the org visibility into dataset quality, distribution, and performance gaps Your profile 5+ years of hands-on experience in Python and data processing frameworks (Pandas, NumPy, vectorized operations, multiprocessing) Proven track record building and owning ETL/ELT pipelines for large-scale video and sensor datasets in production Deep experience with data orchestration and lifecycle management for ML/computer vision workflows, including dataset versioning and reproducibility Strong command of object detection pipelines (Detectron2, MMDetection, COCO format, bounding-box standards) Demonstrated experience designing active learning, uncertainty sampling, or semi-supervised dataset workflows Deep familiarity with data annotation platforms (CVAT, Label Studio) and building automated QA/consistency checks Strong grasp of evaluation metrics for object detection (IoU, mAP, precision-recall curves, class-wise metrics) Comfortable owning decisions around databases (SQL/NoSQL), file systems, and large-scale image, video, and sensor dataset management Track record of working cross-functionally and influencing perception, deployment, robotics, and data infrastructure teams Fluent in English; German and/or French are a plus Nice to have Experience with cloud storage and MLOps tools (AWS S3, MinIO, ClearML, MLFlow, Weights & Biases). Familiarity with ROS / robotics data formats (bag files, TF trees, sensor_msgs), Docker, or embedded ML workflows. Prior work with r",
+      "matchScore": 48,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:characterization-engineer-saint-sulpice-170800",
+      "title": "Characterization Engineer",
+      "company": "Kandou Ai",
+      "location": "Saint-Sulpice",
+      "country": "Switzerland",
+      "category": "MEMS / Materials",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/kandou-ai/characterization-engineer-saint-sulpice-170800",
+      "source": "Arbeitnow",
+      "description": "At Kandou , we are redeﬁning the economics of AI infrastructure. Our mission is to democratise AI by signiﬁcantly reducing the Total Cost of Ownership (TCO) of hardware systems — a critical barrier to scalable adoption. Our proprietary MIMO-over-copper technology powers a high-performance, chiplet-based AI memory fabric that is both scalable and energy-efficient . Unlike traditional interconnects, our solution reduces power consumption signiﬁcantly while preserving high bandwidth and ultra-low latency — unlocking unprecedented efficiency for AI training and inference at scale. Kandou’s architecture is not just an incremental improvement — it’s a foundational shift in how AI hardware is built for the future. We are actively seeking a Characterization Engineer for our lab in Switzerland (Lausanne) Responsibility Lead end-to-end characterization of high-speed SerDes operating at symbol rates above 20 Gbaud Perform jitter, eye-diagram, BER, and margin measurements across PVT Characterize full transmitter and receiver electrical parameters Perform S-parameter, TDR and insertion loss measurements Collaborate with IP architects, digital and analog design teams Documentation of test results and procedures Write and architect test scripts for automation in Python Required Experience Proven experience characterizing silicon devices over PVT. Proven experience using lab equipment, such as: high-speed oscilloscopes, VNAs, and Spectrum Analyzers. Experience defining test plans and test procedures Experience with Python, or other object-oriented programming for test automation, data analysis and report generation Experience with PAM modulation or multi-tonal modulation schemes is a plus Experience in SerDes characterization is a plus At least 5 years of relevant work experience Required Competencies Self-motivated, with a strong sense of ownership and responsibility Good communicator and team player, with experience working in cross-functional teams Strong interest in characterizing high-speed analog circuits Solid understanding or ability to learn SI concepts, modulation schemes, TX and RX fundamentals Experience with Python or other object-oriented languages Experience using high-speed oscilloscopes, VNAs, and Spectrum Analyzers Ability to multitask in a high energy environment Schematic entry or PCB design is a plus Required Education Bachelor´s or Master´s degree in EE, CE, or equivalent work experience Profiles submitted by third-party recruitment agencies will not be taken into consideration. Find Jobs in Switzerland on Arbeitnow",
+      "matchScore": 47,
+      "matchedKeywords": [
+        "materials characterization",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:junior-characterization-engineer-saint-sulpice-246836",
+      "title": "Junior Characterization Engineer",
+      "company": "Kandou Ai",
+      "location": "Saint-Sulpice",
+      "country": "Switzerland",
+      "category": "MEMS / Materials",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/kandou-ai/junior-characterization-engineer-saint-sulpice-246836",
+      "source": "Arbeitnow",
+      "description": "At Kandou , we are redeﬁning the economics of AI infrastructure. Our mission is to democratise AI by signiﬁcantly reducing the Total Cost of Ownership (TCO) of hardware systems — a critical barrier to scalable adoption. Our proprietary MIMO-over-copper technology powers a high-performance, chiplet-based AI memory fabric that is both scalable and energy-efficient . Unlike traditional interconnects, our solution reduces power consumption signiﬁcantly while preserving high bandwidth and ultra-low latency — unlocking unprecedented efficiency for AI training and inference at scale. Kandou’s architecture is not just an incremental improvement — it’s a foundational shift in how AI hardware is built for the future. We are actively seeking a Junior Characterization Engineer for our lab in Switzerland (Saint-Sulpice) Responsibility: Characterisation of high-speed SerDes IP products Documentation of test results and procedures Write test scripts for automation in Python Debug of evaluation boards, silicon ICs and test scripts Required Experience: Experience, or coursework, on high-speed signals Ability to debug silicon, PCB, equipment and software issues Hands-on experience with measurement equipment such as oscilloscopes, power supplies, and DMMs Experience with Python, or other object-oriented programming for test automation, data analysis and report generation 0-3 years of experience Required skills: Self-motivated, with a strong sense of ownership and responsibility Good communicator and team player Strong interest in characterizing high-speed analog circuits Solid understanding of: SI concepts, TX and RX fundamentals, circuit fundamentals Experience with Python or other object-oriented languages Education: Bachelor´s or Master´s degree in EE or equivalent work experience www.kandou.ai Profiles submitted by third-party recruitment agencies will not be taken into consideration. Find Jobs in Switzerland on Arbeitnow",
+      "matchScore": 47,
+      "matchedKeywords": [
+        "materials characterization",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:computational-biologist-france-42092",
+      "title": "Computational Biologist",
+      "company": "Owkin",
+      "location": "France",
+      "country": "France",
+      "category": "PhD / Research",
+      "type": "Full Time",
+      "datePosted": "2026-09-26",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.fr/jobs/companies/owkin/computational-biologist-france-42092",
+      "source": "Arbeitnow",
+      "description": "About us Owkin is an agentic AI company pioneering Biological Artificial Superintelligence to solve problems in biology where human researchers alone have failed. Owkin builds K Pro - an AI scientist for pharmaceutical research and strategic decision-making. K Pro orchestrates a suite of AI skills and tools to decode complex biology, accelerate research, and dramatically increase productivity. K Pro is built on Owkin’s unrivalled multimodal patient data network, state-of-the-art AI for biology and a decade of experience working with pharmaceutical partners. Position is based in our Paris office or remotely in France, UK or Germany. Please submit your CV in English About the role: As a Computational Biologist at Owkin, you will have a unique opportunity to contribute to the discovery of better treatments through the development and use of agentic AI systems. An integral member of the Biomedical team, you will work alongside world-class experts in AI and biology within a multidisciplinary team dedicated to pioneering discoveries, all while embedded in an organization that develops end-to-end AI systems for clients. Your experience in omics will allow you to contribute to the building of our AI Scientist, an agentic system designed to navigate the complexities of target and drug discovery. In particular, you will: Contribute analyses to projects aiming to discover novel drug targets, biomarkers and disease subtypes through reverse translation based on multi-omics patient or pre-clinical data including: genomic, transcriptomic (spatial, single-cell, bulk), proteomic, and others. analyze biomedical datasets using classical or novel omics methods and machine / deep learning algorithms Conduct literature reviews to stay up-to-date with respect to relevant approaches and datasets Participate in the interpretation of results and help design validation strategies together with cross-functional teams. Collaborate with other members of Owkin’s R&Tech and Biomedical departments with varied backgrounds (computational biologists and chemists, AI scientists, medical imaging experts, medical doctors, biologists, …). Contribute analyses and visualisations to generate scientific internal and external communications and reports. Participate in Owkin’s internal R&D activities, develop new as well as improve existing methodologies, strive to keep Owkin’s Toolbox to the state-of-the-art. About you The successful candidate will have a ‘team-first’ kind of attitude; be curious and detail-attentive; thrive in a dynamic, fast-paced environment; and be fun to work with. And: Be passionate about the potential for impact when combining AI and healthcare. MSc / PhD in either computational biology, bioinformatics, biology, machine learning, computer science, mathematics or a related field. Experience working with omics data and NGS data processing pipelines. Experience of integrating multi-omics datasets. Experience of working in early-stage drug discovery programs, and with tasks such as target identification, biomarker discovery and patient stratification. Good knowledge about molecular and cellular biology, especially related to cancer and/or other human diseases, to help interpret analyzis results together with our biomedical experts. Familiarity with machine learning concepts and toolkits such as: cross validation, statistical tests, scikit learn, xgboost, etc. Experience using autonomous AI agents and agentic workflows to perform data analyses. Good programming ",
+      "matchScore": 46,
+      "matchedKeywords": [
+        "medical devices / biomedical",
+        "verification / quality",
+        "medical imaging",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:director-of-silicon-characterization-saint-sulpice-407740",
+      "title": "Director of Silicon Characterization",
+      "company": "Kandou Ai",
+      "location": "Saint-Sulpice",
+      "country": "Switzerland",
+      "category": "MEMS / Materials",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/kandou-ai/director-of-silicon-characterization-saint-sulpice-407740",
+      "source": "Arbeitnow",
+      "description": "At Kandou , we are redeﬁning the economics of AI infrastructure. Our mission is to democratise AI by signiﬁcantly reducing the Total Cost of Ownership (TCO) of hardware systems — a critical barrier to scalable adoption. Our proprietary MIMO-over-copper technology powers a high-performance, chiplet-based AI memory fabric that is both scalable and energy-efficient . Unlike traditional interconnects, our solution reduces power consumption signiﬁcantly while preserving high bandwidth and ultra-low latency — unlocking unprecedented efficiency for AI training and inference at scale. Kandou’s architecture is not just an incremental improvement — it’s a foundational shift in how AI hardware is built for the future. Job Title: Director of Silicon Characterization Location: Saint-Sulpice, Switzerland Responsibility Own the silicon characterization strategy and execution for multiple product programs, from first silicon through validation closure and release readiness. Lead development of comprehensive validation plans, schedules, resource allocation, and execution tracking across projects and locations. Oversee development of scripts, automation frameworks, and program infrastructure for IC validation, characterization, and ATE interfacing. Ensure rigorous and timely execution of silicon bring-up, debug, validation, and characterization for SerDes-based and other high-speed products central to Kandou AI’s portfolio. Drive the definition, specification, and review of evaluation boards and reference hardware required for lab validation and customer enablement. Support customer demos, technical evaluations, and issue resolution involving silicon, EVMs, and validation data. Co-own silicon validation, characterization, and test reporting, ensuring clear communication of status, risks, correlation, and readiness. Partner closely with design, product engineering, quality, applications, and operations teams to accelerate debug cycles and improve silicon learning. Required Skills Strong understanding of validation and characterization requirements for high volume semiconductor products and IP. Ability to define validation coverage from product specifications and translate it into structured test plans, milestones, and resource plans. Effective collaboration with analog, digital, DfT, product, and applications teams to review and finalize validation strategy. Ability to lead teams and coordinate execution across multiple sites and external partners. Sound judgment in selecting methods, tools, and trade-offs for technical problem solving. Experience evaluating lab and test equipment, managing vendors, and supporting procurement decisions. Good understanding of budgeting, lab investment planning, productivity, and cost management. Flexible, pragmatic, and execution-oriented when addressing unexpected silicon or lab issues. Required Experience 10+ years of experience in the semiconductor industry, with deep expertise in IC bring-up, validation, characterization, and ATE interface development. Strong hands-on experience in high-speed or high-frequency signal measurement, lab automation, and validation environments. Proven expertise with instruments and methods used for electrical and compliance testing, including BERTs, oscilloscopes, and signal analyzers. Experience with SerDes-based products is strongly preferred and especially relevant for Kandou AI’s technology roadmap. Good understanding of high-speed multilayer reference PCB or evaluation board design fo",
+      "matchScore": 46,
+      "matchedKeywords": [
+        "materials characterization",
+        "semiconductor process",
+        "verification / quality"
+      ],
+      "warnings": [
+        "Senior-level title"
+      ]
+    },
+    {
+      "id": "arbeitnow:ait-propulsion-engineer-munich-221191",
+      "title": "AIT Propulsion Engineer",
+      "company": "The Exploration Company",
+      "location": "Munich, Germany",
+      "country": "Germany",
+      "category": "PhD / Research",
+      "type": "Full Time",
+      "datePosted": "2026-09-26",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/the-exploration-company/ait-propulsion-engineer-munich-221191",
+      "source": "Arbeitnow",
+      "description": "Here at The Exploration Company, we are building innovative aerospace technologies that advance the future of space transportation. We are developing, producing, and operating Nyx, a modular and reusable space orbital vehicle that can eventually be refueled in orbit, and which carries cargo - and potentially humans in the longer run. We want you as a talented AIT Propulsion engineer to help us in our mission by supporting the integration and test of our products and equipment related to propulsion engines. That includes big engines (made in house), smaller thrusters, pumps, igniters etc… You will be successful in this role if you are able to run these different tasks: Manage the preparation of the equipment integration and functional tests, first for the PQM (Propulsion Qualification Model) and then on the FM (Flight Model) Manage qualification campaigns on mechanical components Procuring tools, FGSE, and test setups needed for AIT operations Planning of integration procedures and schedule Work closely with the design team to define the best design that would ease the integration and test Running the assembly, integration, and testing operations on the capsule, with a tight-knit team Running the functional tests of the components (internal TVAC, outgassing, hydrostatic tests, proof test, Cv characterization, etc.) Clearly communicating and documenting integration and test results Defining lessons learns and making continuous improvement What we would love to see from you: In the role of AIT Propulsion engineer ideally, you will have the following: Successful completion of an Engineering degree (Master or PhD) in mechanical science / propulsion or equivalent An understanding of liquid propulsion systems Having the double skills: mechanical assembly for integration and potentially small tool / GSE design electrical skill for test (data acquisition system for sensors, simple programming of python scripts, harness etc…) Willingness to contribute to build and support a new team Organized and rigorous Hands-on approach Inventive and problem solver Team spirit Skills and Behaviors Good organizing and prioritization of tasks Positive and flexible attitude to get the job done Ability to communicate at all levels of the business Demonstrates behaviors consistent with The Exploration Company’s core values of Commitment, Innovation, Trust, Quality, and Teamwork Our mission At The Exploration Company, we are democratizing space exploration i.e., by making it affordable, available, and open. Our high-impact team is driven by competence, impact, and efficiency. We are doers, team players, and problem solvers. Our culture is driven by technology, learning by doing, and passion for what we do. Why you should join us! What makes us special here at The Exploration Company and why we think you will enjoy working here is: We’re Agile - we make decisions fast whilst keeping our goals and systems in mind We’re Open and Collaborative - we are transparent about risks and obstacles, so that we can cooperate to overcome them We have a lot of Fun - we refuel our energy knowing we are democratising space. It’s a wonderful and rare opportunity, are YOU up for the challenge? We'd love to hear from you if you wish to be a part of our journey. Please submit your CV now for immediate consideration and we will be in touch shortly. The Exploration Company is an equal opportunity employer and values diversity. We do not discriminate based on race, religion, colour, nationa",
+      "matchScore": 42,
+      "matchedKeywords": [
+        "materials characterization",
+        "sensors / acoustics",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "greenhouse:graphcore:8632583002",
+      "title": "AI Research Engineer",
+      "company": "Graphcore",
+      "location": "Cambridge, UK",
+      "country": "United Kingdom",
+      "category": "PhD / Research",
+      "type": "See original posting",
+      "datePosted": "2026-09-15",
+      "deadline": "Check original posting",
+      "url": "https://job-boards.greenhouse.io/graphcore/jobs/8632583002",
+      "source": "Graphcore careers (Greenhouse)",
+      "description": "<h3><strong>About Graphcore</strong></h3> <p><span data-teams=\"true\">At Graphcore, we’re building the future of AI compute.We’re a team of semiconductor, software and AI experts, with deep experience in creating the complete AI compute stack - from silicon and software to infrastructure at datacenter scale.As part of the SoftBank Group, backed by significant long-term investment, we are delivering key technology into the fast-growing SoftBank AI ecosystem.To meet the vast and exciting AI opportunity, Graphcore is expanding its teams around the world.We are bringing together the brightest minds to solve the toughest problems, in a place where everyone has the opportunity to make an impact on the company, our products and the future of artificial intelligence.</span></p> <h3>Job Summary</h3> <p class=\"p1\">As a research engineer at Graphcore, you will contribute to the advancement of AI research, investigating new ideas that push the&nbsp;limits on important AI/ML problems. Specialised hardware has been the key driver of the progress of AI over the last decade, and we&nbsp;believe that hardware-aware AI algorithms and AI-aware hardware developments will continue to be critical to advancing this exciting&nbsp;field. We are therefore looking for individuals who combine strong machine learning experience with practical engineering skills to&nbsp;deliver impactful AI research.&nbsp;We are seeking AI researchers with strong software engineering experience, particularly in lower-level programming and performance optimisation for hardware efficiency. Our research spans a broad range of topics, including efficient training and inference,&nbsp;world models, life sciences, reinforcement learning, and beyond. You will work closely with researchers to generate ideas and translate&nbsp;them into scalable implementations, contributing to publications and projects that help to steer the future of AI hardware.</p> <p>&nbsp;</p> <h3>The Team</h3> <p>Graphcore Research participates in both fundamental and applied research, to characterise the computational requirements of machine intelligence and to demonstrate how hardware can drive the next generation of innovative AI models. We publish at leading AI/ML conferences (NeurIPS, ICML, ICLR) as well as specialist workshops, and collaborate with other research teams and organisations across the world.</p> <p>We pride ourselves on being a supportive and collaborative team, where we organise around our individual research interests to solve problems together in domains such as efficient compute, model scaling and distributed training and inference of AI models for multiple modalities and applications, including for sequence- and graph-based data. We’re based across London, Cambridge and Bristol, with projects and discussions that involve all our locations.</p> <p>Perhaps the best way to get an idea of what we’re all about is to read one of our <a href=\"https://graphcore-research.github.io/publications/\">papers</a> or an article on our <a href=\"https://graphcore-research.github.io/posts/\">blog</a>. If you’re excited to work at the cutting edge of AI supported by new hardware and want to develop your skills in this area, we’d love to hear from you!<br><br></p> <h3>Responsibilities and Duties</h3> <ul> <li>Generate AI/ML ideas, design experiments, implement them &amp; evaluate results.</li> <li>Prepare, submit &amp; present your work to AI conferences and workshops.</li> <li>Provide technical insight to internal tea",
+      "matchScore": 40,
+      "matchedKeywords": [
+        "semiconductor process",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "greenhouse:graphcore:8632582002",
+      "title": "AI Research Engineer",
+      "company": "Graphcore",
+      "location": "Bristol, UK",
+      "country": "United Kingdom",
+      "category": "PhD / Research",
+      "type": "See original posting",
+      "datePosted": "2026-09-15",
+      "deadline": "Check original posting",
+      "url": "https://job-boards.greenhouse.io/graphcore/jobs/8632582002",
+      "source": "Graphcore careers (Greenhouse)",
+      "description": "<h3><strong>About Graphcore</strong></h3> <p><span data-teams=\"true\">At Graphcore, we’re building the future of AI compute.We’re a team of semiconductor, software and AI experts, with deep experience in creating the complete AI compute stack - from silicon and software to infrastructure at datacenter scale.As part of the SoftBank Group, backed by significant long-term investment, we are delivering key technology into the fast-growing SoftBank AI ecosystem.To meet the vast and exciting AI opportunity, Graphcore is expanding its teams around the world.We are bringing together the brightest minds to solve the toughest problems, in a place where everyone has the opportunity to make an impact on the company, our products and the future of artificial intelligence.</span></p> <h3>Job Summary</h3> <p class=\"p1\">As a research engineer at Graphcore, you will contribute to the advancement of AI research, investigating new ideas that push the&nbsp;limits on important AI/ML problems. Specialised hardware has been the key driver of the progress of AI over the last decade, and we&nbsp;believe that hardware-aware AI algorithms and AI-aware hardware developments will continue to be critical to advancing this exciting&nbsp;field. We are therefore looking for individuals who combine strong machine learning experience with practical engineering skills to&nbsp;deliver impactful AI research.&nbsp;We are seeking AI researchers with strong software engineering experience, particularly in lower-level programming and performance optimisation for hardware efficiency. Our research spans a broad range of topics, including efficient training and inference,&nbsp;world models, life sciences, reinforcement learning, and beyond. You will work closely with researchers to generate ideas and translate&nbsp;them into scalable implementations, contributing to publications and projects that help to steer the future of AI hardware.</p> <p>&nbsp;</p> <h3>The Team</h3> <p>Graphcore Research participates in both fundamental and applied research, to characterise the computational requirements of machine intelligence and to demonstrate how hardware can drive the next generation of innovative AI models. We publish at leading AI/ML conferences (NeurIPS, ICML, ICLR) as well as specialist workshops, and collaborate with other research teams and organisations across the world.</p> <p>We pride ourselves on being a supportive and collaborative team, where we organise around our individual research interests to solve problems together in domains such as efficient compute, model scaling and distributed training and inference of AI models for multiple modalities and applications, including for sequence- and graph-based data. We’re based across London, Cambridge and Bristol, with projects and discussions that involve all our locations.</p> <p>Perhaps the best way to get an idea of what we’re all about is to read one of our <a href=\"https://graphcore-research.github.io/publications/\">papers</a> or an article on our <a href=\"https://graphcore-research.github.io/posts/\">blog</a>. If you’re excited to work at the cutting edge of AI supported by new hardware and want to develop your skills in this area, we’d love to hear from you!<br><br></p> <h3>Responsibilities and Duties</h3> <ul> <li>Generate AI/ML ideas, design experiments, implement them &amp; evaluate results.</li> <li>Prepare, submit &amp; present your work to AI conferences and workshops.</li> <li>Provide technical insight to internal tea",
+      "matchScore": 40,
+      "matchedKeywords": [
+        "semiconductor process",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "greenhouse:graphcore:8632581002",
+      "title": "AI Research Engineer",
+      "company": "Graphcore",
+      "location": "London, UK",
+      "country": "United Kingdom",
+      "category": "PhD / Research",
+      "type": "See original posting",
+      "datePosted": "2026-09-15",
+      "deadline": "Check original posting",
+      "url": "https://job-boards.greenhouse.io/graphcore/jobs/8632581002",
+      "source": "Graphcore careers (Greenhouse)",
+      "description": "<h3><strong>About Graphcore</strong></h3> <p><span data-teams=\"true\">At Graphcore, we’re building the future of AI compute.We’re a team of semiconductor, software and AI experts, with deep experience in creating the complete AI compute stack - from silicon and software to infrastructure at datacenter scale.As part of the SoftBank Group, backed by significant long-term investment, we are delivering key technology into the fast-growing SoftBank AI ecosystem.To meet the vast and exciting AI opportunity, Graphcore is expanding its teams around the world.We are bringing together the brightest minds to solve the toughest problems, in a place where everyone has the opportunity to make an impact on the company, our products and the future of artificial intelligence.</span></p> <h3>Job Summary</h3> <p class=\"p1\">As a research engineer at Graphcore, you will contribute to the advancement of AI research, investigating new ideas that push the&nbsp;limits on important AI/ML problems. Specialised hardware has been the key driver of the progress of AI over the last decade, and we&nbsp;believe that hardware-aware AI algorithms and AI-aware hardware developments will continue to be critical to advancing this exciting&nbsp;field. We are therefore looking for individuals who combine strong machine learning experience with practical engineering skills to&nbsp;deliver impactful AI research.&nbsp;We are seeking AI researchers with strong software engineering experience, particularly in lower-level programming and performance optimisation for hardware efficiency. Our research spans a broad range of topics, including efficient training and inference,&nbsp;world models, life sciences, reinforcement learning, and beyond. You will work closely with researchers to generate ideas and translate&nbsp;them into scalable implementations, contributing to publications and projects that help to steer the future of AI hardware.</p> <p>&nbsp;</p> <h3>The Team</h3> <p>Graphcore Research participates in both fundamental and applied research, to characterise the computational requirements of machine intelligence and to demonstrate how hardware can drive the next generation of innovative AI models. We publish at leading AI/ML conferences (NeurIPS, ICML, ICLR) as well as specialist workshops, and collaborate with other research teams and organisations across the world.</p> <p>We pride ourselves on being a supportive and collaborative team, where we organise around our individual research interests to solve problems together in domains such as efficient compute, model scaling and distributed training and inference of AI models for multiple modalities and applications, including for sequence- and graph-based data. We’re based across London, Cambridge and Bristol, with projects and discussions that involve all our locations.</p> <p>Perhaps the best way to get an idea of what we’re all about is to read one of our <a href=\"https://graphcore-research.github.io/publications/\">papers</a> or an article on our <a href=\"https://graphcore-research.github.io/posts/\">blog</a>. If you’re excited to work at the cutting edge of AI supported by new hardware and want to develop your skills in this area, we’d love to hear from you!<br><br></p> <h3>Responsibilities and Duties</h3> <ul> <li>Generate AI/ML ideas, design experiments, implement them &amp; evaluate results.</li> <li>Prepare, submit &amp; present your work to AI conferences and workshops.</li> <li>Provide technical insight to internal tea",
+      "matchScore": 40,
+      "matchedKeywords": [
+        "semiconductor process",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:motor-test-industrialization-engineer-zurich-173931",
+      "title": "Motor Test & Industrialization Engineer",
+      "company": "Enactintelligence",
+      "location": "Zürich",
+      "country": "Switzerland",
+      "category": "MEMS / Materials",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/enactintelligence/motor-test-industrialization-engineer-zurich-173931",
+      "source": "Arbeitnow",
+      "description": "About Enact The next defining technological breakthrough will be in the physical world. We stand at a historical inflection point: bringing general-purpose intelligence into robotics. At Enact we rethink the entire robotic tech stack from model architectures and data pipelines, to the actuators and sensors that feed the model. Pushing beyond pure vision and language approaches, we build a proprioceptive nerve system, and the cortex that makes sense of it, to solve dexterity through whole-body force-awareness and deploy robots for thousands of tasks in industry and beyond. We are shaping a company where brilliant and unconventional people thrive together on solving the hardest challenges of our time. We are truth seekers. We reason from first principles, test our beliefs against reality, and trust that the best ideas can come from anyone. We move fast. We care deeply about our work and colleagues and are driven by passion to change the status quo. If this resonates, we're excited to hear from you. In This Role You will drive our next-gen robotic actuators from prototyping to manufacturing and characterization, working together with our team to turn real-world insights and design feedback into the next evolution of robotic actuation. You'll be hands-on, developing test setups and process improvements, turning ideas into working systems fast. Motor Test & Characterization : You will design and build our actuator test setups and rigs, and characterize motor performance: parameters, torque-ripple, cogging, efficiency, and thermal behavior, for our actuators. Quality & Reliability : You will own motor quality and reliability: FMEA, and life and thermal-cycle testing to prove our actuators survive real use. Root-Cause Analysis & Improvement: You will investigate failures and performance drift, drive corrective actions, and feed findings back into our design and production process. Data, Reporting & Acceptance Criteria: You will run systematic data collection and technical reporting, and define the acceptance criteria and KPIs that gate every unit we ship. What We're Looking For Degree (BSc/MSc) in mechanical, mechatronic, or electrical engineering/equivalent hands-on experience. Experience in testing, characterization, or quality and reliability engineering. Hands-on design and build of test rigs: torque sensors and load cells, dynamometers, encoders, thermocouples etc. Fluency with measurement uncertainty and setup calibration A rigorous, data-driven approach to root-cause analysis and improving both product and process. Strong CAD skills for fixtures and test hardware. Language: We are an international team, fluency in English is a must have. Bonus Points If You Have Supplier quality experience: incoming inspection Familiarity with motor control, motor drives and current sensing Familiarity with high degree of freedom robotic systems Applied statistics in production context What we offer The opportunity to make a real impact working on some of the biggest challenges of our time A fast-paced learning environment alongside an outstanding, driven team Ownership from day one, with the ability to iterate quickly and see your impact firsthand in an early-stage startup Visa sponsorship & relocation benefits to hire the best in the world A world-class in-person setup in central Zürich, with excellent prototyping, robotics, and technical infrastructure for hands-on builders Competitive compensation and meaningful equity participation Find Jobs in Swi",
+      "matchScore": 40,
+      "matchedKeywords": [
+        "materials characterization",
+        "sensors / acoustics",
+        "verification / quality"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "greenhouse:graphcore:8617852002",
+      "title": "Silicon Verification Engineer",
+      "company": "Graphcore",
+      "location": "Bristol, UK; Cambridge, UK",
+      "country": "United Kingdom",
+      "category": "R&D / Engineering",
+      "type": "See original posting",
+      "datePosted": "2026-09-15",
+      "deadline": "Check original posting",
+      "url": "https://job-boards.greenhouse.io/graphcore/jobs/8617852002",
+      "source": "Graphcore careers (Greenhouse)",
+      "description": "<div class=\"relative basis-auto flex-col -mb-(--composer-overlap-px) pb-(--composer-overlap-px) [--composer-overlap-px:28px] grow flex\" data-voice-floating-orb-focus-background=\"\"> <div class=\"flex flex-col text-sm\"> <div class=\"qMYqUG_convSearchResultHighlightRoot\"> <div class=\"\" data-turn-id-container=\"request-WEB:0fbc0e63-7a29-4549-b136-67f3c3174a55-0\" data-is-intersecting=\"true\"> <section class=\"text-token-text-primary w-full focus:outline-none has-data-writing-block:pointer-events-none [&amp;:has([data-writing-block])>*]:pointer-events-auto R6Vx5W_threadScrollVars scroll-mb-[calc(var(--scroll-root-safe-area-inset-bottom,0px)+var(--thread-response-height))] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]\" data-turn-id=\"request-WEB:0fbc0e63-7a29-4549-b136-67f3c3174a55-0\" data-turn-id-container=\"request-WEB:0fbc0e63-7a29-4549-b136-67f3c3174a55-0\" data-testid=\"conversation-turn-2\" data-turn=\"assistant\"> <div class=\"text-base my-auto mx-auto pb-10 [--thread-content-margin:var(--thread-content-margin-xs,calc(var(--spacing)*4))] @w-sm/main:[--thread-content-margin:var(--thread-content-margin-sm,calc(var(--spacing)*6))] @w-lg/main:[--thread-content-margin:var(--thread-content-margin-lg,calc(var(--spacing)*16))] px-(--thread-content-margin)\"> <div class=\"[--thread-content-max-width:40rem] @w-lg/main:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn\" data-conversation-screenshot-content=\"\"> <div class=\"flex max-w-full flex-col gap-4 grow\"> <div class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal outline-none keyboard-focused:focus-ring [.text-message+&amp;]:mt-1\" data-message-author-role=\"assistant\" data-message-id=\"f47ebdab-908c-411e-b668-824056312594\" data-turn-start-message=\"true\" data-message-model-slug=\"gpt-5-5-pro\"> <div class=\"flex w-full flex-col gap-1 empty:hidden\"> <div class=\"markdown prose dark:prose-invert wrap-break-word w-full dark markdown-new-styling\"> <p class=\"PDq2pG_selectionAnchorContainer\" data-start=\"135\" data-end=\"148\"><strong>About the job</strong></p> <p data-start=\"150\" data-end=\"241\">Own verification that turns complex silicon architecture into reliable AI compute hardware.</p> <p data-start=\"243\" data-end=\"442\">As a Silicon Verification Engineer, you will help ensure Graphcore RTL matches the architecture specification. Your work will protect silicon quality before designs move into physical implementation.</p> <p data-start=\"444\" data-end=\"637\">You will sit at the point where architecture, logical design and verification meet. That gives you direct influence over how issues are found, understood and resolved before they become costly.</p> <p data-start=\"639\" data-end=\"824\">You will plan verification, define coverage, generate tests and diagnose failures. You will also improve shared infrastructure that helps engineers move faster and see problems earlier.</p> <p data-start=\"826\" data-end=\"984\">The work is technically deep, but the impact is clear. You will help build the discipline, pace and quality needed for ambitious AI compute programs at scale.</p> <p data-start=\"986\" data-end=\"1006\"><strong>The team and culture</strong></p> <p data-start=\"1008\" data-end=\"1228\">The verification team works very closely with the Architecture, Logical Design and Physical Design teams. Work is shaped through clear pla",
+      "matchScore": 40,
+      "matchedKeywords": [
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:ait-test-assembly-technician-munich-251188",
+      "title": "AIT Test & Assembly Technician",
+      "company": "The Exploration Company",
+      "location": "Munich, Germany",
+      "country": "Germany",
+      "category": "R&D / Engineering",
+      "type": "Full Time",
+      "datePosted": "2026-09-26",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/the-exploration-company/ait-test-assembly-technician-munich-251188",
+      "source": "Arbeitnow",
+      "description": "Here at The Exploration Company, we are building innovative aerospace technologies that advance the future of space transportation. We are developing, producing, and operating Nyx, a modular and reusable space orbital vehicle that can eventually be refueled in orbit and that can carry cargo - and potentially humans in the longer run. We are looking for a hands-on and rigorous AIT Senior Test Technician (proto) to support the preparation, integration, execution, and reporting of environmental and functional test activities for spacecraft sub-systems and hardware. This role is critical to ensuring that all testing activities are executed safely, accurately, and according to procedures and quality standards. The ideal candidate is meticulous, structured, technically skilled, and comfortable operating in a fast-paced aerospace development environment. Key Responsibilities Environmental Test Preparation & Execution Support the setup, integration, and execution of environmental tests including: Vibration testing Shock testing Thermal Vacuum (TVAC) testing Ancillary testing activities Support the preparation and execution of experimental campaigns for the qualification of prototypes of components developed internally, such as valves MGSE machining (milling, drilling, helicoil installation, ...) FGSE preparation (valves, pressure controllers, ...) Prepare hardware, tooling, instrumentation, and Ground Support Equipment (GSE) for test campaigns taking ownership of their readiness. Perform assembly and integration activities of prototypes. Provide feedback to the engineering team relative to the lessons learnt during the assembly execution. Install thermocouples, accelerometers, harnessing, and instrumentation according to test procedures and engineering requirements. Operate environmental test equipment including vibration shaker, shock test facility, TVAC facility, and associated monitoring systems. Perform pre-test and post-test inspections of test setups. Support testing at external test facilities. Support assembly activities at external facilities and different TEC locations. Procedures, Documentation & Reporting Prepare and execute test procedures with adherence to safety, cleanliness, and quality standards. Ensure all operations are properly documented and traceable. Report, anomalies, and observations during operations. Verify that tools, instrumentation, and measurement equipment comply with calibration requirements before use. Tooling, Equipment & Facility Support Maintain and organize tooling, sensors, adapters, cables, and test equipment. Monitor the condition and calibration status of test assets and measurement equipment. Perform first-level maintenance and troubleshooting on test equipment and support systems. Support the integration and validation of new tooling and test setups. Assist engineers in defining and improving test processes, setups, and operational workflows. Ensure laboratory and test areas remain organized, safe, and operationally ready. Qualifications & Experience Technical degree or vocational training in aerospace, electronics, mechatronics, industrial systems, or a related technical field. Experience in aerospace, automotive, defense, industrial testing, or other high-reliability technical environments. Hands-on experience with environmental testing equipment such as vibration tables, thermal chambers, or instrumentation systems is highly desirable. Familiarity with laboratory operations, instrumentation install",
+      "matchScore": 39,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "verification / quality",
+        "laboratory engineering"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:research-scientist-post-training-zurich-462133",
+      "title": "Research Scientist: Post-Training",
+      "company": "Enactintelligence",
+      "location": "Zürich",
+      "country": "Switzerland",
+      "category": "PhD / Research",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/enactintelligence/research-scientist-post-training-zurich-462133",
+      "source": "Arbeitnow",
+      "description": "About Enact The next defining technological breakthrough will be in the physical world. We stand at a historical inflection point: bringing general-purpose intelligence into robotics. At Enact we rethink the entire robotic tech stack from model architectures and data pipelines, to the actuators and sensors that feed the model. Pushing beyond pure vision and language approaches, we build a proprioceptive nerve system, and the cortex that makes sense of it, to solve dexterity through whole-body force-awareness and deploy robots for thousands of tasks in industry and beyond. We are shaping a company where brilliant and unconventional people thrive together on solving the hardest challenges of our time. We are truth seekers. We reason from first principles, test our beliefs against reality, and trust that the best ideas can come from anyone. We move fast. We care deeply about our work and colleagues and are driven by passion to change the status quo. If this resonates, we're excited to hear from you. In This Role You will build the base intelligence layer for robotics, training large-scale force-aware foundation models to unlock dextrous manipulation, generalizing across tasks and environments. Design and execute large-scale pre-training runs for robot foundation models, defining the architectures, objectives, and training curricula that push AI-driven manipulation beyond pixels to actions. Own experiments end-to-end, from data specification through training to real-robot evaluation, to understand scaling laws, data quality effects, and architecture tradeoffs. Build data mixes and evaluation sets to train and assess robots on novel, high-precision tasks, across real-world and simulated settings. Research methods for improving sample efficiency and robustness, ensuring learned policies generalize reliably from training to real-world deployment. What We're Looking For Deep experience developing large-scale predictive or generative models - including RSSM-style, JEPA, transformer, or diffusion/flow-based architectures. Strong probability, statistics, and ML fundamentals, paired with the ability to design rigorous experiments and separate real signal from noise or bugs in experimental data. PhD or equivalent research experience with a proven record of research accomplishments in machine learning, computer vision, data-science, robotics and other related fields Strong fundamentals in ML computing frameworks like PyTorch or JAX, with familiarity in optimizing for performance and efficiency at scale. Motivated to see general-purpose robotic intelligence deployed in the real world. Bonus Points If You Have Prior experience working with real robot hardware Led or made significant contributions to multi-node, multi-GPU distributed training efforts. Experience designing or scaling data collection, annotation and mixing pipelines Track record of open-source contributions or released models/datasets. Publications at top robotics or ML venues (CoRL, RSS, ICRA, NeurIPS, ICML, ICLR). What we offer The opportunity to make a real impact working on some of the biggest challenges of our time A fast-paced learning environment alongside an outstanding, driven team Ownership from day one, with the ability to iterate quickly and see your impact firsthand in an early-stage startup Visa sponsorship & relocation benefits to hire the best in the world A world-class in-person setup in central Zürich, with excellent prototyping, robotics, and technical infrastructure fo",
+      "matchScore": 39,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:research-scientist-pre-training-zurich-328828",
+      "title": "Research Scientist: Pre-Training",
+      "company": "Enactintelligence",
+      "location": "Zürich",
+      "country": "Switzerland",
+      "category": "PhD / Research",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/enactintelligence/research-scientist-pre-training-zurich-328828",
+      "source": "Arbeitnow",
+      "description": "About Enact The next defining technological breakthrough will be in the physical world. We stand at a historical inflection point: bringing general-purpose intelligence into robotics. At Enact we rethink the entire robotic tech stack from model architectures and data pipelines, to the actuators and sensors that feed the model. Pushing beyond pure vision and language approaches, we build a proprioceptive nerve system, and the cortex that makes sense of it, to solve dexterity through whole-body force-awareness and deploy robots for thousands of tasks in industry and beyond. We are shaping a company where brilliant and unconventional people thrive together on solving the hardest challenges of our time. We are truth seekers. We reason from first principles, test our beliefs against reality, and trust that the best ideas can come from anyone. We move fast. We care deeply about our work and colleagues and are driven by passion to change the status quo. If this resonates, we're excited to hear from you. In This Role You will build the base intelligence layer for robotics, training large-scale force-aware foundation models to unlock dextrous manipulation, generalizing across tasks and environments. Design and execute large-scale pretraining runs for robot foundation models, defining the architectures, objectives, and training curricula that push AI-driven manipulation beyond pixels to actions. Own experiments end-to-end, from data specification through training to real-robot evaluation, to understand scaling laws, data quality effects, and architecture tradeoffs. Build datamixes and evaluation sets to train and assess robots on novel, high-precision tasks, across real-world and simulated settings. Research methods for improving sample efficiency and robustness, ensuring learned policies generalize reliably from training to real-world deployment. What We're Looking For Deep experience developing large-scale predictive or generative models — including RSSM-style, JEPA, transformer, or diffusion/flow-based architectures. Strong probability, statistics, and ML fundamentals, paired with the ability to design rigorous experiments and separate real signal from noise or bugs in experimental data. PhD or equivalent research experience with a proven record of research accomplishments in machine learning, computer vision, data-science, robotics and other related fields Strong fundamentals in ML computing frameworks like PyTorch or JAX, with familiarity in optimizing for performance and efficiency at scale. Motivated to see general-purpose robotic intelligence deployed in the real world. Bonus Points If You Have Prior experience working with real robot hardware Led or made significant contributions to multi-node, multi-GPU distributed training efforts. Experience designing or scaling data collection, annotation and mixing pipelines Track record of open-source contributions or released models/datasets. Publications at top robotics or ML venues (CoRL, RSS, ICRA, NeurIPS, ICML, ICLR). What we offer The opportunity to make a real impact working on some of the biggest challenges of our time A fast-paced learning environment alongside an outstanding, driven team Ownership from day one, with the ability to iterate quickly and see your impact firsthand in an early-stage startup Visa sponsorship & relocation benefits to hire the best in the world A world-class in-person setup in central Zürich, with excellent prototyping, robotics, and technical infrastructure for ",
+      "matchScore": 39,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:layout-engineer-aachen-304751",
+      "title": "Layout Engineer (f/m/d)",
+      "company": "Black Semiconductor GmbH",
+      "location": "Aachen, Germany",
+      "country": "Germany",
+      "category": "MEMS / Materials",
+      "type": "Full Time",
+      "datePosted": "2026-09-25",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/black-semiconductor-gmbh/layout-engineer-aachen-304751",
+      "source": "Arbeitnow",
+      "description": "About us We see the semiconductor industry as a realm of possibility. We see opportunity. We see the profound impact that our graphene solutions will have in transforming the industry. We invite you to join us in driving change with our fundamentally human-centered approach, uniting bright minds around a shared vision. The vision is: Prove to everybody that you can make a fundamental change. Prove with your knowledge and skills how things can be done differently. Together, we can change the paradigm of how the world connects About our technology The semiconductor industry’s growing demand for more powerful chips with higher bandwidth and lower power finds its solution in our technology. We connect chips to high-throughput, low-delay computing networks. The key lies in harnessing the physical properties of graphene to combine electronic computing with photonic communication, allowing countless chips to interact almost as if they were one. Our graphene photonic innovation increases computing power and efficiency to a new order of magnitude In short, we connect chips to create powerful and energy-efficient networks, overcoming connectivity limitations in the semiconductor industry. We deliver the graphene solution The Role We are looking for a Layout Engineer to join our design team and support the development of layouts for photonic integrated circuits. You will maintain our layout infrastructure, help translate new designs into fabrication-ready layouts, and contribute to the implementation of new design rules and verification flows. To join our team, you should be excited to: Maintain and further develop our layout libraries and workflows in Synopsys Support designers in generating layouts for new photonic devices and circuits Run design rule checks (DRC) and layout-versus-schematic checks (LVS) Investigate and resolve DRC violations, off-grid errors, and other layout issues Implement new design rules Assemble layouts Support the mask flow from device layout through to mask data preparation Your Qualifications Degree in Physics, Electrical Engineering, Photonics, or a related technical field Strong Python programming skills Understanding of integrated-circuit design; knowledge of photonic integrated circuits is good to have Experience with photonic or electronic layout software, ideally Synopsys OptoCompiler Experience with physical verification tools, ideally Synopsys IC Validator or a comparable platform Experience using KLayout Familiarity with DRC, LVS and mask-data preparation Our work culture People Over Processes. At Black Semiconductor, flexibility is key—we ensure work adapts to life, not the other way around. We champion work-life harmony, where careers are meaningful and enriching. Our processes are human-centric, allowing you to focus on what matters Let’s grow together. Your potential is our priority. We provide the autonomy to make a lasting impact and nurture your growth through a culture of continuous learning. We invest in your journey for professional and personal development Your Health and Future Matter. Your well-being is paramount. We offer a comprehensive benefits package with outstanding insurance, pension and virtual stock options for your mental, physical, and financial health. Your peace of mind is our priority - in the present and future We Live Openness. Collaboration and inclusivity are the cornerstones of our culture. We practice openness, fostering trust and respect. Individuality is our collective streng",
+      "matchScore": 38,
+      "matchedKeywords": [
+        "semiconductor process",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:ai-biology-research-scientist-villejuif-174750",
+      "title": "AI & Biology Research Scientist",
+      "company": "Orakl Oncology",
+      "location": "Villejuif",
+      "country": "Europe",
+      "category": "PhD / Research",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.fr/jobs/companies/orakl-oncology/ai-biology-research-scientist-villejuif-174750",
+      "source": "Arbeitnow",
+      "description": "About Orakl Oncology At Orakl Oncology , we are accelerating the development of oncology treatments. Today, fewer than 5% of new cancer drugs succeed in clinical trials. Clearly, new methods are needed. We combine cutting-edge biology and AI to build the next generation of insight platforms with the world’s largest cohort of patient tumor avatars. These avatars fuel our AI-powered predictive engine , helping to anticipate clinical trial outcomes, validate therapies, and uncover new drug candidates. By generating multimodal, real-world data, we deliver insights that consistently outperform existing solutions. Our mission is simple yet ambitious: to bring more effective treatments to patients who need them and to make drug development smarter, faster, and more personalized. We collaborate with top hospitals, research institutes, and pharmaceutical companies worldwide. Backed by leading investors, we are a fast-growing, mission-driven startup at the intersection of science and technology. The role We are looking for an exceptional AI & Biology Research Scientist to invent, prototype, and mature the next generation of models powering target and biomarker discovery from our PDO multi-omics and functional data, one of the rarest datasets in oncology. This is a research-first, individual-contributor role for an outstanding computational scientist-engineer: someone who designs novel methods at the interface of computational biology and AI/ML, evaluates them with real research rigor, writes excellent Python, and ships complex analyses fast. Rare data, open methodological problems, an engineering stack already in place, a structured database and a data model connected to what happens at the bench. You'll work as a pair with a Research Engineer who hardens your validated methods into production, giving you rare leverage to move from idea to deployed method quickly. You'll report to the Head of Computational Biology. What you’ll do Develop new computational methods to analyse and interpret Orakl’s multi-omic data. This will include novel methods for target identification, validation, and stratification to initiate nomination. Connect your innovative analysis methods to platform and engineering teams to develop our product portfolio. Work in close collaboration with the research engineers to develop production-grade deliverables for the internal and external stakeholders. Collaborate cross-functionally to build compelling data packages that drive program milestones and internal investment decisions. Contribute to the team's scientific culture: rigor, reproducibility, data integrity and biological relevance. What we're looking for Must-have PhD plus postdoctoral experience in computational biology including ML or ML applied to genomics — with a track record of independent research (publications, methods you've driven end to end). Strong experience in transcriptomic / multi-omics analysis (RNA-seq and ideally beyond: WGS/WES, other omics). Proficient in Python and its data/bioinformatics ecosystem (e.g. scanpy, PyDESeq2, scikit-learn, pandas). Comfortable with classical ML ; exposure to causal inference or network methods is a strong plus. Proactive and capable of doing applied research with a high-level of autonomy , with no immediate managerial ambition. Delivery-oriented pragmatism: able to scope an MVP, accept an imperfect first pass, and iterate quickly. Autonomy and rigor: genuine care for data integrity and reproducibility. Fluent in English . ",
+      "matchScore": 37,
+      "matchedKeywords": [
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:control-system-engineer-munchen-120602",
+      "title": "Control System Engineer (m/f/d)",
+      "company": "Franka Robotics",
+      "location": "München",
+      "country": "Germany",
+      "category": "R&D / Engineering",
+      "type": "Experienced, Permanent, Full time",
+      "datePosted": "2026-09-25",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/franka-robotics/control-system-engineer-munchen-120602",
+      "source": "Arbeitnow",
+      "description": "Your role You’ll shape how our robots move, sense, and respond, turning control theory into real-world performance You’ll push existing products further and bring new prototypes to life with both state-of-the-art and experimental methods. In practice, that means: Exploring advanced algorithms, controllers, calibration, digital signal processing and finding what actually works on hardware Implementing those algorithms in C++ and Python (and Matlab/Simulink when it fits) Designing and running test benches that reveal true system performance Building software for data acquisition and processing Identifying dynamic system properties Connecting the stack end to end: embedded firmware, middleware, backends, and analysis platforms Hunting down and fixing interoperability issues across systems and devices Your experience and qualifications 3+ years as a control system engineer or mathematician 3+ years in embedded software development, building scalable, high-performance systems Strong grounding in control theory, advanced control algorithms, and DSP Solid proficiency in C++, Python, and Matlab Enough electrical and mechanical fluency to read schematics and reason about sensors and components Working knowledge of electric motors and motor control Familiarity with communication protocols (CAN, Ethernet, EtherCAT, TCP/IP) Comfort with professional tooling (git, GitLab, Confluence, JIRA, etc.) Experience with robotic systems is a strong plus Find more English Speaking Jobs in Germany on Arbeitnow",
+      "matchScore": 37,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:forward-deployed-ai-engineer-munich-bavaria-383839",
+      "title": "Forward Deployed AI Engineer",
+      "company": "Agilerobotsse",
+      "location": "Munich, Bavaria",
+      "country": "Germany",
+      "category": "R&D / Engineering",
+      "type": "See original posting",
+      "datePosted": "2026-09-26",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/agilerobotsse/forward-deployed-ai-engineer-munich-bavaria-383839",
+      "source": "Arbeitnow",
+      "description": "<p>&nbsp;</p> <p>Agile Robots SE is an innovative company with a clear mission: bringing intelligent robotic solutions to our customers. We combine the latest technology in the field of AI with powerful robotic systems — from industrial robot arms and mobile manipulators to humanoids — to solve tasks that classical automation cannot address.</p> <p>At the heart of our offering is a versatile software platform for orchestrating complex robotic systems. It allows efficient customization for specific customer requirements: configuring systems, developing reusable skills, parameterizing processes, and executing tasks reliably in production. Learned models — from perception to end-to-end policies — are a core part of this platform.</p> <p>Our solutions are deployed with international customers across a wide range of industries. Seamless integration and scalable deployment are at the core of our mission.</p> <p>We are looking for a passionate Forward Deployed AI Engineer to bring state-of-the-art robot learning and computer vision models into real production environments. In this role, you will train, fine-tune, and deploy AI models directly on customer robots — from Vision-Language-Action models and diffusion policies to perception and grasp generation networks. You will become a trusted technical partner, turning customer challenges into robust, data-driven robotics applications. The role is based in Munich, Germany.</p> <h4>Responsibilities</h4> <ul> <li>Deploy, fine-tune, and evaluate AI models on real robotic systems at customer sites — including Vision-Language-Action (VLA) models, diffusion policies, and other end-to-end learned policies</li> <li>Adapt and train perception models for robotic applications, e.g. object detection, segmentation, and pose estimation based on YOLO, SAM, vision transformers, and self-supervised backbones such as DINOv2</li> <li>Integrate and tune grasp generation models (e.g., GraspNet, Dex-Net, Contact-GraspNet) for bin picking and manipulation tasks</li> <li>Build data pipelines for customer deployments: demonstration and teleoperation recording, dataset curation, annotation, training runs, and systematic evaluation of model performance</li> <li>Bring models into production: optimize inference, deploy on edge and embedded hardware, and integrate models into our robotic software platform</li> <li>Work closely with customers to understand technical requirements and translate them into robust, AI-driven robotics applications</li> <li>Diagnose, troubleshoot, and resolve model, software, and system integration issues both remotely and on-site</li> <li>Travel to international customer sites for workshops, deployments, training, and technical support (up to 40% travel)</li> </ul> <h4>Essential Skills</h4> <ul> <li>Master's degree in Robotics, Computer Science, Artificial Intelligence, Machine Learning, or a related field — or equivalent practical experience</li> <li>Minimum of four years of professional experience in machine learning, AI for robotics, or computer vision</li> <li>Hands-on experience working with real robots — robot arms, mobile manipulators, grippers, cameras, and sensors — not only in simulation</li> <li>Proven experience with end-to-end learned models for robotics (e.g., VLAs, diffusion policies, imitation or reinforcement learning policies), covering training, fine-tuning, and deployment</li> <li>Strong programming skills in both Python and C++</li> <li>Solid command of machine learning framewor",
+      "matchScore": 37,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "greenhouse:graphcore:8558136002",
+      "title": "Hardware Validation and Debug Engineer - DDR",
+      "company": "Graphcore",
+      "location": "Bristol, UK",
+      "country": "United Kingdom",
+      "category": "MEMS / Materials",
+      "type": "See original posting",
+      "datePosted": "2026-09-15",
+      "deadline": "Check original posting",
+      "url": "https://job-boards.greenhouse.io/graphcore/jobs/8558136002",
+      "source": "Graphcore careers (Greenhouse)",
+      "description": "<p>Graphcore is a globally recognised leader in Artificial Intelligence computing systems. The company designs advanced semiconductors and data centre hardware that provide the specialised processing power needed to drive AI innovation, while delivering the efficiency required to support its broader adoption.&nbsp;</p> <p>As part of the SoftBank Group, Graphcore is a member of an elite family of companies responsible for some of the world’s most transformative technologies. We are expending our labs in Bristol which will play a central role in Graphcore's work building the future of AI computing.&nbsp;&nbsp;</p> <p>We are looking for a Validation and Debug engineer to work with Architecture, Silicon Engineering, Hardware Engineering and the Firmware team to help create and execute the bring-up and debug of our&nbsp;cutting-edge&nbsp;system platforms. As such you will need to develop a detailed understanding of our silicon and platform products.&nbsp;Your role will be to create and execute Validation and Debug plans of our silicon devices and platforms in systems to show that they will&nbsp;operate&nbsp;correctly over all conditions in the final product. This Validation will also involve debugging of hardware and firmware. You will concentrate on mainly manual testing of systems in the lab with the aid of some automation.</p> <p>Responsibilities and Duties&nbsp;</p> <ul> <li>Perform Validation and Debug for new hardware platforms.</li> <li>Debug PCB, power, signal integrity, and interface issues.</li> <li>Validate and debug high-speed memory interfaces and slow speed interfaces <ul> <li>LPDDR5-9600 memory interfaces</li> <li>SPI/I2C/I3C/UART</li> </ul> </li> <li>Support LPDDR5-9600 initialization, training, timing optimization, margin analysis, and stability validation.</li> <li>Analyse DDR timing margins, signal integrity, eye diagrams, and training behaviour.</li> <li>Identify root causes and drive corrective actions across hardware and firmware domains.</li> <li>Create bring-up documentation, test procedures, and debug reports.</li> </ul> <p>&nbsp;</p> <p>Working closely with:</p> <ul> <li>PCB design engineers</li> <li>Power engineers</li> <li>Signal integrity engineers</li> <li>Embedded software teams</li> </ul> <p>&nbsp;</p> <p>Essential skills</p> <ul> <li>Hardware Debug</li> <li>LPDDR validation and tuning</li> <li>Signal integrity analysis</li> <li>DDR training and margin analysis</li> <li>Protocol-level debugging</li> <li>Root-cause analysis</li> <li>Low-level system integration</li> <li>An ability to work independently without daily oversight.</li> <li>Independently performs board bring-up and subsystem debug</li> <li>Drives issue resolution across teams.</li> </ul> <ul> <li>Use advanced lab instrumentation including: <ul> <li>High-bandwidth oscilloscopes</li> <li>BERT systems</li> <li>VNA/TDR equipment</li> </ul> </li> </ul> <ul> <li>Hands-on experience with:</li> <ul> <li>LPDDR5 memory subsystems</li> <li>LPDDR5 compliance testing</li> </ul> </ul> <p>Desirable skills:</p> <ul> <li>Knowledge of PCBA and system level technologies</li> <li>Ethernet validation</li> <li>PCIe</li> <li>Background knowledge of ATE systems and capabilities. You may not be directly involved with such testing.</li> <li>The ability to code or script automation and data analysis using appropriate coding languages such as Python, LabView and BASH.</li> </ul> <p>&nbsp;</p> <p>Benefits:</p> <p>In addition to a competitive salary, Graphcore offers a competiti",
+      "matchScore": 36,
+      "matchedKeywords": [
+        "semiconductor process",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:ait-mechanical-technician-thermal-protection-system-munich-26331",
+      "title": "AIT Mechanical Technician - Thermal Protection System",
+      "company": "The Exploration Company",
+      "location": "Munich, Germany",
+      "country": "Germany",
+      "category": "MEMS / Materials",
+      "type": "Full Time",
+      "datePosted": "2026-09-26",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/the-exploration-company/ait-mechanical-technician-thermal-protection-system-munich-26331",
+      "source": "Arbeitnow",
+      "description": "Here at The Exploration Company, we are building innovative aerospace technologies that advance the future of space transportation. We are developing, producing, and operating Nyx, a modular and reusable space orbital vehicle that can eventually be refueled in orbit, and which carries cargo – and potentially humans in the longer run. We want you as a talented Mechanical Technician – Thermal Protection System (TPS) to help us in our mission by supporting the manufacturing, integration, inspection, and qualification of the Thermal Protection System for our next-generation capsule. We want you as a talented MAIT Mechanical Technician to help us in our mission by Taking care of the assembly of Nyx Capsule, in particular of the Thermal Protection system, in collaboration with AIT mechanical and GSE team, in close relationship with other mechanical technician and under the supervision of the MAIT mechanical engineers Potentially supporting other AIT assembly activities in collaboration with AIT Propulsion, AIT Thermal and AIT FGSE engineers Key Responsibilities In your capacity as a Mechanical Technician – Thermal Protection System, your role will be continuously evolving, but day-to-day your duties will include: Assemble and integrate Thermal Protection System (TPS) hardware, including skin panels, access panels, TPS tiles, and associated mechanical interfaces. Perform adhesive bonding, injection, painting, and other manufacturing processes according to qualified procedures. Execute dimensional and visual inspections before, during, and after manufacturing and integration activities. Support non-destructive inspection (NDI) activities and assist in the interpretation and reporting of inspection results. Manufacture, assemble, and maintain dedicated tooling, fixtures, and MGSE required for TPS activities. Support the preparation, execution, and documentation of qualification, development, and production campaigns. Maintain manufacturing records, complete production documentation, and ensure full traceability of hardware and materials. Identify anomalies during manufacturing or integration activities and support troubleshooting, rework, and continuous process improvement. Ensure all activities are performed in compliance with safety regulations, cleanliness requirements, and company procedures. Additional Requirements Experience with CFRP structures or composite materials. Experience with adhesive dispensing, or painting processes. Familiarity with cleanroom or controlled manufacturing environments. Experience using metrology equipment or NDI techniques. Basic knowledge of aerospace quality standards and traceability requirements. Qualifications Mechanical or Electro-mechanical Degree as a technician or Bachelor (2 years after High school) 3+ years of experience in welding, Knowledge of ESA and NASA quality and safety standards. Plus: experience with Aluminum orbital welding A previous experience (2 or 3 years) in building space vehicles would be appreciated Skills and Behaviours Strong organizing and prioritization of tasks Positive and flexible attitude to get the job done Wishes to accomplish a good job and likes all the details to be covered but without over-quality Rigorous and insure a good traceability Problem solver, be proactive but always with the team agreement Demonstrates behaviors consistent with The Exploration Company’s core values of Commitment, Innovation, Trust, Quality, and Teamwork Why you should join us! What makes us spe",
+      "matchScore": 35,
+      "matchedKeywords": [
+        "materials characterization",
+        "semiconductor process"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:fpga-engineer-controls-signal-processing-zurich-391054",
+      "title": "FPGA Engineer (Controls & Signal Processing)",
+      "company": "Enactintelligence",
+      "location": "Zürich",
+      "country": "Switzerland",
+      "category": "R&D / Engineering",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/enactintelligence/fpga-engineer-controls-signal-processing-zurich-391054",
+      "source": "Arbeitnow",
+      "description": "About Enact The next defining technological breakthrough will be in the physical world. We stand at a historical inflection point: bringing general-purpose intelligence into robotics. At Enact we rethink the entire robotic tech stack from model architectures and data pipelines, to the actuators and sensors that feed the model. Pushing beyond pure vision and language approaches, we build a proprioceptive nerve system, and the cortex that makes sense of it, to solve dexterity through whole-body force-awareness and deploy robots for thousands of tasks in industry and beyond. We are shaping a company where brilliant and unconventional people thrive together on solving the hardest challenges of our time. We are truth seekers. We reason from first principles, test our beliefs against reality, and trust that the best ideas can come from anyone. We move fast. We care deeply about our work and colleagues and are driven by passion to change the status quo. If this resonates, we're excited to hear from you. In This Role You Will Design, implement, and verify the FPGA fabric at the heart of our custom hardware, from real-time control and signal processing to high-speed sensor and data interfaces. Own the build flow: synthesis, place & route, static timing analysis, and timing closure on real silicon. Develop testbenches, simulation, and co-simulation to verify behaviour at unit and system level. Take designs from RTL through board bring-up, integration, and lab debug under real operating conditions all the way through to production-ready. Keep the design understandable: specifications, timing budgets, and verification plans. What We're Looking For Strong digital design fundamentals: RTL in SystemVerilog (or VHDL), and a solid grasp of computer architecture. The ability to reason about fixed- and floating-point data paths and pipelines - where precision goes, where it costs you, and how a computation maps onto real hardware. Experience closing timing: static timing analysis, writing constraints, clock-domain crossing, and synchronization. Fluency with at least one vendor toolchain (Xilinx/AMD, Intel/Altera, or Lattice), in a heavily scripted setting. Comfortable reading schematics, reasoning from first principles, and working shoulder-to-shoulder with electronics and mechanical engineers. The ability to take designs from benchtop prototype to production ready. Fluency in English (German not required, though useful!). Bonus Points If You Have Having done these before is a plus, not a prerequisite. You'll do much of it in the role: Rust or embedded firmware experience. DSP in fabric: filtering (FIR/IIR), FFT, and fixed-point implementation. Control theory: system identification, plant modeling, and loop tuning. High-speed ADC/DAC interfaces and sensor/communication protocols. Expert knowledge of version control, especially git. Safety-critical or certified design. Experience collaborating across analog, software, and mechanical domains. What We Offer The opportunity to make a real impact working on some of the biggest challenges of our time A fast-paced learning environment alongside an outstanding, driven team Ownership from day one, with the ability to iterate quickly and see your impact firsthand in an early-stage startup Visa sponsorship & relocation benefits to hire the best in the world A world-class in-person setup in central Zürich, with excellent prototyping, robotics, and technical infrastructure for hands-on builders Competitive compensatio",
+      "matchScore": 35,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:member-of-technical-staff-machine-learning-research-engineer-berlin-482658",
+      "title": "Member of Technical Staff (Machine Learning Research Engineer)",
+      "company": "Perplexity",
+      "location": "Berlin",
+      "country": "Germany",
+      "category": "R&D / Engineering",
+      "type": "Full Time",
+      "datePosted": "2026-09-24",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/perplexity/member-of-technical-staff-machine-learning-research-engineer-berlin-482658",
+      "source": "Arbeitnow",
+      "description": "Perplexity is seeking an experienced Machine Learning Research Engineer to help build the next generation of advanced search technologies, with a focus on retrieval and ranking. Responsibilities Relentlessly push search quality forward — through models, data, tools, or any other leverage available Architect and build core components of the search platform and model stack Design, train, and optimize large-scale deep learning models using frameworks like PyTorch, leveraging distributed training (e.g., PyTorch Distributed, DeepSpeed, FSDP) and hardware acceleration, with a focus on retrieval and ranking models Conduct advanced research in representation learning, including contrastive learning, multilingual, and multimodal modeling for search and retrieval Deploy models — from boosting algorithms to LLMs — in a scalable and performant way Build and optimize RAG pipelines for grounding and answer generation Collaborate with Data, AI, Infrastructure, and Product teams to ensure fast and high-quality delivery Qualifications Deep understanding of search and retrieval systems, including quality evaluation principles and metrics Proven track record with large-scale search or recommender systems Strong proficiency with PyTorch, including experience in distributed training techniques and performance optimization for large models Expertise in representation learning, including contrastive learning and embedding space alignment for multilingual and multimodal applications Strong publication record in AI/ML conferences or workshops (e.g., NeurIPS, ICML, ICLR, ACL, CVPR, SIGIR) Self-driven, with a strong sense of ownership and execution Minimum of 3 years (preferably 5+) working on search, recommender systems, or closely related research areas Find Jobs in Germany on Arbeitnow",
+      "matchScore": 34,
+      "matchedKeywords": [
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:advanced-rd-serdes-architect-and-modeling-engineer-saint-sulpice-436139",
+      "title": "Advanced R&D - SerDes Architect and Modeling Engineer",
+      "company": "Kandou Ai",
+      "location": "Saint-Sulpice",
+      "country": "Switzerland",
+      "category": "MEMS / Materials",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/kandou-ai/advanced-rd-serdes-architect-and-modeling-engineer-saint-sulpice-436139",
+      "source": "Arbeitnow",
+      "description": "At Kandou , we are redeﬁning the economics of AI infrastructure. Our mission is to democratise AI by signiﬁcantly reducing the Total Cost of Ownership (TCO) of hardware systems — a critical barrier to scalable adoption. Our proprietary MIMO-over-copper technology powers a high-performance, chiplet-based AI memory fabric that is both scalable and energy-efficient . Unlike traditional interconnects, our solution reduces power consumption signiﬁcantly while preserving high bandwidth and ultra-low latency — unlocking unprecedented efficiency for AI training and inference at scale. Kandou’s architecture is not just an incremental improvement — it’s a foundational shift in how AI hardware is built for the future. Job title: SerDes Architecture and Modeling Engineer Location : Lausanne, Switzerland Responsibility: Implement, document, and maintain software for system-level modelling of serial communication links in MATLAB, Python, and C++ Work closely with system architects in order to budget the link and define block-level specs of the transceiver Work closely with analog, digital, and verification teams in order to support the design and verification process ‪ Skills: Good knowledge of control theory and digital algorithms Demonstrated skills in implementing signal-processing algorithms Understanding of the building blocks of a digital communication link and factors impacting the link performance (Familiarity with SerDes link components and clock recovery circuits is a plus) Proficient in at least one of the following programming languages C++, MALTAB, or Python/NumPy. Familiar with git version-control system and fundamentals of software engineering (unit-testing, profiling, …) Familiar with analog circuit simulators (SPICE/SPECTRE) Familiar with principles of signal integrity Strong communication and presentation skills ‪ Preferred Experience: 5+ years of experience in semiconductor, telecommunications, or mathematical/scientific software industry Experience with system-level simulation of digital communication systems (experience in SerDes links is a plus) Experience working with geographically dispersed teams Education Bachelor of Engineering in Electronics and Electrical Engineering, Communication Systems, or Computer Science (equivalent or higher) with strong background in Signal Processing and good understanding of Circuits Theory If this is the role you have been looking for and you want to be part of a growing Company, with an exciting future then we would really love to hear from you. Together We Kandou It ! Visit us at www.kandou.ai and https://www.linkedin.com/company/kandou-ai/ Find Jobs in Switzerland on Arbeitnow",
+      "matchScore": 33,
+      "matchedKeywords": [
+        "semiconductor process",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "greenhouse:graphcore:8383085002",
+      "title": "DFT Engineer",
+      "company": "Graphcore",
+      "location": "Bristol, UK; Cambridge, UK",
+      "country": "United Kingdom",
+      "category": "PhD / Research",
+      "type": "See original posting",
+      "datePosted": "2026-09-15",
+      "deadline": "Check original posting",
+      "url": "https://job-boards.greenhouse.io/graphcore/jobs/8383085002",
+      "source": "Graphcore careers (Greenhouse)",
+      "description": "<h2><strong>About Graphcore</strong></h2> <p>At Graphcore, we’re building the future of AI compute.</p> <p>We’re a team of semiconductor, software and AI experts, with deep experience in creating the complete AI compute stack - from silicon and software to infrastructure at datacenter scale.<br><br>As part of the SoftBank Group, backed by significant long-term investment, we are delivering key technology into the fast-growing SoftBank AI ecosystem. To meet the vast and exciting AI opportunity, Graphcore is expanding its teams around the world.<br><br>We are bringing together the brightest minds to solve the toughest problems, in a place where everyone has the opportunity to make an impact on the company, our products and the future of artificial intelligence.</p> <p><strong><span data-contrast=\"auto\">The Person</span></strong><span data-ccp-props=\"{&quot;201341983&quot;:0,&quot;335551550&quot;:6,&quot;335551620&quot;:6,&quot;335559739&quot;:0,&quot;335559740&quot;:240}\">&nbsp;</span></p> <p><span data-contrast=\"auto\">Graphcore’s </span><span data-contrast=\"auto\">experienced, skilled, and motivated engineering team is heavily involved in shaping the future of AI.</span> <span data-contrast=\"none\">A successful candidate </span><span data-contrast=\"none\">will exhibit exceptional knowledge in Design for Testability (DFT) and </span><span data-contrast=\"none\">will have a </span><span data-contrast=\"none\">strong technical background and experience in DFT methodologies, complemented by a robust, self-motivated work ethic. The ideal candidate should also</span><span data-contrast=\"none\"> have a focus on quality</span><span data-contrast=\"none\"> and demonstrate</span><span data-contrast=\"none\"> a good understanding of the importance of production test on the success of a product. Some hands-on experience in one or more of the following areas is essential: RTL design, simulations and debugging, synthesis, STA.&nbsp;</span><span data-ccp-props=\"{&quot;201341983&quot;:0,&quot;335551550&quot;:6,&quot;335551620&quot;:6,&quot;335559739&quot;:0,&quot;335559740&quot;:240}\">&nbsp;</span></p> <p><strong><span data-contrast=\"none\">The Role:</span></strong><span data-ccp-props=\"{&quot;201341983&quot;:0,&quot;335551550&quot;:6,&quot;335551620&quot;:6,&quot;335559739&quot;:0,&quot;335559740&quot;:240}\">&nbsp;</span></p> <p><span data-contrast=\"none\">We are expanding and looking for an experienced DFT engineers to join the Silicon team. As a part of our team, you will have the opportunity to work on next-generation AI designs targeted for data centers applications.</span><span data-ccp-props=\"{&quot;201341983&quot;:0,&quot;335551550&quot;:6,&quot;335551620&quot;:6,&quot;335559739&quot;:0,&quot;335559740&quot;:240}\">&nbsp;</span></p> <p><strong><span data-contrast=\"none\">Responsibilities:</span></strong><span data-ccp-props=\"{&quot;201341983&quot;:0,&quot;335551550&quot;:6,&quot;335551620&quot;:6,&quot;335559739&quot;:0,&quot;335559740&quot;:240}\">&nbsp;</span></p> <ul> <li data-leveltext=\"\" data-font=\"Symbol\" data-listid=\"2\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;multilevel&quot;}\" data-aria-posinset=\"1\" data-aria-level=\"1\"><span data-contrast=\"auto\">Keep up with the latest industry trends in DFT domain and help adopt the latest D",
+      "matchScore": 33,
+      "matchedKeywords": [
+        "semiconductor process",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "greenhouse:graphcore:8626165002",
+      "title": "Logical Design Engineer",
+      "company": "Graphcore",
+      "location": "Bristol, UK; Cambridge, UK",
+      "country": "United Kingdom",
+      "category": "MEMS / Materials",
+      "type": "See original posting",
+      "datePosted": "2026-09-15",
+      "deadline": "Check original posting",
+      "url": "https://job-boards.greenhouse.io/graphcore/jobs/8626165002",
+      "source": "Graphcore careers (Greenhouse)",
+      "description": "<h2><strong>About Graphcore</strong></h2> <p>At Graphcore, we’re building the future of AI compute.</p> <p>We’re a team of semiconductor, software and AI experts, with deep experience in creating the complete AI compute stack - from silicon and software to infrastructure at datacenter scale.</p> <p>As part of the SoftBank Group, backed by significant long-term investment, we are delivering key technology into the fast-growing SoftBank AI ecosystem.</p> <p>To meet the vast and exciting AI opportunity, Graphcore is expanding its teams around the world.</p> <p>We are bringing together the brightest minds to solve the toughest problems, in a place where everyone has the opportunity to make an impact on the company, our products and the future of artificial intelligence.</p> <p><strong>Job Summary</strong></p> <p>Working within the Logical Design team, the Silicon Logical Design Engineer is responsible for a wide range of logical design tasks which require working closely with other engineers within the Silicon department. This person is responsible for helping the team deliver high quality micro-architecture specifications and RTL for Graphcore chips, and assisting the rest of the Silicon teams to ensure we can meet the company objectives for silicon delivery.</p> <p><strong>Responsibilities and Duties</strong></p> <ul> <li>Integrate IP and subsystems into top-level SoC designs</li> <li>Develop and maintain build and configuration environments</li> <li>Perform synthesis, linting, CDC/RDC, and timing checks at the SoC level</li> <li>Support verification and physical design teams through clean interface hand-offs</li> <li>Debug and resolve integration-related issues across multiple hierarchies</li> <li>Contribute to the continuous improvement of integration flows and automation</li> <li>Producing high quality microarchitecture and other documentation</li> <li>Ensure good communication between sites to maintain consistent working practices</li> </ul> <p><strong>Essential skills:</strong></p> <ul> <li>Degree in Computer Science, Engineering or a related subject</li> <li>Digital design experience in a relevant industry</li> <li>Be highly motivated, a self-starter, and a team player</li> <li>Ability to work across teams and finding solutions to problems</li> <li>Ability to solve design issues through programming, e.g. Python, Tcl</li> <li>Strong competency in SystemVerilog or VHDL</li> <li>Knowledge of digital design flows</li> <li>Capable of managing time and priorities</li> </ul> <p><strong>Desirable:</strong></p> <ul> <li>Processor design</li> <li>Application specific blocks</li> <li>High-speed serial interfaces</li> <li>Complex third-party IP integration</li> <li>Experience leading teams</li> <li>Arithmetic pipeline design</li> <li>Floating-point design</li> <li>Design for test</li> <li>Synthesis</li> <li>Timing Analysis</li> <li>Logical Equivalence</li> <li>Project Planning</li> <li>Power Integrity</li> <li>Silicon transistor knowledge</li> </ul> <h2><strong>Benefits</strong></h2> <p>In addition to a competitive salary, Graphcore offers flexible working, a generous annual leave policy, private medical insurance and health cash plan, a dental plan, pension (matched up to 5%), life assurance and income protection. We have a generous parental leave policy and an employee assistance programme (which includes health, mental wellbeing, and bereavement support). We offer a range of healthy food and snacks at our central Bristol office and have our ",
+      "matchScore": 33,
+      "matchedKeywords": [
+        "semiconductor process",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "greenhouse:graphcore:8383084002",
+      "title": "Silicon Physical Design Engineer",
+      "company": "Graphcore",
+      "location": "Bristol, UK; Cambridge, UK",
+      "country": "United Kingdom",
+      "category": "MEMS / Materials",
+      "type": "See original posting",
+      "datePosted": "2026-09-15",
+      "deadline": "Check original posting",
+      "url": "https://job-boards.greenhouse.io/graphcore/jobs/8383084002",
+      "source": "Graphcore careers (Greenhouse)",
+      "description": "<h2><strong>About Graphcore</strong></h2> <p>At Graphcore, we’re building the future of AI compute.</p> <p>We’re a team of semiconductor, software and AI experts, with deep experience in creating the complete AI compute stack - from silicon and software to infrastructure at datacenter scale.<br><br>As part of the SoftBank Group, backed by significant long-term investment, we are delivering key technology into the fast-growing SoftBank AI ecosystem. To meet the vast and exciting AI opportunity, Graphcore is expanding its teams around the world.<br><br>We are bringing together the brightest minds to solve the toughest problems, in a place where everyone has the opportunity to make an impact on the company, our products and the future of artificial intelligence.</p> <p><strong>Job Summary</strong></p> <p>We are looking for high-quality silicon physical design engineers to complement our existing exceptional team. We have a range of roles available with focus on those with extensive ranges of skills and experience although exceptional candidates with less experience will be considered. We want people who work collaboratively and proactively within a team focusing on collectively achieving our goals and creating the right engineering solutions. Good communication is essential, as is the ability to adapt and learn – we value the right characteristics more than specific experience.</p> <p>For the successful candidate we offer an open, honest and collaborative environment working on leading-edge designs at the most advanced nodes. Our engineers are not siloed, and they are trusted and encouraged to take ownership of their designs and problem solutions. You will become part of a team that looks for improvements to everything we do: our designs, our flows, our methodologies, our infrastructure.</p> <p><strong>&nbsp;</strong></p> <p><strong>The Team</strong></p> <p>The physical design team sits within the wider silicon design team which includes RTL, verification and DFT and with whom we collaborate extensively. Our work additionally involves strong links with architecture, packaging and product engineering. We are responsible for working with those teams to create high-quality RTL and then to build the final chip layout (e.g. GDSII) ensuring a signoff-quality design is delivered to the Foundry (e.g. TSMC).</p> <p><strong>&nbsp;</strong></p> <p><strong>Responsibilities and Duties</strong></p> <p>Applicants will be expected to contribute technically to the development of Graphcore's next generation of AI superchips, focusing on achieving robust, high-performance and power-efficient designs in leading-edge process technologies while meeting ambitious development schedules. Contributions are expected to span multiple areas and involve:</p> <ul> <li>using state-of-the-art EDA tools and in-house Graphcore flows to deliver final designs that are of sign-off quality</li> <li>enhancing existing flows and in-house tools/APIs to support new features and/or methodologies</li> <li>analysis and/or debugging of complex engineering problems leading to workable solutions</li> <li>developing an understanding of emerging technical issues and applying that knowledge to optimise in-house flows and methodologies</li> </ul> <p>&nbsp;</p> <p>Candidates will be expected to work closely both with other teams within Graphcore and with 3rd party support engineers/contractors, ensuring good communication between all parties, and to contribute meaningfully to the overall effi",
+      "matchScore": 33,
+      "matchedKeywords": [
+        "semiconductor process",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:aerodynamic-engineer-lausanne-384672",
+      "title": "Aerodynamic Engineer",
+      "company": "Harmattan Ai",
+      "location": "Lausanne",
+      "country": "Switzerland",
+      "category": "R&D / Engineering",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/harmattan-ai/aerodynamic-engineer-lausanne-384672",
+      "source": "Arbeitnow",
+      "description": "About Us Harmattan AI is a next-generation defense prime building autonomous and scalable defense systems. Following the close of a $200M Series B, valuing the company at $1.4 billion, we are expanding our teams and capabilities to deliver mission-critical systems to allied forces. Our work is guided by clear values: building technologies with real-world impact, pursuing excellence in everything we do, setting ambitious goals, and taking on the hardest technical challenges. We operate in a demanding environment where rigor, ownership, and execution are expected. Harmattan is seeking an Aerodynamic Engineer to help design, validate, and continuously improve the flight physics of our UAV and eVTOL platforms. You'll work across the full loop — from conceptual aerodynamic design and simulation, through physical testing, to the Python tooling that ties it all together — collaborating closely with the Mechanical and GNC teams. Responsibilities Aerodynamic Design & Analysis: Contribute to the aerodynamic layout and analysis of fixed-wing, multicopter, and eVTOL configurations, moving fluidly between low-fidelity methods (XFoil, OpenVSP, AVL) and higher-fidelity CFD depending on the stage of the design. Testing & Validation: Support flight test and/or wind tunnel campaigns — helping define test cards, instrument prototypes, and run experiments — to validate simulation predictions against real-world data. Python Tooling & Automation: Write Python to automate analysis workflows, process test/flight data, and connect design and simulation tools together into a smoother end-to-end pipeline. Aero Database Generation: Generate and maintain aerodynamic databases and stability derivatives that the GNC team relies on for control law development and autopilot tuning. Cross-functional Collaboration: Work closely with the Mechanical and GNC teams throughout the design cycle to make sure aerodynamic choices stay feasible, stable, and testable in practice. Requirements Education: B.S. or M.S. in Aerospace Engineering, Aeronautical Engineering, or a related field, with coursework or project experience touching aerodynamics or flight mechanics. Aerodynamics & Flight Dynamics Knowledge: Solid grasp of aerodynamic fundamentals (lift, drag, stability) and flight dynamics, with enough intuition to reason about a design's behaviour before running a full simulation or test. Python Proficiency: Comfortable scripting in Python (NumPy, SciPy, Pandas) to process data, automate repetitive analysis, and glue together different engineering tools. Simulation or Testing Exposure: Hands-on experience with at least one side of the validation loop — either aerodynamic simulation (CFD, XFoil, OpenVSP, AVL) or physical/experimental testing (wind tunnel, flight test, prototyping). CAD Familiarity: Comfortable navigating and making basic edits in SolidWorks or CATIA, enough to understand geometry constraints and communicate effectively with the Mechanical team. Pragmatic, Hands-on Mindset: Happy moving across the full design-to-validation loop rather than staying in a single niche, and comfortable working in a small, fast-moving team. Nice-to-have French language skills. Hands-on experience building or flying RC aircraft/drones. Propeller design and integration with the airframe. Aeroacoustics. We look forward to hearing how you can help shape the future of autonomous defense systems at Harmattan AI. Find Jobs in Switzerland on Arbeitnow",
+      "matchScore": 32,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:algorithm-engineer-radar-tracking-braunschweig-488959",
+      "title": "Algorithm Engineer - Radar Tracking (m/f/d)",
+      "company": "smartmicro",
+      "location": "Braunschweig",
+      "country": "Europe",
+      "category": "PhD / Research",
+      "type": "professional / experienced",
+      "datePosted": "2026-09-25",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.com/jobs/companies/smartmicro/algorithm-engineer-radar-tracking-braunschweig-488959",
+      "source": "Arbeitnow",
+      "description": "Introduction We are smartmicro, the leading specialist in high-performance automotive and traffic radar- and radar/camera hybrid sensor technology. We design, develop and manufacture high-tech sensors for autonomous driving, intelligent traffic infrastructure and smart cities. Our mission is to make roads safer, enable autonomous driving in all-weather scenarios, optimize traffic flow for reduced travel times and enable greener, smarter cities. We are a German company with international presence in the UK and in the US, while we are headquartered in Braunschweig for design, development and production. We make the future of mobility a reality. We are looking for an experienced Algorithm Engineer for Radar Tracking. Your Tasks In this role, you develop tracking and sensor fusion algorithms for radar and camera-based sensor systems used in intelligent traffic systems, smart mobility, ADAS-related applications, automated driving scenarios and airborne radar applications. You develop, implement and validate algorithms for multi-object tracking, sensor fusion and statistical signal processing You work on advanced tracking approaches such as extended object tracking, Bernoulli filters, Kalman filters, Bayesian filtering, probabilistic data association and related estimation methods You work with real radar, camera and radar/camera fusion data and analyze algorithm performance in realistic traffic, mobility and airborne scenarios You turn algorithmic concepts, prototypes and proof-of-concepts into robust, maintainable and testable software for product development and customer projects You improve robustness, accuracy, runtime behavior and reliability of tracking and fusion algorithms under challenging real-world conditions You define and use suitable test cases, metrics and validation methods to evaluate detection, tracking, fusion and object-level perception quality Depending on the project, your work may contribute to applications such as intelligent traffic infrastructure, ADAS, automated driving, drone detection, UAV/UAS tracking and airborne radar systems. You cooperate closely with embedded software, system engineering, testing and product teams to ensure reliable integration into our sensor platforms Your work contributes to safety-critical and high-performance radar applications, for example by improving traffic flow, protecting vulnerable road users and enabling robust radar-based perception in airborne use cases Your Strengths We are looking for an engineer with proven professional experience in algorithm development, not only an academic background. You have completed a Master’s degree in Electrical Engineering, Computer Science, Robotics, Mathematics or a comparable technical field You have some years of full-time professional experience in industrial or commercial algorithm/software development after graduation (Internships, thesis work, student jobs and purely university-based projects do not count toward this requirement) You have practical experience with at least one of the following areas: multi-object tracking, sensor fusion, radar tracking, object-level fusion, nonlinear state estimation, statistical signal processing, perception algorithms or probabilistic methods You are confident in programming with Python and C or C++ and can write structured, maintainable and testable code You have a solid mathematical foundation, especially in linear algebra, statistics, probability theory, estimation theory and filtering methods Exper",
+      "matchScore": 32,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:embedded-software-engineer-som-zurich-128713",
+      "title": "Embedded Software Engineer - SoM",
+      "company": "Harmattan Ai",
+      "location": "Zurich",
+      "country": "Switzerland",
+      "category": "PhD / Research",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/harmattan-ai/embedded-software-engineer-som-zurich-128713",
+      "source": "Arbeitnow",
+      "description": "About Us Harmattan AI is a next-generation defense prime building autonomous and scalable defense systems. Following the close of a $200M Series B, valuing the company at $1.4 billion, we are expanding our teams and capabilities to deliver mission-critical systems to allied forces. Our work is guided by clear values: building technologies with real-world impact, pursuing excellence in everything we do, setting ambitious goals, and taking on the hardest technical challenges. We operate in a demanding environment where rigor, ownership, and execution are expected. ABOUT THE ROLE As an Embedded Software Engineer at Harmattan AI, you will join the R&D team to own the embedded software stack on the compute modules used across our platforms. You will take a new module from bare board to a maintained, securely booting Linux platform, covering the boot chain, kernel, drivers, and the verification around them. This is a high impact role that combines deep Linux and kernel work with hands on bring up on new hardware, taking a board from first power up through to flight. RESPONSIBILITIES BSP and Reference Images: Build and maintain the BSP layer, device trees, and the reference images for each board, including custom layers and SDK generation, and carry them forward across kernel upgrades and silicon revisions. Boot Chain and Secure Boot: Own the boot chain, including bootloader porting, signed boot, verified rootfs, and A/B system update. Drivers and Low Level Interfaces: Develop and validate Linux device drivers across I2C, SPI, UART, GPIO, PCIe, and MIPI, including camera and sensor interfaces. Board Support on MCU Targets: Provide startup, clock, and peripheral support on the microcontrollers of boards the team designs. Board Bring Up and Hardware Validation: Lead software bring up on new hardware, take part in design reviews, and debug system level issues across the hardware and software boundary. Verification and Documentation: Define verification test plans and acceptance criteria, automate boot and peripheral test on real targets, and document each milestone. Cross Functional Collaboration: Work with the hardware team on new boards, and with Systems and Embedded Software Platform on interfaces and integration. Mentorship: Depending on seniority, mentor junior embedded engineers. CANDIDATE REQUIREMENTS Educational Background: MSc in engineering (electrical, computer, or a related field). PhD a plus. A hands on bring up record matters more than the specific degree. Experience: 5 years minimum in embedded software, with BSPs owned through their lifecycle and kept reproducible as the hardware evolved. Build Systems: Strong command of an embedded Linux build system such as Yocto or OpenEmbedded, across custom layers or packages, BSP integration, image build, and SDK generation. Experience with in house or non standard build systems is an advantage. Technical Expertise: Kernel space driver development on ARM targets, validated against real peripherals across I2C, SPI, UART, GPIO, PCIe, and MIPI. Device tree work on new boards and hardware revisions. Board bring up from first power up to a booting Linux image. Boot and Update: Bootloader porting, kernel configuration, signed boot, and firmware update mechanisms on production hardware, with security conscious and deterministic engineering practice throughout. Programming: Strong C and C++, including kernel space coding, and strong Python scripting skills, with solid version control practice (Git).",
+      "matchScore": 32,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:embedded-software-engineer-som-lausanne-378664",
+      "title": "Embedded Software Engineer - SoM",
+      "company": "Harmattan Ai",
+      "location": "Lausanne",
+      "country": "Switzerland",
+      "category": "PhD / Research",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/harmattan-ai/embedded-software-engineer-som-lausanne-378664",
+      "source": "Arbeitnow",
+      "description": "About Us Harmattan AI is a next-generation defense prime building autonomous and scalable defense systems. Following the close of a $200M Series B, valuing the company at $1.4 billion, we are expanding our teams and capabilities to deliver mission-critical systems to allied forces. Our work is guided by clear values: building technologies with real-world impact, pursuing excellence in everything we do, setting ambitious goals, and taking on the hardest technical challenges. We operate in a demanding environment where rigor, ownership, and execution are expected. ABOUT THE ROLE As an Embedded Software Engineer at Harmattan AI, you will join the R&D team to own the embedded software stack on the compute modules used across our platforms. You will take a new module from bare board to a maintained, securely booting Linux platform, covering the boot chain, kernel, drivers, and the verification around them. This is a high impact role that combines deep Linux and kernel work with hands on bring up on new hardware, taking a board from first power up through to flight. RESPONSIBILITIES BSP and Reference Images: Build and maintain the BSP layer, device trees, and the reference images for each board, including custom layers and SDK generation, and carry them forward across kernel upgrades and silicon revisions. Boot Chain and Secure Boot: Own the boot chain, including bootloader porting, signed boot, verified rootfs, and A/B system update. Drivers and Low Level Interfaces: Develop and validate Linux device drivers across I2C, SPI, UART, GPIO, PCIe, and MIPI, including camera and sensor interfaces. Board Support on MCU Targets: Provide startup, clock, and peripheral support on the microcontrollers of boards the team designs. Board Bring Up and Hardware Validation: Lead software bring up on new hardware, take part in design reviews, and debug system level issues across the hardware and software boundary. Verification and Documentation: Define verification test plans and acceptance criteria, automate boot and peripheral test on real targets, and document each milestone. Cross Functional Collaboration: Work with the hardware team on new boards, and with Systems and Embedded Software Platform on interfaces and integration. Mentorship: Depending on seniority, mentor junior embedded engineers. CANDIDATE REQUIREMENTS Educational Background: MSc in engineering (electrical, computer, or a related field). PhD a plus. A hands on bring up record matters more than the specific degree. Experience: 5 years minimum in embedded software, with BSPs owned through their lifecycle and kept reproducible as the hardware evolved. Build Systems: Strong command of an embedded Linux build system such as Yocto or OpenEmbedded, across custom layers or packages, BSP integration, image build, and SDK generation. Experience with in house or non standard build systems is an advantage. Technical Expertise: Kernel space driver development on ARM targets, validated against real peripherals across I2C, SPI, UART, GPIO, PCIe, and MIPI. Device tree work on new boards and hardware revisions. Board bring up from first power up to a booting Linux image. Boot and Update: Bootloader porting, kernel configuration, signed boot, and firmware update mechanisms on production hardware, with security conscious and deterministic engineering practice throughout. Programming: Strong C and C++, including kernel space coding, and strong Python scripting skills, with solid version control practice (Git).",
+      "matchScore": 32,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:forward-deployed-engineer-zurich-314170",
+      "title": "Forward Deployed Engineer",
+      "company": "Laelaps",
+      "location": "Zürich, Switzerland",
+      "country": "Switzerland",
+      "category": "PhD / Research",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/laelaps/forward-deployed-engineer-zurich-314170",
+      "source": "Arbeitnow",
+      "description": "Our Mission At Laelaps AI, we believe robotics is entering a transformative decade, much like the arrival of the internet. Advances in AI, cloud computing, and hardware are reshaping what autonomous systems can do. Our mission is to build the intelligent software that powers physical security in the real world - enabling robots and sensors to handle dangerous and critical tasks that humans shouldn't have to. By engineering the orchestration layer for intelligent security, we aim to create a world that is safer, more secure, and more resilient. We're a strong founding team based in Zurich, backed by visionary investors and advisors. We are engineering the future of security today! The Role As a Forward Deployed Engineer, you own our customer deployments end to end. Our system runs on-prem at industrial facilities, critical infrastructure, and military sites, integrated with the cameras, networks, and robots already in place. You survey the site, plan the deployment, install and integrate the system, tune it to the site's conditions, and hand it over to operators who will rely on it daily. You are also the technical face of Laelaps on site. You work with security operators to understand how they actually work and where the bottlenecks are, align with their leadership on what success looks like, and translate what you learn into configuration, code, and product priorities. Early deployments you run alongside the founders; over time you own sites and accounts independently. Expect roughly half your time at customer sites in Switzerland and Europe, and the rest in Zurich, turning field lessons into tooling and automation that make each deployment faster than the last. This is an engineering role with a customer in the room, not a support or services role. What You'll Own Deployments end-to-end: site surveys, network and hardware planning, installation, camera and VMS integration, commissioning, validation, and handover. On-prem infrastructure: install and manage our stack on edge hardware (NVIDIA DGX Spark, Jetson Thor class devices) inside customer networks, often air-gapped or heavily restricted. Integrations: connect existing cameras, sensors, VMS platforms, and robots into one coordinated system, and write the glue code where no integration exists yet. System tuning: calibrate detection and tracking to each site's terrain, lighting, and threat profile until the system performs in the field as it does in the demo. Pilots to production: make POCs succeed technically, because pilots that work become contracts. Customer understanding: sit with operators, interview stakeholders from the control room to the leadership floor, and map the real problems and bottlenecks behind the stated requirements. Customer trust: train operators, respond fast when something breaks, and be the engineer customers ask for by name. The deployment playbook: turn every hard-won lesson into runbooks, tooling, and automation that compound. Product feedback: bring real field signal back to the core engineering team and shape the roadmap with it. Who We're Looking For We are looking for an engineer who runs toward the messy parts, with the EQ to match the IQ. You are as comfortable in a server room or on a windswept perimeter as you are in a terminal, and just as comfortable in a conversation. You can spend a shift with a security operator and earn enough trust that they tell you what actually goes wrong at 3 a.m., then brief a head of security or a site director in the",
+      "matchScore": 32,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "greenhouse:isaraerospace:4952519101",
+      "title": "Junior Calibration Technician (m/f/d)",
+      "company": "Isar Aerospace",
+      "location": "Ottobrunn, Bavaria, Germany; Parsdorf, Bavaria, Germany",
+      "country": "Germany",
+      "category": "R&D / Engineering",
+      "type": "See original posting",
+      "datePosted": "2026-09-17",
+      "deadline": "Check original posting",
+      "url": "https://job-boards.eu.greenhouse.io/isaraerospace/jobs/4952519101",
+      "source": "Isar Aerospace careers (Greenhouse)",
+      "description": "<p><strong>Mission Brief<br></strong></p> <p>Die Aufgabe besteht hauptsächlich darin, die Fachabteilungen fundiert zur Auswahl geeigneter Komponenten der gesamten Messkette für das Flüssigkeitsraketentriebwerk von Isar Aerospace zu beraten. Sobald der Testbetrieb beginnt, wird der Techniker die Test- und Antriebsingenieure bei der Durchführung ihrer Testkampagnen an Raketentriebwerksprototypen und deren Teilsystemen unterstützen.</p> <p>Deine Rolle in unserer Space Mission:&nbsp;</p> <ul> <li>Unterstützung bei der Kalibrierung, Instandhaltung und Wartung unserer Mess- &amp; Prüfmittel</li> <li>Selbstständige Installation des Messequipments (Sensorik, Verkabelung, ggf. Messdatenerfassung) für verschiedenste Versuchsaufbauten an unseren Prüfständen, Testeinrichtungen und in unseren Niederlassungen.</li> <li>Unterstützung der Kollegen durch die Inbetriebnahme, Überprüfung und Betreuung der vorhandenen Messtechnik-Komponenten (mechanisch, elektrisch und computergestützt)</li> <li>Applikation von Dehnungsmesstreifen (DMS) auf Materialproben oder Strukturteilen zur Erfassung der Kennwerte und Aufbereitung dieser Daten, um beratend für Design und Auslegung zu wirken</li> <li>Tatkräftige Unterstützung der Projekt- und Testteams während der Durchführung größerer Testkampagnen</li> <li>Fundierte Beratung interner Kollegen / Abteilungen zur Auswahl geeigneter Komponenten der gesamten Messkette für unterschiedlichste Bauteil-, Komponenten- und System-Tests speziell im Hinblick auf Vakuum und Niedrig- oder Hochtemperaturbereich</li> <li>Inventarisierung sowie Verwaltung elektrischer/elektronischer Messmittel, Überwachung der Kalibrierintervalle und Sicherstellen der Einsatzfähigkeit.</li> </ul> <p><strong>Qualifikationscheckliste</strong></p> <ul> <li>Staatlich geprüfter Techniker der Fachrichtung Elektrotechnik, Mechatronik oder vergleichbare Qualifikation</li> <li>Ein hohes Verantwortungsbewusstsein, ausgeprägte Qualitätsorientierung und eine strukturierte und eigenständige Arbeitsweise&nbsp;</li> <li>Eine schnelle Auffassungsgabe zur raschen Einarbeitung in neue Aufgaben und eine ausgeprägte „Hands-on“-Mentalität&nbsp;</li> <li>Teamarbeit</li> <li>Gültiger Führerschein - Klasse B</li> <li>Gutes Englisch, Deutsch verhandlungssicher</li> </ul> <p><strong>Benefits:&nbsp;</strong></p> <ul> <li><strong>Mitarbeiterbeteiligungsprogramm:&nbsp;</strong>Wir möchten dich an unserem Erfolg beteiligen durch unsere virtuellen Unternehmensaktien.&nbsp;</li> <li><strong>30 Tage Urlaub:</strong> Genieße die freien Tage, um dich zu entspannen und neue Energie zu tanken&nbsp;</li> <li><strong>Betriebliche Altersvorsorge:</strong> Sichere deine Zukunft mit unserer betrieblichen Altersvorsorge, bei der der Arbeitgeber nach der Probezeit 20% bezuschusst&nbsp;</li> <li><strong>Subventioniertes Mittagessen:</strong> Bleibe jeden Tag mit köstlichen, subventionierten Mittagessen energiegeladen&nbsp;</li> <li><strong>ÖPNV-Ticket:</strong> Pendle stressfrei mit einem vollständig finanzierten Deutschlandticket&nbsp;</li> <li><strong>Mietkleidung mit Wäscheservice: </strong>Genieße stressfreie Arbeitskleidung mit unserem praktischen Mietkleidungs- und Wäscheservice&nbsp;</li> <li><strong>Sports Club Mitgliedschaft:</strong> Bleibe fit mit unserer gesponserten Sports Club Mitgliedschaft (EGYM Wellpass)&nbsp;</li> <li><strong>Individuelles Lernbudget:</strong> Entwickle deine Fähigkeiten mit einem individuellen Lernbudget, das du nach der Probezeit erhältst.&nbsp;</li> <li><str",
+      "matchScore": 32,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "verification / quality"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "arbeitnow:robotic-controls-engineer-zurich-107920",
+      "title": "Robotic Controls Engineer",
+      "company": "Enactintelligence",
+      "location": "Zürich",
+      "country": "Switzerland",
+      "category": "PhD / Research",
+      "type": "Full Time",
+      "datePosted": "2026-09-27",
+      "deadline": "Check original posting",
+      "url": "https://www.arbeitnow.ch/jobs/companies/enactintelligence/robotic-controls-engineer-zurich-107920",
+      "source": "Arbeitnow",
+      "description": "About Enact The next defining technological breakthrough will be in the physical world. We stand at a historical inflection point: bringing general-purpose intelligence into robotics. At Enact we rethink the entire robotic tech stack from model architectures and data pipelines, to the actuators and sensors that feed the model. Pushing beyond pure vision and language approaches, we build a proprioceptive nerve system, and the cortex that makes sense of it, to solve dexterity through whole-body force-awareness and deploy robots for thousands of tasks in industry and beyond. We are shaping a company where brilliant and unconventional people thrive together on solving the hardest challenges of our time. We are truth seekers. We reason from first principles, test our beliefs against reality, and trust that the best ideas can come from anyone. We move fast. We care deeply about our work and colleagues and are driven by passion to change the status quo. If this resonates, we're excited to hear from you. In This Role You will develop the proprioceptive motion control layer to enable our robots to do high contact manipulation predictably, smoothly, and safely under varied and uncertain conditions. Design and implement model- and learning-based estimation and control algorithms, along with the runtime loops that form the backbone for teleoperation and our AI-driven manipulation, from simulation to the real robot system. Debug and diagnose complex system behaviors spanning the interplay of hardware, software, and algorithms. Own robot bring-up, including validation and refinement of our robot model descriptions (URDF, MuJoCo XML, USD, etc.) for simulation and control, characterizing and adjusting for the sim-to-real gap as needed. Work together with both our hardware team and our AI researchers to continuously assess and push the performance of our full stack robot system What We're Looking For Degree (BSc/MSc/PhD) in Robotics, Mechanical Engineering, or a related field Excellent theoretical and practical grasp of model and learning based whole-body control and state estimation Experience with robot simulation environments (MuJoCo, Isaac Sim, or similar) and robot description files (URDF, USD, etc.) Proven ability to take complex algorithms from concept through hardware integration to production-ready real-time robot software Strong proficiency in Python, complemented by efficient low-level programming skills in Rust or C/C++ Bonus Points If You Have Hands-on experience with tensor and automatic differentiation frameworks such as JAX, PyTorch, CppAD, Burn, or similar. Experience with whole-body force estimation Experience in developing reinforcement learning based robot control Experience in robot safety, including Control Barrier Functions and/or relevant industry certifications. Experience in contact rich manipulation, preferably including teleoperation and interfacing with large behavior models such as VLAs. What we offer The opportunity to make a real impact working on some of the biggest challenges of our time A fast-paced learning environment alongside an outstanding, driven team Ownership from day one, with the ability to iterate quickly and see your impact firsthand in an early-stage startup Visa sponsorship & relocation benefits to hire the best in the world A world-class in-person setup in central Zürich, with excellent prototyping, robotics, and technical infrastructure for hands-on builders Competitive compensation and meaningful equit",
+      "matchScore": 32,
+      "matchedKeywords": [
+        "sensors / acoustics",
+        "verification / quality",
+        "MATLAB / Python / ML"
+      ],
+      "warnings": []
+    }
+  ]
+}

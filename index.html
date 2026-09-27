@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CV-matched MEMS, thin-film, biomedical engineering, medtech and research jobs across Germany and Europe.">
+  <title>EU Umbrella · CV-matched technical jobs</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="data/candidate-profile.js"></script>
+  <script defer src="jobs.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to job matches</a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#" aria-label="EU Umbrella home">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+          <path d="M5 18a13 13 0 0 1 26 0H5Z" fill="currentColor" opacity=".18"/>
+          <path d="M5 18a13 13 0 0 1 26 0M18 18v9a4 4 0 0 0 8 0" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+          <path d="M9 18c1.3-4.6 4.3-7 9-7s7.7 2.4 9 7" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+        </svg>
+        <span>EU Umbrella</span>
+      </a>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch color theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Germany + Europe · refreshed daily</p>
+          <h1>Your CV, matched to technical roles.</h1>
+          <p class="hero-copy">Ranked opportunities in MEMS, thin films, materials characterization, biomedical engineering, medical devices, imaging and research.</p>
+        </div>
+        <div class="profile-card" aria-label="Matching profile summary">
+          <span class="profile-label">Matching evidence</span>
+          <strong>AlN · FTIR · XRD · SEM · ALD</strong>
+          <p>Plus three years of clinical equipment engineering, QA, calibration and validation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace container" aria-labelledby="matches-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow dark">Personal job radar</p>
+          <h2 id="matches-title">Best matches first</h2>
+        </div>
+        <button id="refreshButton" class="secondary-button" type="button">Reload latest data</button>
+      </div>
+
+      <div id="statusPanel" class="status-panel loading" role="status" aria-live="polite">
+        <span class="status-dot"></span>
+        <span id="statusText">Loading ranked vacancies…</span>
+      </div>
+
+      <form class="toolbar" aria-label="Filter job matches" onsubmit="return false">
+        <label class="field search-field">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Title, company, skill or location" autocomplete="off">
+        </label>
+        <label class="field">
+          <span>Country</span>
+          <select id="countryFilter"><option value="">All countries</option></select>
+        </label>
+        <label class="field">
+          <span>Career area</span>
+          <select id="categoryFilter"><option value="">All career areas</option></select>
+        </label>
+        <label class="field">
+          <span>Minimum fit</span>
+          <select id="scoreFilter">
+            <option value="0">Any match</option>
+            <option value="50">50+ fit</option>
+            <option value="65">65+ strong fit</option>
+            <option value="80">80+ excellent fit</option>
+          </select>
+        </label>
+      </form>
+
+      <div class="results-bar">
+        <p id="resultsSummary">Preparing results…</p>
+        <p class="score-note">Fit scores are CV-ranking signals, not hiring probabilities.</p>
+      </div>
+
+      <section id="jobsContainer" class="jobs-grid" aria-live="polite" aria-busy="true">
+        <article class="job-card skeleton-card" aria-hidden="true">
+          <div class="skeleton skeleton-heading"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text short"></div>
+        </article>
+        <article class="job-card skeleton-card" aria-hidden="true">
+          <div class="skeleton skeleton-heading"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text short"></div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>Always verify vacancy status, eligibility, deadline and application instructions on the original employer page.</p>
+    <a href="https://github.com/bhavdeepxf/EU-umbrella/actions" target="_blank" rel="noopener noreferrer">Automation status ↗</a>
+  </footer>
+</body>
+</html>

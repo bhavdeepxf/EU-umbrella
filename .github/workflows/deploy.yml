@@ -1,1 +1,81 @@
+name: Refresh jobs and deploy EU Umbrella
 
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install --requirement requirements.txt
+
+      - name: Fetch and rank public jobs
+        run: python scripts/fetch_and_score_jobs.py
+
+      - name: Validate generated site data
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path("data/live-jobs.json")
+          payload = json.loads(path.read_text(encoding="utf-8"))
+          jobs = payload.get("jobs")
+          if not isinstance(jobs, list) or not jobs:
+              raise SystemExit("data/live-jobs.json has no publishable jobs")
+          required = {"title", "company", "url", "matchScore", "matchedKeywords"}
+          for index, job in enumerate(jobs):
+              missing = required - set(job)
+              if missing:
+                  raise SystemExit(f"Job {index} is missing: {sorted(missing)}")
+              if not str(job["url"]).startswith("https://"):
+                  raise SystemExit(f"Job {index} has a non-HTTPS URL")
+          print(f"Validated {len(jobs)} jobs generated at {payload.get('generatedAt')}")
+          PY
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check jobs.js
+          node --check data/candidate-profile.js
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-24.04
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

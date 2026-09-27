@@ -1,135 +1,182 @@
-const ui = {
-  search: document.getElementById("searchInput"), family: document.getElementById("familyFilter"),
-  score: document.getElementById("scoreFilter"), readiness: document.getElementById("readinessFilter"),
-  sort: document.getElementById("sortFilter"), jobs: document.getElementById("jobsContainer"),
-  summary: document.getElementById("resultsSummary"), status: document.getElementById("statusPanel"),
-  statusText: document.getElementById("statusText"), refresh: document.getElementById("refreshButton"),
-  metrics: document.getElementById("metrics"), theme: document.querySelector("[data-theme-toggle]"),
-  profileToggle: document.getElementById("profileToggle"), profilePanel: document.getElementById("profilePanel"),
-  regionButtons: [...document.querySelectorAll("[data-region]")]
+"use strict";
+
+const $ = (id) => document.getElementById(id);
+const searchInput = $("searchInput");
+const countryFilter = $("countryFilter");
+const categoryFilter = $("categoryFilter");
+const scoreFilter = $("scoreFilter");
+const resetFilters = $("resetFilters");
+const jobsContainer = $("jobsContainer");
+const resultsSummary = $("resultsSummary");
+
+let liveJobs = [];
+let generatedAt = "";
+let sourceHealth = [];
+let loadError = "";
+
+const normalise = (value) => String(value ?? "").toLocaleLowerCase();
+const unique = (items) => [...new Set(items.filter(Boolean))];
+const escapeHtml = (value) => String(value ?? "")
+  .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+  .replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+const escapeAttr = escapeHtml;
+const safeUrl = (value) => {
+  try {
+    const url = new URL(String(value));
+    return ["http:", "https:"].includes(url.protocol) ? url.href : "#";
+  } catch { return "#"; }
 };
-const state = { jobs: [], generatedAt: "", stats: {}, coverage: {}, region: "", visible: 50 };
-const normalise = value => String(value ?? "").normalize("NFKD").toLowerCase();
-const escapeHtml = value => String(value ?? "").replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"})[c]);
-const unique = values => [...new Set(values.filter(Boolean))];
-function safeUrl(value) { try { const url = new URL(value); return url.protocol === "https:" ? url.href : ""; } catch { return ""; } }
-function allText(job) { return normalise([job.title, job.company, job.location, job.country, job.region, job.category, job.description, ...(job.matchedKeywords || []), ...(job.roleFamilies || [])].join(" ")); }
-function formatDate(value, includeTime = false) {
-  const date = new Date(value); if (Number.isNaN(date.getTime())) return "";
-  return new Intl.DateTimeFormat(undefined, includeTime ? {dateStyle:"medium",timeStyle:"short"} : {dateStyle:"medium"}).format(date);
+
+function allText(job) {
+  return normalise([job.title, job.company, job.location, job.country, job.category, job.type, job.description, job.source, ...(job.matchedKeywords || [])].join(" "));
 }
-function setStatus(kind, text) { ui.status.className = `status-panel ${kind}`; ui.statusText.textContent = text; }
-function scoreClass(value) { return value >= 80 ? "high" : value >= 65 ? "medium" : "low"; }
-function regionLabel(region) { return region || "All regions"; }
-function populateFamilies() {
-  const previous = ui.family.value;
-  const families = unique(state.jobs.flatMap(job => job.roleFamilies || [job.category])).sort();
-  ui.family.replaceChildren(new Option("All career routes", ""));
-  for (const family of families) ui.family.add(new Option(family, family));
-  if (families.includes(previous)) ui.family.value = previous;
-}
-function renderMetrics() {
-  const regions = state.coverage.regions || {};
-  const sources = Object.keys(state.stats || {}).length;
-  ui.metrics.innerHTML = [
-    [state.jobs.length, "Current matches"], [regions.Germany || 0, "Germany"],
-    [regions.Europe || 0, "Europe"], [regions.India || 0, "India"], [sources, "Source groups"]
-  ].map(([value,label]) => `<div class="metric"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`).join("");
-}
-function filteredJobs() {
-  const query = normalise(ui.search.value.trim());
-  const minScore = Number(ui.score.value || 0); const minReadiness = Number(ui.readiness.value || 0);
-  const jobs = state.jobs.filter(job => {
-    const families = job.roleFamilies || [job.category];
-    return (!query || allText(job).includes(query)) && (!state.region || job.region === state.region) &&
-      (!ui.family.value || families.includes(ui.family.value)) && Number(job.matchScore) >= minScore &&
-      Number(job.attainability) >= minReadiness;
+
+function localScore(job) {
+  const text = allText(job);
+  let score = 15;
+  candidateProfile.directMatchKeywords.forEach((term) => { if (text.includes(normalise(term))) score += 7; });
+  Object.values(candidateProfile.roleGroups).forEach((terms) => {
+    const hits = terms.filter((term) => text.includes(normalise(term))).length;
+    score += Math.min(hits * 3, 15);
   });
-  const sorters = {
-    overall: (a,b) => b.matchScore-a.matchScore || b.attainability-a.attainability,
-    technical: (a,b) => b.technicalFit-a.technicalFit || b.attainability-a.attainability,
-    attainability: (a,b) => b.attainability-a.attainability || b.technicalFit-a.technicalFit,
-    newest: (a,b) => new Date(b.datePosted || 0)-new Date(a.datePosted || 0)
-  };
-  return jobs.sort(sorters[ui.sort.value] || sorters.overall);
+  if (candidateProfile.preferredCountries.some((country) => normalise(job.country).includes(normalise(country)))) score += 7;
+  if (candidateProfile.priorityLocations.some((place) => text.includes(normalise(place)))) score += 5;
+  if (/\bphd\b|doctoral|doktorand|wissenschaftlicher mitarbeiter|research associate/.test(text)) score += 10;
+  candidateProfile.seniorityWarnings.forEach((term) => { if (text.includes(normalise(term))) score -= 10; });
+  candidateProfile.languageWarnings.forEach((term) => { if (text.includes(normalise(term))) score -= 7; });
+  return Math.max(0, Math.min(100, score));
 }
-function scoreMeter(label, value, kind) {
-  return `<div class="score-meter ${scoreClass(value)}"><span>${escapeHtml(label)}</span><strong>${Math.round(value)}%</strong><div class="meter-track"><i style="width:${Math.max(0,Math.min(100,value))}%"></i></div><small>${escapeHtml(kind)}</small></div>`;
+
+function score(job) {
+  const collected = Number(job.matchScore);
+  return Number.isFinite(collected) ? Math.max(0, Math.min(100, collected)) : localScore(job);
 }
-function evidenceText(job) {
-  const top = (job.matchedKeywords || []).slice(0, 5).join(", ");
-  const strengths = (job.strengths || []).slice(0, 3).join("; ");
-  return `Evidence overlap: ${top || "related engineering experience"}.${strengths ? ` Attainability strengths: ${strengths}.` : ""}`;
+
+function tags(job) {
+  if (Array.isArray(job.matchedKeywords) && job.matchedKeywords.length) return unique(job.matchedKeywords).slice(0, 8);
+  const text = allText(job);
+  return unique(Object.values(candidateProfile.roleGroups).flat().filter((term) => text.includes(normalise(term)))).slice(0, 8);
 }
-function card(job) {
-  const url = safeUrl(job.url);
-  const tags = (job.matchedKeywords || []).slice(0, 8).map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join("");
-  const warnings = (job.warnings || []).length ? `<p class="warning"><strong>Check before applying:</strong> ${(job.warnings || []).map(escapeHtml).join(" · ")}</p>` : "";
-  return `<article class="job-card">
-    <div class="card-main">
-      <div class="job-heading"><div><span class="region-badge">${escapeHtml(job.region)}</span><h3>${escapeHtml(job.title)}</h3><p>${escapeHtml(job.company)}</p></div>
-        <div class="overall ${scoreClass(job.matchScore)}"><strong>${Math.round(job.matchScore)}%</strong><span>overall</span></div>
-      </div>
-      <div class="meta"><span>${escapeHtml(job.location || "See posting")}</span><span>${escapeHtml(job.primaryFamily || job.category)}</span><span>${escapeHtml(job.type || "See posting")}</span>${job.datePosted ? `<span>Posted ${escapeHtml(formatDate(job.datePosted))}</span>` : ""}</div>
-      <div class="tags">${tags || '<span class="tag">Related engineering</span>'}</div>
-      <p class="reason">${escapeHtml(evidenceText(job))}</p>${warnings}
-    </div>
-    <aside class="score-panel" aria-label="Fit scores">
-      ${scoreMeter("Technical fit", Number(job.technicalFit), "CV evidence")}
-      ${scoreMeter("Attainability", Number(job.attainability), "seniority + eligibility")}
-      ${job.compensation ? `<p class="compensation">${escapeHtml(job.compensation)}</p>` : ""}
-      <a class="apply-button" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Open original posting ↗</a>
-      <small class="source">${escapeHtml(job.source)}</small>
-    </aside>
-  </article>`;
+
+function warnings(job) {
+  if (Array.isArray(job.warnings)) return unique(job.warnings).slice(0, 4);
+  const text = allText(job);
+  return unique([...candidateProfile.seniorityWarnings, ...candidateProfile.languageWarnings].filter((term) => text.includes(normalise(term)))).slice(0, 4);
 }
+
+function scoreLabel(value) {
+  if (value >= 85) return "High priority";
+  if (value >= 70) return "Strong fit";
+  if (value >= 60) return "Potential fit";
+  return "Selective";
+}
+
+function scoreClass(value) {
+  if (value >= 80) return "high";
+  if (value >= 60) return "medium";
+  return "low";
+}
+
+function dateLabel(value) {
+  if (!value) return "Date not published";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? escapeHtml(value) : new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(date);
+}
+
+function reason(job) {
+  const matched = tags(job).slice(0, 5);
+  if (!matched.length) return "Broader engineering overlap; inspect the official requirements before deciding.";
+  return `CV overlap: ${matched.join(", ")}. ${score(job) >= 70 ? "Tailor the application around these methods and your closest project evidence." : "Confirm that the day-to-day work and required level justify an application."}`;
+}
+
+function options(select, placeholder, values) {
+  const selected = select.value;
+  select.replaceChildren(new Option(placeholder, ""), ...values.map((value) => new Option(value, value)));
+  if (values.includes(selected)) select.value = selected;
+}
+
+function populateFilters() {
+  options(countryFilter, "All countries", unique(liveJobs.map((job) => job.country)).sort());
+  options(categoryFilter, "All role types", unique(liveJobs.map((job) => job.category)).sort());
+}
+
 function render() {
-  const matches = filteredJobs(); const shown = matches.slice(0, state.visible);
-  ui.jobs.setAttribute("aria-busy", "false");
-  ui.summary.textContent = `${matches.length} matches in ${regionLabel(state.region)} · showing ${shown.length}`;
-  if (!matches.length) {
-    ui.jobs.innerHTML = `<div class="empty"><h3>No roles match this view</h3><p>Lower a score threshold, select another region, or clear the search. The full source data remains available.</p><button id="clearFilters" type="button">Reset filters</button></div>`;
-    document.getElementById("clearFilters").addEventListener("click", resetFilters); return;
+  const term = normalise(searchInput.value.trim());
+  const minimum = Number(scoreFilter.value);
+  const visible = liveJobs.map((job) => ({ ...job, computedScore: score(job), computedTags: tags(job), computedWarnings: warnings(job) }))
+    .filter((job) => (!term || allText(job).includes(term)) && (!countryFilter.value || job.country === countryFilter.value) && (!categoryFilter.value || job.category === categoryFilter.value) && job.computedScore >= minimum)
+    .sort((a, b) => b.computedScore - a.computedScore || String(b.datePosted).localeCompare(String(a.datePosted)));
+
+  const failed = sourceHealth.filter((item) => item.status !== "ok").length;
+  const timestamp = generatedAt ? ` Updated ${new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(generatedAt))}.` : "";
+  resultsSummary.textContent = `${visible.length} of ${liveJobs.length} verified vacancies shown.${timestamp}${failed ? ` ${failed} source${failed === 1 ? "" : "s"} unavailable during the last refresh.` : ""}`;
+
+  if (!visible.length) {
+    const message = loadError && !liveJobs.length ? "The live vacancy feed could not be loaded." : "No vacancies match the current filters.";
+    jobsContainer.innerHTML = `<div class="empty-state"><svg aria-hidden="true" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16v12H4zM8 7V5h8v2M8 12h8"/></svg><h3>${escapeHtml(message)}</h3><p>${loadError ? "Try reloading. If this persists, run the refresh workflow and inspect its source-health output." : "Lower the fit threshold, clear filters, or try a broader keyword."}</p><button class="secondary-button" type="button" data-clear>Clear filters</button></div>`;
+    jobsContainer.querySelector("[data-clear]")?.addEventListener("click", clearFilters);
+    jobsContainer.setAttribute("aria-busy", "false");
+    return;
   }
-  ui.jobs.innerHTML = shown.map(card).join("") + (shown.length < matches.length ? `<button id="loadMore" class="load-more" type="button">Show 50 more</button>` : "");
-  document.getElementById("loadMore")?.addEventListener("click", () => { state.visible += 50; render(); });
+
+  jobsContainer.innerHTML = visible.map((job) => {
+    const value = job.computedScore;
+    const warningHtml = job.computedWarnings.length ? `<p class="warning"><strong>Review:</strong> ${job.computedWarnings.map(escapeHtml).join(", ")}</p>` : "";
+    const deadline = job.deadline && job.deadline !== "Check original vacancy" ? `<span>Deadline ${dateLabel(job.deadline)}</span>` : "";
+    const description = String(job.description || "").slice(0, 320);
+    return `<article class="job-card">
+      <div class="job-main">
+        <div class="job-heading"><div><p class="source-line">${escapeHtml(job.source || "Official source")}</p><h3>${escapeHtml(job.title)}</h3><p class="company">${escapeHtml(job.company)} · ${escapeHtml(job.location || job.country)}</p></div><div class="score score-${scoreClass(value)}" aria-label="Match score ${value} out of 100"><strong>${value}</strong><span>${scoreLabel(value)}</span></div></div>
+        <div class="meta"><span>${escapeHtml(job.category || "Technical role")}</span><span>Posted ${dateLabel(job.datePosted)}</span>${deadline}</div>
+        ${description ? `<p class="description">${escapeHtml(description)}${String(job.description || "").length > 320 ? "…" : ""}</p>` : ""}
+        <p class="match-reason">${escapeHtml(reason(job))}</p>${warningHtml}
+        <div class="job-tags">${job.computedTags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
+      </div>
+      <div class="job-action"><a class="apply-button" href="${escapeAttr(safeUrl(job.url))}" target="_blank" rel="noopener noreferrer">View official posting <span aria-hidden="true">↗</span></a><span class="verify-note">Verify status before applying</span></div>
+    </article>`;
+  }).join("");
+  jobsContainer.setAttribute("aria-busy", "false");
 }
-function resetFilters() {
-  ui.search.value = ""; ui.family.value = ""; ui.score.value = "65"; ui.readiness.value = "55"; ui.sort.value = "overall";
-  setRegion("");
-}
-function setRegion(region) {
-  state.region = region; state.visible = 50;
-  for (const button of ui.regionButtons) button.classList.toggle("active", button.dataset.region === region);
+
+function clearFilters() {
+  searchInput.value = "";
+  countryFilter.value = "";
+  categoryFilter.value = "";
+  scoreFilter.value = "70";
   render();
 }
+
 async function loadJobs() {
-  ui.refresh.disabled = true; setStatus("loading", "Loading the latest multi-source vacancy index…");
   try {
-    const response = await fetch(`data/live-jobs.json?t=${Date.now()}`, {cache:"no-store"});
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const response = await fetch(`data/jobs.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Vacancy feed returned ${response.status}`);
     const payload = await response.json();
-    if (!Array.isArray(payload.jobs) || !payload.jobs.length) throw new Error("No jobs in deployed data");
-    state.jobs = payload.jobs.filter(job => safeUrl(job.url)); state.generatedAt = payload.generatedAt || "";
-    state.stats = payload.sourceStats || {}; state.coverage = payload.coverage || {};
-    setStatus("live", `${state.jobs.length} current vacancies loaded · refreshed ${formatDate(state.generatedAt, true)} · Germany, Europe and India included.`);
+    if (!Array.isArray(payload.jobs)) throw new Error("Vacancy feed has an invalid format");
+    liveJobs = payload.jobs.filter((job) => job && job.title && safeUrl(job.url) !== "#");
+    generatedAt = payload.generatedAt || "";
+    sourceHealth = Array.isArray(payload.sources) ? payload.sources : [];
   } catch (error) {
-    state.jobs = Array.isArray(globalThis.fallbackJobs) ? globalThis.fallbackJobs : [];
-    setStatus("error", state.jobs.length ? "Live index unavailable; showing verified fallback jobs." : "No deployed job index found. Run the GitHub Actions workflow once.");
-    console.error(error);
-  } finally {
-    ui.refresh.disabled = false; populateFamilies(); renderMetrics(); render();
+    loadError = error.message;
+    liveJobs = Array.isArray(globalThis.jobs) ? globalThis.jobs : [];
   }
+  populateFilters();
+  render();
 }
-function setTheme(value) {
-  document.documentElement.dataset.theme = value;
-  ui.theme.setAttribute("aria-label", `Switch to ${value === "dark" ? "light" : "dark"} mode`);
-  ui.theme.innerHTML = value === "dark" ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2"/></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
-}
-let theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; setTheme(theme);
-ui.theme.addEventListener("click", () => { theme = theme === "dark" ? "light" : "dark"; setTheme(theme); });
-ui.profileToggle.addEventListener("click", () => { const opening = ui.profilePanel.hidden; ui.profilePanel.hidden = !opening; ui.profileToggle.textContent = opening ? "Hide positioning details" : "See positioning details"; if (opening) ui.profilePanel.scrollIntoView({behavior:"smooth",block:"nearest"}); });
-ui.regionButtons.forEach(button => button.addEventListener("click", () => setRegion(button.dataset.region)));
-[ui.family, ui.score, ui.readiness, ui.sort].forEach(control => control.addEventListener("change", () => {state.visible=50;render();}));
-ui.search.addEventListener("input", () => {state.visible=50;render();}); ui.refresh.addEventListener("click", loadJobs);
+
+[searchInput, countryFilter, categoryFilter, scoreFilter].forEach((control) => control.addEventListener(control === searchInput ? "input" : "change", render));
+resetFilters.addEventListener("click", clearFilters);
+
+(function initTheme() {
+  const root = document.documentElement;
+  const toggle = document.querySelector("[data-theme-toggle]");
+  let theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  const draw = () => {
+    root.dataset.theme = theme;
+    toggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
+    toggle.innerHTML = theme === "dark" ? '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>' : '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>';
+  };
+  toggle.addEventListener("click", () => { theme = theme === "dark" ? "light" : "dark"; draw(); });
+  draw();
+})();
+
 loadJobs();

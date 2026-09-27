@@ -231,11 +231,49 @@ def main():
         if not listings:
             break
 
-    ranked = []
-    for raw in unique_jobs.values():
-        result = score_job(raw)
-        if result:
-            ranked.append(result)
+ranked = []
+sample_titles = []
+technical_candidates = []
+
+for raw in unique_jobs.values():
+    title = clean_text(raw.get("title"))
+    description = clean_text(raw.get("description"))
+    tags = raw.get("tags") or []
+
+    if len(sample_titles) < 12:
+        sample_titles.append(title)
+
+    core_matches = match_labels(
+        f"{title} {description} {' '.join(map(str, tags))}",
+        CORE,
+    )
+    support_matches = match_labels(
+        f"{title} {description} {' '.join(map(str, tags))}",
+        SUPPORT,
+    )
+
+    if core_matches or support_matches:
+        technical_candidates.append({
+            "title": title,
+            "core": core_matches[:5],
+            "support": support_matches[:5],
+            "excluded_title": bool(EXCLUDED_TITLE.search(title)),
+            "relevant_title": bool(ROLE_TITLE.search(title)),
+        })
+
+    result = score_job(raw)
+    if result:
+        ranked.append(result)
+
+print("Sample titles:", json.dumps(sample_titles, ensure_ascii=False))
+print(
+    "Listings with at least one CV-related term:",
+    len(technical_candidates),
+)
+print(
+    "First 15 technical candidates:",
+    json.dumps(technical_candidates[:15], ensure_ascii=False),
+)
 
     ranked.sort(key=lambda item: item["matchScore"], reverse=True)
 

@@ -1,47 +1,38 @@
-# EU Umbrella
+# EU Umbrella — expanded edition
 
-A personal, CV-matched job radar for MEMS, thin films, materials characterization, biomedical engineering, medtech and research roles in Germany and Europe.
+A multi-source career radar matching a CV-derived profile to semiconductor, MEMS, materials, biomedical, medtech, validation and research opportunities across Germany, Europe and India.
 
-## What was fixed
+## Improvements
 
-- Replaced the blocked Bundesagentur endpoint with permitted public feeds.
-- Uses Arbeitnow plus selected employers' public Greenhouse Job Board APIs.
-- Scores complete posting text against the CV, not only titles.
-- Keeps prior valid data if a source temporarily produces no matches.
-- Deploys generated `data/live-jobs.json` in the same GitHub Pages artifact.
-- Removes duplicate script tags and all demonstration vacancies.
-- Adds clear live/error/loading states, responsive filters, dark mode and safe link handling.
-- Updates Actions to Node 24-compatible action versions.
+- Adds Germany, Europe and India as explicit geographic tracks.
+- Adds selected public Ashby employer boards alongside Arbeitnow, Greenhouse and Remotive.
+- Expands semiconductor, MEMS, materials, biomedical, medical-device, imaging, equipment and quality coverage.
+- Separates **technical fit** from **attainability**; overall rank is 64% technical fit and 36% attainability.
+- Penalizes leadership-heavy titles, excessive experience requirements, student-only eligibility and hard language constraints.
+- Adds filtering by region, career route, overall rank, attainability and sort order.
+- Uses a CV-derived, honest positioning model without inventing qualifications.
+- Keeps previous deployed data if every upstream source fails or produces no matches.
 
-## Install in GitHub
+## Install
 
-1. Download and unzip this project.
-2. In the `EU-umbrella` repository, upload the files **with their folders preserved**.
-3. Replace the old files when GitHub asks.
-4. Delete any obsolete workflow such as `.github/workflows/update-live-jobs.yml`; keep only `.github/workflows/deploy.yml`.
-5. Open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**.
-6. Open **Actions → Refresh jobs and deploy EU Umbrella → Run workflow → main → Run workflow**.
-7. A successful run shows `CV-matched jobs: N`, validates `data/live-jobs.json`, uploads the Pages artifact and deploys it.
-8. Open `https://bhavdeepxf.github.io/EU-umbrella/` and use a hard refresh once.
+1. Extract the archive.
+2. Open your `EU-umbrella` GitHub repository.
+3. Use **Add file → Upload files** and drag everything *inside* the extracted project folder into the repository root.
+4. Replace the existing files and preserve `.github/workflows/deploy.yml`, `data/` and `scripts/`.
+5. Commit to `main`.
+6. In **Settings → Pages**, keep **Source: GitHub Actions**.
+7. Open **Actions → Refresh jobs and deploy EU Umbrella → Run workflow**.
 
-No repository API secret is required for the included sources.
+No API secret is required for the included public posting endpoints.
 
 ## Refresh behavior
 
-The workflow runs:
+The GitHub workflow runs on every push, manually, and daily at 05:17 UTC. The website’s reload button only reloads the most recently deployed JSON; it cannot start a GitHub workflow.
 
-- on every push to `main`;
-- manually with **Run workflow**;
-- every day at 05:17 UTC.
+## Add employers
 
-The browser's **Reload latest data** button reloads the latest deployed JSON. It cannot run the GitHub Action itself; use the Actions page for an immediate server-side collection.
+- Add Greenhouse board tokens to `GREENHOUSE_BOARDS`.
+- Add Ashby job-board names to `ASHBY_BOARDS`.
+- Validate location coverage and inspect the resulting matches before committing.
 
-## Matching model
-
-The Python collector prioritizes CV evidence in AlN, MEMS, thin films, ALD, sputtering, FTIR, XRD, SEM, materials characterization, sensors, biomedical engineering, medical devices, QA, calibration, validation, MATLAB, Python and medical imaging. It penalizes senior-only, student-only and strong language-requirement signals.
-
-The displayed percentage is a transparent heuristic ranking score—not a probability of interview or employment. Always check the original posting.
-
-## Add another Greenhouse employer
-
-Public Greenhouse GET job-board endpoints do not require authentication. Add a known board token to `GREENHOUSE_BOARDS` in `scripts/fetch_and_score_jobs.py`, then run the workflow. Invalid or unavailable boards are skipped without destroying previous data.
+The collector skips an unavailable individual employer board and continues with the remaining sources.

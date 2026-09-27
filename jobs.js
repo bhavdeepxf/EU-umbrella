@@ -1,3 +1,3 @@
-// Optional hand-curated fallback jobs can be added here using the live-jobs.json schema.
-// Keep this empty so demonstration jobs are never mistaken for current vacancies.
-const jobs = [];
+// Optional manually verified fallback jobs may use the same schema as data/live-jobs.json.
+// An empty fallback prevents expired demonstration vacancies from being presented as live.
+const fallbackJobs = [];

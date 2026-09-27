@@ -1,4 +1,4 @@
-name: Update live German jobs
+name: Fetch jobs and deploy EU Umbrella
 
 on:
   workflow_dispatch:
@@ -6,11 +6,21 @@ on:
     - cron: "17 6 * * 1-5"
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
 
 jobs:
-  fetch-and-score:
+  fetch-and-deploy:
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Check out repository
@@ -24,15 +34,41 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Fetch and score vacancies
+      - name: Fetch and score jobs
         env:
           BA_JOBS_API_KEY: ${{ secrets.BA_JOBS_API_KEY }}
         run: python scripts/fetch_and_score_jobs.py
 
-      - name: Commit updated job data
+      - name: Check generated job data
         run: |
-          git config user.name "EU Umbrella Bot"
-          git config user.email "actions@github.com"
-          git add data/live-jobs.json
-          git diff --staged --quiet || git commit -m "Update live German job matches"
-          git push
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("data/live-jobs.json")
+          payload = json.loads(path.read_text(encoding="utf-8"))
+
+          if not isinstance(payload, dict) or not isinstance(payload.get("jobs"), list):
+              raise SystemExit("Expected data/live-jobs.json to contain a jobs array")
+
+          print("Generated at:", payload.get("generatedAt"))
+          print("Number of jobs:", len(payload["jobs"]))
+
+          if not payload["jobs"]:
+              raise SystemExit("No real jobs were collected; refusing to replace the working site with empty data")
+
+          if any(str(job.get("title", "")).startswith("Test Live Job") for job in payload["jobs"]):
+              raise SystemExit("Test jobs are still present; refusing to publish them as live results")
+          PY
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4

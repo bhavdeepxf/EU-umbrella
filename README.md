@@ -1,38 +1,52 @@
-# EU Umbrella — Selective Career Radar
+# EU Umbrella
 
-A static GitHub Pages dashboard that discovers and ranks only high-confidence jobs and PhD opportunities for Mano's biomedical microsystems, MEMS, thin-film characterization, medical-device QA and clinical-equipment background.
+EU Umbrella is a static, CV-matched vacancy dashboard for technical careers in Germany and Europe. It collects public vacancies, scores them against a biomedical/microsystems profile, publishes source-health metadata, and deploys to GitHub Pages.
 
-## What changed
+## Coverage
 
-- Hard-excludes working-student, Werkstudent, internship, Praktikum, thesis, trainee and postdoc roles.
-- Requires both **technical fit ≥ 65** and **attainability ≥ 55**.
-- Uses a green **Perfect fit** treatment only for exceptional, realistically attainable roles.
-- Limits each company to eight listings so Bosch or another large employer cannot dominate.
-- Adds an **Applied jobs** tracker with status and notes; browser storage preserves tracking on that device.
-- Keeps the default view selective at 75+, with 65+ available when you want to broaden the search.
-- Adds Brainlab and Eurofins public SmartRecruiters feeds, while retaining Bosch, Infineon, Hahn-Schickard, Fraunhofer and EURAXESS. The country model includes Germany, Switzerland, the Netherlands, broader Europe and India.
+The collector currently uses public listings or public job-search interfaces from:
 
-## Run locally
+- Hahn-Schickard
+- Bosch
+- Infineon
+- Fraunhofer
+- EURAXESS
+
+The relevance model prioritizes acoustic MEMS, AlN and other thin films, ALD/sputtering, FTIR/XRD/SEM, materials characterization, biomedical engineering, medical devices, verification/validation, clinical engineering, MATLAB/Python, medical imaging, and related PhD/R&D roles.
+
+## Local run
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate        # Windows: .venv\\Scripts\\activate
 pip install -r requirements.txt
 python scripts/fetch_jobs.py
 python scripts/validate_data.py
 python -m http.server 8000
 ```
 
-Open `http://localhost:8000`.
+Open `http://localhost:8000`. A local HTTP server is required because the frontend fetches `data/jobs.json`.
 
-## Deploy
+## GitHub Pages
 
-Push the whole project to the root of your GitHub Pages repository. In **Settings → Pages**, select **GitHub Actions**, then run **Refresh jobs and deploy EU Umbrella**. The workflow refreshes daily at 04:17 UTC.
+1. Push the complete project, including `.github/workflows`, `scripts`, and `data`.
+2. In **Settings → Pages**, choose **GitHub Actions** as the source.
+3. Run **Actions → Refresh jobs and deploy EU Umbrella → Run workflow**.
+4. Remove or disable obsolete deployment workflows to avoid competing Pages deployments.
 
-## Tracking limitation
+The workflow refreshes daily at 04:17 UTC and on pushes to `main`. It validates JSON, checks all JavaScript syntax, preserves last-known-good vacancies if every fresh result is empty, uploads one Pages artifact, and deploys it.
 
-Application tracking uses `localStorage`. It is private to the current browser/device and is not synced through GitHub. Clearing browser site data removes it. A future synced tracker would need a database or authenticated service.
+## Data model
 
-## Collector policy
+`data/jobs.json` contains:
 
-The collector searches public employer/research feeds, normalizes records, blocks excluded role types, checks title-level domain relevance, calculates separate technical-fit and attainability scores, deduplicates, and applies a per-company cap. Public career pages can change; check the workflow source-health output after failures.
+- `generatedAt` — refresh timestamp
+- `jobCount` — number of published matches
+- `sources` — per-source status, count, duration or error
+- `jobs` — normalized vacancy records and CV-match metadata
+
+## Maintenance notes
+
+Public career pages can change HTML or API structure. A single connector failure does not erase successful results. Inspect the workflow log and `sources` array when the UI reports unavailable sources. Update only the affected collector function in `scripts/fetch_jobs.py`.
+
+The match score is a prioritization aid, not an eligibility determination. Always verify vacancy status, qualifications, deadline, working language, visa requirements, and application instructions on the official posting.

@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="A selective, CV-matched vacancy dashboard for biomedical microsystems, MEMS, thin films, medtech and PhD roles across Europe and India.">
+  <meta name="description" content="A CV-matched vacancy dashboard for MEMS, thin films, biomedical engineering, medical devices, PhD and R&D roles in Germany and Europe.">
   <meta name="color-scheme" content="light dark">
-  <title>EU Umbrella | Selective Career Radar</title>
+  <title>EU Umbrella | Technical Career Radar</title>
   <link rel="preconnect" href="https://api.fontshare.com">
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -17,15 +17,17 @@
   <a class="skip-link" href="#main">Skip to vacancies</a>
   <header class="site-header">
     <div class="container header-row">
-      <a class="brand" href="#matches" aria-label="EU Umbrella home">
-        <svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" fill="none"><path d="M7 19.5C8.6 11.8 13 8 20 8s11.4 3.8 13 11.5H7Z" stroke="currentColor" stroke-width="2.4"/><path d="M20 19.5V29a4 4 0 0 0 8 0" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M7 19.5c3.8-3 7.3-3 10.5 0 1.8-3 5.2-3 7 0 3.2-3 5.8-3 8.5 0" stroke="currentColor" stroke-width="2.4"/></svg>
+      <a class="brand" href="#main" aria-label="EU Umbrella home">
+        <svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" fill="none">
+          <path d="M7 19.5C8.6 11.8 13 8 20 8s11.4 3.8 13 11.5H7Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+          <path d="M20 19.5V29a4 4 0 0 0 8 0" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M7 19.5c3.8-3 7.3-3 10.5 0 1.8-3 5.2-3 7 0 3.2-3 5.8-3 8.5 0" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+        </svg>
         <span>EU Umbrella</span>
       </a>
-      <nav class="view-tabs" aria-label="Application views">
-        <button class="view-tab is-active" data-view="matches" type="button">Best matches <span id="matchCount">0</span></button>
-        <button class="view-tab" data-view="applied" type="button">Applied <span id="appliedCount">0</span></button>
-      </nav>
-      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+      </button>
     </div>
   </header>
 
@@ -33,35 +35,54 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Selective CV-matched radar</p>
-          <h1>Fewer listings. Better chances.</h1>
-          <p class="lede">Only high-confidence PhD and full-time opportunities aligned with your biomedical, MEMS, thin-film, characterization and medical-device experience.</p>
-          <div class="hero-tags" aria-label="Search policy"><span>No student jobs</span><span>No internships</span><span>Full-time &amp; PhD</span><span>Europe + India</span></div>
+          <p class="eyebrow">CV-matched career radar</p>
+          <h1>Technical roles worth your attention.</h1>
+          <p class="lede">Fresh PhD and industry R&amp;D opportunities ranked for an acoustic MEMS, AlN thin-film, characterization and biomedical-engineering profile.</p>
+          <div class="hero-tags" aria-label="Primary expertise">
+            <span>MEMS</span><span>AlN</span><span>Thin films</span><span>FTIR</span><span>XRD</span><span>SEM</span><span>Medical devices</span>
+          </div>
         </div>
-        <aside class="profile-card" aria-label="Selection policy">
-          <span class="status-dot"></span><p class="profile-kicker">Quality gate</p><h2>Technical fit + attainability</h2>
-          <p>Roles must pass both thresholds. “Perfect fit” is reserved for exceptional alignment without major seniority or language barriers.</p>
+        <aside class="profile-card" aria-label="Candidate profile summary">
+          <span class="status-dot"></span>
+          <p class="profile-kicker">Matching profile</p>
+          <h2>Biomedical &amp; Microsystems Engineer</h2>
+          <p>Germany-first search with broader European coverage. Scores reflect technical overlap, role level, location and warning signals.</p>
         </aside>
       </div>
     </section>
 
     <section class="container results-section" aria-labelledby="results-title">
       <div class="section-heading">
-        <div><p class="eyebrow" id="viewEyebrow">Opportunity shortlist</p><h2 id="results-title">Best matches</h2></div>
+        <div>
+          <p class="eyebrow">Opportunity feed</p>
+          <h2 id="results-title">Ranked vacancies</h2>
+        </div>
         <button id="resetFilters" class="text-button" type="button">Reset filters</button>
       </div>
-      <form id="filterToolbar" class="toolbar" aria-label="Filter vacancies" onsubmit="return false">
-        <label class="field search-field"><span>Search</span><input id="searchInput" type="search" autocomplete="off" placeholder="Title, method, company, location…"></label>
+
+      <form class="toolbar" aria-label="Filter vacancies" onsubmit="return false">
+        <label class="field search-field">
+          <span>Search</span>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Title, method, company, location…">
+        </label>
         <label class="field"><span>Country</span><select id="countryFilter"><option value="">All countries</option></select></label>
-        <label class="field"><span>Career route</span><select id="categoryFilter"><option value="">All routes</option></select></label>
-        <label class="field"><span>Minimum fit</span><select id="scoreFilter"><option value="65">65+ shortlisted</option><option value="75" selected>75+ strong</option><option value="85">85+ exceptional</option></select></label>
+        <label class="field"><span>Role type</span><select id="categoryFilter"><option value="">All role types</option></select></label>
+        <label class="field"><span>Minimum fit</span><select id="scoreFilter"><option value="0">Any score</option><option value="52" selected>52+ relevant</option><option value="60">60+ potential</option><option value="70">70+ strong</option><option value="80">80+ high</option></select></label>
       </form>
-      <div class="feed-status"><p id="resultsSummary" role="status" aria-live="polite">Loading current vacancies…</p><p class="score-note">Apply first to green-highlighted perfect fits.</p></div>
-      <section id="jobsContainer" class="jobs-grid" aria-label="Vacancy results" aria-busy="true"><div class="skeleton-card"><span></span><span></span><span></span></div><div class="skeleton-card"><span></span><span></span><span></span></div></section>
-      <p class="disclaimer">Independent discovery and tracking tool. Always verify vacancy status, deadline, language, visa and application requirements on the employer’s official page. Your tracking data stays in this browser.</p>
+
+      <div class="feed-status">
+        <p id="resultsSummary" class="summary" role="status" aria-live="polite">Loading current vacancies…</p>
+        <p class="score-note">Use the score to prioritize, then verify every requirement on the official posting.</p>
+      </div>
+
+      <section id="jobsContainer" class="jobs-grid" aria-label="Vacancy results" aria-busy="true">
+        <div class="skeleton-card" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="skeleton-card" aria-hidden="true"><span></span><span></span><span></span></div>
+      </section>
+
+      <p class="disclaimer">EU Umbrella is an independent discovery tool, not an employer or recruitment agency. Vacancy status, deadline, language, visa and application instructions must be confirmed on the linked official page.</p>
     </section>
   </main>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <noscript><p class="noscript">JavaScript is required to display and track vacancies.</p></noscript>
+  <noscript><p class="noscript">JavaScript is required to filter and display the collected vacancies.</p></noscript>
 </body>
 </html>

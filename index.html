@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A selective, CV-matched vacancy dashboard for biomedical microsystems, MEMS, thin films, medtech and PhD roles across Europe and India.">
+  <meta name="color-scheme" content="light dark">
+  <title>EU Umbrella | Selective Career Radar</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="data/candidate-profile.js" defer></script>
+  <script src="jobs.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to vacancies</a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="#matches" aria-label="EU Umbrella home">
+        <svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" fill="none"><path d="M7 19.5C8.6 11.8 13 8 20 8s11.4 3.8 13 11.5H7Z" stroke="currentColor" stroke-width="2.4"/><path d="M20 19.5V29a4 4 0 0 0 8 0" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M7 19.5c3.8-3 7.3-3 10.5 0 1.8-3 5.2-3 7 0 3.2-3 5.8-3 8.5 0" stroke="currentColor" stroke-width="2.4"/></svg>
+        <span>EU Umbrella</span>
+      </a>
+      <nav class="view-tabs" aria-label="Application views">
+        <button class="view-tab is-active" data-view="matches" type="button">Best matches <span id="matchCount">0</span></button>
+        <button class="view-tab" data-view="applied" type="button">Applied <span id="appliedCount">0</span></button>
+      </nav>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Selective CV-matched radar</p>
+          <h1>Fewer listings. Better chances.</h1>
+          <p class="lede">Only high-confidence PhD and full-time opportunities aligned with your biomedical, MEMS, thin-film, characterization and medical-device experience.</p>
+          <div class="hero-tags" aria-label="Search policy"><span>No student jobs</span><span>No internships</span><span>Full-time &amp; PhD</span><span>Europe + India</span></div>
+        </div>
+        <aside class="profile-card" aria-label="Selection policy">
+          <span class="status-dot"></span><p class="profile-kicker">Quality gate</p><h2>Technical fit + attainability</h2>
+          <p>Roles must pass both thresholds. “Perfect fit” is reserved for exceptional alignment without major seniority or language barriers.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container results-section" aria-labelledby="results-title">
+      <div class="section-heading">
+        <div><p class="eyebrow" id="viewEyebrow">Opportunity shortlist</p><h2 id="results-title">Best matches</h2></div>
+        <button id="resetFilters" class="text-button" type="button">Reset filters</button>
+      </div>
+      <form id="filterToolbar" class="toolbar" aria-label="Filter vacancies" onsubmit="return false">
+        <label class="field search-field"><span>Search</span><input id="searchInput" type="search" autocomplete="off" placeholder="Title, method, company, location…"></label>
+        <label class="field"><span>Country</span><select id="countryFilter"><option value="">All countries</option></select></label>
+        <label class="field"><span>Career route</span><select id="categoryFilter"><option value="">All routes</option></select></label>
+        <label class="field"><span>Minimum fit</span><select id="scoreFilter"><option value="65">65+ shortlisted</option><option value="75" selected>75+ strong</option><option value="85">85+ exceptional</option></select></label>
+      </form>
+      <div class="feed-status"><p id="resultsSummary" role="status" aria-live="polite">Loading current vacancies…</p><p class="score-note">Apply first to green-highlighted perfect fits.</p></div>
+      <section id="jobsContainer" class="jobs-grid" aria-label="Vacancy results" aria-busy="true"><div class="skeleton-card"><span></span><span></span><span></span></div><div class="skeleton-card"><span></span><span></span><span></span></div></section>
+      <p class="disclaimer">Independent discovery and tracking tool. Always verify vacancy status, deadline, language, visa and application requirements on the employer’s official page. Your tracking data stays in this browser.</p>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">JavaScript is required to display and track vacancies.</p></noscript>
+</body>
+</html>

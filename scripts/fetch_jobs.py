@@ -27,7 +27,7 @@ TIMEOUT = 35
 
 SEARCH_TERMS = ["MEMS", "microsystem", "thin film", "AlN", "materials characterization", "biomedical", "medical device", "PhD", "Doktorand", "research engineer"]
 EU_CODES = {"de":"Germany","at":"Austria","ch":"Switzerland","nl":"Netherlands","be":"Belgium","dk":"Denmark","se":"Sweden","fi":"Finland","fr":"France","ie":"Ireland","lu":"Luxembourg","no":"Norway","it":"Italy","es":"Spain","pt":"Portugal","cz":"Czechia","pl":"Poland","ee":"Estonia","lv":"Latvia","lt":"Lithuania","si":"Slovenia","sk":"Slovakia","hr":"Croatia","gr":"Greece","ro":"Romania","bg":"Bulgaria","hu":"Hungary","cy":"Cyprus","mt":"Malta"}
-EU_NAMES = set(EU_CODES.values()) | {"Czech Republic", "European Union", "Remote"}
+EU_NAMES = set(EU_CODES.values()) | {"Czech Republic", "European Union", "Remote", "India"}
 PRIORITY_PLACES = ["baden-württemberg","bavaria","saxony","berlin","brandenburg","hamburg","north rhine-westphalia","villingen-schwenningen","freiburg","stuttgart","munich","dresden"]
 DIRECT = ["mems","microsystem","aln","aluminum nitride","aluminium nitride","thin film","thin-film","ftir","ft-ir","xrd","sem","ald","atomic layer deposition","sputtering","wafer bow","acoustic sensor","ultrasonic","surface characterization","materials characterization","medical device","biomedical engineering","clinical engineering"]
 GROUPS = {
@@ -39,6 +39,14 @@ GROUPS = {
 }
 SENIOR = ["senior manager","principal","director","head of","staff engineer","lead engineer","10+ years","8+ years","7+ years"]
 LANGUAGE = ["german c1","german c2","native german","deutsch c1","deutsch c2","verhandlungssicheres deutsch"]
+CORE_DOMAIN = ["mems", "microsystem", "microfabrication", "lab-on-a-chip", "lab on chip", "microfluidic", "thin film", "thin-film", "aln", "aluminum nitride", "aluminium nitride", "ftir", "ft-ir", "xrd", "sem microscopy", "scanning electron", "ald", "atomic layer deposition", "sputtering", "wafer", "acoustic sensor", "ultrasonic", "biomedical", "medical device", "medtech", "clinical engineering", "medical equipment", "medical imaging", "verification and validation", "quality engineer", "spectroscopy"]
+TITLE_DOMAIN = ["mems", "microsystem", "microfluidic", "lab-on-a-chip", "lab on chip", "thin film", "thin-film", "spectroscopy", "semiconductor test", "medical device", "medtech", "biomedical", "clinical engineer", "medical imaging", "validation engineer", "quality engineer", "research associate", "wissenschaftlicher mitarbeiter", "doctoral", "phd"]
+EXCLUDED_ROLES = ["senior software", "senior manager", "principal", "director", "head of", "staff engineer", "lead engineer", "postdoc", "postdoctoral", "working student", "werkstudent", "student assistant", "studentische hilfskraft", "hiwi", "internship", "intern ", "praktikum", "praktikant", "trainee", "bachelor thesis", "master thesis", "master's thesis", "masterarbeit", "bachelorarbeit", "abschlussarbeit"]
+ENTRY_SIGNALS = ["graduate", "junior", "entry level", "early career", "master's degree", "master degree", "msc", "m.sc", "phd position", "doctoral", "doktorand", "research associate", "scientific employee", "wissenschaftlicher mitarbeiter"]
+EXPERIENCE_PENALTIES = [("10+ years", 28), ("8+ years", 24), ("7+ years", 20), ("6+ years", 16), ("5+ years", 12), ("several years", 8)]
+MAX_PER_COMPANY = 8
+MIN_TECHNICAL_FIT = 65
+MIN_ATTAINABILITY = 55
 RELEVANCE = set(DIRECT + [x for values in GROUPS.values() for x in values])
 
 @dataclass
@@ -58,6 +66,9 @@ class Job:
     matchScore: int = 0
     matchedKeywords: list[str] | None = None
     warnings: list[str] | None = None
+    attainabilityScore: int = 0
+    perfectFit: bool = False
+    matchReason: str = ""
 
 
 def get(url: str, **kwargs) -> requests.Response:
@@ -103,9 +114,15 @@ def classify(text: str) -> str:
     return "Engineering / Research"
 
 
+def excluded_role(job: Job) -> bool:
+    text = f"{job.title} {job.type}".lower()
+    return any(term in text for term in EXCLUDED_ROLES)
+
+
 def meaningful(job: Job) -> bool:
     t = f"{job.title} {job.description}".lower()
-    return any(term in t for term in RELEVANCE)
+    title = job.title.lower()
+    return not excluded_role(job) and any(term in title for term in TITLE_DOMAIN) and any(term in t for term in CORE_DOMAIN) and any(term in t for term in RELEVANCE)
 
 
 def in_scope(job: Job) -> bool:
@@ -134,6 +151,22 @@ def enrich(job: Job) -> Job:
     job.matchedKeywords = list(dict.fromkeys(matches))[:8]
     job.warnings = list(dict.fromkeys(warnings))[:4]
     job.category = classify(text)
+    attainability = 58
+    if any(term in text for term in ENTRY_SIGNALS): attainability += 15
+    if job.country == "Germany": attainability += 5
+    if job.country in {"Netherlands", "Switzerland", "Austria", "Belgium", "India"}: attainability += 3
+    if any(term in text for term in LANGUAGE): attainability -= 14
+    if any(term in text for term in ["principal", "director", "head of", "staff engineer", "lead engineer", "senior manager"]): attainability -= 25
+    for term, penalty in EXPERIENCE_PENALTIES:
+        if term in text: attainability -= penalty
+    title_text = job.title.lower()
+    if re.search(r"\bphd\b|doctoral|doktorand|research associate|wissenschaftlicher mitarbeiter", title_text): attainability += 8
+    if len(job.matchedKeywords or []) >= 4: attainability += 5
+    job.attainabilityScore = max(0, min(100, attainability))
+    senior_barrier = any(term in text for term in SENIOR)
+    job.perfectFit = job.matchScore >= 82 and job.attainabilityScore >= 70 and not senior_barrier
+    strongest = ", ".join((job.matchedKeywords or [])[:5])
+    job.matchReason = f"Direct overlap with {strongest}." if strongest else "Relevant transferable technical and research experience."
     return job
 
 
@@ -183,6 +216,27 @@ def collect_bosch() -> list[Job]:
         if in_scope(job) and meaningful(job): out.append(job)
     return out
 
+
+
+def collect_smartrecruiters(company_slug: str, company_name: str) -> list[Job]:
+    base = f"https://api.smartrecruiters.com/v1/companies/{company_slug}/postings"
+    candidates = {}
+    for term in SEARCH_TERMS:
+        payload = get(base, params={"q": term, "limit": 100, "offset": 0}).json()
+        for item in payload.get("content", []): candidates[item["id"]] = item
+    out = []
+    for item in candidates.values():
+        try: detail = get(f"{base}/{item['id']}").json()
+        except requests.RequestException: detail = item
+        loc = detail.get("location") or item.get("location") or {}
+        code = str(loc.get("country", "")).lower()
+        country = "India" if code == "in" else country_from(loc.get("fullLocation", ""), code)
+        if not country: continue
+        url = detail.get("postingUrl") or f"https://jobs.smartrecruiters.com/{company_slug}/{item['id']}"
+        description = clean(" ".join(str(v) for v in (detail.get("jobAd") or {}).get("sections", {}).values()))
+        job = Job(make_id(company_name, url), clean(detail.get("name") or item.get("name")), company_name, clean(loc.get("fullLocation") or loc.get("city")), country, "", clean((detail.get("typeOfEmployment") or {}).get("label") or "Full-time"), iso_date(detail.get("releasedDate") or item.get("releasedDate")), "Check official posting", url, description[:5000], f"{company_name} careers")
+        if (in_scope(job) or country == "India") and meaningful(job): out.append(job)
+    return out
 
 def collect_infineon() -> list[Job]:
     base = "https://jobs.infineon.com"
@@ -271,16 +325,27 @@ def collect_euraxess() -> list[Job]:
 def deduplicate(jobs: list[Job]) -> list[Job]:
     best = {}
     for job in jobs:
+        if excluded_role(job) or not meaningful(job): continue
         key = re.sub(r"\W+", "", f"{job.title}{job.company}{job.location}".lower())
         enriched = enrich(job)
-        if key not in best or enriched.matchScore > best[key].matchScore: best[key] = enriched
-    return sorted(best.values(), key=lambda j: (j.matchScore, j.datePosted), reverse=True)
+        if enriched.matchScore < MIN_TECHNICAL_FIT or enriched.attainabilityScore < MIN_ATTAINABILITY: continue
+        if key not in best or (enriched.matchScore, enriched.attainabilityScore) > (best[key].matchScore, best[key].attainabilityScore): best[key] = enriched
+    ranked = sorted(best.values(), key=lambda j: (j.perfectFit, j.matchScore, j.attainabilityScore, j.datePosted), reverse=True)
+    selected, counts = [], {}
+    for job in ranked:
+        company_key = re.sub(r"\W+", "", job.company.lower())
+        if counts.get(company_key, 0) >= MAX_PER_COMPANY: continue
+        selected.append(job)
+        counts[company_key] = counts.get(company_key, 0) + 1
+    return selected
 
 
 def main() -> int:
     collectors: list[tuple[str, Callable[[], list[Job]]]] = [
         ("Hahn-Schickard", collect_hahn), ("Bosch", collect_bosch), ("Infineon", collect_infineon),
-        ("Fraunhofer", collect_fraunhofer), ("EURAXESS", collect_euraxess)
+        ("Fraunhofer", collect_fraunhofer), ("EURAXESS", collect_euraxess),
+        ("Brainlab", lambda: collect_smartrecruiters("Brainlab", "Brainlab")),
+        ("Eurofins", lambda: collect_smartrecruiters("Eurofins", "Eurofins"))
     ]
     all_jobs, health = [], []
     for name, collector in collectors:
@@ -305,13 +370,13 @@ def main() -> int:
     if successful < 2 and not jobs:
         print("ERROR: fewer than two sources succeeded and no fallback data exists", file=sys.stderr)
         return 1
-    payload = {"generatedAt":datetime.now(timezone.utc).isoformat(),"jobCount":len(jobs),"sources":health,"jobs":[asdict(job) for job in jobs[:250]]}
+    payload = {"generatedAt":datetime.now(timezone.utc).isoformat(),"jobCount":len(jobs),"sources":health,"jobs":[asdict(job) for job in jobs[:120]]}
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     temp = OUTPUT.with_suffix(".tmp")
     temp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     json.loads(temp.read_text(encoding="utf-8"))
     temp.replace(OUTPUT)
-    print(f"Wrote {len(jobs[:250])} jobs to {OUTPUT}")
+    print(f"Wrote {len(jobs[:120])} curated jobs to {OUTPUT}")
     return 0
 
 if __name__ == "__main__": raise SystemExit(main())

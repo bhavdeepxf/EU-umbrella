@@ -1,42 +1,36 @@
 {
-  "generatedAt": "2026-09-27T15:25:18.183713+00:00",
-  "jobCount": 16,
+  "generatedAt": "2026-09-28T15:50:25.973074+00:00",
+  "jobCount": 11,
   "sources": [
     {
       "name": "Hahn-Schickard",
       "status": "ok",
-      "count": 6,
-      "seconds": 2.57
+      "count": 3,
+      "seconds": 2.85
     },
     {
       "name": "Bosch",
       "status": "ok",
-      "count": 157,
-      "seconds": 88.31
+      "count": 25,
+      "seconds": 89.03
     },
     {
       "name": "Infineon",
       "status": "ok",
-      "count": 24,
-      "seconds": 13.78
+      "count": 0,
+      "seconds": 21.61
     },
     {
       "name": "Fraunhofer",
       "status": "ok",
-      "count": 87,
-      "seconds": 33.53
+      "count": 12,
+      "seconds": 41.5
     },
     {
       "name": "EURAXESS",
       "status": "ok",
-      "count": 35,
-      "seconds": 9.45
-    },
-    {
-      "name": "Country-balanced curation",
-      "status": "ok",
-      "count": 16,
-      "note": "Expanded relevant recommendations with European country diversity; working-student, assistant, internship, thesis, trainee, postdoc and clearly senior roles excluded."
+      "count": 1,
+      "seconds": 4.43
     }
   ],
   "jobs": [
@@ -188,54 +182,6 @@
       "warnings": []
     },
     {
-      "id": "57f27f0a66763da8",
-      "title": "PhD Position Unravelling Hydrogen-Induced Degradation and Fracture in Circular Steels",
-      "company": "EURAXESS research organisation",
-      "location": "Netherlands",
-      "country": "Netherlands",
-      "category": "PhD / Research",
-      "type": "Research position",
-      "datePosted": "2026-09-27",
-      "deadline": "2026-10-30",
-      "url": "https://euraxess.ec.europa.eu/jobs/468714",
-      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 27 Sep 2026 Job Information Organisation/Company Delft University of Technology (TU Delft) Research Field Engineering » Materials engineering Researcher Profile First Stage Researcher (R1) Application Deadline 30 Oct 2026 - 22:59 (UTC) Country Netherlands Type of Contract Permanent Job Status Not Applicable Hours Per Week 38.0 Is the job funded through the EU Research Framework Programme? Not funded by a EU programme Is the Job related to staff position within a Research Infrastructure? No Offer Description Join a cutting-edge research programme at TU Delft and investigate the mechanisms of hydrogen-induced degradation in circular steels. Job description Within this project, you will investigate one of the key challenges facing the hydrogen economy: understanding how hydrogen interacts with the complex microstructures of circular steels and causes degradation and failure. This position is part of the project \"Circularity as Opportunity: Engineering Hydrogen-Resistant Circular Steels (CIRHY)\", a 6-year research and innovation programme developing next-generation circular steels that can safely operate in hydrogen environments. By combining advanced experiments with multiscale modelling, CIRHY aims to enable reliable and sustainable steels for future hydrogen infrastructure and industry. Hydrogen embrittlement is one of the major barriers to the safe deployment of hydrogen technologies. At the same time, increasing steel circularity introduces microstructural complexity through tramp elements, precipitates, inclusions and segregation phenomena. While considerable progress has been made in understanding hydrogen embrittlement in conventional steels, the mechanisms governing hydrogen-induced degradation and fracture in compositionally complex circular steels remain poorly understood. The Extreme Materials and Mechanics Group at TU Delft, led by Prof. Vera Popovich, is internationally recognized for its expertise in hydrogen embrittlement, fracture mechanics and advanced characterization of metallic materials. By combining state-of-the-art microscopy, hydrogen testing and fracture mechanics, the group develops fundamental understanding of material degradation in extreme environments and translates this knowledge into solutions for the energy transition. Within this position, you will combine advanced microstructural characterization, in-situ hydrogen mechanical testing and fracture toughness experiments to uncover how hydrogen interacts with circular steel microstructures and affects deformation, ductility, crack initiation and crack propagation. You will investigate hydrogen trapping and transport, identify the microstructural features controlling embrittlement and establish quantitative links between microstructure and structural performance. The outcome of this research, conducted in close collaboration with Tata Steel and other partners, will provide crucial experimental insights for designing safer and more reliable hydrogen-resistant circular steels. In this role, you will develop fundamental insights into the mechanisms governing hydrogen-induced degradation and failure of circular steels. As a PhD researcher, you will: Perform advanced 3D microstructural characterization of circular steels, focusing on segregation of tramp elements to precipitates, inclusions, interfaces, voids and dislocations. Investigate the influence of hydrogen on deformation behaviour and ductility through in-situ hydrogen mechanical testing. Quantify hydrogen transport, trapping and interaction with microstructural defects using advanced characterization techniques. Conduct in-situ hydrogen fracture toughness testing to identify crack initiation and propagation mechanisms. Collaborate closely with researchers from the Department of Materials Science and Engineering at TU Delft, University of Groningen, Eindhoven University of Technology, University of Twente, KU Leuven, MPI for Sustainable Materials and multiple industrial partners. Contribute to scientific publications, conference presentations and dissemination activities within the M2i framework. Job requirements We are looking for a highly motivated and curious researcher with a strong interest in materials degradation, hydrogen embrittlement and advanced experimental characterization. You enjoy working at the intersection of materials science, mechanics and microscopy, and are excited to contribute to the development of sustainable materials for the hydrogen economy. You are an independent thinker, eager to learn new experimental techniques, and enjoy collaborating with researchers from different disciplines as well as industrial partners. Furthermore, you meet the following requirements: You hold a Master's degree in Materials Science and Engineering, Mechanical Engineering, Physics, Applied Physics, Metallurgy, or a closely related discipline. You have a strong background in physical metallurgy, materials characterization, fracture mechanics, mechanical behaviour of materials, or a related field. Experience with one or more advanced characterization techniques such as SEM, EBSD, TEM, XRD, SIMS or related methods is highly desirable. Experience with mechanical testing, fracture mechanics, hydrogen embrittlement research or materials degradation is an advantage but not mandatory. You have strong analytical and problem-solving skills and enjoy combining experimental observations with scientific interpretation. You have a strong academic track record, demonstrated by excellent study results and/or research experience. You are enthusiastic about working in a multidisciplinary academic and industrial consortium. You have excellent written and verbal communication skills in English. TU Delft (Delft University of Technology) Working at TU Delft means contributing to solutions that really make a difference. For over 180 years, we have been t",
-      "source": "EURAXESS",
-      "matchScore": 69,
-      "matchedKeywords": [
-        "xrd",
-        "sem",
-        "materials characterization",
-        "phd",
-        "researcher"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "6f3104903e2f1d2f",
-      "title": "PhD in Automated Spectroscopy of Photoactive Molecules and Thin Films",
-      "company": "EURAXESS research organisation",
-      "location": "Netherlands",
-      "country": "Netherlands",
-      "category": "PhD / Research",
-      "type": "Research position",
-      "datePosted": "2026-09-27",
-      "deadline": "2026-10-31",
-      "url": "https://euraxess.ec.europa.eu/jobs/468719",
-      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 27 Sep 2026 Job Information Organisation/Company University of Amsterdam (UvA) Research Field Chemistry » Analytical chemistry Chemistry » Physical chemistry Engineering » Chemical engineering Engineering » Process engineering Researcher Profile First Stage Researcher (R1) Application Deadline 31 Oct 2026 - 22:59 (UTC) Country Netherlands Type of Contract Temporary Job Status Not Applicable Hours Per Week 38.0 Is the job funded through the EU Research Framework Programme? Not funded by a EU programme Is the Job related to staff position within a Research Infrastructure? No Offer Description How can we accelerate the discovery of next-generation materials — from porous architectures for CO₂ capture to photoactive systems for sustainable solar-energy conversion and unprecedented photomedicines? In this PhD project, you will build a self-driving laboratory platform that will help solving outstanding questions at the forefront of (photo)chemistry by implementing automated spectroscopy workflows for molecular systems and thin films in combination with AI-driven process optimization. Help us shape the future of chemical research! Self-driving lab platform for photochemical and porosity research Join a highly interdisciplinary project with the spectroscopy at its core at the University of Amsterdam that brings together photophysics, spectroscopy, automation, flow technology and functional materials supervised by a team of passionate experts: Dr Tomáš Šolomek, Dr Bettina Baumgartner, and Prof Tim Noël. The project aims at establishing a self-driving platform based on RoboChem, extending its capabilities to research in porous and photoactive materials. You will first implement new reliable and quantitative diffusion-ordered optical spectroscopy that will permit rapid and automated determination of fundamental photochemical parameters, such as optical spectra, quenching, or quantum yields. This will aid and abet discovery of new systems for photoactivated chemotherapy. Second, you will develop a flow-based ATR-UV–Vis spectroscopy platform that follows the formation of porous or photoactive thin films in real time. By measuring both polarization directions, you will determine how molecular building blocks become oriented during film growth, and how the films respond to external perturbations, such as molecular guests, light or charge. The focus will be on organic cages and metal–organic framework (MOF) thin films as key material classes. The broader goal is to create robust, automated set of spectroscopic tools that connect molecular structure and organization, their properties and function. This is what you are going to do Design and build flow setups using 3D printer, pumps, valves operated by a computer and the corresponding software. Develop flow cells to connect various spectroscopic tools to the setup. Create and validate reproducible automated workflows for quantitative photophysical measurements to obtain optical spectra and quantum-yields. Implement AI methods to search in the parameter space that affects the measured data and translate the observations into mechanistic insight. Develop a controlled flow system for in situ ATR-UV–Vis spectroscopy including polarization and use it to monitor the formation, orientation, and evolution of porous or photoactive thin films. Turn the developed methods into robust, documented and transferable experimental workflows, analyse the resulting multidimensional datasets, publish the results and collaborate closely with the supervisory team and colleagues. This is what we ask of you You enjoy experimental research and want to work at the interface of physical chemistry, spectroscopy, photochemistry and instrumentation. This is a heavily hands-on oriented position: you will not only measure samples, but also build, automate, troubleshoot and improve the setup and ensuing workflows. You have a Master's degree in chemical engineering, physical chemistry, materials science, or a closely related field. You have hands-on experience with building experimental setups, ideally involving experimental spectroscopy, and can prepare and handle molecular solutions and photosensitive samples accurately and reproducibly. You are comfortable working with optics, fluidics, detectors, light sources or related laboratory hardware. You are interested in instrument automation and quantitative data analysis. Experience with Python, LabVIEW, or Matlab for instrument control/data processing is required, but you do not need to be an expert at the start. You can document experiments carefully, work safely with chemical samples and solvents, and communicate results clearly with collaborators from different scientific backgrounds. Strong initiative and passion for science. Open to collaborate with students (BSc/MSc), PhDs and postdocs involved in related project and research groups within and outside the Netherlands. This is what we offer you You will work on a project in which building new experimental capability is itself a central scientific contribution. You will have room to develop expertise in quantitative photophysics, optical spectroscopy, laboratory automation, flow systems and functional thin-film materials, while working with supervisors who bring complementary expertise. You will become part of supportive and collaborative research groups (Šolomek group, Baumgartner group, and Noël group) where curiosity and creativity are highly valued. We celebrate scientific progress—whether it’s a successful synthesis, a clever analysis, or a shared insight over coffee. You will have regular individual meetings with your supervisors with an open-door policy to ensure you have guidance when needed and space to grow independently. You’ll have access to excellent facilities for state-of-the-art self-driving platforms and spectroscopy, and also organic and materials",
-      "source": "EURAXESS",
-      "matchScore": 65,
-      "matchedKeywords": [
-        "thin film",
-        "thin-film",
-        "matlab",
-        "python",
-        "data analysis",
-        "phd",
-        "researcher"
-      ],
-      "warnings": []
-    },
-    {
       "id": "1b3b06a3966d7158",
       "title": "MEMS Layout",
       "company": "Bosch Group",
@@ -285,29 +231,6 @@
       "warnings": []
     },
     {
-      "id": "d737cffe2a0f92ee",
-      "title": "PhD student (M/F) : Advanced cross-linking processes for polymeric materials",
-      "company": "EURAXESS research organisation",
-      "location": "France",
-      "country": "France",
-      "category": "PhD / Research",
-      "type": "Research position",
-      "datePosted": "2026-09-27",
-      "deadline": "2026-10-17",
-      "url": "https://euraxess.ec.europa.eu/jobs/468731",
-      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 27 Sep 2026 Job Information Organisation/Company CNRS Department Institut de Science des Matériaux de Mulhouse Research Field Chemistry Physics Technology Researcher Profile First Stage Researcher (R1) Application Deadline 17 Oct 2026 - 23:59 (UTC) Country France Type of Contract Temporary Job Status Full-time Hours Per Week 35 Offer Starting Date 1 Dec 2026 Is the job funded through the EU Research Framework Programme? Not funded by a EU programme Is the Job related to staff position within a Research Infrastructure? No Offer Description The PhD project is part of the LAMPS (Light for Advanced Materials and Processes) joint laboratory, a collaboration between the University of Haute-Alsace, the CNRS and Arkema. The PhD student will therefore benefit from an academic and industrial research environment, at the interface between fundamental research, materials development and cross-linking processes. The student (M/F) will be affiliated with the Mulhouse branch of the Strasbourg Doctoral School (ED 182). The campus is located in a green setting and is easily accessible by public transportation. Employee benefits: partial reimbursement of transit fares and/or a transportation allowance, university cafeteria, continuing education, and supplemental health insurance. Cross-linking processes using external energy sources are playing an increasingly important role in the fields of coatings, inks, adhesives and functional materials. UV photopolymerisation, and more recently LED technologies, enable rapid, localised and energy-efficient processes. Recent developments in UV LEDs at different wavelengths, as well as approaches utilising the near-infrared (NIR), are opening up new possibilities for tailoring cross-linking conditions to specific formulations and desired properties. This thesis aims to understand the influence of activation conditions on the formation and properties of polymer networks, and to compare different cross-linking technologies under controlled experimental conditions. Particular attention will be paid to the relationships between the energy source (UV or EB), conversion, network structure and final properties. The work will focus primarily on the study of model polymerisable formulations subjected to different irradiation conditions: conventional UV lamps, UV/visible LEDs across a wide wavelength range (UVC, UVB or UVA) and, where relevant, NIR and EB sources. The main objectives will be to: • study the kinetics and conversion of polymerisation reactions; • determine the influence of wavelength, intensity and energy dose; • characterise the structure of polymer networks and their cross-linking density; • to evaluate the thermal, mechanical and adhesion properties of materials; • to study inhibition phenomena, particularly those related to oxygen and interfaces; • to analyse the influence of thickness, pigments and fillers; • to decouple photochemical and photothermal phenomena within rationalised reaction mechanisms. A comparison with cross-linking processes using other energy sources may also be carried out, in particular to identify the respective advantages and limitations of the different technologies. The materials will be characterised using various techniques, including FTIR/Raman spectroscopy, DSC, DMA, photorheology and mechanical/adhesion testing. A modelling approach will be used to link irradiation conditions to the generation of reactive species and to the properties of the resulting networks. In a second stage, the results will be applied to more complex formulations representative of industrial applications. Required profile: Holder of a Master's degree or engineering qualification in chemistry, physical chemistry, materials science, polymers or an equivalent field. Experience in polymerisation or the characterisation of polymeric materials would be an advantage. The candidate must have a strong interest in experimental research and in projects at the interface between materials science and applications. Where to apply Website https://emploi.cnrs.fr/Offres/Doctorant/UMR7361-CHRPOR-071/Default.aspx Requirements Research Field Chemistry Education Level PhD or equivalent Research Field Physics Education Level PhD or equivalent Research Field Technology Education Level PhD or equivalent Languages FRENCH Level Basic Research Field Chemistry Years of Research Experience None Research Field Physics Years of Research Experience None Research Field Technology Years of Research Experience None Additional Information Website for additional job details https://emploi.cnrs.fr/Offres/Doctorant/UMR7361-CHRPOR-071/Default.aspx Work Location(s) Number of offers available 1 Company/Institute Institut de Science des Matériaux de Mulhouse Country France City MULHOUSE Contact City MULHOUSE Website http://www.is2m.uha.fr STATUS: EXPIRED Apply now Share this page",
-      "source": "EURAXESS",
-      "matchScore": 62,
-      "matchedKeywords": [
-        "ftir",
-        "sem",
-        "phd",
-        "doctoral",
-        "researcher"
-      ],
-      "warnings": []
-    },
-    {
       "id": "d12b7d7433b1324e",
       "title": "Microstructural Characterization and Mechanical Testing of 3D metal printed on Advanced PCB Surfaces",
       "company": "Hahn-Schickard",
@@ -325,53 +248,6 @@
         "microsystem",
         "materials characterization",
         "microelectronics"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "ed7eeea75b918af0",
-      "title": "PhD Position Foundation Models for Automotive Imaging Radar",
-      "company": "EURAXESS research organisation",
-      "location": "Netherlands",
-      "country": "Netherlands",
-      "category": "PhD / Research",
-      "type": "Research position",
-      "datePosted": "2026-09-27",
-      "deadline": "2026-10-18",
-      "url": "https://euraxess.ec.europa.eu/jobs/468717",
-      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 27 Sep 2026 Job Information Organisation/Company Delft University of Technology (TU Delft) Research Field Engineering » Computer engineering Engineering » Electrical engineering Researcher Profile First Stage Researcher (R1) Application Deadline 18 Oct 2026 - 21:59 (UTC) Country Netherlands Type of Contract Permanent Job Status Not Applicable Hours Per Week 38.0 Is the job funded through the EU Research Framework Programme? Not funded by a EU programme Is the Job related to staff position within a Research Infrastructure? No Offer Description Job description Next generation automotive imaging radars provide increasingly rich 3D information, opening the door to more advanced scene understanding and perception tasks such as 3D object detection and free space estimation. However, current neural networks are typically developed for a specific radar configuration and task, and often generalize poorly to other sensors. At the same time, large scale radar datasets with high quality labels remain scarce. In this PhD project, you will investigate foundation models for automotive imaging radar. The goal is to learn general radar representations from largely unlabelled data that can generalize across different radar configurations and be efficiently adapted to multiple downstream perception tasks with limited labelled data. An important research direction is the transfer of representations from vision and LiDAR based foundation models to radar, as well as the development of multimodal foundation models incorporating radar. A further challenge is how different radar representations and sensor configurations can be accommodated within a general foundation model framework, and to what extent a common model can generalize across them. Research directions may also include generative or predictive modeling of dynamic radar scenes. The project combines methodological machine learning research with experiments on real automotive sensor data. You will have access to research vehicles and advanced radar prototypes for collecting and evaluating real world multimodal sensor data. While the primary application domain is automotive, the developed methods should preferably be sufficiently general to also apply to other domains, such as autonomous vehicles operating in off-road settings. You will join the Intelligent Vehicles group within the Department of Cognitive Robotics at TU Delft. The project will be carried out in collaboration with Perciv.AI, and will also involve NXP Semiconductors as an industrial partner. The research is part of the FIND project, funded by the Dutch Research Council (NWO), which investigates foundation models for high tech industry applications. Your results are expected to be published at leading international venues in machine learning, computer vision, robotics and radar, such as NeurIPS, CVPR, ICRA, IEEE IV and RadarConf. For your research, you will have access to extensive computing resources at TU Delft, ranging from personal workstations and shared GPU servers to the Delft AI Cluster and the DelftBlue supercomputer. Your supervisors will be Prof. Dariu Gavrila and Dr. Julian Kooij. Job requirements We are looking for a candidate with: An MSc degree in Computer Science, Artificial Intelligence, Robotics, Electrical Engineering, or a closely related field. A strong academic record and solid background in machine learning and deep learning. Ability to develop, understand, and critically evaluate machine learning research software, preferably using Python and PyTorch. An interest in foundation models, self supervised learning, multimodal learning, and 3D perception. An affinity for translating methodological research into experiments with real automotive sensor data and vehicle demonstrators. The ability to work independently as well as collaborate effectively within a larger research team. Good written and spoken English. Experience with radar, signal processing, computer vision, autonomous driving, or sensor fusion is advantageous. TU Delft (Delft University of Technology) Working at TU Delft means contributing to solutions that really make a difference. For over 180 years, we have been training engineers who make an impact worldwide in companies, government bodies, or as entrepreneurs. Our alumni turn knowledge into concrete solutions for the challenges of today and tomorrow. These challenges are changing rapidly. That is why we focus on themes such as energy, climate, digitalisation, artificial intelligence (AI), and smart mobility every day. Our education and research are directly aligned with what society needs now and in the future. At TU Delft, our people make the difference. With their knowledge and curiosity, our staff provide a high-quality education and conduct pioneering research that extends beyond the campus. You will have the opportunity to take the initiative, work with others, and grow as a professional. Working at TU Delft means join an international community of professionals and students. Together, we create knowledge, innovations, and solutions that help move the world forward. Faculty Mechanical Engineering From chip to ship. From machine to human being. From idea to solution. Driven by a deep-rooted desire to understand our environment and discover its underlying mechanisms, research and education at the ME faculty focusses on fundamental understanding, design, production including application and product improvement, materials, processes and (mechanical) systems. ME is a dynamic and innovative faculty with high-tech lab facilities and international reach. It’s a large faculty but also versatile, so we can often make unique connections by combining different disciplines. This is reflected in ME’s outstanding, state-of-the-art education, which trains students to become responsible and socially engaged engineers and scientists. We translat",
-      "source": "EURAXESS",
-      "matchScore": 58,
-      "matchedKeywords": [
-        "sem",
-        "python",
-        "machine learning",
-        "computer vision",
-        "phd",
-        "researcher"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "b7c1e25b65f9ce01",
-      "title": "PhD Position Probing Hydrogen-Defect Interaction in Circular Steels via Atomistic Simulation",
-      "company": "EURAXESS research organisation",
-      "location": "Netherlands",
-      "country": "Netherlands",
-      "category": "PhD / Research",
-      "type": "Research position",
-      "datePosted": "2026-09-27",
-      "deadline": "2026-10-30",
-      "url": "https://euraxess.ec.europa.eu/jobs/468713",
-      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 27 Sep 2026 Job Information Organisation/Company Delft University of Technology (TU Delft) Research Field Engineering » Materials engineering Researcher Profile First Stage Researcher (R1) Application Deadline 30 Oct 2026 - 22:59 (UTC) Country Netherlands Type of Contract Permanent Job Status Not Applicable Hours Per Week 38.0 Is the job funded through the EU Research Framework Programme? Not funded by a EU programme Is the Job related to staff position within a Research Infrastructure? No Offer Description Join TU Delft and help design hydrogen-resistant steels for a sustainable energy future. As a PhD researcher, you will unravel the atomic-scale mechanisms of hydrogen embrittlement in compositionally complex recycled steels, using density functional theory and machine-learned interatomic potentials, in close collaboration with leading academic partners and Tata Steel. Job description At TU Delft, you will contribute to a transformative research initiative focused on enabling the transition to a hydrogen-based energy system. This position is within the project \"Circularity as Opportunity: Engineering Hydrogen-Resistant Circular Steels (CIRHY)\" which is a 6-year research and innovation project developing next-generation circular steels that can safely operate in hydrogen environments. By combining advanced experiments with multiscale modelling, CIRHY enables reliable, sustainable steels for future infrastructure and industry. The project was granted by the Dutch national funding agency NWO in 2025. Understanding hydrogen-material interactions at the atomic scale remains one of the most complex and urgent challenges in the transition to a hydrogen-based energy system. Since the first discovery of the phenomenon in 1875, several hypotheses have been proposed about the mechanistic origin of hydrogen embrittlement (HE). Atomistic modelling can play a crucial role in verifying, characterizing and quantifying the HE mechanisms, since hydrogen is challenging to detect experimentally. Machine learning potentials can overcome typical bottlenecks of empirical potentials for simulating dislocations, cracks and hydrogen diffusion near precipitates embedded in ferritic iron. While considerable progress has been made in simulating hydrogen behaviour in the presence of defects (e.g., grain boundaries) in iron, the effects of hydrogen in compositionally complex recycled steels remain poorly understood. Within this position, you will investigate the atomistic mechanisms underlying hydrogen embrittlement (HE) in circular steels, with a particular focus on the role of tramp elements at experimentally informed microstructural features. You will combine first-principles modelling and machine-learning approaches to develop predictive simulations of hydrogen behaviour in compositionally complex Fe alloys. Working closely with Tata Steel and an interdisciplinary academic team, your research will contribute to the development of more hydrogen-embrittlement-resistant circular steels. Your responsibilities In this role, you will develop fundamental insights into the atomistic mechanisms governing hydrogen embrittlement in compositionally complex circular steels. As a PhD researcher, you will: Perform Density Functional Theory (DFT) calculations to model hydrogen-tramp element co-segregation at grain boundaries and phase boundaries Perform DFT to obtain atomistic insights into how tramp elements interact with dislocations and how hydrogen modifies these interactions Develop a DFT-accurate machine-learned interatomic potential (MLIP) for a multi-component Fe alloy system, enabling predictive molecular dynamics (MD) simulations capable of probing hydrogen diffusion and trapping at interfaces in the presence of tramp elements with near-DFT accuracy Collaborate closely with a broad team of researchers from the department MSE of TU Delft, University of Groningen, Eindhoven University of Technology, University of Twente, KU Leuven, and MPI for Sustainable Materials, as well as with the project's industrial partner, Tata Steel. Contribute to scientific publications, conference presentations and the dissemination of research findings within the M2i framework Your work environment You will be part of Team Dey within the Computational Materials Science section at TU Delft. This team focuses on atomistic simulations to investigate materials for sustainable energy, with proven expertise in hydrogen embrittlement, hydrogen storage and the behaviour of carbon-based materials such as graphene. Your project on the atomistic mechanisms of hydrogen embrittlement in circular steels aligns perfectly with the team's broader interest in metal–impurity interactions, interfacial phenomena and its commitment to computation-guided design for a sustainable future. You will collaborate closely with researchers from a broad consortium, including academic partners from the University of Groningen, Eindhoven University of Technology, University of Twente, KU Leuven and the MPI for Sustainable Materials, as well as the industrial partner Tata Steel. The project is embedded within the M2i framework. The Computational Materials Science section offers a collaborative and intellectually stimulating environment, where researchers work across disciplines and scales, with ample opportunities for scientific development and impact. Job requirements We are looking for a self-motivated researcher to help develop atomistic insights and simulation tools for enabling hydrogen-resistant circular steels. You are independent but also a good team player and are willing to cooperate closely with other researchers and our industry partners. Furthermore, you meet the following requirements: You hold a Master’s degree in Materials Science and Engineering, Physics, Chemistry or a closely related discipline. You have a strong background and prior ",
-      "source": "EURAXESS",
-      "matchScore": 55,
-      "matchedKeywords": [
-        "sem",
-        "machine learning",
-        "simulation",
-        "phd",
-        "researcher"
       ],
       "warnings": []
     },

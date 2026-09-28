@@ -1,45 +1,79 @@
 {
-  "generatedAt": "2026-09-27T15:25:18.183713+00:00",
-  "jobCount": 10,
+  "generatedAt": "2026-09-28T15:11:42.969942+00:00",
+  "jobCount": 9,
   "sources": [
     {
       "name": "Hahn-Schickard",
       "status": "ok",
-      "count": 6,
-      "seconds": 2.57
+      "count": 1,
+      "seconds": 3.91
     },
     {
       "name": "Bosch",
       "status": "ok",
-      "count": 157,
-      "seconds": 88.31
+      "count": 16,
+      "seconds": 102.31
     },
     {
       "name": "Infineon",
       "status": "ok",
-      "count": 24,
-      "seconds": 13.78
+      "count": 0,
+      "seconds": 20.9
     },
     {
       "name": "Fraunhofer",
       "status": "ok",
-      "count": 87,
-      "seconds": 33.53
+      "count": 4,
+      "seconds": 51.56
     },
     {
       "name": "EURAXESS",
       "status": "ok",
-      "count": 35,
-      "seconds": 9.45
+      "count": 4,
+      "seconds": 14.25
     },
     {
-      "name": "Curation policy",
+      "name": "Brainlab",
       "status": "ok",
-      "count": 10,
-      "note": "Student, internship, thesis, trainee, postdoc and clearly senior roles excluded; title relevance, dual-score and company caps applied."
+      "count": 0,
+      "seconds": 23.02
+    },
+    {
+      "name": "Eurofins",
+      "status": "ok",
+      "count": 4,
+      "seconds": 207.29
     }
   ],
   "jobs": [
+    {
+      "id": "e1944324b2ad2b12",
+      "title": "Research Associate: Interconnect Technologies (all genders)",
+      "company": "IPMS - Photonic Microsystems",
+      "location": "Dresden, Germany",
+      "country": "Germany",
+      "category": "PhD / Research",
+      "type": "Research / Employment",
+      "datePosted": "",
+      "deadline": "Check official posting",
+      "url": "https://jobs.fraunhofer.de/job/Dresden-Research-Associate-Interconnect-Technologies-%28all-genders%29-01109/1441741233/",
+      "description": "Search by Keyword/Field of Study/Jobcode Search by Location > More Search Options Loading... Level of Experience All Job Function All Opportunity for promotion All Region All Institute All Language All Clear Select how often (in days) to receive an alert: Create Jobalert × Select how often (in days) to receive an alert: Apply now » City: Dresden Date: Sep 28, 2026 Research Associate: Interconnect Technologies (all genders) The Fraunhofer-Gesellschaft ( www.fraunhofer.com ) is one of the world's leading organizations for application-oriented research. 74 institutes develop pioneering technologies for our economy and society – more precisely: 30 000 people from technology, science, administration and IT. They know: Anyone who comes to Fraunhofer wants to and can make a difference. For themselves, for us and for the markets of today and tomorrow. Developing innovative technology solutions and bringing them to application - that is our goal at the Fraunhofer Institute for Photonic Microsystems IPMS . Our »Center Nanoelectronic Technologies« (CNT) conducts research on 300 mm wafers for microchip manufacturers, suppliers, device manufacturers, and R&D partners. We offer process and technology developments as well as services at the ULSI (ultra-large-scale integration) level in the areas of front-end (FEoL) and back-end-of-line (BEoL) for various CMOS technology nodes. The associated Interconnect Technologies group, which is part of our Neuropmorphic Computing business unit, focuses on technologies for metallization in the BEOL (back end of line) of CMOS manufacturing and the border area to advanced packaging. The core theme of the group is the creation of copper lines through electrochemical deposition (ECD) and chemical mechanical polishing (CMP), as well as all wet chemical cleaning steps. Be part of change Research and development in the field of interconnect technologies BEOL process integration of existing UPD solutions to set up a complete BEOL metallization module Managing complex development projects in the field of metallization across different groups within the institute's division CNT Evaluation and potential development of novel metallization solutions Evaluation and responsibility for complex project ideas with regard to feasibility and the associated measures in the 300mm cleanroom Development of synergies between classic BEOL technologies and advanced packaging, in particular silicon interposer technologies Project management and acquisition for industrially and publicly funded projects Scientific exchange and presentation of research results at conferences and participation in workshops What you contribute Completed university degree (master's/diploma) in microelectronics, materials science, electrical engineering, physics, or a comparable field Three years of previous professional experience or a completed doctorate Know-how in the field of semiconductor manufacturing technologies , especially in BEOL or BE, preferably on HVM equipment platforms, e.g.: Thin film deposition (PVD) Chemical mechanical polishing (CMP) Advanced packaging BEOL process integration In-depth expertise in working with industrial partner companies Experience in project management ; ideally with responsibility for acquiring publicly funded projects and direct industrial contracts Great knowledge of common analysis and measurement methods Independent and proactive approach to work with a focus on reliability and precision Pragmatic, flexible approach to work – especially in the event of unforeseen project changes Enthusiastic and friendly personality with a strong interest in working in a research environment Strong communication skills with good German (B level) and very good English (C level) What we offer Our benefits: Attractive and international working environment in an innovative industry of the future Extensive and varied training and qualification opportunities Work-life balance thanks to flexible working hours and the option of mobile working Company pension scheme Job ticket for public transport 30 days vacation Corporate benefits An overview of all benefits and other good reasons to join us can be found here. We offer female scientists the opportunity to participate in our TALENTA program: a comprehensive career and development program that includes individually tailored qualification offers. You can find out more here. The weekly working time is 39 hours. This position is also available on a part-time basis. The position is initially limited to 2 years. Long-term employment is sought. We value and promote the diversity of our employees' skills and therefore welcome all applications – regardless of age, gender, nationality, ethnic and social origin, religion, ideology, disability, sexual orientation and identity. Severely disabled persons are given preference in the event of equal suitability. Our tasks are diverse and adaptable – for applicants with disabilities, we work together to find solutions that best prom",
+      "source": "Fraunhofer careers",
+      "matchScore": 88,
+      "matchedKeywords": [
+        "microsystem",
+        "thin film",
+        "sem",
+        "microelectronics",
+        "research associate",
+        "r&d",
+        "research and development"
+      ],
+      "warnings": [],
+      "attainabilityScore": 91,
+      "perfectFit": true,
+      "matchReason": "Direct overlap with microsystem, thin film, sem, microelectronics, research associate."
+    },
     {
       "id": "9967ab75c8ead139",
       "title": "PhD - Development of a Novel Lab-on-a-Chip Component for the Analysis and Sorting of Single Cells",
@@ -178,32 +212,6 @@
       "matchReason": "Direct overlap with mems, microsystem, photonics, simulation, research associate."
     },
     {
-      "id": "57f27f0a66763da8",
-      "title": "PhD Position Unravelling Hydrogen-Induced Degradation and Fracture in Circular Steels",
-      "company": "EURAXESS research organisation",
-      "location": "Netherlands",
-      "country": "Netherlands",
-      "category": "PhD / Research",
-      "type": "Research position",
-      "datePosted": "2026-09-27",
-      "deadline": "2026-10-30",
-      "url": "https://euraxess.ec.europa.eu/jobs/468714",
-      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 27 Sep 2026 Job Information Organisation/Company Delft University of Technology (TU Delft) Research Field Engineering » Materials engineering Researcher Profile First Stage Researcher (R1) Application Deadline 30 Oct 2026 - 22:59 (UTC) Country Netherlands Type of Contract Permanent Job Status Not Applicable Hours Per Week 38.0 Is the job funded through the EU Research Framework Programme? Not funded by a EU programme Is the Job related to staff position within a Research Infrastructure? No Offer Description Join a cutting-edge research programme at TU Delft and investigate the mechanisms of hydrogen-induced degradation in circular steels. Job description Within this project, you will investigate one of the key challenges facing the hydrogen economy: understanding how hydrogen interacts with the complex microstructures of circular steels and causes degradation and failure. This position is part of the project \"Circularity as Opportunity: Engineering Hydrogen-Resistant Circular Steels (CIRHY)\", a 6-year research and innovation programme developing next-generation circular steels that can safely operate in hydrogen environments. By combining advanced experiments with multiscale modelling, CIRHY aims to enable reliable and sustainable steels for future hydrogen infrastructure and industry. Hydrogen embrittlement is one of the major barriers to the safe deployment of hydrogen technologies. At the same time, increasing steel circularity introduces microstructural complexity through tramp elements, precipitates, inclusions and segregation phenomena. While considerable progress has been made in understanding hydrogen embrittlement in conventional steels, the mechanisms governing hydrogen-induced degradation and fracture in compositionally complex circular steels remain poorly understood. The Extreme Materials and Mechanics Group at TU Delft, led by Prof. Vera Popovich, is internationally recognized for its expertise in hydrogen embrittlement, fracture mechanics and advanced characterization of metallic materials. By combining state-of-the-art microscopy, hydrogen testing and fracture mechanics, the group develops fundamental understanding of material degradation in extreme environments and translates this knowledge into solutions for the energy transition. Within this position, you will combine advanced microstructural characterization, in-situ hydrogen mechanical testing and fracture toughness experiments to uncover how hydrogen interacts with circular steel microstructures and affects deformation, ductility, crack initiation and crack propagation. You will investigate hydrogen trapping and transport, identify the microstructural features controlling embrittlement and establish quantitative links between microstructure and structural performance. The outcome of this research, conducted in close collaboration with Tata Steel and other partners, will provide crucial experimental insights for designing safer and more reliable hydrogen-resistant circular steels. In this role, you will develop fundamental insights into the mechanisms governing hydrogen-induced degradation and failure of circular steels. As a PhD researcher, you will: Perform advanced 3D microstructural characterization of circular steels, focusing on segregation of tramp elements to precipitates, inclusions, interfaces, voids and dislocations. Investigate the influence of hydrogen on deformation behaviour and ductility through in-situ hydrogen mechanical testing. Quantify hydrogen transport, trapping and interaction with microstructural defects using advanced characterization techniques. Conduct in-situ hydrogen fracture toughness testing to identify crack initiation and propagation mechanisms. Collaborate closely with researchers from the Department of Materials Science and Engineering at TU Delft, University of Groningen, Eindhoven University of Technology, University of Twente, KU Leuven, MPI for Sustainable Materials and multiple industrial partners. Contribute to scientific publications, conference presentations and dissemination activities within the M2i framework. Job requirements We are looking for a highly motivated and curious researcher with a strong interest in materials degradation, hydrogen embrittlement and advanced experimental characterization. You enjoy working at the intersection of materials science, mechanics and microscopy, and are excited to contribute to the development of sustainable materials for the hydrogen economy. You are an independent thinker, eager to learn new experimental techniques, and enjoy collaborating with researchers from different disciplines as well as industrial partners. Furthermore, you meet the following requirements: You hold a Master's degree in Materials Science and Engineering, Mechanical Engineering, Physics, Applied Physics, Metallurgy, or a closely related discipline. You have a strong background in physical metallurgy, materials characterization, fracture mechanics, mechanical behaviour of materials, or a related field. Experience with one or more advanced characterization techniques such as SEM, EBSD, TEM, XRD, SIMS or related methods is highly desirable. Experience with mechanical testing, fracture mechanics, hydrogen embrittlement research or materials degradation is an advantage but not mandatory. You have strong analytical and problem-solving skills and enjoy combining experimental observations with scientific interpretation. You have a strong academic track record, demonstrated by excellent study results and/or research experience. You are enthusiastic about working in a multidisciplinary academic and industrial consortium. You have excellent written and verbal communication skills in English. TU Delft (Delft University of Technology) Working at TU Delft means contributing to solutions that really make a difference. For over 180 years, we have been t",
-      "source": "EURAXESS",
-      "matchScore": 69,
-      "matchedKeywords": [
-        "xrd",
-        "sem",
-        "materials characterization",
-        "phd",
-        "researcher"
-      ],
-      "warnings": [],
-      "attainabilityScore": 89,
-      "perfectFit": false,
-      "matchReason": "Direct overlap with xrd, sem, materials characterization, phd, researcher."
-    },
-    {
       "id": "6a95f98be7b7d545",
       "title": "Development and Integration Engineer for MEMS & ASIC BEOL technology (f/m/div.)",
       "company": "Bosch Group",
@@ -226,34 +234,6 @@
       "attainabilityScore": 63,
       "perfectFit": false,
       "matchReason": "Direct overlap with mems, sem, phd."
-    },
-    {
-      "id": "6f3104903e2f1d2f",
-      "title": "PhD in Automated Spectroscopy of Photoactive Molecules and Thin Films",
-      "company": "EURAXESS research organisation",
-      "location": "Netherlands",
-      "country": "Netherlands",
-      "category": "PhD / Research",
-      "type": "Research position",
-      "datePosted": "2026-09-27",
-      "deadline": "2026-10-31",
-      "url": "https://euraxess.ec.europa.eu/jobs/468719",
-      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 27 Sep 2026 Job Information Organisation/Company University of Amsterdam (UvA) Research Field Chemistry » Analytical chemistry Chemistry » Physical chemistry Engineering » Chemical engineering Engineering » Process engineering Researcher Profile First Stage Researcher (R1) Application Deadline 31 Oct 2026 - 22:59 (UTC) Country Netherlands Type of Contract Temporary Job Status Not Applicable Hours Per Week 38.0 Is the job funded through the EU Research Framework Programme? Not funded by a EU programme Is the Job related to staff position within a Research Infrastructure? No Offer Description How can we accelerate the discovery of next-generation materials — from porous architectures for CO₂ capture to photoactive systems for sustainable solar-energy conversion and unprecedented photomedicines? In this PhD project, you will build a self-driving laboratory platform that will help solving outstanding questions at the forefront of (photo)chemistry by implementing automated spectroscopy workflows for molecular systems and thin films in combination with AI-driven process optimization. Help us shape the future of chemical research! Self-driving lab platform for photochemical and porosity research Join a highly interdisciplinary project with the spectroscopy at its core at the University of Amsterdam that brings together photophysics, spectroscopy, automation, flow technology and functional materials supervised by a team of passionate experts: Dr Tomáš Šolomek, Dr Bettina Baumgartner, and Prof Tim Noël. The project aims at establishing a self-driving platform based on RoboChem, extending its capabilities to research in porous and photoactive materials. You will first implement new reliable and quantitative diffusion-ordered optical spectroscopy that will permit rapid and automated determination of fundamental photochemical parameters, such as optical spectra, quenching, or quantum yields. This will aid and abet discovery of new systems for photoactivated chemotherapy. Second, you will develop a flow-based ATR-UV–Vis spectroscopy platform that follows the formation of porous or photoactive thin films in real time. By measuring both polarization directions, you will determine how molecular building blocks become oriented during film growth, and how the films respond to external perturbations, such as molecular guests, light or charge. The focus will be on organic cages and metal–organic framework (MOF) thin films as key material classes. The broader goal is to create robust, automated set of spectroscopic tools that connect molecular structure and organization, their properties and function. This is what you are going to do Design and build flow setups using 3D printer, pumps, valves operated by a computer and the corresponding software. Develop flow cells to connect various spectroscopic tools to the setup. Create and validate reproducible automated workflows for quantitative photophysical measurements to obtain optical spectra and quantum-yields. Implement AI methods to search in the parameter space that affects the measured data and translate the observations into mechanistic insight. Develop a controlled flow system for in situ ATR-UV–Vis spectroscopy including polarization and use it to monitor the formation, orientation, and evolution of porous or photoactive thin films. Turn the developed methods into robust, documented and transferable experimental workflows, analyse the resulting multidimensional datasets, publish the results and collaborate closely with the supervisory team and colleagues. This is what we ask of you You enjoy experimental research and want to work at the interface of physical chemistry, spectroscopy, photochemistry and instrumentation. This is a heavily hands-on oriented position: you will not only measure samples, but also build, automate, troubleshoot and improve the setup and ensuing workflows. You have a Master's degree in chemical engineering, physical chemistry, materials science, or a closely related field. You have hands-on experience with building experimental setups, ideally involving experimental spectroscopy, and can prepare and handle molecular solutions and photosensitive samples accurately and reproducibly. You are comfortable working with optics, fluidics, detectors, light sources or related laboratory hardware. You are interested in instrument automation and quantitative data analysis. Experience with Python, LabVIEW, or Matlab for instrument control/data processing is required, but you do not need to be an expert at the start. You can document experiments carefully, work safely with chemical samples and solvents, and communicate results clearly with collaborators from different scientific backgrounds. Strong initiative and passion for science. Open to collaborate with students (BSc/MSc), PhDs and postdocs involved in related project and research groups within and outside the Netherlands. This is what we offer you You will work on a project in which building new experimental capability is itself a central scientific contribution. You will have room to develop expertise in quantitative photophysics, optical spectroscopy, laboratory automation, flow systems and functional thin-film materials, while working with supervisors who bring complementary expertise. You will become part of supportive and collaborative research groups (Šolomek group, Baumgartner group, and Noël group) where curiosity and creativity are highly valued. We celebrate scientific progress—whether it’s a successful synthesis, a clever analysis, or a shared insight over coffee. You will have regular individual meetings with your supervisors with an open-door policy to ensure you have guidance when needed and space to grow independently. You’ll have access to excellent facilities for state-of-the-art self-driving platforms and spectroscopy, and also organic and materials",
-      "source": "EURAXESS",
-      "matchScore": 65,
-      "matchedKeywords": [
-        "thin film",
-        "thin-film",
-        "matlab",
-        "python",
-        "data analysis",
-        "phd",
-        "researcher"
-      ],
-      "warnings": [],
-      "attainabilityScore": 89,
-      "perfectFit": false,
-      "matchReason": "Direct overlap with thin film, thin-film, matlab, python, data analysis."
     },
     {
       "id": "1b3b06a3966d7158",

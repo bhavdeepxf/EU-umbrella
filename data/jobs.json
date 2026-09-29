@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-09-28T15:50:25.973074+00:00",
+  "generatedAt": "2026-09-29T10:47:28.616451+00:00",
   "jobCount": 11,
   "sources": [
     {
       "name": "Hahn-Schickard",
       "status": "ok",
       "count": 3,
-      "seconds": 2.85
+      "seconds": 3.54
     },
     {
       "name": "Bosch",
       "status": "ok",
-      "count": 25,
-      "seconds": 89.03
+      "count": 21,
+      "seconds": 92.01
     },
     {
       "name": "Infineon",
       "status": "ok",
-      "count": 0,
-      "seconds": 21.61
+      "count": 1,
+      "seconds": 21.01
     },
     {
       "name": "Fraunhofer",
       "status": "ok",
       "count": 12,
-      "seconds": 41.5
+      "seconds": 53.46
     },
     {
       "name": "EURAXESS",
       "status": "ok",
-      "count": 1,
-      "seconds": 4.43
+      "count": 0,
+      "seconds": 7.31
     }
   ],
   "jobs": [
@@ -80,30 +80,6 @@
         "validation",
         "python",
         "research and development"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "5c41e65facf83cdb",
-      "title": "PhD - Lab on Chip Sample Preparation for Next-Generation Molecular Diagnostics",
-      "company": "Bosch Group",
-      "location": "Renningen, BW, Germany",
-      "country": "Germany",
-      "category": "PhD / Research",
-      "type": "Full-time",
-      "datePosted": "2026-09-11",
-      "deadline": "Check official posting",
-      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000148957129-phd-lab-on-chip-sample-preparation-for-next-generation-molecular-diagnostics",
-      "description": "{'title': 'Company Description', 'text': ' At Bosch, we shape the future by inventing high-quality technologies and services that spark enthusiasm and enrich people’s lives. Our promise to our associates is rock-solid: we grow together, we enjoy our work, and we inspire each other. Join in and feel the difference. The Robert Bosch GmbH is looking forward to your application! '} {'title': 'Job Description', 'text': ' Join our innovative research team. We are looking for a motivated PhD candidate to develop a microfluidic sample-preparation unit operation, based on magnetic beads, enabling next-generation molecular diagnostics (MDx) workflows. Next-generation molecular diagnostics require robust and automated methods for isolating low-abundance biological targets - such as pathogens, circulating tumor DNA (ctDNA), and extracellular vesicles (EVs)-from complex samples. This PhD project aims to develop a scalable, cartridge-compatible platform for the controlled handling of functionalized magnetic particles throughout the complete sample-preparation workflow, including target capture, washing, transfer, resuspension, and release. The central objective is to establish a reusable microfluidic actuation module that interfaces seamlessly with disposable diagnostic cartridges. You will conduct targeted literature research on the manipulation of magnetic particles and develop multiphysics models (e.g., COMSOL) to optimize particle trajectories and fluid interactions. Furthermore, you will conceptually design and develop a reusable, cartridge-compatible microfluidic handling module that automates the entire target-molecule extraction process (capture, washing, transfer, and release). You will create functional prototypes and experimentally quantify system performance using key metrics such as target-molecule recovery, processing time, and reproducibility. Last but not least, you will translate your physical understanding and modeling results into rigorous design rules for integration into disposable diagnostics cartridges, delivering transferable models and prototypes for future product development. '} {'title': 'Qualifications', 'text': \" Education: excellent master's degree in Biomedical Engineering, Mechanical Engineering, Applied Physics, Microsystems Engineering (MEMS), or a related field Experience and Knowledge: solid knowledge of microfluidics, fluid dynamics, and multiphysics simulation (e.g., COMSOL); practical experience in the design, prototyping, and testing of lab-on-a-chip systems; ideally, familiarity with handling magnetic particles, non-Newtonian fluids (such as blood), or sample preparation for molecular diagnostics (MDx) Personality and Working Practice: you work independently, plan your tasks carefully, and contribute with a high level of commitment and a strong hands-on mentality; you are able to communicate your research findings clearly and bridge the gap between theoretical simulation and physical prototyping, taking ownership of your work Enthusiasm: you are passionate about interdisciplinary scientific work at the intersection of physics, engineering, and biomedicine, approach complex tasks creatively and innovatively, and successfully translate them into practical applications Languages: very good written and spoken German and English \"} {'title': 'Additional Information', 'text': ' https://www.bosch-ai.com \\nwww.bosch.com/research The final topic depends on your university. Start: October 2026 Diversity and inclusion are not just trends for us but are firmly anchored in our corporate culture. Therefore, we welcome all applications, regardless of gender, age, disability, religion, ethnic origin or sexual identity. Need support during your application? \\nCelina Dannecker (Human Resources) \\n+49 711 811 21346 Need further information about the job? \\nRaphaelle Satet (Functional Department) \\n +49 172 472 2466 \\n Work #LikeABosch starts here: Apply now! '} {'title': 'Videos To Watch', 'urls': ['https://www.youtube.com/watch?v=vEdllJp7QVA']}",
-      "source": "Bosch careers / SmartRecruiters",
-      "matchScore": 77,
-      "matchedKeywords": [
-        "mems",
-        "microsystem",
-        "biomedical engineering",
-        "biomedical",
-        "simulation",
-        "phd"
       ],
       "warnings": []
     },
@@ -177,6 +153,27 @@
         "validation",
         "machine learning",
         "simulation",
+        "phd"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "6a95f98be7b7d545",
+      "title": "Development and Integration Engineer for MEMS & ASIC BEOL technology (f/m/div.)",
+      "company": "Bosch Group",
+      "location": "Dresden, SN, Germany",
+      "country": "Germany",
+      "category": "PhD / Research",
+      "type": "Full-time",
+      "datePosted": "2026-09-18",
+      "deadline": "Check official posting",
+      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000150304129-development-and-integration-engineer-for-mems-asic-beol-technology-f-m-div-",
+      "description": "{'title': 'Company Description', 'text': ' Bosch Sensortec GmbH is a technology leader in sensing solutions based on microelectromechanical systems (MEMS) and dedicated to the consumer electronics world. We develop and market key technologies for smartphones and tablets, hearables, wearables, smartglasses, augmented and virtual reality applications, gaming devices and many more. Our sensors improve people’s well-being and lifestyle and enable consumer electronic devices to sense the world around us. MEMS sensors are therefore an essential part of the foundation for a connected world. Bosch Sensortec GmbH is a wholly owned subsidiary of Robert Bosch GmbH. Bosch Sensortec GmbH is looking forward to your application! '} {'title': 'Job Description', 'text': ' To strengthen our leading market position within the sensor products we will extend our MEMS and ASIC BEOL technology to 300 mm wafer. We are looking for a curious and technology-driven engineer (f/m/div.), who has a passion for technology and process. If you enjoy connecting the dots between different technologies, challenging technical boundaries, and turning complexity into manufacturable solutions, this role is for you. As a Development and Integration Engineer, you will drive and control innovative technology developments for complex products with a focus on integration, including scheduling and the customer interface Part of your responsibilities is implementing development goals together with a team of integrators and experts; you will achieve these goals by combining your technology know-how and manufacturing expertise with intensive, collaborative work and a high degree of personal responsibility and independence Furthermore, you will develop semiconductor processes for the manufacturing of our sensor products Driven by your passion for innovation, you will enable new technologies and materials and perform both technical and economic evaluation of the feasibility of new processes You will coordinate internal interfaces across development sections and manufacturing to develop solutions and control their implementation from the start of development until they are ready for series production With a focus on quality, you will manage quality assessments and process releases to ensure our high standards are met In addition, you will be responsible for the cooperation with research institutes for basic development, driving foundational progress in our field '} {'title': 'Qualifications', 'text': ' Personality : Self-initiated, assertive, creative, strong team player, goal-oriented Working Practice: Systematic, proactive, resilient Experience and Know-How : Multiple years of relevant professional experience; very good knowledge in sensor, micromechanics and semiconductor technology required; knowledge of relevant analytical methods beneficial; excellent understanding of physical principles and interrelationships; ability to guide a team in technical matters Language: Very good knowledge of English, proficient German Education: Completed university studies (Master/Diploma/PhD) in engineering or natural sciences, physics, chemistry, material sciences or a comparable qualification '} {'title': 'Additional Information', 'text': ' We offer flexible working models: from various part-time options to mobile working and job sharing. Feel free to contact us. Diversity and inclusion are not just trends for us but are firmly anchored in our corporate culture. Therefore, we welcome all applications, regardless of gender, age, disability, religion, ethnic origin or sexual identity. \\n Need support during your application? \\nSamuel Zinn (Human Resources) \\n+49 7121 35-33717 Need further information about the job? \\nChristina Leinenbach (Functional Department) \\n+49 712135-33480 \\n \\n Data Privacy Information \\nBy submitting your application, you acknowledge that your application documents and personal data may be accessed and reviewed by hiring managers and authorized recruitment representatives of both Bosch Sensortec GmbH and Robert Bosch GmbH where necessary for the recruitment process and the assessment of your suitability for the position. Access is limited to individuals involved in the recruitment process and is subject to applicable data protection laws. For further information on the processing of your personal data, please refer to the Bosch Applicant Privacy Notice . '} {'title': 'Videos To Watch', 'urls': ['https://www.youtube.com/watch?v=K62T_8HQ2_4']}",
+      "source": "Bosch careers / SmartRecruiters",
+      "matchScore": 69,
+      "matchedKeywords": [
+        "mems",
+        "sem",
         "phd"
       ],
       "warnings": []

@@ -1,63 +1,39 @@
 {
-  "generatedAt": "2026-09-29T10:47:28.616451+00:00",
+  "generatedAt": "2026-09-30T10:35:24.289813+00:00",
   "jobCount": 11,
   "sources": [
     {
       "name": "Hahn-Schickard",
       "status": "ok",
       "count": 3,
-      "seconds": 3.54
+      "seconds": 2.76
     },
     {
       "name": "Bosch",
       "status": "ok",
-      "count": 21,
-      "seconds": 92.01
+      "count": 20,
+      "seconds": 86.72
     },
     {
       "name": "Infineon",
       "status": "ok",
       "count": 1,
-      "seconds": 21.01
+      "seconds": 23.06
     },
     {
       "name": "Fraunhofer",
       "status": "ok",
       "count": 12,
-      "seconds": 53.46
+      "seconds": 41.59
     },
     {
       "name": "EURAXESS",
       "status": "ok",
-      "count": 0,
-      "seconds": 7.31
+      "count": 4,
+      "seconds": 15.77
     }
   ],
   "jobs": [
-    {
-      "id": "9967ab75c8ead139",
-      "title": "PhD - Development of a Novel Lab-on-a-Chip Component for the Analysis and Sorting of Single Cells",
-      "company": "Bosch Group",
-      "location": "Renningen, BW, Germany",
-      "country": "Germany",
-      "category": "PhD / Research",
-      "type": "Full-time",
-      "datePosted": "2026-09-11",
-      "deadline": "Check official posting",
-      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000148954834-phd-development-of-a-novel-lab-on-a-chip-component-for-the-analysis-and-sorting-of-single-cells",
-      "description": "{'title': 'Company Description', 'text': ' At Bosch, we shape the future by inventing high-quality technologies and services that spark enthusiasm and enrich people’s lives. Our promise to our associates is rock-solid: we grow together, we enjoy our work, and we inspire each other. Join in and feel the difference. The Robert Bosch GmbH is looking forward to your application! '} {'title': 'Job Description', 'text': ' As part of our research team, you will work on cutting-edge solutions for the life sciences. We are offering a PhD position to develop a novel dielectrophoresis (DEP) chip for the analysis and sorting of single cells. \\nMulti-omics analyses at the single-cell level offer crucial diagnostic insights into diseases. However, current automation technologies are often inefficient and expensive. Your project will focus on overcoming these limitations by developing an image-based DEP chip to automate the compartmentation, sample preparation, analysis, and sorting of single cells. This technology aims to enable high-throughput, gentle multi-omics analyses for universal sample types. You will develop and evaluate innovative concepts for semiconductor-based dielectrophoresis (DEP) chips, determining robust electrical, microfluidic, and thermal operating parameters. Furthermore, you will investigate the physical limits of chip miniaturization and explore feasible manufacturing routes compatible with Bosch’s CMOS technology. You will design and fabricate a functional demonstrator using semiconductor manufacturing processes and integrate it into a microfluidic system. Last but not least, you will characterize the prototype and perform a proof of concept for all operating modes using a representative bioassay with living cells in physiological media. '} {'title': 'Qualifications', 'text': \" Education: excellent Master's degree in Electrical Engineering, Microsystems Engineering, Biomedical Engineering, Physics, or a comparable field Experience and Knowledge: detailed knowledge of classical MEMS, microfluidics, and biomedical engineering; expertise in microfluidic and electrical design for lab-on-chip systems; experience in modeling of physical cell interactions at the microscale; knowledge of (optical) signal processing; experience with cleanroom processes and knowledge of oncology are advantageous Personality and Working Practice: you actively contribute your ideas and communicate your research results clearly and convincingly; your curiosity motivates you to explore new approaches, and you enjoy taking a hands-on role; you work in a structured manner to achieve your goals, develop creative solutions to complex challenges, and independently conduct experiments Languages: very good written and spoken German and English \"} {'title': 'Additional Information', 'text': ' https://www.bosch-ai.com \\nwww.bosch.com/research The final topic depends on your university. Start: Oktober 2026 Diversity and inclusion are not just trends for us but are firmly anchored in our corporate culture. Therefore, we welcome all applications, regardless of gender, age, disability, religion, ethnic origin or sexual identity. Need support during your application? \\nCelina Dannecker (Human Resources) \\n+49 711 811 21346 Need further information about the job? \\nRaphaelle Satet (Functional Department) \\n +49 172 472 2466 \\n Work #LikeABosch starts here: Apply now! '} {'title': 'Videos To Watch', 'urls': ['https://www.youtube.com/watch?v=vEdllJp7QVA']}",
-      "source": "Bosch careers / SmartRecruiters",
-      "matchScore": 84,
-      "matchedKeywords": [
-        "mems",
-        "microsystem",
-        "sem",
-        "biomedical engineering",
-        "biomedical",
-        "phd"
-      ],
-      "warnings": []
-    },
     {
       "id": "84361700bffa22ea",
       "title": "Semiconductor Test Expert for Research and Development (m/w/d)",
@@ -224,6 +200,29 @@
         "matlab",
         "phd",
         "r&d"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "135679e033b1f26f",
+      "title": "Promotion (PhD) im Bereich Inertial‑MEMS: Wafer‑Level‑Test und Design mit Fokus auf Stiction und Robustheit (w/m/div.) (w/m/div.)",
+      "company": "Bosch Group",
+      "location": "Reutlingen, BW, Germany",
+      "country": "Germany",
+      "category": "PhD / Research",
+      "type": "Full-time",
+      "datePosted": "2026-06-23",
+      "deadline": "Check official posting",
+      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000133548779-promotion-phd-im-bereich-inertial-mems-wafer-level-test-und-design-mit-fokus-auf-stiction-und-robustheit-w-m-div-w-m-div-",
+      "description": "{'title': 'Unternehmensbeschreibung', 'text': 'Bei Bosch gestalten wir die Zukunft, indem wir hochwertige Technologien und Dienstleistungen entwickeln, die begeistern und das Leben der Menschen bereichern. Unser Versprechen an unsere Mitarbeitenden ist felsenfest: Wir wachsen gemeinsam, wir haben Freude an unserer Arbeit und wir inspirieren uns gegenseitig. Machen Sie mit und spüren Sie den Unterschied. Die Robert Bosch GmbH freut sich auf Ihre Bewerbung!'} {'title': 'Stellenbeschreibung', 'text': ' Im Rahmen Ihrer Promotion sind Sie für die Entwicklung von Testinhalten zur Charakterisierung inertialer MEMS auf Wafer-Ebene verantwortlich. Ihre Tätigkeit umfasst die Auslegung und Charakterisierung von inertialen MEMS-Testchips in Richtung Stiction und Robustheit. Zudem entwickeln Sie innovative Techniken und Ideen, die anschließend in reale Produkte übertragen werden können. '} {'title': 'Qualifikationen', 'text': ' Ausbildung: Sie verfügen über einen Masterabschluss mit sehr guten Noten in Physik, Elektrotechnik, Nachrichtentechnik, Software Engineering oder einem vergleichbaren Fachgebiet. Erfahrung: Sie bringen Erfahrung mit FPGA-Systemen und -Tools mit, verfügen über einen Hintergrund in der Analogelektronik sowie über Erfahrung in Schaltungsdesign und Simulation (z.\\u202fB. Ansys, Comsol o.\\u202fÄ.). Kenntnisse: Sie haben ein gutes Verständnis elektrischer Messtechniken, verfügen über Programmierkenntnisse (erforderlich: C, Python, Matlab) und Kenntnisse im Bereich Halbleiter und MEMS. Persönlichkeit: Sie sind teamorientiert, arbeiten gerne in interdisziplinären Teams und zeichnen sich durch eine selbstorganisierte Arbeitsweise aus. Sprachen: Sie verfügen über gute Kommunikationsfähigkeiten in Englisch sowie in Deutsch (mindestens B2). '} {'title': 'Zusätzliche Informationen', 'text': 'Gemäß vorheriger Vereinbarung: Das endgültige Promotionsthema ist von Ihrer Universität abhängig.\\n\\nVielfalt und Inklusion sind für uns nicht nur Trends, sondern fest in unserer Unternehmenskultur verankert. Daher begrüßen wir alle Bewerbungen – unabhängig von Geschlecht, Alter, Behinderung, Religion, ethnischer Herkunft oder sexueller Identität.\\n\\nBenötigen Sie Unterstützung während Ihrer Bewerbung? \\nJohanna Ripple \\n+49 (7121) 35-34427\\n\\nBenötigen Sie weitere Informationen zur Stelle? \\nMatthew Lewis \\n+49 (7121) 35-30846'}",
+      "source": "Bosch careers / SmartRecruiters",
+      "matchScore": 63,
+      "matchedKeywords": [
+        "mems",
+        "matlab",
+        "python",
+        "simulation",
+        "phd"
       ],
       "warnings": []
     },

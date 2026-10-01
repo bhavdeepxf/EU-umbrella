@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-09-30T10:35:24.289813+00:00",
+  "generatedAt": "2026-10-01T11:02:34.789405+00:00",
   "jobCount": 11,
   "sources": [
     {
       "name": "Hahn-Schickard",
       "status": "ok",
       "count": 3,
-      "seconds": 2.76
+      "seconds": 2.22
     },
     {
       "name": "Bosch",
       "status": "ok",
-      "count": 20,
-      "seconds": 86.72
+      "count": 21,
+      "seconds": 90.64
     },
     {
       "name": "Infineon",
       "status": "ok",
-      "count": 1,
-      "seconds": 23.06
+      "count": 0,
+      "seconds": 10.43
     },
     {
       "name": "Fraunhofer",
       "status": "ok",
-      "count": 12,
-      "seconds": 41.59
+      "count": 13,
+      "seconds": 35.31
     },
     {
       "name": "EURAXESS",
       "status": "ok",
-      "count": 4,
-      "seconds": 15.77
+      "count": 0,
+      "seconds": 6.18
     }
   ],
   "jobs": [

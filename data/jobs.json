@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-10-01T11:02:34.789405+00:00",
+  "generatedAt": "2026-10-02T10:35:42.831767+00:00",
   "jobCount": 11,
   "sources": [
     {
       "name": "Hahn-Schickard",
       "status": "ok",
-      "count": 3,
-      "seconds": 2.22
+      "count": 2,
+      "seconds": 2.37
     },
     {
       "name": "Bosch",
       "status": "ok",
-      "count": 21,
-      "seconds": 90.64
+      "count": 22,
+      "seconds": 85.16
     },
     {
       "name": "Infineon",
       "status": "ok",
       "count": 0,
-      "seconds": 10.43
+      "seconds": 10.73
     },
     {
       "name": "Fraunhofer",
       "status": "ok",
       "count": 13,
-      "seconds": 35.31
+      "seconds": 34.71
     },
     {
       "name": "EURAXESS",
       "status": "ok",
-      "count": 0,
-      "seconds": 6.18
+      "count": 2,
+      "seconds": 8.85
     }
   ],
   "jobs": [
@@ -227,38 +227,17 @@
       "warnings": []
     },
     {
-      "id": "d12b7d7433b1324e",
-      "title": "Microstructural Characterization and Mechanical Testing of 3D metal printed on Advanced PCB Surfaces",
-      "company": "Hahn-Schickard",
-      "location": "Freiburg im Breisgau, Germany",
-      "country": "Germany",
-      "category": "R&D / Industry",
-      "type": "Full-time / Research",
-      "datePosted": "",
-      "deadline": "Check official posting",
-      "url": "https://jobs.hahn-schickard.de/job-microstructural-characterization-and-mechanical-testing-of-3d-metal-printed-on-advanced-pcb-surfaces-freiburg-im-breisgau-1895.html",
-      "description": "Bitte aktivieren Sie JavaScript, um alle Funktionen nutzen zu können. Vision to Products Welcome to Hahn-Schickard: The research center for innovative microsystems technology. With a team of over 300 employees, we transform ideas into cross-industry solutions - from conception to production at three locations in Baden-Württemberg. At our Freiburg site, the emphasis is on developing analytical solutions in microsystems technology, particularly for point-of-care diagnostics. At the Freiburg site, the focus is on analytical solutions, especially for point-of-care diagnostics. But we also research, develop and manufacture electrochemical energy systems, autonomous fluidic robots and 3D printing of electronics. For our Laboratory Automation division, we offer at Freiburg im Breisgau the following position (beginning from November 2026 or later ): Research Student Assistant / Master Thesis (m/f/x) Microstructural Characterization and Mechanical Testing of 3D metal printed on Advanced PCB Surfaces Your Tasks You will be part of a team working on multi-material 3D printing platform for microfluidic and microelectronics applications. Getting familiar with the StarJet technology and establishing suitable jetting modes and process conditions for a molten metal alloy. Producing solder deposits and joints using different StarJet process parameters. Systematically investigating the influence of process parameters on the resulting printed metal. Performing materials characterization of printed deposits and solder joints, and investigating the interaction between solder alloy and different PCB surfaces. Preparing metallographic cross-sections and performing microscopy and other available materials characterization techniques. Evaluating the bonding performance of the resulting solder joints using suitable mechanical testing methods. Evaluate and visualize experimental data. Your profile Bachelor’s degree (or currently enrolled in a Master’s program) in Materials Science, Materials Engineering, Microsystems Engineering, Mechanical Engineering, or a related field. A strong interest in materials science and metallurgy is desirable. Basic knowledge of metals, alloys and microstructure is advantageous. Interest in solder materials, 3D printing, electronic materials, and materials characterization. Willingness to work hands-on in the laboratory and operate experimental equipment. Basic experience with microscopy, metallography, or mechanical testing is advantageous. Ability to independently evaluate experimental data and draw scientific conclusions. Good communication skills in English and/or German Our offer to you Opportunity to work on cutting-edge research in intelligent multi-material additive manufacturing An attractive workplace for a student working at a modern, excellently equipped research institute that is close to industry Excellent support for you working in a dynamic, flexible team Flexible working hours Partial refund of travel expenses when using public transport of the ÖPNV (public transport system) Health and lifestyle: Participation in first-class health programs such as Hansefit Subsidy for meals Your Application If you are interested, please send us your complete application documents (motivation letter/resume+CV/certificates/transcript of records), stating the reference number 26/3610/41 in a complete PDF document file and name the job portal details you may need. Dr. Zhe Shu, by phone +49 761 203-54057 or e-Mail Zhe.Shu@hahn-schickard.de will be pleased to answer any questions you may have. The decision is made directly by the division. Please have patience - your personal application process will take some time. Ihre Ansprechpartnerin Frau Antigoni Zouridaki Kontakt Hahn-Schickard gGmbH Georges-Köhler-Allee 304 79110 Freiburg im Breisgau Personal-FR@Hahn-Schickard.de 0761 203 73200 Jetzt online bewerben Stelle ausdrucken Impressum • Datenschutzerklärung • Deutsch • English",
-      "source": "Hahn-Schickard careers",
-      "matchScore": 59,
-      "matchedKeywords": [
-        "microsystem",
-        "materials characterization",
-        "microelectronics"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "6f48d3350ca23681",
-      "title": "MEMS Designer Accelerometers",
+      "id": "9b5183d09b8d6be3",
+      "title": "MEMS Designer for inertial MEMS Sensors",
       "company": "Bosch Group",
       "location": "Milano, Lombardia, Italy",
       "country": "Italy",
       "category": "PhD / Research",
       "type": "Full-time",
-      "datePosted": "2026-09-16",
+      "datePosted": "2026-10-01",
       "deadline": "Check official posting",
-      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000149866680-mems-designer-accelerometers",
-      "description": "{'title': 'Company Description', 'text': ' Bosch Sensortec is the technology leader in sensing solutions based on microelectromechanical systems (MEMS) and dedicated to the consumer electronics world. Our success in MEMS sensors and solutions is built on a remarkable team driven by passion, innovation and flexibility. There is more than one good reason to join #BoschSensortec . We not only have cutting-edge product technology and an employee-oriented corporate culture, we also offer you attractive working conditions and first-class career opportunities. We offer you many different working fields and career paths — and we provide individual possibilities to enable you to turn your passion into real innovations. '} {'title': 'Job Description', 'text': ' What will you take care of? You will be working in the Milan Design Center of the Bosch Sensortec Division, where you will have the chance to: Take responsibility: Based on specific customer requirements you are designing the MEMS structures with respect to its mechanical and electrical behavior. Model based design : You are carrying out dedicated simulations to optimize the designed MEMS structures with focus on accelerometers. Drive the future: You are developing new algorithms for design optimization and improve simulation methods. In addition, the analysis of cause chain reactions is required. Be part of the team : You are part of a cross functional engineering team and take responsibility for internal activities or work packages in design projects. Networking : Beside the coordination of all design and simulation tasks the close cooperation with project management and technology development is a crucial key-factor for success. '} {'title': 'Qualifications', 'text': ' What distinguishes you? Education : Master of Science or PhD in Mechanical Engineering, Mathematics, Physics or equivalent Languages : Fluent English (B2 as minimum level), German as a plus. Software Skills: Proficient coder. Experience with MATLAB/Python and Finite Element Simulation tools required. Additional Simulink skills and experience with AI methods is preferred. Working style : autonomous self-organized working in a complex development environment. Structured concept development in the area of simulations and algorithms. Excellent presentation skills. Experience and Know-How : Specialist for MEMS design and model development for inertial MEMS sensors (FEM, Matlab, etc.) with at least 3-5 years of experience. Working in cross-functional teams. (ASIC, package, etc.) Experience designing and conducting lab experiments. '} {'title': 'Additional Information', 'text': ' In line with our compensation policies, the gross annual salary (RAL) for this position lies within the range € 50.000 - €60.000 for a 40-hour work week. The remuneration package also includes: An individual performance-related bonus Additional benefits. The salary range corresponds to the specified job grade and may vary depending on the candidate’s level of experience. We look forward to discussing the full details of our compensation package and career development opportunities with you during the application process. Bosch is proud to be an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, marital status, national origin or ancestry, age, disability or any other protected class. www.bosch.it https://www.bosch.it/lavora-con-noi/ '}",
+      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000152942130-mems-designer-for-inertial-mems-sensors",
+      "description": "{'title': 'Company Description', 'text': ' Bosch Sensortec is the technology leader in sensing solutions based on microelectromechanical systems (MEMS) and dedicated to the consumer electronics world. Our success in MEMS sensors and solutions is built on a remarkable team driven by passion, innovation and flexibility. There is more than one good reason to join #BoschSensortec . We not only have cutting-edge product technology and an employee-oriented corporate culture, we also offer you attractive working conditions and first-class career opportunities. We offer you many different working fields and career paths — and we provide individual possibilities to enable you to turn your passion into real innovations. '} {'title': 'Job Description', 'text': ' What will you take care of? You will be working in the Milan Design Center of the Bosch Sensortec Division, where you will have the chance to: Take responsibility: Based on specific customer requirements you are designing the mechanical and electrical behavior of new MEMS structures. Model based design : You are carrying out dedicated simulations to optimize the designed MEMS structures with focus on gyroscopes. Drive the future: You are developing new algorithms for design optimization and improve simulation methods. Be part of the team : You are part of a cross functional engineering team. In addition to the design, the analysis of cause chain reactions is required. Networking : Beside the coordination of all design and simulation tasks the close cooperation with project management and technology development is a crucial key-factor for success. '} {'title': 'Qualifications', 'text': ' What distinguishes you? Education : Master of Science or PhD in Mechanical Engineering, Mathematics, Physics or equivalent Languages : Fluent English (B2 as minimum level), German as a plus. Software Skills: Proficient coder. Experience with MATLAB/Python and Finite Element Simulation tools required. Additional Simulink skills preferred. Working style : autonomous self-organized working in a complex development environment. Structured concept development in the area of simulations and algorithms. Excellent presentation skills. Experience and Know-How : Specialist for MEMS design and model development for inertial MEMS sensors (FEM, Matlab, etc.) with at least 3-5 years of experience. Working in cross-functional teams. (ASIC, package, etc.) Experience designing and conducting lab experiments. In line with our compensation policies, the gross annual salary (RAL) for this position lies within the range € 50.000 - €60.000 for a 40-hour work week. The remuneration package also includes: A company performance-related bonus Additional benefits. The salary range corresponds to the specified job grade and may vary depending on the candidate’s level of experience. We look forward to discussing the full details of our compensation package and career development opportunities with you during the application process. '} {'title': 'Additional Information', 'text': ' Bosch is proud to be an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, marital status, national origin or ancestry, age, disability or any other protected class. www.bosch.it https://www.bosch.it/lavora-con-noi/ '}",
       "source": "Bosch careers / SmartRecruiters",
       "matchScore": 55,
       "matchedKeywords": [
@@ -267,6 +246,29 @@
         "python",
         "simulation",
         "phd"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "613bb71a2b0d35bf",
+      "title": "Students: Computer Vision in Semiconductor Metrology",
+      "company": "ENAS - Electronic Nano Systems",
+      "location": "Chemnitz, Germany",
+      "country": "Germany",
+      "category": "PhD / Research",
+      "type": "Research / Employment",
+      "datePosted": "",
+      "deadline": "Check official posting",
+      "url": "https://jobs.fraunhofer.de/job/Chemnitz-Students-Computer-Vision-in-Semiconductor-Metrology-09126/1065328701/",
+      "description": "Search by Keyword/Field of Study/Jobcode Search by Location > More Search Options Loading... Level of Experience All Job Function All Opportunity for promotion All Region All Institute All Language All Clear Select how often (in days) to receive an alert: Create Jobalert × Select how often (in days) to receive an alert: Apply now » City: Chemnitz Date: Sep 18, 2026 Students: Computer Vision in Semiconductor Metrology The Fraunhofer-Gesellschaft ( www.fraunhofer.com ) is one of the world's leading organizations for application-oriented research. 74 institutes develop pioneering technologies for our economy and society – more precisely: 30 000 people from technology, science, administration and IT. They know: Anyone who comes to Fraunhofer wants to and can make a difference. For themselves, for us and for the markets of today and tomorrow. The particular strength of the Fraunhofer Institute for Electronic Nano Systems ENAS lies in the development of smart systems - so-called intelligent systems for various applications. The systems combine electronic components, micro and nano sensors and actuators with interfaces for communication. Fraunhofer ENAS develops individual components, the technologies for their production as well as system concepts and system integration technologies and transfers them into practical use. Fraunhofer ENAS accompanies customer projects from the idea to the design, technology development or implementation using existing technologies, right through to the tested prototype. The Data-based Methods team at Fraunhofer ENAS develops real-world applications using AI, machine learning and computer vision. The main focus is on semiconductor manufacturing and medical technology. Do you have a passion for developing application-oriented computer vision pipelines for semiconductor metrology? Join our team as a student and contribute to the development of computer vision models for analyzing measurements on metrology equipments. Our goal is to increase the efficiency of semiconductor manufacturing by automating image analysis, utilizing web-based user interfaces and simplifying reporting. Key responsibilities: Development of computer vision models to analyze measurement data. Extract meaningful information from metrological data. Deploy your pipeline in web-based user interfaces. We are currently looking for students for Master's theses, internships and student assistants . We can discuss our ideas together to find the right job for you. What you contribute Strong understanding and practical experience with image processing methods or computer vision models. Excellent programming skills (preferably in Python) are required. Strong abstract and mathematical thinking skills. A strong interest in interdisciplinary work at the interface of software engineering, data science and semiconductor metrology is essential. Still studying in Chemnitz, Mittweida or the surrounding area. An average grade < 2 is preffered. We value and promote the diversity of our employees' skills and therefore welcome all applications – regardless of age, gender, nationality, ethnic and social origin, religion, ideology, disability, sexual orientation and identity. Severely disabled persons are given preference in the event of equal suitability. Our tasks are diverse and adaptable – for applicants with disabilities, we work together to find solutions that best promote their abilities. With its focus on developing key technologies that are vital for the future and enabling the commercial utilization of this work by business and industry, Fraunhofer plays a central role in the innovation process. As a pioneer and catalyst for groundbreaking developments and scientific excellence, Fraunhofer helps shape society now and in the future. Ready for a change? Then apply now and make a difference! Once we have received your online application, you will receive an automatic confirmation of receipt. We will then get back to you as soon as possible and let you know what happens next. Dr. Jan Langer will be happy to answer any questions you may have about the position. Please submit your questions here via our recruiting portal. For data protection reasons, we can only consider applications submitted via our career portal - thank you for your understanding. Fraunhofer Institute for Electronic Nano Systems ENAS www.enas.fraunhofer.de Requisition Number: 73238 Application Deadline: Job Segment: Medical Technology, Software Engineer, Semiconductor, Engineer, Healthcare, Engineering, Research, Science Apply now » Find similar jobs: Student assistant, Applied Research, All Job Offers",
+      "source": "Fraunhofer careers",
+      "matchScore": 53,
+      "matchedKeywords": [
+        "sem",
+        "python",
+        "machine learning",
+        "image processing",
+        "computer vision"
       ],
       "warnings": []
     },

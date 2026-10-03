@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-10-02T10:35:42.831767+00:00",
-  "jobCount": 11,
+  "generatedAt": "2026-10-03T09:57:21.142901+00:00",
+  "jobCount": 13,
   "sources": [
     {
       "name": "Hahn-Schickard",
       "status": "ok",
       "count": 2,
-      "seconds": 2.37
+      "seconds": 2.69
     },
     {
       "name": "Bosch",
       "status": "ok",
       "count": 22,
-      "seconds": 85.16
+      "seconds": 85.4
     },
     {
       "name": "Infineon",
       "status": "ok",
       "count": 0,
-      "seconds": 10.73
+      "seconds": 13.3
     },
     {
       "name": "Fraunhofer",
       "status": "ok",
       "count": 13,
-      "seconds": 34.71
+      "seconds": 39.97
     },
     {
       "name": "EURAXESS",
       "status": "ok",
-      "count": 2,
-      "seconds": 8.85
+      "count": 3,
+      "seconds": 8.89
     }
   ],
   "jobs": [
@@ -227,6 +227,32 @@
       "warnings": []
     },
     {
+      "id": "9113d6ae243f8e87",
+      "title": "Photonic Devices Specialist (F/M)",
+      "company": "EURAXESS research organisation",
+      "location": "Poland",
+      "country": "Poland",
+      "category": "R&D / Industry",
+      "type": "Research position",
+      "datePosted": "2026-10-02",
+      "deadline": "2026-10-16",
+      "url": "https://euraxess.ec.europa.eu/jobs/470173",
+      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 2 Oct 2026 Job Information Organisation/Company Łukasiewicz Research Network - Institute of Microelectronics and Photonics Research Field Physics » Electronics Engineering » Materials engineering Researcher Profile First Stage Researcher (R1) Positions Master Positions Application Deadline 16 Oct 2026 - 23:59 (Europe/Warsaw) Country Poland Type of Contract Permanent Job Status Full-time Hours Per Week 40 Offer Starting Date 1 Nov 2026 Is the job funded through the EU Research Framework Programme? Not funded by a EU programme Reference Number N/26/73 Is the Job related to staff position within a Research Infrastructure? Yes Offer Description Łukasiewicz Research Network - Institute of Microelectronics and Photonics (Łukasiewicz-IMiF) conducts the research and development in the field of advanced microelectronic and photonic technologies. It has unique technological laboratories and intellectual capital that enable it to undertake the scientific work and run the projects aimed at increasing the innovation of Polish enterprises, simultaneously creating a high-tech knowledge environment in the field of innovative materials’ production along with the technology and design of microelectronics and photonic devices, gallium nitride technology, LTCC technology, printed electronics and medical and environmental sensors. Łukasiewicz–IMiF runs numerous projects financed from domestic and foreign funds annually, the goals of which are to increase the innovation of the Polish economy. Main responsibilities: Designing and optimising photonic structures and devices, in particular those intended for operation in the infrared and mid-infrared (MIR) spectral ranges. Developing numerical models and performing electromagnetic, optical, thermal and electro-optical simulations using COMSOL Multiphysics, Lumerical, MATLAB, or tools with comparable functionality. Planning and conducting optical, electro-optical, electrical, spectral and thermal characterisation of designed structures and devices. Analysing and interpreting measurement results, comparing them with modelling outcomes, and identifying opportunities for design and technology optimisation. Preparing design data while taking technological process constraints into account, and cooperating with teams responsible for epitaxy, fabrication, characterisation and device integration. Participating in the development and optimisation of technological processes, including photolithography, layer deposition, etching, surface preparation, device assembly and integration. Automating measurements, programming laboratory equipment and processing experimental data using Python, MATLAB, or equivalent tools. Maintaining scientific and technical documentation, preparing R&D reports, and contributing to the preparation of publications, patent applications and conference presentations. Participating in the implementation of national and international research and development projects. Where to apply Website https://system.erecruiter.pl/FormTemplates/RecruitmentForm.aspx?WebID=f92dee88f… Requirements Research Field Physics » Electronics Education Level Master Degree or equivalent Research Field Engineering » Materials engineering Education Level Master Degree or equivalent Skills/Qualifications A Master’s degree or a higher education degree combined with at least one year of experience in the research and development sector. Candidates holding at least a Master’s degree in photonics, optoelectronics, physics, electronics, materials engineering, or a related field will be preferred. Experience in conducting research and development work related to the design, modelling or characterisation of photonic/optoelectronic devices. Experience in experimental work and in analysing the results of optical, electro-optical, electrical, spectral or thermal measurements. Practical knowledge of numerical modelling methods and simulation of photonic structures. Knowledge of COMSOL Multiphysics, Lumerical, MATLAB, or software with comparable functionality. Author or co-author of at least one publication published in a scientific journal included on the Polish Ministry of Science and Higher Education list, with a score below 140 points. Author or co-author of at least one presentation delivered at an international scientific or industry conference, in the form of a poster, communication, oral presentation or lecture. Documented participation in the implementation of at least one research and development project, or a project related to the implementation of research results, financed through subsidies, grants, commissioned tasks or external sources, whether domestic or international. Good command of spoken and written English, at a minimum B1 level. Ability to work effectively both independently and as part of a team. Ability to work systematically and reliably; maintain documentation of technological work; analyse experimental results; and prepare reports. Strong problem-solving skills and the ability to identify effective solutions. Specific Requirements Preferred Qualifications - The Łukasiewicz Research Network – Institute of Microelectronics and Photonics (Łukasiewicz-IMiF) will additionally consider the following qualifications: Experience in the fabrication technology of semiconductor and photonic structures, particularly in photolithography, layer deposition and etching, will be considered an additional asset. Author or co-author of an industry report or analysis relevant to the Institute’s research areas. Documented participation in specialist training courses. Languages ENGLISH Level Good Research Field Physics » ElectronicsEngineering » Materials engineering Years of Research Experience None Additional Information Benefits Medical packages Group life insurance Sports card Co-financing of training and courses Additional social benefits Co-financing of holidays",
+      "source": "EURAXESS",
+      "matchScore": 57,
+      "matchedKeywords": [
+        "sem",
+        "microelectronics",
+        "photonics",
+        "matlab",
+        "python",
+        "simulation",
+        "researcher",
+        "r&d"
+      ],
+      "warnings": []
+    },
+    {
       "id": "9b5183d09b8d6be3",
       "title": "MEMS Designer for inertial MEMS Sensors",
       "company": "Bosch Group",
@@ -269,6 +295,28 @@
         "machine learning",
         "image processing",
         "computer vision"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "0f7b896be4129b12",
+      "title": "Lecturer and researcher Civil Engineering and Microstructure of Building Materials M/F",
+      "company": "EURAXESS research organisation",
+      "location": "France",
+      "country": "France",
+      "category": "PhD / Research",
+      "type": "Research position",
+      "datePosted": "2026-10-02",
+      "deadline": "2026-11-02",
+      "url": "https://euraxess.ec.europa.eu/jobs/470198",
+      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 2 Oct 2026 Job Information Organisation/Company IMT Mines Ales Department Human Ressources Department Research Field Engineering » Civil engineering Researcher Profile Leading Researcher (R4) Positions PhD Positions Application Deadline 2 Nov 2026 - 00:00 (UTC) Country France Type of Contract Permanent Job Status Full-time Offer Starting Date 1 Feb 2027 Is the job funded through the EU Research Framework Programme? European Union / Next Generation EU Is the Job related to staff position within a Research Infrastructure? No Offer Description Come join IMT Mines Alès, a prestigious “grande école” ranked among the top engineering schools both nationally and globally, located in Alès—a welcoming, livable city and the capital of the Cévennes region, where residents highly value the quality of life. Founded in 1843, IMT Mines Alès currently has 1,400 students (including 250 international students) and 380 staff members. The school has three high-level scientific and technological research and teaching centers, working in the fields of materials and civil engineering (C2MA), the environment and risk (CREER), and artificial intelligence and industrial and digital engineering (CERIS). It has 12 technology platforms and 1,600 partner companies. For more information: https://www.imt-mines-ales.fr You will be based at the Mines Alès Materials Center (C2MA) at IMT Mines Alès and will be part of the UMR LMGC “Laboratory of Mechanics and Civil Engineering” research team. As an Associate Professor at Institut Mines-Télécom, you will carry out teaching, research, and technology transfer duties. Teaching Activities Participate in teaching activities at the school within the Department of Civil Engineering and Sustainable Building (GCBD), in the Infrastructure and Major Structures (IGO), Building and Energy (BE), and Building (BAT), through lectures, seminars, lab sessions, project supervision, and student mentoring; Teach courses in the fields of civil engineering, materials science, and structural analysis; Deliver courses in English or develop active learning methods; Participate in student admissions committees and in initiatives to promote the engineering program; Lead a specialization track in the final year of study and propose research and development projects; Teach a minimum of 150 hours per year. Research Activities Conduct research within the LMGC’s “Divided Media” research area; Strengthen the research focus on low-carbon cementitious matrices, with regard to the macroscopic properties and durability of these materials, and bring together other researchers by linking this work to the modeling and mechanical aspects developed at the LMGC; Focus on methods for the experimental characterization of the properties of cementitious materials in both the fresh and hardened states, particularly their microstructure, which requires knowledge of the physicochemistry of cementitious matrices and admixture technology; Contribute to the collective management of the Civil Engineering platform. Technology Commercialization and Transfer Activities Identify and establish research contracts with industrial and academic partners, as well as draft grant proposals for public agencies or international programs; Serve as the liaison with the contractual partner, oversee the scientific objectives defined in the project, lead a project team, and monitor the project’s progress, as well as manage related communications; Develop an understanding of the process of commercially exploiting research results in order to contribute to cooperation between academic research, industrial research, and the production sectors; Carry out, within your scientific and technical area of expertise, initiatives designed to support companies or the school’s incubator in order to promote the creation of spin-offs and the development of technology-based companies. Where to apply Website https://www.imt-mines-ales.fr Requirements Research Field Engineering » Civil engineering Education Level PhD or equivalent Skills/Qualifications The position requires proven experience in teaching civil engineering and construction materials, as well as the ability to design and implement innovative teaching methods tailored to the targeted competencies. You must have solid research experience and demonstrate your ability to develop scientific collaborations, publish your work, and promote research findings to academic and industrial partners. Proficiency in scientific English is required; international experience and the ability to contribute to projects at the LMGC and C2MA will be considered assets. The evaluation criteria are: Required degree: an engineering degree or a master’s degree in civil engineering or sustainable building, as well as a Ph.D . in civil engineering or materials science. Primary selection criteria for teaching activities: Quality of instruction provided Emphasis on pedagogical innovation Activity and reputation within the academic community Selection criteria for research activities National and international recognition of research results Responsibilities held in the field of expertise Relationships with the academic and industrial sectors The exercise of leadership responsibilities, organizational activities, and participation in consultative and decision-making bodies are also taken into account in the evaluation criteria. Internal Application form(s) needed FP - Lecturer and researcher Civil Engineering and Microstructure of Building Materials.pdf English (1.01 MB - PDF) Download Additional Information Benefits Join us and enjoy these many benefits: Option to work remotely Generous vacation time On-site dining 75% reimbursement for public transportation costs Sustainable mobility allowance for carpooling or biking Wide range of employee benefits Stimulating innovation ecosystem (startups, students, research,",
+      "source": "EURAXESS",
+      "matchScore": 52,
+      "matchedKeywords": [
+        "sem",
+        "phd",
+        "researcher",
+        "research and development"
       ],
       "warnings": []
     },

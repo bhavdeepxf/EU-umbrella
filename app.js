@@ -1,182 +1,56 @@
 "use strict";
-
 const $ = (id) => document.getElementById(id);
-const searchInput = $("searchInput");
-const countryFilter = $("countryFilter");
-const categoryFilter = $("categoryFilter");
-const scoreFilter = $("scoreFilter");
-const resetFilters = $("resetFilters");
-const jobsContainer = $("jobsContainer");
-const resultsSummary = $("resultsSummary");
-
-let liveJobs = [];
-let generatedAt = "";
-let sourceHealth = [];
-let loadError = "";
-
-const normalise = (value) => String(value ?? "").toLocaleLowerCase();
-const unique = (items) => [...new Set(items.filter(Boolean))];
-const escapeHtml = (value) => String(value ?? "")
-  .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
-  .replaceAll('"', "&quot;").replaceAll("'", "&#039;");
-const escapeAttr = escapeHtml;
-const safeUrl = (value) => {
-  try {
-    const url = new URL(String(value));
-    return ["http:", "https:"].includes(url.protocol) ? url.href : "#";
-  } catch { return "#"; }
-};
-
-function allText(job) {
-  return normalise([job.title, job.company, job.location, job.country, job.category, job.type, job.description, job.source, ...(job.matchedKeywords || [])].join(" "));
+const controls = { search: $("searchInput"), country: $("countryFilter"), category: $("categoryFilter"), score: $("scoreFilter") };
+let liveJobs = [], generatedAt = "", sourceHealth = [], loadError = "", activeView = "matches";
+const TRACKER_KEY = "euUmbrellaAppliedV3";
+let applied = readTracker();
+const normalise = (v) => String(v ?? "").toLocaleLowerCase();
+const unique = (a) => [...new Set(a.filter(Boolean))];
+const escapeHtml = (v) => String(v ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+const safeUrl = (v) => { try { const u = new URL(String(v)); return ["http:","https:"].includes(u.protocol) ? u.href : "#"; } catch { return "#"; } };
+function readTracker(){ try { return JSON.parse(localStorage.getItem(TRACKER_KEY) || "{}"); } catch { return {}; } }
+function writeTracker(){ try { localStorage.setItem(TRACKER_KEY, JSON.stringify(applied)); } catch {} }
+function allText(j){ return normalise([j.title,j.company,j.location,j.country,j.category,j.type,j.description,j.source,...(j.matchedKeywords||[])].join(" ")); }
+function score(j){ return Math.max(0,Math.min(100,Number(j.matchScore)||0)); }
+function attainability(j){ return Math.max(0,Math.min(100,Number(j.attainabilityScore ?? score(j))||0)); }
+function tags(j){ return unique(j.matchedKeywords||[]).slice(0,7); }
+function warnings(j){ return unique(j.warnings||[]).slice(0,4); }
+function isPerfect(j){ return Boolean(j.perfectFit) || (score(j)>=88 && attainability(j)>=72 && !warnings(j).length); }
+function dateLabel(v){ if(!v) return "Not published"; const d=new Date(v); return Number.isNaN(d.getTime())?escapeHtml(v):new Intl.DateTimeFormat(undefined,{dateStyle:"medium"}).format(d); }
+function scoreLabel(j){ if(isPerfect(j)) return "Perfect fit"; if(score(j)>=85) return "Exceptional"; if(score(j)>=75) return "Strong fit"; return "Shortlisted"; }
+function reason(j){ if(j.matchReason) return j.matchReason; const m=tags(j).slice(0,5); return m.length?`Strongest CV overlap: ${m.join(", ")}.`:"Relevant transferable technical experience; verify the detailed requirements."; }
+function options(el,placeholder,values){ const old=el.value; el.replaceChildren(new Option(placeholder,""),...values.map(v=>new Option(v,v))); if(values.includes(old)) el.value=old; }
+function populateFilters(){ options(controls.country,"All countries",unique(liveJobs.map(j=>j.country)).sort()); options(controls.category,"All routes",unique(liveJobs.map(j=>j.category)).sort()); }
+function showToast(text){ const t=$("toast"); t.textContent=text; t.classList.add("is-visible"); clearTimeout(showToast.timer); showToast.timer=setTimeout(()=>t.classList.remove("is-visible"),2200); }
+function setView(view){ activeView=view; location.hash=view; document.querySelectorAll("[data-view]").forEach(b=>{const on=b.dataset.view===view;b.classList.toggle("is-active",on);b.setAttribute("aria-current",on?"page":"false")}); $("results-title").textContent=view==="applied"?"Applied jobs":"Best matches"; $("viewEyebrow").textContent=view==="applied"?"Application tracker":"Opportunity shortlist"; $("filterToolbar").hidden=view==="applied"; $("resetFilters").hidden=view==="applied"; render(); }
+function visibleJobs(){
+  if(activeView==="applied") return Object.values(applied).map(a=>liveJobs.find(j=>j.id===a.id)||a.snapshot).filter(Boolean).sort((a,b)=>String(applied[b.id]?.appliedAt||"").localeCompare(String(applied[a.id]?.appliedAt||"")));
+  const term=normalise(controls.search.value.trim()), min=Number(controls.score.value);
+  return liveJobs.filter(j=>(!term||allText(j).includes(term))&&(!controls.country.value||j.country===controls.country.value)&&(!controls.category.value||j.category===controls.category.value)&&score(j)>=min).sort((a,b)=>(isPerfect(b)-isPerfect(a))||score(b)-score(a)||attainability(b)-attainability(a)||String(b.datePosted).localeCompare(String(a.datePosted)));
 }
-
-function localScore(job) {
-  const text = allText(job);
-  let score = 15;
-  candidateProfile.directMatchKeywords.forEach((term) => { if (text.includes(normalise(term))) score += 7; });
-  Object.values(candidateProfile.roleGroups).forEach((terms) => {
-    const hits = terms.filter((term) => text.includes(normalise(term))).length;
-    score += Math.min(hits * 3, 15);
-  });
-  if (candidateProfile.preferredCountries.some((country) => normalise(job.country).includes(normalise(country)))) score += 7;
-  if (candidateProfile.priorityLocations.some((place) => text.includes(normalise(place)))) score += 5;
-  if (/\bphd\b|doctoral|doktorand|wissenschaftlicher mitarbeiter|research associate/.test(text)) score += 10;
-  candidateProfile.seniorityWarnings.forEach((term) => { if (text.includes(normalise(term))) score -= 10; });
-  candidateProfile.languageWarnings.forEach((term) => { if (text.includes(normalise(term))) score -= 7; });
-  return Math.max(0, Math.min(100, score));
+function render(){
+  const list=visibleJobs(), failed=sourceHealth.filter(s=>s.status!=="ok").length;
+  $("matchCount").textContent=liveJobs.length; $("appliedCount").textContent=Object.keys(applied).length;
+  const stamp=generatedAt?` Updated ${new Intl.DateTimeFormat(undefined,{dateStyle:"medium"}).format(new Date(generatedAt))}.`:"";
+  $("resultsSummary").textContent=activeView==="applied"?`${list.length} application${list.length===1?"":"s"} tracked in this browser.`:`${list.length} of ${liveJobs.length} curated opportunities shown.${stamp}${failed?` ${failed} source${failed===1?"":"s"} unavailable.`:""}`;
+  if(!list.length){ const title=activeView==="applied"?"No applications tracked yet":loadError?"The vacancy feed could not be loaded":"No shortlisted jobs match these filters"; const body=activeView==="applied"?"When you apply, click “Mark applied” on the job card and it will appear here.":"Clear filters or lower the threshold to 65+ shortlisted."; $("jobsContainer").innerHTML=`<div class="empty-state"><svg aria-hidden="true" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16v12H4zM8 7V5h8v2M8 12h8"/></svg><h3>${escapeHtml(title)}</h3><p>${escapeHtml(body)}</p>${activeView==="matches"?'<button class="secondary-button" type="button" data-clear>Clear filters</button>':''}</div>`; $("jobsContainer").querySelector("[data-clear]")?.addEventListener("click",clearFilters); return; }
+  $("jobsContainer").innerHTML=list.map(j=>card(j)).join("");
+  $("jobsContainer").querySelectorAll("[data-applied]").forEach(b=>b.addEventListener("click",()=>toggleApplied(b.dataset.applied)));
+  $("jobsContainer").querySelectorAll("[data-status]").forEach(s=>s.addEventListener("change",()=>updateStatus(s.dataset.status,s.value)));
+  $("jobsContainer").querySelectorAll("[data-notes]").forEach(n=>n.addEventListener("change",()=>updateNotes(n.dataset.notes,n.value)));
+  $("jobsContainer").setAttribute("aria-busy","false");
 }
-
-function score(job) {
-  const collected = Number(job.matchScore);
-  return Number.isFinite(collected) ? Math.max(0, Math.min(100, collected)) : localScore(job);
+function card(j){
+  const tracked=applied[j.id], perfect=isPerfect(j), ws=warnings(j), deadline=j.deadline&&!String(j.deadline).toLowerCase().startsWith("check")?`<span>Deadline ${dateLabel(j.deadline)}</span>`:"";
+  const description=String(j.description||"").slice(0,330), appliedAt=tracked?dateLabel(tracked.appliedAt):"";
+  return `<article class="job-card ${perfect?"perfect-fit":""} ${tracked?"is-applied":""}">${perfect?'<div class="perfect-banner"><span>Best of the best</span> Perfect fit for your profile</div>':''}<div class="job-main"><div class="job-heading"><div><p class="source-line">${escapeHtml(j.source||"Official source")}</p><h3>${escapeHtml(j.title)}</h3><p class="company">${escapeHtml(j.company)} · ${escapeHtml(j.location||j.country)}</p></div><div class="score ${perfect?"score-perfect":"score-high"}" aria-label="Technical fit ${score(j)} and attainability ${attainability(j)}"><strong>${score(j)}</strong><span>${scoreLabel(j)}</span></div></div><div class="metric-row"><span><b>${score(j)}</b> technical fit</span><span><b>${attainability(j)}</b> interview potential</span></div><div class="meta"><span>${escapeHtml(j.category||"Technical role")}</span><span>Posted ${dateLabel(j.datePosted)}</span>${deadline}</div>${description?`<p class="description">${escapeHtml(description)}${String(j.description||"").length>330?"…":""}</p>`:""}<p class="match-reason"><strong>Why it fits:</strong> ${escapeHtml(reason(j))}</p>${ws.length?`<p class="warning"><strong>Review:</strong> ${ws.map(escapeHtml).join(", ")}</p>`:""}<div class="job-tags">${tags(j).map(t=>`<span>${escapeHtml(t)}</span>`).join("")}</div>${tracked?`<div class="tracker-fields"><label>Status<select data-status="${escapeHtml(j.id)}"><option${tracked.status==="Applied"?" selected":""}>Applied</option><option${tracked.status==="Interview"?" selected":""}>Interview</option><option${tracked.status==="Offer"?" selected":""}>Offer</option><option${tracked.status==="Rejected"?" selected":""}>Rejected</option></select></label><label>Notes<input data-notes="${escapeHtml(j.id)}" value="${escapeHtml(tracked.notes||"")}" placeholder="Contact, follow-up, deadline…"></label><span>Added ${appliedAt}</span></div>`:""}</div><div class="job-action"><a class="apply-button" href="${escapeHtml(safeUrl(j.url))}" target="_blank" rel="noopener noreferrer">View official posting <span aria-hidden="true">↗</span></a><button class="secondary-button ${tracked?"applied-button":""}" type="button" data-applied="${escapeHtml(j.id)}">${tracked?"✓ Applied":"Mark applied"}</button><span class="verify-note">Official employer or research portal</span></div></article>`;
 }
-
-function tags(job) {
-  if (Array.isArray(job.matchedKeywords) && job.matchedKeywords.length) return unique(job.matchedKeywords).slice(0, 8);
-  const text = allText(job);
-  return unique(Object.values(candidateProfile.roleGroups).flat().filter((term) => text.includes(normalise(term)))).slice(0, 8);
-}
-
-function warnings(job) {
-  if (Array.isArray(job.warnings)) return unique(job.warnings).slice(0, 4);
-  const text = allText(job);
-  return unique([...candidateProfile.seniorityWarnings, ...candidateProfile.languageWarnings].filter((term) => text.includes(normalise(term)))).slice(0, 4);
-}
-
-function scoreLabel(value) {
-  if (value >= 85) return "High priority";
-  if (value >= 70) return "Strong fit";
-  if (value >= 60) return "Potential fit";
-  return "Selective";
-}
-
-function scoreClass(value) {
-  if (value >= 80) return "high";
-  if (value >= 60) return "medium";
-  return "low";
-}
-
-function dateLabel(value) {
-  if (!value) return "Date not published";
-  const date = new Date(value);
-  return Number.isNaN(date.getTime()) ? escapeHtml(value) : new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(date);
-}
-
-function reason(job) {
-  const matched = tags(job).slice(0, 5);
-  if (!matched.length) return "Broader engineering overlap; inspect the official requirements before deciding.";
-  return `CV overlap: ${matched.join(", ")}. ${score(job) >= 70 ? "Tailor the application around these methods and your closest project evidence." : "Confirm that the day-to-day work and required level justify an application."}`;
-}
-
-function options(select, placeholder, values) {
-  const selected = select.value;
-  select.replaceChildren(new Option(placeholder, ""), ...values.map((value) => new Option(value, value)));
-  if (values.includes(selected)) select.value = selected;
-}
-
-function populateFilters() {
-  options(countryFilter, "All countries", unique(liveJobs.map((job) => job.country)).sort());
-  options(categoryFilter, "All role types", unique(liveJobs.map((job) => job.category)).sort());
-}
-
-function render() {
-  const term = normalise(searchInput.value.trim());
-  const minimum = Number(scoreFilter.value);
-  const visible = liveJobs.map((job) => ({ ...job, computedScore: score(job), computedTags: tags(job), computedWarnings: warnings(job) }))
-    .filter((job) => (!term || allText(job).includes(term)) && (!countryFilter.value || job.country === countryFilter.value) && (!categoryFilter.value || job.category === categoryFilter.value) && job.computedScore >= minimum)
-    .sort((a, b) => b.computedScore - a.computedScore || String(b.datePosted).localeCompare(String(a.datePosted)));
-
-  const failed = sourceHealth.filter((item) => item.status !== "ok").length;
-  const timestamp = generatedAt ? ` Updated ${new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(generatedAt))}.` : "";
-  resultsSummary.textContent = `${visible.length} of ${liveJobs.length} verified vacancies shown.${timestamp}${failed ? ` ${failed} source${failed === 1 ? "" : "s"} unavailable during the last refresh.` : ""}`;
-
-  if (!visible.length) {
-    const message = loadError && !liveJobs.length ? "The live vacancy feed could not be loaded." : "No vacancies match the current filters.";
-    jobsContainer.innerHTML = `<div class="empty-state"><svg aria-hidden="true" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16v12H4zM8 7V5h8v2M8 12h8"/></svg><h3>${escapeHtml(message)}</h3><p>${loadError ? "Try reloading. If this persists, run the refresh workflow and inspect its source-health output." : "Lower the fit threshold, clear filters, or try a broader keyword."}</p><button class="secondary-button" type="button" data-clear>Clear filters</button></div>`;
-    jobsContainer.querySelector("[data-clear]")?.addEventListener("click", clearFilters);
-    jobsContainer.setAttribute("aria-busy", "false");
-    return;
-  }
-
-  jobsContainer.innerHTML = visible.map((job) => {
-    const value = job.computedScore;
-    const warningHtml = job.computedWarnings.length ? `<p class="warning"><strong>Review:</strong> ${job.computedWarnings.map(escapeHtml).join(", ")}</p>` : "";
-    const deadline = job.deadline && job.deadline !== "Check original vacancy" ? `<span>Deadline ${dateLabel(job.deadline)}</span>` : "";
-    const description = String(job.description || "").slice(0, 320);
-    return `<article class="job-card">
-      <div class="job-main">
-        <div class="job-heading"><div><p class="source-line">${escapeHtml(job.source || "Official source")}</p><h3>${escapeHtml(job.title)}</h3><p class="company">${escapeHtml(job.company)} · ${escapeHtml(job.location || job.country)}</p></div><div class="score score-${scoreClass(value)}" aria-label="Match score ${value} out of 100"><strong>${value}</strong><span>${scoreLabel(value)}</span></div></div>
-        <div class="meta"><span>${escapeHtml(job.category || "Technical role")}</span><span>Posted ${dateLabel(job.datePosted)}</span>${deadline}</div>
-        ${description ? `<p class="description">${escapeHtml(description)}${String(job.description || "").length > 320 ? "…" : ""}</p>` : ""}
-        <p class="match-reason">${escapeHtml(reason(job))}</p>${warningHtml}
-        <div class="job-tags">${job.computedTags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
-      </div>
-      <div class="job-action"><a class="apply-button" href="${escapeAttr(safeUrl(job.url))}" target="_blank" rel="noopener noreferrer">View official posting <span aria-hidden="true">↗</span></a><span class="verify-note">Verify status before applying</span></div>
-    </article>`;
-  }).join("");
-  jobsContainer.setAttribute("aria-busy", "false");
-}
-
-function clearFilters() {
-  searchInput.value = "";
-  countryFilter.value = "";
-  categoryFilter.value = "";
-  scoreFilter.value = "52";
-  render();
-}
-
-async function loadJobs() {
-  try {
-    const response = await fetch(`data/jobs.json?v=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) throw new Error(`Vacancy feed returned ${response.status}`);
-    const payload = await response.json();
-    if (!Array.isArray(payload.jobs)) throw new Error("Vacancy feed has an invalid format");
-    liveJobs = payload.jobs.filter((job) => job && job.title && safeUrl(job.url) !== "#");
-    generatedAt = payload.generatedAt || "";
-    sourceHealth = Array.isArray(payload.sources) ? payload.sources : [];
-  } catch (error) {
-    loadError = error.message;
-    liveJobs = Array.isArray(globalThis.jobs) ? globalThis.jobs : [];
-  }
-  populateFilters();
-  render();
-}
-
-[searchInput, countryFilter, categoryFilter, scoreFilter].forEach((control) => control.addEventListener(control === searchInput ? "input" : "change", render));
-resetFilters.addEventListener("click", clearFilters);
-
-(function initTheme() {
-  const root = document.documentElement;
-  const toggle = document.querySelector("[data-theme-toggle]");
-  let theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  const draw = () => {
-    root.dataset.theme = theme;
-    toggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
-    toggle.innerHTML = theme === "dark" ? '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>' : '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>';
-  };
-  toggle.addEventListener("click", () => { theme = theme === "dark" ? "light" : "dark"; draw(); });
-  draw();
-})();
-
-loadJobs();
+function toggleApplied(id){ const j=liveJobs.find(x=>x.id===id)||applied[id]?.snapshot; if(!j)return; if(applied[id]){delete applied[id];showToast("Removed from application tracker");}else{applied[id]={id,status:"Applied",notes:"",appliedAt:new Date().toISOString(),snapshot:j};showToast("Added to Applied jobs");} writeTracker();render(); }
+function updateStatus(id,status){ if(applied[id]){applied[id].status=status;writeTracker();showToast(`Status changed to ${status}`);} }
+function updateNotes(id,notes){ if(applied[id]){applied[id].notes=notes;writeTracker();showToast("Application note saved");} }
+function clearFilters(){ controls.search.value="";controls.country.value="";controls.category.value="";controls.score.value="75";render(); }
+async function loadJobs(){ try{const r=await fetch(`data/jobs.json?v=${Date.now()}`,{cache:"no-store"});if(!r.ok)throw Error(`Feed returned ${r.status}`);const p=await r.json();liveJobs=(p.jobs||[]).filter(j=>j&&j.title&&safeUrl(j.url)!=="#");generatedAt=p.generatedAt||"";sourceHealth=p.sources||[];}catch(e){loadError=e.message;liveJobs=Array.isArray(globalThis.jobs)?globalThis.jobs:[];}populateFilters();render(); }
+Object.values(controls).forEach(c=>c.addEventListener(c===controls.search?"input":"change",render));
+$("resetFilters").addEventListener("click",clearFilters);document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.view)));window.addEventListener("hashchange",()=>setView(location.hash==="#applied"?"applied":"matches"));
+(function(){const root=document.documentElement,t=document.querySelector("[data-theme-toggle]");let theme=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";const draw=()=>{root.dataset.theme=theme;t.setAttribute("aria-label",`Switch to ${theme==="dark"?"light":"dark"} mode`);t.innerHTML=theme==="dark"?'<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4 4l2 2M18 18l2 2M1 12h2M21 12h2M4 20l2-2M18 6l2-2"/></svg>':'<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>';};t.addEventListener("click",()=>{theme=theme==="dark"?"light":"dark";draw()});draw();})();
+setView(location.hash==="#applied"?"applied":"matches");loadJobs();

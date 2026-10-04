@@ -1,39 +1,72 @@
 {
-  "generatedAt": "2026-10-03T09:57:21.142901+00:00",
-  "jobCount": 13,
+  "generatedAt": "2026-09-27T15:25:18.183713+00:00",
+  "jobCount": 10,
   "sources": [
     {
       "name": "Hahn-Schickard",
       "status": "ok",
-      "count": 2,
-      "seconds": 2.69
+      "count": 6,
+      "seconds": 2.57
     },
     {
       "name": "Bosch",
       "status": "ok",
-      "count": 22,
-      "seconds": 85.4
+      "count": 157,
+      "seconds": 88.31
     },
     {
       "name": "Infineon",
       "status": "ok",
-      "count": 0,
-      "seconds": 13.3
+      "count": 24,
+      "seconds": 13.78
     },
     {
       "name": "Fraunhofer",
       "status": "ok",
-      "count": 13,
-      "seconds": 39.97
+      "count": 87,
+      "seconds": 33.53
     },
     {
       "name": "EURAXESS",
       "status": "ok",
-      "count": 3,
-      "seconds": 8.89
+      "count": 35,
+      "seconds": 9.45
+    },
+    {
+      "name": "Curation policy",
+      "status": "ok",
+      "count": 10,
+      "note": "Student, internship, thesis, trainee, postdoc and clearly senior roles excluded; title relevance, dual-score and company caps applied."
     }
   ],
   "jobs": [
+    {
+      "id": "9967ab75c8ead139",
+      "title": "PhD - Development of a Novel Lab-on-a-Chip Component for the Analysis and Sorting of Single Cells",
+      "company": "Bosch Group",
+      "location": "Renningen, BW, Germany",
+      "country": "Germany",
+      "category": "PhD / Research",
+      "type": "Full-time",
+      "datePosted": "2026-09-11",
+      "deadline": "Check official posting",
+      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000148954834-phd-development-of-a-novel-lab-on-a-chip-component-for-the-analysis-and-sorting-of-single-cells",
+      "description": "{'title': 'Company Description', 'text': ' At Bosch, we shape the future by inventing high-quality technologies and services that spark enthusiasm and enrich people’s lives. Our promise to our associates is rock-solid: we grow together, we enjoy our work, and we inspire each other. Join in and feel the difference. The Robert Bosch GmbH is looking forward to your application! '} {'title': 'Job Description', 'text': ' As part of our research team, you will work on cutting-edge solutions for the life sciences. We are offering a PhD position to develop a novel dielectrophoresis (DEP) chip for the analysis and sorting of single cells. \\nMulti-omics analyses at the single-cell level offer crucial diagnostic insights into diseases. However, current automation technologies are often inefficient and expensive. Your project will focus on overcoming these limitations by developing an image-based DEP chip to automate the compartmentation, sample preparation, analysis, and sorting of single cells. This technology aims to enable high-throughput, gentle multi-omics analyses for universal sample types. You will develop and evaluate innovative concepts for semiconductor-based dielectrophoresis (DEP) chips, determining robust electrical, microfluidic, and thermal operating parameters. Furthermore, you will investigate the physical limits of chip miniaturization and explore feasible manufacturing routes compatible with Bosch’s CMOS technology. You will design and fabricate a functional demonstrator using semiconductor manufacturing processes and integrate it into a microfluidic system. Last but not least, you will characterize the prototype and perform a proof of concept for all operating modes using a representative bioassay with living cells in physiological media. '} {'title': 'Qualifications', 'text': \" Education: excellent Master's degree in Electrical Engineering, Microsystems Engineering, Biomedical Engineering, Physics, or a comparable field Experience and Knowledge: detailed knowledge of classical MEMS, microfluidics, and biomedical engineering; expertise in microfluidic and electrical design for lab-on-chip systems; experience in modeling of physical cell interactions at the microscale; knowledge of (optical) signal processing; experience with cleanroom processes and knowledge of oncology are advantageous Personality and Working Practice: you actively contribute your ideas and communicate your research results clearly and convincingly; your curiosity motivates you to explore new approaches, and you enjoy taking a hands-on role; you work in a structured manner to achieve your goals, develop creative solutions to complex challenges, and independently conduct experiments Languages: very good written and spoken German and English \"} {'title': 'Additional Information', 'text': ' https://www.bosch-ai.com \\nwww.bosch.com/research The final topic depends on your university. Start: Oktober 2026 Diversity and inclusion are not just trends for us but are firmly anchored in our corporate culture. Therefore, we welcome all applications, regardless of gender, age, disability, religion, ethnic origin or sexual identity. Need support during your application? \\nCelina Dannecker (Human Resources) \\n+49 711 811 21346 Need further information about the job? \\nRaphaelle Satet (Functional Department) \\n +49 172 472 2466 \\n Work #LikeABosch starts here: Apply now! '} {'title': 'Videos To Watch', 'urls': ['https://www.youtube.com/watch?v=vEdllJp7QVA']}",
+      "source": "Bosch careers / SmartRecruiters",
+      "matchScore": 84,
+      "matchedKeywords": [
+        "mems",
+        "microsystem",
+        "sem",
+        "biomedical engineering",
+        "biomedical",
+        "phd"
+      ],
+      "warnings": [],
+      "attainabilityScore": 91,
+      "perfectFit": true,
+      "matchReason": "Direct overlap with mems, microsystem, sem, biomedical engineering, biomedical."
+    },
     {
       "id": "84361700bffa22ea",
       "title": "Semiconductor Test Expert for Research and Development (m/w/d)",
@@ -57,7 +90,37 @@
         "python",
         "research and development"
       ],
-      "warnings": []
+      "warnings": [],
+      "attainabilityScore": 68,
+      "perfectFit": false,
+      "matchReason": "Direct overlap with mems, microsystem, sem, microelectronics, validation."
+    },
+    {
+      "id": "5c41e65facf83cdb",
+      "title": "PhD - Lab on Chip Sample Preparation for Next-Generation Molecular Diagnostics",
+      "company": "Bosch Group",
+      "location": "Renningen, BW, Germany",
+      "country": "Germany",
+      "category": "PhD / Research",
+      "type": "Full-time",
+      "datePosted": "2026-09-11",
+      "deadline": "Check official posting",
+      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000148957129-phd-lab-on-chip-sample-preparation-for-next-generation-molecular-diagnostics",
+      "description": "{'title': 'Company Description', 'text': ' At Bosch, we shape the future by inventing high-quality technologies and services that spark enthusiasm and enrich people’s lives. Our promise to our associates is rock-solid: we grow together, we enjoy our work, and we inspire each other. Join in and feel the difference. The Robert Bosch GmbH is looking forward to your application! '} {'title': 'Job Description', 'text': ' Join our innovative research team. We are looking for a motivated PhD candidate to develop a microfluidic sample-preparation unit operation, based on magnetic beads, enabling next-generation molecular diagnostics (MDx) workflows. Next-generation molecular diagnostics require robust and automated methods for isolating low-abundance biological targets - such as pathogens, circulating tumor DNA (ctDNA), and extracellular vesicles (EVs)-from complex samples. This PhD project aims to develop a scalable, cartridge-compatible platform for the controlled handling of functionalized magnetic particles throughout the complete sample-preparation workflow, including target capture, washing, transfer, resuspension, and release. The central objective is to establish a reusable microfluidic actuation module that interfaces seamlessly with disposable diagnostic cartridges. You will conduct targeted literature research on the manipulation of magnetic particles and develop multiphysics models (e.g., COMSOL) to optimize particle trajectories and fluid interactions. Furthermore, you will conceptually design and develop a reusable, cartridge-compatible microfluidic handling module that automates the entire target-molecule extraction process (capture, washing, transfer, and release). You will create functional prototypes and experimentally quantify system performance using key metrics such as target-molecule recovery, processing time, and reproducibility. Last but not least, you will translate your physical understanding and modeling results into rigorous design rules for integration into disposable diagnostics cartridges, delivering transferable models and prototypes for future product development. '} {'title': 'Qualifications', 'text': \" Education: excellent master's degree in Biomedical Engineering, Mechanical Engineering, Applied Physics, Microsystems Engineering (MEMS), or a related field Experience and Knowledge: solid knowledge of microfluidics, fluid dynamics, and multiphysics simulation (e.g., COMSOL); practical experience in the design, prototyping, and testing of lab-on-a-chip systems; ideally, familiarity with handling magnetic particles, non-Newtonian fluids (such as blood), or sample preparation for molecular diagnostics (MDx) Personality and Working Practice: you work independently, plan your tasks carefully, and contribute with a high level of commitment and a strong hands-on mentality; you are able to communicate your research findings clearly and bridge the gap between theoretical simulation and physical prototyping, taking ownership of your work Enthusiasm: you are passionate about interdisciplinary scientific work at the intersection of physics, engineering, and biomedicine, approach complex tasks creatively and innovatively, and successfully translate them into practical applications Languages: very good written and spoken German and English \"} {'title': 'Additional Information', 'text': ' https://www.bosch-ai.com \\nwww.bosch.com/research The final topic depends on your university. Start: October 2026 Diversity and inclusion are not just trends for us but are firmly anchored in our corporate culture. Therefore, we welcome all applications, regardless of gender, age, disability, religion, ethnic origin or sexual identity. Need support during your application? \\nCelina Dannecker (Human Resources) \\n+49 711 811 21346 Need further information about the job? \\nRaphaelle Satet (Functional Department) \\n +49 172 472 2466 \\n Work #LikeABosch starts here: Apply now! '} {'title': 'Videos To Watch', 'urls': ['https://www.youtube.com/watch?v=vEdllJp7QVA']}",
+      "source": "Bosch careers / SmartRecruiters",
+      "matchScore": 77,
+      "matchedKeywords": [
+        "mems",
+        "microsystem",
+        "biomedical engineering",
+        "biomedical",
+        "simulation",
+        "phd"
+      ],
+      "warnings": [],
+      "attainabilityScore": 91,
+      "perfectFit": false,
+      "matchReason": "Direct overlap with mems, microsystem, biomedical engineering, biomedical, simulation."
     },
     {
       "id": "adcb9c349f41b2c1",
@@ -82,7 +145,10 @@
         "phd",
         "doctoral"
       ],
-      "warnings": []
+      "warnings": [],
+      "attainabilityScore": 91,
+      "perfectFit": false,
+      "matchReason": "Direct overlap with mems, sem, matlab, python, simulation."
     },
     {
       "id": "ef2b87e0e97ff56e",
@@ -106,32 +172,36 @@
         "research associate",
         "research and development"
       ],
-      "warnings": []
+      "warnings": [],
+      "attainabilityScore": 83,
+      "perfectFit": false,
+      "matchReason": "Direct overlap with mems, microsystem, photonics, simulation, research associate."
     },
     {
-      "id": "285a28f69fd14c71",
-      "title": "Simulation Expert - Semiconductor Processes and Materials - Espoo",
-      "company": "Bosch Group",
-      "location": "Espoo, Uusimaa, Finland",
-      "country": "Finland",
+      "id": "57f27f0a66763da8",
+      "title": "PhD Position Unravelling Hydrogen-Induced Degradation and Fracture in Circular Steels",
+      "company": "EURAXESS research organisation",
+      "location": "Netherlands",
+      "country": "Netherlands",
       "category": "PhD / Research",
-      "type": "Full-time",
-      "datePosted": "2026-06-17",
-      "deadline": "Check official posting",
-      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000132612130-simulation-expert-semiconductor-processes-and-materials-espoo",
-      "description": "{'title': 'Company Description', 'text': \" Here at Bosch, we are creating the future by inventing technologies and services of high quality that can enrich peoples' lives. Our promise to our employees is solid: we grow together, we enjoy our work, and we inspire each other. Join us and feel the difference!\\u202f \"} {'title': 'Job Description', 'text': ' Join one of the major global players in the MEMS business! To strengthen our development center in Espoo, Finland, we are looking for simulation experts with a passion for semiconductor processes and innovation. As a Simulation Expert, you will work on the modelling and simulation of semiconductor manufacturing processes, with a focus on plasma patterning and deposition. You will apply atomistic and continuum approaches, combining them to understand and optimize process behavior. The role offers the opportunity to shape simulation-driven development in an evolving environment, requiring initiative, ownership, and independent topic development, as well as active cross-functional networking. Process Simulation & Modelling: Multi-scale simulation of plasma and deposition processes. Methods: Combine atomistic, continuum, analytical, and machine learning approaches. From Research to Industrialization: Understand plasma–surface interactions and thin-film growth and translate insights into process improvements. Support transfer to high-volume manufacturing to enhance yield and reduce costs. Validation: Align simulations with experimental data from semiconductor wafers. Collaboration: Build a strong internal network and work across cooperate research, development and production. Knowledge Transfer: Collaborate with research partners and vendors. '} {'title': 'Qualifications', 'text': ' Personality: Self-driven, proactive, problem-solving mindset and comfortable owning topics independently. Experience and Know-How: Background in semiconductor process simulation, ideally plasma and/or deposition. Knowledge of multi-scale modelling (atomistic + continuum); experience with analytical methods and/or machine learning. Experience in validating simulations with experimental data is required, experience in industry or with industrial partners is favorable; independent topic ownership is an advantage. Enthusiasm: Interest in complex topics in an international environment. Education: Degree (Master/PhD) in engineering, physics, chemistry, materials, computational science, or equivalent. Languages: Excellent English; Finnish or German are a plus. Local experience: You have professional experience in the Finnish semiconductor ecosystem. '} {'title': 'Additional Information', 'text': ' Please submit your application for this role via our Bosch Finland Job Portal. We offer: An exciting job at\\u202fan international company which is working at the forefront of technology. The chance to be part of a growing new location for MEMS technology development of one of the major global players in the MEMS business! A hybrid work form is possible after further coordination with managers.\\u202f Do you have any questions? Then contact Christoph Kaiser at christoph.kaiser@fi.bosch.com \\n More about Bosch: www.bosch.com '}",
-      "source": "Bosch careers / SmartRecruiters",
-      "matchScore": 72,
+      "type": "Research position",
+      "datePosted": "2026-09-27",
+      "deadline": "2026-10-30",
+      "url": "https://euraxess.ec.europa.eu/jobs/468714",
+      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 27 Sep 2026 Job Information Organisation/Company Delft University of Technology (TU Delft) Research Field Engineering » Materials engineering Researcher Profile First Stage Researcher (R1) Application Deadline 30 Oct 2026 - 22:59 (UTC) Country Netherlands Type of Contract Permanent Job Status Not Applicable Hours Per Week 38.0 Is the job funded through the EU Research Framework Programme? Not funded by a EU programme Is the Job related to staff position within a Research Infrastructure? No Offer Description Join a cutting-edge research programme at TU Delft and investigate the mechanisms of hydrogen-induced degradation in circular steels. Job description Within this project, you will investigate one of the key challenges facing the hydrogen economy: understanding how hydrogen interacts with the complex microstructures of circular steels and causes degradation and failure. This position is part of the project \"Circularity as Opportunity: Engineering Hydrogen-Resistant Circular Steels (CIRHY)\", a 6-year research and innovation programme developing next-generation circular steels that can safely operate in hydrogen environments. By combining advanced experiments with multiscale modelling, CIRHY aims to enable reliable and sustainable steels for future hydrogen infrastructure and industry. Hydrogen embrittlement is one of the major barriers to the safe deployment of hydrogen technologies. At the same time, increasing steel circularity introduces microstructural complexity through tramp elements, precipitates, inclusions and segregation phenomena. While considerable progress has been made in understanding hydrogen embrittlement in conventional steels, the mechanisms governing hydrogen-induced degradation and fracture in compositionally complex circular steels remain poorly understood. The Extreme Materials and Mechanics Group at TU Delft, led by Prof. Vera Popovich, is internationally recognized for its expertise in hydrogen embrittlement, fracture mechanics and advanced characterization of metallic materials. By combining state-of-the-art microscopy, hydrogen testing and fracture mechanics, the group develops fundamental understanding of material degradation in extreme environments and translates this knowledge into solutions for the energy transition. Within this position, you will combine advanced microstructural characterization, in-situ hydrogen mechanical testing and fracture toughness experiments to uncover how hydrogen interacts with circular steel microstructures and affects deformation, ductility, crack initiation and crack propagation. You will investigate hydrogen trapping and transport, identify the microstructural features controlling embrittlement and establish quantitative links between microstructure and structural performance. The outcome of this research, conducted in close collaboration with Tata Steel and other partners, will provide crucial experimental insights for designing safer and more reliable hydrogen-resistant circular steels. In this role, you will develop fundamental insights into the mechanisms governing hydrogen-induced degradation and failure of circular steels. As a PhD researcher, you will: Perform advanced 3D microstructural characterization of circular steels, focusing on segregation of tramp elements to precipitates, inclusions, interfaces, voids and dislocations. Investigate the influence of hydrogen on deformation behaviour and ductility through in-situ hydrogen mechanical testing. Quantify hydrogen transport, trapping and interaction with microstructural defects using advanced characterization techniques. Conduct in-situ hydrogen fracture toughness testing to identify crack initiation and propagation mechanisms. Collaborate closely with researchers from the Department of Materials Science and Engineering at TU Delft, University of Groningen, Eindhoven University of Technology, University of Twente, KU Leuven, MPI for Sustainable Materials and multiple industrial partners. Contribute to scientific publications, conference presentations and dissemination activities within the M2i framework. Job requirements We are looking for a highly motivated and curious researcher with a strong interest in materials degradation, hydrogen embrittlement and advanced experimental characterization. You enjoy working at the intersection of materials science, mechanics and microscopy, and are excited to contribute to the development of sustainable materials for the hydrogen economy. You are an independent thinker, eager to learn new experimental techniques, and enjoy collaborating with researchers from different disciplines as well as industrial partners. Furthermore, you meet the following requirements: You hold a Master's degree in Materials Science and Engineering, Mechanical Engineering, Physics, Applied Physics, Metallurgy, or a closely related discipline. You have a strong background in physical metallurgy, materials characterization, fracture mechanics, mechanical behaviour of materials, or a related field. Experience with one or more advanced characterization techniques such as SEM, EBSD, TEM, XRD, SIMS or related methods is highly desirable. Experience with mechanical testing, fracture mechanics, hydrogen embrittlement research or materials degradation is an advantage but not mandatory. You have strong analytical and problem-solving skills and enjoy combining experimental observations with scientific interpretation. You have a strong academic track record, demonstrated by excellent study results and/or research experience. You are enthusiastic about working in a multidisciplinary academic and industrial consortium. You have excellent written and verbal communication skills in English. TU Delft (Delft University of Technology) Working at TU Delft means contributing to solutions that really make a difference. For over 180 years, we have been t",
+      "source": "EURAXESS",
+      "matchScore": 69,
       "matchedKeywords": [
-        "mems",
-        "thin-film",
+        "xrd",
         "sem",
-        "validation",
-        "machine learning",
-        "simulation",
-        "phd"
+        "materials characterization",
+        "phd",
+        "researcher"
       ],
-      "warnings": []
+      "warnings": [],
+      "attainabilityScore": 89,
+      "perfectFit": false,
+      "matchReason": "Direct overlap with xrd, sem, materials characterization, phd, researcher."
     },
     {
       "id": "6a95f98be7b7d545",
@@ -152,7 +222,38 @@
         "sem",
         "phd"
       ],
-      "warnings": []
+      "warnings": [],
+      "attainabilityScore": 63,
+      "perfectFit": false,
+      "matchReason": "Direct overlap with mems, sem, phd."
+    },
+    {
+      "id": "6f3104903e2f1d2f",
+      "title": "PhD in Automated Spectroscopy of Photoactive Molecules and Thin Films",
+      "company": "EURAXESS research organisation",
+      "location": "Netherlands",
+      "country": "Netherlands",
+      "category": "PhD / Research",
+      "type": "Research position",
+      "datePosted": "2026-09-27",
+      "deadline": "2026-10-31",
+      "url": "https://euraxess.ec.europa.eu/jobs/468719",
+      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 27 Sep 2026 Job Information Organisation/Company University of Amsterdam (UvA) Research Field Chemistry » Analytical chemistry Chemistry » Physical chemistry Engineering » Chemical engineering Engineering » Process engineering Researcher Profile First Stage Researcher (R1) Application Deadline 31 Oct 2026 - 22:59 (UTC) Country Netherlands Type of Contract Temporary Job Status Not Applicable Hours Per Week 38.0 Is the job funded through the EU Research Framework Programme? Not funded by a EU programme Is the Job related to staff position within a Research Infrastructure? No Offer Description How can we accelerate the discovery of next-generation materials — from porous architectures for CO₂ capture to photoactive systems for sustainable solar-energy conversion and unprecedented photomedicines? In this PhD project, you will build a self-driving laboratory platform that will help solving outstanding questions at the forefront of (photo)chemistry by implementing automated spectroscopy workflows for molecular systems and thin films in combination with AI-driven process optimization. Help us shape the future of chemical research! Self-driving lab platform for photochemical and porosity research Join a highly interdisciplinary project with the spectroscopy at its core at the University of Amsterdam that brings together photophysics, spectroscopy, automation, flow technology and functional materials supervised by a team of passionate experts: Dr Tomáš Šolomek, Dr Bettina Baumgartner, and Prof Tim Noël. The project aims at establishing a self-driving platform based on RoboChem, extending its capabilities to research in porous and photoactive materials. You will first implement new reliable and quantitative diffusion-ordered optical spectroscopy that will permit rapid and automated determination of fundamental photochemical parameters, such as optical spectra, quenching, or quantum yields. This will aid and abet discovery of new systems for photoactivated chemotherapy. Second, you will develop a flow-based ATR-UV–Vis spectroscopy platform that follows the formation of porous or photoactive thin films in real time. By measuring both polarization directions, you will determine how molecular building blocks become oriented during film growth, and how the films respond to external perturbations, such as molecular guests, light or charge. The focus will be on organic cages and metal–organic framework (MOF) thin films as key material classes. The broader goal is to create robust, automated set of spectroscopic tools that connect molecular structure and organization, their properties and function. This is what you are going to do Design and build flow setups using 3D printer, pumps, valves operated by a computer and the corresponding software. Develop flow cells to connect various spectroscopic tools to the setup. Create and validate reproducible automated workflows for quantitative photophysical measurements to obtain optical spectra and quantum-yields. Implement AI methods to search in the parameter space that affects the measured data and translate the observations into mechanistic insight. Develop a controlled flow system for in situ ATR-UV–Vis spectroscopy including polarization and use it to monitor the formation, orientation, and evolution of porous or photoactive thin films. Turn the developed methods into robust, documented and transferable experimental workflows, analyse the resulting multidimensional datasets, publish the results and collaborate closely with the supervisory team and colleagues. This is what we ask of you You enjoy experimental research and want to work at the interface of physical chemistry, spectroscopy, photochemistry and instrumentation. This is a heavily hands-on oriented position: you will not only measure samples, but also build, automate, troubleshoot and improve the setup and ensuing workflows. You have a Master's degree in chemical engineering, physical chemistry, materials science, or a closely related field. You have hands-on experience with building experimental setups, ideally involving experimental spectroscopy, and can prepare and handle molecular solutions and photosensitive samples accurately and reproducibly. You are comfortable working with optics, fluidics, detectors, light sources or related laboratory hardware. You are interested in instrument automation and quantitative data analysis. Experience with Python, LabVIEW, or Matlab for instrument control/data processing is required, but you do not need to be an expert at the start. You can document experiments carefully, work safely with chemical samples and solvents, and communicate results clearly with collaborators from different scientific backgrounds. Strong initiative and passion for science. Open to collaborate with students (BSc/MSc), PhDs and postdocs involved in related project and research groups within and outside the Netherlands. This is what we offer you You will work on a project in which building new experimental capability is itself a central scientific contribution. You will have room to develop expertise in quantitative photophysics, optical spectroscopy, laboratory automation, flow systems and functional thin-film materials, while working with supervisors who bring complementary expertise. You will become part of supportive and collaborative research groups (Šolomek group, Baumgartner group, and Noël group) where curiosity and creativity are highly valued. We celebrate scientific progress—whether it’s a successful synthesis, a clever analysis, or a shared insight over coffee. You will have regular individual meetings with your supervisors with an open-door policy to ensure you have guidance when needed and space to grow independently. You’ll have access to excellent facilities for state-of-the-art self-driving platforms and spectroscopy, and also organic and materials",
+      "source": "EURAXESS",
+      "matchScore": 65,
+      "matchedKeywords": [
+        "thin film",
+        "thin-film",
+        "matlab",
+        "python",
+        "data analysis",
+        "phd",
+        "researcher"
+      ],
+      "warnings": [],
+      "attainabilityScore": 89,
+      "perfectFit": false,
+      "matchReason": "Direct overlap with thin film, thin-film, matlab, python, data analysis."
     },
     {
       "id": "1b3b06a3966d7158",
@@ -177,7 +278,10 @@
         "simulation",
         "r&d"
       ],
-      "warnings": []
+      "warnings": [],
+      "attainabilityScore": 63,
+      "perfectFit": false,
+      "matchReason": "Direct overlap with mems, microsystem, sem, verification, python."
     },
     {
       "id": "e56bbba67dfd30c2",
@@ -201,144 +305,10 @@
         "phd",
         "r&d"
       ],
-      "warnings": []
-    },
-    {
-      "id": "135679e033b1f26f",
-      "title": "Promotion (PhD) im Bereich Inertial‑MEMS: Wafer‑Level‑Test und Design mit Fokus auf Stiction und Robustheit (w/m/div.) (w/m/div.)",
-      "company": "Bosch Group",
-      "location": "Reutlingen, BW, Germany",
-      "country": "Germany",
-      "category": "PhD / Research",
-      "type": "Full-time",
-      "datePosted": "2026-06-23",
-      "deadline": "Check official posting",
-      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000133548779-promotion-phd-im-bereich-inertial-mems-wafer-level-test-und-design-mit-fokus-auf-stiction-und-robustheit-w-m-div-w-m-div-",
-      "description": "{'title': 'Unternehmensbeschreibung', 'text': 'Bei Bosch gestalten wir die Zukunft, indem wir hochwertige Technologien und Dienstleistungen entwickeln, die begeistern und das Leben der Menschen bereichern. Unser Versprechen an unsere Mitarbeitenden ist felsenfest: Wir wachsen gemeinsam, wir haben Freude an unserer Arbeit und wir inspirieren uns gegenseitig. Machen Sie mit und spüren Sie den Unterschied. Die Robert Bosch GmbH freut sich auf Ihre Bewerbung!'} {'title': 'Stellenbeschreibung', 'text': ' Im Rahmen Ihrer Promotion sind Sie für die Entwicklung von Testinhalten zur Charakterisierung inertialer MEMS auf Wafer-Ebene verantwortlich. Ihre Tätigkeit umfasst die Auslegung und Charakterisierung von inertialen MEMS-Testchips in Richtung Stiction und Robustheit. Zudem entwickeln Sie innovative Techniken und Ideen, die anschließend in reale Produkte übertragen werden können. '} {'title': 'Qualifikationen', 'text': ' Ausbildung: Sie verfügen über einen Masterabschluss mit sehr guten Noten in Physik, Elektrotechnik, Nachrichtentechnik, Software Engineering oder einem vergleichbaren Fachgebiet. Erfahrung: Sie bringen Erfahrung mit FPGA-Systemen und -Tools mit, verfügen über einen Hintergrund in der Analogelektronik sowie über Erfahrung in Schaltungsdesign und Simulation (z.\\u202fB. Ansys, Comsol o.\\u202fÄ.). Kenntnisse: Sie haben ein gutes Verständnis elektrischer Messtechniken, verfügen über Programmierkenntnisse (erforderlich: C, Python, Matlab) und Kenntnisse im Bereich Halbleiter und MEMS. Persönlichkeit: Sie sind teamorientiert, arbeiten gerne in interdisziplinären Teams und zeichnen sich durch eine selbstorganisierte Arbeitsweise aus. Sprachen: Sie verfügen über gute Kommunikationsfähigkeiten in Englisch sowie in Deutsch (mindestens B2). '} {'title': 'Zusätzliche Informationen', 'text': 'Gemäß vorheriger Vereinbarung: Das endgültige Promotionsthema ist von Ihrer Universität abhängig.\\n\\nVielfalt und Inklusion sind für uns nicht nur Trends, sondern fest in unserer Unternehmenskultur verankert. Daher begrüßen wir alle Bewerbungen – unabhängig von Geschlecht, Alter, Behinderung, Religion, ethnischer Herkunft oder sexueller Identität.\\n\\nBenötigen Sie Unterstützung während Ihrer Bewerbung? \\nJohanna Ripple \\n+49 (7121) 35-34427\\n\\nBenötigen Sie weitere Informationen zur Stelle? \\nMatthew Lewis \\n+49 (7121) 35-30846'}",
-      "source": "Bosch careers / SmartRecruiters",
-      "matchScore": 63,
-      "matchedKeywords": [
-        "mems",
-        "matlab",
-        "python",
-        "simulation",
-        "phd"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "9113d6ae243f8e87",
-      "title": "Photonic Devices Specialist (F/M)",
-      "company": "EURAXESS research organisation",
-      "location": "Poland",
-      "country": "Poland",
-      "category": "R&D / Industry",
-      "type": "Research position",
-      "datePosted": "2026-10-02",
-      "deadline": "2026-10-16",
-      "url": "https://euraxess.ec.europa.eu/jobs/470173",
-      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 2 Oct 2026 Job Information Organisation/Company Łukasiewicz Research Network - Institute of Microelectronics and Photonics Research Field Physics » Electronics Engineering » Materials engineering Researcher Profile First Stage Researcher (R1) Positions Master Positions Application Deadline 16 Oct 2026 - 23:59 (Europe/Warsaw) Country Poland Type of Contract Permanent Job Status Full-time Hours Per Week 40 Offer Starting Date 1 Nov 2026 Is the job funded through the EU Research Framework Programme? Not funded by a EU programme Reference Number N/26/73 Is the Job related to staff position within a Research Infrastructure? Yes Offer Description Łukasiewicz Research Network - Institute of Microelectronics and Photonics (Łukasiewicz-IMiF) conducts the research and development in the field of advanced microelectronic and photonic technologies. It has unique technological laboratories and intellectual capital that enable it to undertake the scientific work and run the projects aimed at increasing the innovation of Polish enterprises, simultaneously creating a high-tech knowledge environment in the field of innovative materials’ production along with the technology and design of microelectronics and photonic devices, gallium nitride technology, LTCC technology, printed electronics and medical and environmental sensors. Łukasiewicz–IMiF runs numerous projects financed from domestic and foreign funds annually, the goals of which are to increase the innovation of the Polish economy. Main responsibilities: Designing and optimising photonic structures and devices, in particular those intended for operation in the infrared and mid-infrared (MIR) spectral ranges. Developing numerical models and performing electromagnetic, optical, thermal and electro-optical simulations using COMSOL Multiphysics, Lumerical, MATLAB, or tools with comparable functionality. Planning and conducting optical, electro-optical, electrical, spectral and thermal characterisation of designed structures and devices. Analysing and interpreting measurement results, comparing them with modelling outcomes, and identifying opportunities for design and technology optimisation. Preparing design data while taking technological process constraints into account, and cooperating with teams responsible for epitaxy, fabrication, characterisation and device integration. Participating in the development and optimisation of technological processes, including photolithography, layer deposition, etching, surface preparation, device assembly and integration. Automating measurements, programming laboratory equipment and processing experimental data using Python, MATLAB, or equivalent tools. Maintaining scientific and technical documentation, preparing R&D reports, and contributing to the preparation of publications, patent applications and conference presentations. Participating in the implementation of national and international research and development projects. Where to apply Website https://system.erecruiter.pl/FormTemplates/RecruitmentForm.aspx?WebID=f92dee88f… Requirements Research Field Physics » Electronics Education Level Master Degree or equivalent Research Field Engineering » Materials engineering Education Level Master Degree or equivalent Skills/Qualifications A Master’s degree or a higher education degree combined with at least one year of experience in the research and development sector. Candidates holding at least a Master’s degree in photonics, optoelectronics, physics, electronics, materials engineering, or a related field will be preferred. Experience in conducting research and development work related to the design, modelling or characterisation of photonic/optoelectronic devices. Experience in experimental work and in analysing the results of optical, electro-optical, electrical, spectral or thermal measurements. Practical knowledge of numerical modelling methods and simulation of photonic structures. Knowledge of COMSOL Multiphysics, Lumerical, MATLAB, or software with comparable functionality. Author or co-author of at least one publication published in a scientific journal included on the Polish Ministry of Science and Higher Education list, with a score below 140 points. Author or co-author of at least one presentation delivered at an international scientific or industry conference, in the form of a poster, communication, oral presentation or lecture. Documented participation in the implementation of at least one research and development project, or a project related to the implementation of research results, financed through subsidies, grants, commissioned tasks or external sources, whether domestic or international. Good command of spoken and written English, at a minimum B1 level. Ability to work effectively both independently and as part of a team. Ability to work systematically and reliably; maintain documentation of technological work; analyse experimental results; and prepare reports. Strong problem-solving skills and the ability to identify effective solutions. Specific Requirements Preferred Qualifications - The Łukasiewicz Research Network – Institute of Microelectronics and Photonics (Łukasiewicz-IMiF) will additionally consider the following qualifications: Experience in the fabrication technology of semiconductor and photonic structures, particularly in photolithography, layer deposition and etching, will be considered an additional asset. Author or co-author of an industry report or analysis relevant to the Institute’s research areas. Documented participation in specialist training courses. Languages ENGLISH Level Good Research Field Physics » ElectronicsEngineering » Materials engineering Years of Research Experience None Additional Information Benefits Medical packages Group life insurance Sports card Co-financing of training and courses Additional social benefits Co-financing of holidays",
-      "source": "EURAXESS",
-      "matchScore": 57,
-      "matchedKeywords": [
-        "sem",
-        "microelectronics",
-        "photonics",
-        "matlab",
-        "python",
-        "simulation",
-        "researcher",
-        "r&d"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "9b5183d09b8d6be3",
-      "title": "MEMS Designer for inertial MEMS Sensors",
-      "company": "Bosch Group",
-      "location": "Milano, Lombardia, Italy",
-      "country": "Italy",
-      "category": "PhD / Research",
-      "type": "Full-time",
-      "datePosted": "2026-10-01",
-      "deadline": "Check official posting",
-      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000152942130-mems-designer-for-inertial-mems-sensors",
-      "description": "{'title': 'Company Description', 'text': ' Bosch Sensortec is the technology leader in sensing solutions based on microelectromechanical systems (MEMS) and dedicated to the consumer electronics world. Our success in MEMS sensors and solutions is built on a remarkable team driven by passion, innovation and flexibility. There is more than one good reason to join #BoschSensortec . We not only have cutting-edge product technology and an employee-oriented corporate culture, we also offer you attractive working conditions and first-class career opportunities. We offer you many different working fields and career paths — and we provide individual possibilities to enable you to turn your passion into real innovations. '} {'title': 'Job Description', 'text': ' What will you take care of? You will be working in the Milan Design Center of the Bosch Sensortec Division, where you will have the chance to: Take responsibility: Based on specific customer requirements you are designing the mechanical and electrical behavior of new MEMS structures. Model based design : You are carrying out dedicated simulations to optimize the designed MEMS structures with focus on gyroscopes. Drive the future: You are developing new algorithms for design optimization and improve simulation methods. Be part of the team : You are part of a cross functional engineering team. In addition to the design, the analysis of cause chain reactions is required. Networking : Beside the coordination of all design and simulation tasks the close cooperation with project management and technology development is a crucial key-factor for success. '} {'title': 'Qualifications', 'text': ' What distinguishes you? Education : Master of Science or PhD in Mechanical Engineering, Mathematics, Physics or equivalent Languages : Fluent English (B2 as minimum level), German as a plus. Software Skills: Proficient coder. Experience with MATLAB/Python and Finite Element Simulation tools required. Additional Simulink skills preferred. Working style : autonomous self-organized working in a complex development environment. Structured concept development in the area of simulations and algorithms. Excellent presentation skills. Experience and Know-How : Specialist for MEMS design and model development for inertial MEMS sensors (FEM, Matlab, etc.) with at least 3-5 years of experience. Working in cross-functional teams. (ASIC, package, etc.) Experience designing and conducting lab experiments. In line with our compensation policies, the gross annual salary (RAL) for this position lies within the range € 50.000 - €60.000 for a 40-hour work week. The remuneration package also includes: A company performance-related bonus Additional benefits. The salary range corresponds to the specified job grade and may vary depending on the candidate’s level of experience. We look forward to discussing the full details of our compensation package and career development opportunities with you during the application process. '} {'title': 'Additional Information', 'text': ' Bosch is proud to be an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, marital status, national origin or ancestry, age, disability or any other protected class. www.bosch.it https://www.bosch.it/lavora-con-noi/ '}",
-      "source": "Bosch careers / SmartRecruiters",
-      "matchScore": 55,
-      "matchedKeywords": [
-        "mems",
-        "matlab",
-        "python",
-        "simulation",
-        "phd"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "613bb71a2b0d35bf",
-      "title": "Students: Computer Vision in Semiconductor Metrology",
-      "company": "ENAS - Electronic Nano Systems",
-      "location": "Chemnitz, Germany",
-      "country": "Germany",
-      "category": "PhD / Research",
-      "type": "Research / Employment",
-      "datePosted": "",
-      "deadline": "Check official posting",
-      "url": "https://jobs.fraunhofer.de/job/Chemnitz-Students-Computer-Vision-in-Semiconductor-Metrology-09126/1065328701/",
-      "description": "Search by Keyword/Field of Study/Jobcode Search by Location > More Search Options Loading... Level of Experience All Job Function All Opportunity for promotion All Region All Institute All Language All Clear Select how often (in days) to receive an alert: Create Jobalert × Select how often (in days) to receive an alert: Apply now » City: Chemnitz Date: Sep 18, 2026 Students: Computer Vision in Semiconductor Metrology The Fraunhofer-Gesellschaft ( www.fraunhofer.com ) is one of the world's leading organizations for application-oriented research. 74 institutes develop pioneering technologies for our economy and society – more precisely: 30 000 people from technology, science, administration and IT. They know: Anyone who comes to Fraunhofer wants to and can make a difference. For themselves, for us and for the markets of today and tomorrow. The particular strength of the Fraunhofer Institute for Electronic Nano Systems ENAS lies in the development of smart systems - so-called intelligent systems for various applications. The systems combine electronic components, micro and nano sensors and actuators with interfaces for communication. Fraunhofer ENAS develops individual components, the technologies for their production as well as system concepts and system integration technologies and transfers them into practical use. Fraunhofer ENAS accompanies customer projects from the idea to the design, technology development or implementation using existing technologies, right through to the tested prototype. The Data-based Methods team at Fraunhofer ENAS develops real-world applications using AI, machine learning and computer vision. The main focus is on semiconductor manufacturing and medical technology. Do you have a passion for developing application-oriented computer vision pipelines for semiconductor metrology? Join our team as a student and contribute to the development of computer vision models for analyzing measurements on metrology equipments. Our goal is to increase the efficiency of semiconductor manufacturing by automating image analysis, utilizing web-based user interfaces and simplifying reporting. Key responsibilities: Development of computer vision models to analyze measurement data. Extract meaningful information from metrological data. Deploy your pipeline in web-based user interfaces. We are currently looking for students for Master's theses, internships and student assistants . We can discuss our ideas together to find the right job for you. What you contribute Strong understanding and practical experience with image processing methods or computer vision models. Excellent programming skills (preferably in Python) are required. Strong abstract and mathematical thinking skills. A strong interest in interdisciplinary work at the interface of software engineering, data science and semiconductor metrology is essential. Still studying in Chemnitz, Mittweida or the surrounding area. An average grade < 2 is preffered. We value and promote the diversity of our employees' skills and therefore welcome all applications – regardless of age, gender, nationality, ethnic and social origin, religion, ideology, disability, sexual orientation and identity. Severely disabled persons are given preference in the event of equal suitability. Our tasks are diverse and adaptable – for applicants with disabilities, we work together to find solutions that best promote their abilities. With its focus on developing key technologies that are vital for the future and enabling the commercial utilization of this work by business and industry, Fraunhofer plays a central role in the innovation process. As a pioneer and catalyst for groundbreaking developments and scientific excellence, Fraunhofer helps shape society now and in the future. Ready for a change? Then apply now and make a difference! Once we have received your online application, you will receive an automatic confirmation of receipt. We will then get back to you as soon as possible and let you know what happens next. Dr. Jan Langer will be happy to answer any questions you may have about the position. Please submit your questions here via our recruiting portal. For data protection reasons, we can only consider applications submitted via our career portal - thank you for your understanding. Fraunhofer Institute for Electronic Nano Systems ENAS www.enas.fraunhofer.de Requisition Number: 73238 Application Deadline: Job Segment: Medical Technology, Software Engineer, Semiconductor, Engineer, Healthcare, Engineering, Research, Science Apply now » Find similar jobs: Student assistant, Applied Research, All Job Offers",
-      "source": "Fraunhofer careers",
-      "matchScore": 53,
-      "matchedKeywords": [
-        "sem",
-        "python",
-        "machine learning",
-        "image processing",
-        "computer vision"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "0f7b896be4129b12",
-      "title": "Lecturer and researcher Civil Engineering and Microstructure of Building Materials M/F",
-      "company": "EURAXESS research organisation",
-      "location": "France",
-      "country": "France",
-      "category": "PhD / Research",
-      "type": "Research position",
-      "datePosted": "2026-10-02",
-      "deadline": "2026-11-02",
-      "url": "https://euraxess.ec.europa.eu/jobs/470198",
-      "description": "Page contents Job Information Offer Description Where to apply Requirements Additional Information Work Location(s) Contact 2 Oct 2026 Job Information Organisation/Company IMT Mines Ales Department Human Ressources Department Research Field Engineering » Civil engineering Researcher Profile Leading Researcher (R4) Positions PhD Positions Application Deadline 2 Nov 2026 - 00:00 (UTC) Country France Type of Contract Permanent Job Status Full-time Offer Starting Date 1 Feb 2027 Is the job funded through the EU Research Framework Programme? European Union / Next Generation EU Is the Job related to staff position within a Research Infrastructure? No Offer Description Come join IMT Mines Alès, a prestigious “grande école” ranked among the top engineering schools both nationally and globally, located in Alès—a welcoming, livable city and the capital of the Cévennes region, where residents highly value the quality of life. Founded in 1843, IMT Mines Alès currently has 1,400 students (including 250 international students) and 380 staff members. The school has three high-level scientific and technological research and teaching centers, working in the fields of materials and civil engineering (C2MA), the environment and risk (CREER), and artificial intelligence and industrial and digital engineering (CERIS). It has 12 technology platforms and 1,600 partner companies. For more information: https://www.imt-mines-ales.fr You will be based at the Mines Alès Materials Center (C2MA) at IMT Mines Alès and will be part of the UMR LMGC “Laboratory of Mechanics and Civil Engineering” research team. As an Associate Professor at Institut Mines-Télécom, you will carry out teaching, research, and technology transfer duties. Teaching Activities Participate in teaching activities at the school within the Department of Civil Engineering and Sustainable Building (GCBD), in the Infrastructure and Major Structures (IGO), Building and Energy (BE), and Building (BAT), through lectures, seminars, lab sessions, project supervision, and student mentoring; Teach courses in the fields of civil engineering, materials science, and structural analysis; Deliver courses in English or develop active learning methods; Participate in student admissions committees and in initiatives to promote the engineering program; Lead a specialization track in the final year of study and propose research and development projects; Teach a minimum of 150 hours per year. Research Activities Conduct research within the LMGC’s “Divided Media” research area; Strengthen the research focus on low-carbon cementitious matrices, with regard to the macroscopic properties and durability of these materials, and bring together other researchers by linking this work to the modeling and mechanical aspects developed at the LMGC; Focus on methods for the experimental characterization of the properties of cementitious materials in both the fresh and hardened states, particularly their microstructure, which requires knowledge of the physicochemistry of cementitious matrices and admixture technology; Contribute to the collective management of the Civil Engineering platform. Technology Commercialization and Transfer Activities Identify and establish research contracts with industrial and academic partners, as well as draft grant proposals for public agencies or international programs; Serve as the liaison with the contractual partner, oversee the scientific objectives defined in the project, lead a project team, and monitor the project’s progress, as well as manage related communications; Develop an understanding of the process of commercially exploiting research results in order to contribute to cooperation between academic research, industrial research, and the production sectors; Carry out, within your scientific and technical area of expertise, initiatives designed to support companies or the school’s incubator in order to promote the creation of spin-offs and the development of technology-based companies. Where to apply Website https://www.imt-mines-ales.fr Requirements Research Field Engineering » Civil engineering Education Level PhD or equivalent Skills/Qualifications The position requires proven experience in teaching civil engineering and construction materials, as well as the ability to design and implement innovative teaching methods tailored to the targeted competencies. You must have solid research experience and demonstrate your ability to develop scientific collaborations, publish your work, and promote research findings to academic and industrial partners. Proficiency in scientific English is required; international experience and the ability to contribute to projects at the LMGC and C2MA will be considered assets. The evaluation criteria are: Required degree: an engineering degree or a master’s degree in civil engineering or sustainable building, as well as a Ph.D . in civil engineering or materials science. Primary selection criteria for teaching activities: Quality of instruction provided Emphasis on pedagogical innovation Activity and reputation within the academic community Selection criteria for research activities National and international recognition of research results Responsibilities held in the field of expertise Relationships with the academic and industrial sectors The exercise of leadership responsibilities, organizational activities, and participation in consultative and decision-making bodies are also taken into account in the evaluation criteria. Internal Application form(s) needed FP - Lecturer and researcher Civil Engineering and Microstructure of Building Materials.pdf English (1.01 MB - PDF) Download Additional Information Benefits Join us and enjoy these many benefits: Option to work remotely Generous vacation time On-site dining 75% reimbursement for public transportation costs Sustainable mobility allowance for carpooling or biking Wide range of employee benefits Stimulating innovation ecosystem (startups, students, research,",
-      "source": "EURAXESS",
-      "matchScore": 52,
-      "matchedKeywords": [
-        "sem",
-        "phd",
-        "researcher",
-        "research and development"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "2e9367bf08fad178",
-      "title": "Doktorand/Forscher (m/w/d) Bioelektronische Sensoren",
-      "company": "Hahn-Schickard",
-      "location": "Freiburg im Breisgau, Germany",
-      "country": "Germany",
-      "category": "PhD / Research",
-      "type": "Full-time / Research",
-      "datePosted": "",
-      "deadline": "Check official posting",
-      "url": "https://jobs.hahn-schickard.de/job-doktorand-forscher-m-w-d-bioelektronische-sensoren-freiburg-im-breisgau-1888.html",
-      "description": "Bitte aktivieren Sie JavaScript, um alle Funktionen nutzen zu können. Freiräume für Ideen und Entdeckungen im Bereich Biotechnologie Willkommen bei Hahn-Schickard: Die Forschungseinrichtung für innovative Mikrosystemtechnik. Mit einem Team von über 300 Mitarbeitenden verwandeln wir Ideen in branchenübergreifende Lösungen – von der Konzeption bis zur Fertigung an drei Standorten in Baden-Württemberg. Wir bieten für den Bereich \"Embedded Systems\" ab sofort eine Position als wissenschaftlicher Mitarbeiter (m/w/d) am Standort: Freiburg im Breisgau als Doktorand/Forscher (m/w/d) Bioelektronische Sensoren Ihre Aufgaben Durchführung bioelektrischer Experimente mit Zellkulturen und Geweben auf ferroelektrischen Mikroelektrodenarrays Präsentation & Veröffentlichung der Ergebnisse auf wissenschaftlichen Konferenzen und in Fachzeitschriften (Peer-Review), sowie innerhalb interner & externer Kooperationspartner aus Industrie und Forschung Einarbeitung und Anleitung von studentischen Mitarbeitern Zusammenarbeit in fachübergreifenden Teams innerhalb der Standorte von Hahn-Schickard und der Universität Freiburg Im Rahmen der wissenschaftlichen Tätigkeit soll eine Promotion vorbereitet werden. Ihr Profil Mit überdurchschnittlichem Erfolg abgeschlossenes Masterstudium mit den Inhalten Biologie, Biochemie, Biophysik, Neuronale Schnittstellen oder verwandten Disziplinen Idealerweise Erfahrungen in Zellkultur und optischer Mikroskopie (inklusive Fluoreszenz-Mikroskopie) an Zellen und Geweben idealerweise praktische Erfahrungen in der Einarbeitung & Führung studentischer Mitarbeiter Gute analytische, organisatorische und kommunikative Fähigkeiten Interesse an Anwendungen und Spin-offs Sehr gute Deutsch- & Englischkenntnisse Das bieten wir Faire Vergütung: Unsere Gehaltsstruktur orientiert sich am öffentlichen Dienst nach TV-L. Die Stelle ist zunächst auf 3 Jahre befristet. Erweitertes Urlaubsangebot: 30 Tage Urlaub pro Jahr sowie arbeitsfreie Tage am 24. Dezember und 31. Dezember. Nutzung des vorhandenen Arbeitszeitkontos bei der Betriebsschließung zwischen Weihnachten und Neujahr sowie an Brückentagen Fortbildung und Entwicklung: Profitieren Sie von attraktiven Weiterbildungsmöglichkeiten Gesundheit und Lifestyle: Teilnahme an erstklassigen Gesundheitsprogrammen wie Hansefit, weitere Vorteilsprogrammen und Firmenevents Flexible Arbeitszeiten: mit der Möglichkeit zum mobilen Arbeiten und Sabbaticals, um Beruf und Privatleben optimal zu vereinbaren. Überdurchschnittliche Altersvorsorge Zuschuss zu Mahlzeiten Mobilitätsunterstützung: monatliche Zuschüsse für Nutzung öffentlicher Verkehrsmittel und Jobrad So geht es weiter Sie finden die Thematik \"Bioelektronik\" auch spannend und können uns mit Ihrer Expertise unterstützen? Dann bewerben Sie sich bitte mit Ihren kompletten Unterlagen (Anschreiben/CV/Zeugnisse & Zertifikate/evtl. vorhandene Publikationsliste), möglichst in einem gesamten PDF-Dokument, mit Angabe der Referenz Nummer 26/1670/39 . Für fachliche Rückfragen steht Ihnen Herr Dr. Maximilian Becker unter der Telefonnummer +49 761 887865739 zur Verfügung. Da wir Ihre Bewerbungen immer persönlich auswerten, bitten wir Sie dafür bereits vorab um etwas Geduld. Ihre Ansprechpartnerin Frau Nadja Elkmann Kontakt Hahn-Schickard gGmbH Georges-Köhler-Allee 304 79110 Freiburg im Breisgau Nadja.Elkmann@Hahn-Schickard.de 0761 203 73200 Jetzt online bewerben Stelle ausdrucken Impressum • Datenschutzerklärung • Deutsch • English",
-      "source": "Hahn-Schickard careers",
-      "matchScore": 52,
-      "matchedKeywords": [
-        "doktorand",
-        "wissenschaftlicher mitarbeiter"
-      ],
-      "warnings": []
+      "warnings": [],
+      "attainabilityScore": 63,
+      "perfectFit": false,
+      "matchReason": "Direct overlap with mems, sem, validation, matlab, phd."
     }
   ]
 }

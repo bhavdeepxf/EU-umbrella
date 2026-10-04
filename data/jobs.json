@@ -1,48 +1,48 @@
 {
-  "generatedAt": "2026-10-04T08:21:14.203787+00:00",
+  "generatedAt": "2026-10-04T10:42:37.433138+00:00",
   "jobCount": 8,
   "sources": [
     {
       "name": "Hahn-Schickard",
       "status": "ok",
       "count": 1,
-      "seconds": 2.82
+      "seconds": 2.49
     },
     {
       "name": "Bosch",
       "status": "ok",
       "count": 13,
-      "seconds": 86.27
+      "seconds": 83.15
     },
     {
       "name": "Infineon",
       "status": "ok",
       "count": 0,
-      "seconds": 17.06
+      "seconds": 10.97
     },
     {
       "name": "Fraunhofer",
       "status": "ok",
       "count": 6,
-      "seconds": 37.64
+      "seconds": 32.32
     },
     {
       "name": "EURAXESS",
       "status": "ok",
       "count": 4,
-      "seconds": 5.22
+      "seconds": 9.18
     },
     {
       "name": "Brainlab",
       "status": "ok",
       "count": 0,
-      "seconds": 21.47
+      "seconds": 20.81
     },
     {
       "name": "Eurofins",
       "status": "ok",
       "count": 5,
-      "seconds": 172.23
+      "seconds": 165.18
     }
   ],
   "jobs": [

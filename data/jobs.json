@@ -1,48 +1,48 @@
 {
-  "generatedAt": "2026-10-04T10:42:37.433138+00:00",
+  "generatedAt": "2026-10-05T11:41:39.305100+00:00",
   "jobCount": 8,
   "sources": [
     {
       "name": "Hahn-Schickard",
       "status": "ok",
       "count": 1,
-      "seconds": 2.49
+      "seconds": 3.1
     },
     {
       "name": "Bosch",
       "status": "ok",
       "count": 13,
-      "seconds": 83.15
+      "seconds": 92.76
     },
     {
       "name": "Infineon",
       "status": "ok",
       "count": 0,
-      "seconds": 10.97
+      "seconds": 15.78
     },
     {
       "name": "Fraunhofer",
       "status": "ok",
       "count": 6,
-      "seconds": 32.32
+      "seconds": 58.35
     },
     {
       "name": "EURAXESS",
       "status": "ok",
-      "count": 4,
-      "seconds": 9.18
+      "count": 2,
+      "seconds": 3.67
     },
     {
       "name": "Brainlab",
       "status": "ok",
       "count": 0,
-      "seconds": 20.81
+      "seconds": 23.45
     },
     {
       "name": "Eurofins",
       "status": "ok",
       "count": 5,
-      "seconds": 165.18
+      "seconds": 197.05
     }
   ],
   "jobs": [
@@ -207,17 +207,17 @@
       "matchReason": "Direct overlap with mems, sem, simulation, research associate."
     },
     {
-      "id": "1b3b06a3966d7158",
+      "id": "31e525af278e5a2b",
       "title": "MEMS Layout",
       "company": "Bosch Group",
       "location": "Milano, Lombardia, Italy",
       "country": "Italy",
       "category": "R&D / Industry",
       "type": "Full-time",
-      "datePosted": "2026-09-16",
+      "datePosted": "2026-10-05",
       "deadline": "Check official posting",
-      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000149867219-mems-layout",
-      "description": "{'title': 'Company Description', 'text': ' Bosch Sensortec is the technology leader in sensing solutions based on microelectromechanical systems (MEMS) and dedicated to the consumer electronics world. Our success in MEMS sensors and solutions is built on a remarkable team driven by passion, innovation and flexibility. There is more than one good reason to join #BoschSensortec . We not only have cutting-edge product technology and an employee-oriented corporate culture, we also offer you attractive working conditions and first-class career opportunities. We offer you many different working fields and career paths — and we provide individual possibilities to enable you to turn your passion into real innovations. '} {'title': 'Job Description', 'text': ' Become part of the global market leader in MEMS! Together, we are shaping the future of MEMS sensors and enabling innovative applications in the automotive, consumer and industrial sectors. In your role as a development engineer, you will develop holistic chip designs and chip layouts for complex micromechanical sensors, always focusing on the requirements of design and technology. As part of an expert team, you will work on the agile implementation of project goals. The combination of teamwork, personal responsibility and independence will help you achieve the best possible results. We rely on you and your expertise when it comes to the technical assessment of feasibility and the verification of chip designs and layouts in accordance with technology and manufacturing specifications. You will generate mask data and manufacturing documentation for both new developments and variants, taking relevant cost-effectiveness and quality aspects into account. What is more, as a valued contact person, you will coordinate the internal interfaces between development and manufacturing in carrying out this task. The further development of implemented software solutions for the simulation and automation of workflows is also part of your responsibilities. You will also successfully develop and optimize new software concepts for verifying layouts and mask data in close collaboration with internal R&D departments. '} {'title': 'Qualifications', 'text': ' Education : completed university degree in engineering or natural sciences, electrical engineering, microsystems engineering, mathematics, physics, chemistry, materials science or a comparable field of study Experience and know-how : experience in the development of innovative MEMS/semiconductor technologies; expertise in sensor technology, micromechanics and semiconductor technology; experience in software development and programming, e.g. Python experience Personality and working style : you take initiative, focus on solving problems and are creative in your approaches; you enjoy working in a team and keep a cool head even during peak phases; you are able to represent your opinion effectively to stakeholders; your working style is systematic, methodical and goal-oriented; you are able to make decisions quickly and confidently; you succeed in bringing your enthusiasm for tasks and projects into the working environment Languages : very good written and spoken (German and) English '} {'title': 'Additional Information', 'text': ' In line with our compensation policies, the gross annual salary (RAL) for this position lies within the range € 40.000 - €45.000 for a 40-hour work week. The remuneration package also includes: An individual performance-related bonus Additional benefits. The salary range corresponds to the specified job grade and may vary depending on the candidate’s level of experience. We look forward to discussing the full details of our compensation package and career development opportunities with you during the application process. Bosch is proud to be an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, marital status, national origin or ancestry, age, disability or any other protected class. www.bosch.it https://www.bosch.it/lavora-con-noi/ '}",
+      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000153431099-mems-layout",
+      "description": "{'title': 'Company Description', 'text': ' Bosch Sensortec is the technology leader in sensing solutions based on microelectromechanical systems (MEMS) and dedicated to the consumer electronics world. Our success in MEMS sensors and solutions is built on a remarkable team driven by passion, innovation and flexibility. There is more than one good reason to join #BoschSensortec . We not only have cutting-edge product technology and an employee-oriented corporate culture, we also offer you attractive working conditions and first-class career opportunities. We offer you many different working fields and career paths — and we provide individual possibilities to enable you to turn your passion into real innovations. '} {'title': 'Job Description', 'text': ' Become part of the global market leader in MEMS! Together, we are shaping the future of MEMS sensors and enabling innovative applications in the automotive, consumer and industrial sectors. In your role as a development engineer, you will develop holistic chip designs and chip layouts for complex micromechanical sensors, always focusing on the requirements of design and technology. As part of an expert team, you will work on the agile implementation of project goals. The combination of teamwork, personal responsibility and independence will help you achieve the best possible results. We rely on you and your expertise when it comes to the technical assessment of feasibility and the verification of chip designs and layouts in accordance with technology and manufacturing specifications. You will generate mask data and manufacturing documentation for both new developments and variants, taking relevant cost-effectiveness and quality aspects into account. What is more, as a valued contact person, you will coordinate the internal interfaces between development and manufacturing in carrying out this task. The further development of implemented software solutions for the simulation and automation of workflows is also part of your responsibilities. You will also successfully develop and optimize new software concepts for verifying layouts and mask data in close collaboration with internal R&D departments. '} {'title': 'Qualifications', 'text': ' Education : completed university degree in engineering or natural sciences, electrical engineering, microsystems engineering, mathematics, physics, chemistry, materials science or a comparable field of study Experience and know-how : experience in the development of innovative MEMS/semiconductor technologies; expertise in sensor technology, micromechanics and semiconductor technology; experience in software development and programming, e.g. Python experience Personality and working style : you take initiative, focus on solving problems and are creative in your approaches; you enjoy working in a team and keep a cool head even during peak phases; you are able to represent your opinion effectively to stakeholders; your working style is systematic, methodical and goal-oriented; you are able to make decisions quickly and confidently; you succeed in bringing your enthusiasm for tasks and projects into the working environment Languages : very good written and spoken English and Italian, German is a plus '} {'title': 'Additional Information', 'text': ' In line with our compensation policies, the gross annual salary (RAL) for this position lies within the range € 40.000 - €45.000 for a 40-hour work week. The remuneration package also includes: A Company performance-related bonus Additional benefits. The salary range corresponds to the specified job grade and may vary depending on the candidate’s level of experience. We look forward to discussing the full details of our compensation package and career development opportunities with you during the application process. Bosch is proud to be an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, marital status, national origin or ancestry, age, disability or any other protected class. www.bosch.it https://www.bosch.it/lavora-con-noi/ '}",
       "source": "Bosch careers / SmartRecruiters",
       "matchScore": 65,
       "matchedKeywords": [

@@ -1,16 +1,16 @@
-# EU Umbrella — Selective Career Radar
+# EU Umbrella — Europe Career Radar
 
-A static GitHub Pages dashboard that discovers and ranks only high-confidence jobs and PhD opportunities for Mano's biomedical microsystems, MEMS, thin-film characterization, medical-device QA and clinical-equipment background.
+A static GitHub Pages dashboard that discovers and ranks full-time and PhD opportunities across European semiconductor, MEMS, acoustic-MEMS, thin-film/metrology, biomedical-engineering, medical-device and implant employers.
 
-## What changed
+## Coverage and selection
 
-- Hard-excludes working-student, Werkstudent, internship, Praktikum, thesis, trainee and postdoc roles.
-- Requires both **technical fit ≥ 65** and **attainability ≥ 55**.
-- Uses a green **Perfect fit** treatment only for exceptional, realistically attainable roles.
-- Limits each company to eight listings so Bosch or another large employer cannot dominate.
-- Adds an **Applied jobs** tracker with status and notes; browser storage preserves tracking on that device.
-- Keeps the default view selective at 75+, with 65+ available when you want to broaden the search.
-- Adds Brainlab and Eurofins public SmartRecruiters feeds, while retaining Bosch, Infineon, Hahn-Schickard, Fraunhofer and EURAXESS. The country model includes Germany, Switzerland, the Netherlands, broader Europe and India.
+- Europe-wide location model, with explicit priority for Heidelberg, Munich, Hannover, Hamburg, Aachen, Dresden, Stuttgart, Reutlingen, Freiburg, Berlin, Jena, Eindhoven, Delft, Zurich, Grenoble, Graz, Vienna, Leuven and other relevant clusters.
+- Employer mix from open startup/company boards, EURAXESS, SmartRecruiters, Lever, Greenhouse, Personio and Odoo career feeds.
+- 85+ = exceptional; 75+ = strong (default); 65+ = shortlisted.
+- Separate attainability scoring reduces senior, high-experience and strict-language roles.
+- Hard exclusion of student, Werkstudent, internship, thesis, trainee, apprenticeship and postdoc listings.
+- Six-result cap per employer prevents Bosch, Fraunhofer or any other organisation from dominating.
+- Applied-jobs tracker with statuses and notes.
 
 ## Run locally
 
@@ -18,8 +18,8 @@ A static GitHub Pages dashboard that discovers and ranks only high-confidence jo
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python scripts/fetch_jobs.py
-python scripts/validate_data.py
+python fetch_jobs.py
+python validate_data.py
 python -m http.server 8000
 ```
 
@@ -27,12 +27,12 @@ Open `http://localhost:8000`.
 
 ## Deploy
 
-Push the whole project to the root of your GitHub Pages repository. In **Settings → Pages**, select **GitHub Actions**, then run **Refresh jobs and deploy EU Umbrella**. The workflow refreshes daily at 04:17 UTC.
+Place these files in the repository root. In GitHub **Settings → Pages**, select **GitHub Actions**, then run **Refresh jobs and deploy EU Umbrella**. The workflow refreshes every day and publishes the last valid feed if an individual source fails.
+
+## Extend sources
+
+Add public ATS slugs to `SMARTRECRUITERS`, `LEVER`, `GREENHOUSE`, or `PERSONIO` in `fetch_jobs.py`. A source failure is isolated and recorded in the workflow log; it does not block other employers.
 
 ## Tracking limitation
 
-Application tracking uses `localStorage`. It is private to the current browser/device and is not synced through GitHub. Clearing browser site data removes it. A future synced tracker would need a database or authenticated service.
-
-## Collector policy
-
-The collector searches public employer/research feeds, normalizes records, blocks excluded role types, checks title-level domain relevance, calculates separate technical-fit and attainability scores, deduplicates, and applies a per-company cap. Public career pages can change; check the workflow source-health output after failures.
+Application tracking uses browser `localStorage`, so it stays on that browser/device and is removed if site data is cleared. Cross-device sync requires an authenticated database.

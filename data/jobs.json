@@ -1,134 +1,455 @@
 {
-  "generatedAt": "2026-10-05T11:41:39.305100+00:00",
-  "jobCount": 8,
+  "generatedAt": "2026-10-05T19:53:33.758719+00:00",
+  "jobCount": 16,
   "sources": [
     {
-      "name": "Hahn-Schickard",
+      "name": "Arbeitnow Europe",
       "status": "ok",
-      "count": 1,
-      "seconds": 3.1
+      "count": 2,
+      "seconds": 1.77
     },
     {
-      "name": "Bosch",
-      "status": "ok",
-      "count": 13,
-      "seconds": 92.76
-    },
-    {
-      "name": "Infineon",
+      "name": "Alif Semiconductor",
       "status": "ok",
       "count": 0,
-      "seconds": 15.78
+      "seconds": 0.68
     },
     {
-      "name": "Fraunhofer",
+      "name": "Munich Electrification",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/MunichElectrification?mode=json"
+    },
+    {
+      "name": "Quantum Motion",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/quantummotion?mode=json"
+    },
+    {
+      "name": "Sika",
       "status": "ok",
-      "count": 6,
-      "seconds": 58.35
+      "count": 0,
+      "seconds": 2.98
+    },
+    {
+      "name": "ASML",
+      "status": "ok",
+      "count": 0,
+      "seconds": 3.01
+    },
+    {
+      "name": "Axelera AI",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/axeleraai?mode=json"
+    },
+    {
+      "name": "Prophesee",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/prophesee/jobs?content=true"
+    },
+    {
+      "name": "Qblox",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/qblox/jobs?content=true"
+    },
+    {
+      "name": "Neko Health",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/nekohealth/jobs?content=true"
+    },
+    {
+      "name": "ONWARD Medical",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/onwardmedical/jobs?content=true"
+    },
+    {
+      "name": "Materialise",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/materialise?mode=json"
+    },
+    {
+      "name": "Marvel Fusion",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://personio.com"
+    },
+    {
+      "name": "CorTec",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://personio.com"
+    },
+    {
+      "name": "Black Semiconductor",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://personio.com"
+    },
+    {
+      "name": "Sensry",
+      "status": "error",
+      "count": 0,
+      "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://personio.com"
+    },
+    {
+      "name": "INBRAIN Neuroelectronics",
+      "status": "ok",
+      "count": 0,
+      "seconds": 0.81
+    },
+    {
+      "name": "USound",
+      "status": "ok",
+      "count": 2,
+      "seconds": 0.75
     },
     {
       "name": "EURAXESS",
       "status": "ok",
-      "count": 2,
-      "seconds": 3.67
+      "count": 0,
+      "seconds": 6.72
     },
     {
       "name": "Brainlab",
       "status": "ok",
       "count": 0,
-      "seconds": 23.45
+      "seconds": 15.26
+    },
+    {
+      "name": "TOMRA",
+      "status": "ok",
+      "count": 0,
+      "seconds": 26.35
     },
     {
       "name": "Eurofins",
       "status": "ok",
       "count": 5,
-      "seconds": 197.05
+      "seconds": 86.6
+    },
+    {
+      "name": "Bosch Group",
+      "status": "ok",
+      "count": 19,
+      "seconds": 125.2
+    },
+    {
+      "name": "Last-known-good merge",
+      "status": "stale",
+      "count": 8,
+      "error": "Fresh result count was unusually low."
     }
   ],
   "jobs": [
+    {
+      "title": "Acoustic & MEMS Development Engineer",
+      "company": "USound",
+      "location": "Vienna, Austria",
+      "country": "Austria",
+      "category": "Acoustic MEMS",
+      "type": "Full-time",
+      "datePosted": "2026-09-22",
+      "url": "https://usound.com/careers/",
+      "description": "Product development for MEMS miniature loudspeakers, computational acoustics, piezo-mechanics, MEMS characterization, materials and semiconductor processes. Master degree and English required.",
+      "source": "USound careers",
+      "matchScore": 95,
+      "matchedKeywords": [
+        "mems",
+        "acoustic",
+        "microspeaker",
+        "piezoelectric",
+        "characterization",
+        "materials"
+      ],
+      "warnings": [],
+      "attainabilityScore": 83,
+      "perfectFit": true,
+      "matchReason": "Direct CV overlap: MEMS, acoustic devices, characterization, materials and simulation.",
+      "employerType": "Startup",
+      "id": "a9205b65936afeeb"
+    },
+    {
+      "title": "MEMS Development Engineer",
+      "company": "USound",
+      "location": "Vienna, Austria",
+      "country": "Austria",
+      "category": "Acoustic MEMS",
+      "type": "Full-time",
+      "datePosted": "2026-09-22",
+      "url": "https://usound-16.odoo.com/jobs/detail/mems-development-engineer-192",
+      "description": "Develop and optimize MEMS microspeaker technology using FEM and computational acoustics; characterize MEMS and investigate new materials and processes.",
+      "source": "USound careers",
+      "matchScore": 93,
+      "matchedKeywords": [
+        "mems",
+        "acoustic",
+        "piezoelectric",
+        "characterization",
+        "materials",
+        "simulation"
+      ],
+      "warnings": [],
+      "attainabilityScore": 83,
+      "perfectFit": true,
+      "matchReason": "Direct CV overlap: MEMS, acoustic devices, materials characterization and research.",
+      "employerType": "Startup",
+      "id": "64d630e4d6899902"
+    },
+    {
+      "title": "Junior Biomedical Engineer — Medical Devices",
+      "company": "BellaSeno",
+      "location": "Leipzig, Germany",
+      "country": "Germany",
+      "category": "Biomedical & implants",
+      "type": "Full-time",
+      "datePosted": "2026-07-09",
+      "url": "https://de.indeed.com/viewjob?jk=e69c103d9de7f14e",
+      "description": "Design and development of custom-made and off-the-shelf bioresorbable implants at a medtech startup using 3D printing and regulated medical-device processes.",
+      "source": "BellaSeno vacancy",
+      "matchScore": 91,
+      "matchedKeywords": [
+        "biomedical engineering",
+        "medical device",
+        "implant",
+        "biomaterial",
+        "validation"
+      ],
+      "warnings": [],
+      "attainabilityScore": 90,
+      "perfectFit": true,
+      "matchReason": "Direct CV overlap: biomedical engineering, implants, biomaterials and medical-device development.",
+      "employerType": "Startup",
+      "id": "de16b87579de8e60"
+    },
+    {
+      "title": "Biomedical Engineer — Bioresorbable Implants",
+      "company": "BellaSeno",
+      "location": "Leipzig, Germany",
+      "country": "Germany",
+      "category": "Biomedical & implants",
+      "type": "Full-time",
+      "datePosted": "2026-09-01",
+      "url": "https://de.indeed.com/Medical-Device-Jobs",
+      "description": "Design custom and off-the-shelf bioresorbable implants, create 3D printed prototypes and work with quality, regulatory and clinical teams.",
+      "source": "BellaSeno vacancy",
+      "matchScore": 89,
+      "matchedKeywords": [
+        "biomedical engineering",
+        "medical device",
+        "implant",
+        "biomaterial",
+        "3d printing",
+        "quality assurance"
+      ],
+      "warnings": [],
+      "attainabilityScore": 76,
+      "perfectFit": true,
+      "matchReason": "Direct CV overlap: implants, biomedical engineering, prototyping and regulated medical-device development.",
+      "employerType": "Startup",
+      "id": "e8b7bbb756497bac"
+    },
+    {
+      "title": "Doctoral Candidate — Active Medical Implant Process Technologies",
+      "company": "Cochlear Technology Centre Belgium",
+      "location": "Mechelen, Belgium",
+      "country": "Belgium",
+      "category": "PhD · Biomedical & implants",
+      "type": "PhD position",
+      "datePosted": "2026-08-25",
+      "url": "https://euraxess.ec.europa.eu/de/node/461588",
+      "description": "Industrial PhD developing and validating a digital twin for micro-laser welding of titanium components used in active medical implants.",
+      "source": "EURAXESS",
+      "matchScore": 88,
+      "matchedKeywords": [
+        "doctoral",
+        "medical implant",
+        "biomedical",
+        "materials",
+        "validation",
+        "python"
+      ],
+      "warnings": [],
+      "attainabilityScore": 89,
+      "perfectFit": true,
+      "matchReason": "Direct CV overlap: biomedical implants, materials engineering, validation, Python and doctoral research.",
+      "employerType": "Company / research",
+      "id": "41a733ded7927d5d"
+    },
+    {
+      "title": "Mechanical Engineer — MEMS Audio Products",
+      "company": "USound",
+      "location": "Vienna, Austria",
+      "country": "Austria",
+      "category": "Acoustic MEMS",
+      "type": "Full-time",
+      "datePosted": "2026-09-22",
+      "url": "https://usound-16.odoo.com/jobs/detail/mechanical-engineer-247",
+      "description": "Development and validation of MEMS audio products including prototypes, laboratory testing, reliability validation and failure analysis.",
+      "source": "USound careers",
+      "matchScore": 86,
+      "matchedKeywords": [
+        "mems",
+        "validation",
+        "characterization",
+        "failure analysis",
+        "acoustic"
+      ],
+      "warnings": [],
+      "attainabilityScore": 78,
+      "perfectFit": true,
+      "matchReason": "Direct CV overlap: MEMS validation, laboratory testing, failure analysis and acoustics.",
+      "employerType": "Startup",
+      "id": "d612bfec7f4ef911"
+    },
+    {
+      "id": "c67c23dcdec54db1",
+      "title": "PhD - Development of a Novel Lab-on-a-Chip Component for the Analysis and Sorting of Single Cells",
+      "company": "Bosch Group",
+      "location": "Renningen, BW, Germany",
+      "country": "Germany",
+      "category": "PhD · MEMS & semiconductors",
+      "type": "Full-time",
+      "datePosted": "2026-09-11",
+      "deadline": "Check official posting",
+      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000148954834-phd-development-of-a-novel-lab-on-a-chip-component-for-the-analysis-and-sorting-of-single-cells",
+      "description": "{'title': 'Company Description', 'text': ' At Bosch, we shape the future by inventing high-quality technologies and services that spark enthusiasm and enrich people’s lives. Our promise to our associates is rock-solid: we grow together, we enjoy our work, and we inspire each other. Join in and feel the difference. The Robert Bosch GmbH is looking forward to your application! '} {'title': 'Job Description', 'text': ' As part of our research team, you will work on cutting-edge solutions for the life sciences. We are offering a PhD position to develop a novel dielectrophoresis (DEP) chip for the analysis and sorting of single cells. \\nMulti-omics analyses at the single-cell level offer crucial diagnostic insights into diseases. However, current automation technologies are often inefficient and expensive. Your project will focus on overcoming these limitations by developing an image-based DEP chip to automate the compartmentation, sample preparation, analysis, and sorting of single cells. This technology aims to enable high-throughput, gentle multi-omics analyses for universal sample types. You will develop and evaluate innovative concepts for semiconductor-based dielectrophoresis (DEP) chips, determining robust electrical, microfluidic, and thermal operating parameters. Furthermore, you will investigate the physical limits of chip miniaturization and explore feasible manufacturing routes compatible with Bosch’s CMOS technology. You will design and fabricate a functional demonstrator using semiconductor manufacturing processes and integrate it into a microfluidic system. Last but not least, you will characterize the prototype and perform a proof of concept for all operating modes using a representative bioassay with living cells in physiological media. '} {'title': 'Qualifications', 'text': \" Education: excellent Master's degree in Electrical Engineering, Microsystems Engineering, Biomedical Engineering, Physics, or a comparable field Experience and Knowledge: detailed knowledge of classical MEMS, microfluidics, and biomedical engineering; expertise in microfluidic and electrical design for lab-on-chip systems; experience in modeling of physical cell interactions at the microscale; knowledge of (optical) signal processing; experience with cleanroom processes and knowledge of oncology are advantageous Personality and Working Practice: you actively contribute your ideas and communicate your research results clearly and convincingly; your curiosity motivates you to explore new approaches, and you enjoy taking a hands-on role; you work in a structured manner to achieve your goals, develop creative solutions to complex challenges, and independently conduct experiments Languages: very good written and spoken German and English \"} {'title': 'Additional Information', 'text': ' https://www.bosch-ai.com \\nwww.bosch.com/research The final topic depends on your university. Start: Oktober 2026 Diversity and inclusion are not just trends for us but are firmly anchored in our corporate culture. Therefore, we welcome all applications, regardless of gender, age, disability, religion, ethnic origin or sexual identity. Need support during your application? \\nCelina Dannecker (Human Resources) \\n+49 711 811 21346 Need further information about the job? \\nRaphaelle Satet (Functional Department) \\n +49 172 472 2466 \\n Work #LikeABosch starts here: Apply now! '} {'title': 'Videos To Watch', 'urls': ['https://www.youtube.com/watch?v=vEdllJp7QVA']}",
+      "source": "Bosch Group careers",
+      "matchScore": 85,
+      "matchedKeywords": [
+        "mems",
+        "microsystem",
+        "biomedical engineering",
+        "microfluidic",
+        "semiconductor",
+        "cleanroom",
+        "cmos",
+        "biomedical",
+        "lab-on-a-chip"
+      ],
+      "warnings": [],
+      "attainabilityScore": 87,
+      "perfectFit": true,
+      "matchReason": "Direct CV overlap: mems, microsystem, biomedical engineering, microfluidic, semiconductor.",
+      "employerType": "Company"
+    },
+    {
+      "title": "Simulation Engineer",
+      "company": "Sonion",
+      "location": "Hoofddorp, Netherlands",
+      "country": "Netherlands",
+      "category": "Acoustic MEMS",
+      "type": "Full-time",
+      "datePosted": "2026-10-01",
+      "url": "https://www.sonion.com/career/",
+      "description": "Simulation work for miniature MEMS microphones and hearing-aid acoustic transducers.",
+      "source": "Sonion careers",
+      "matchScore": 84,
+      "matchedKeywords": [
+        "mems",
+        "acoustic",
+        "microphone",
+        "simulation",
+        "hearing"
+      ],
+      "warnings": [],
+      "attainabilityScore": 74,
+      "perfectFit": false,
+      "matchReason": "Direct overlap in MEMS acoustics, hearing technology and simulation.",
+      "employerType": "Company",
+      "id": "a256c65fc7185479"
+    },
     {
       "id": "e1944324b2ad2b12",
       "title": "Research Associate: Interconnect Technologies (all genders)",
       "company": "IPMS - Photonic Microsystems",
       "location": "Dresden, Germany",
       "country": "Germany",
-      "category": "PhD / Research",
+      "category": "MEMS & semiconductors",
       "type": "Research / Employment",
       "datePosted": "",
       "deadline": "Check official posting",
       "url": "https://jobs.fraunhofer.de/job/Dresden-Research-Associate-Interconnect-Technologies-%28all-genders%29-01109/1441741233/",
       "description": "Search by Keyword/Field of Study/Jobcode Search by Location > More Search Options Loading... Level of Experience All Job Function All Opportunity for promotion All Region All Institute All Language All Clear Select how often (in days) to receive an alert: Create Jobalert × Select how often (in days) to receive an alert: Apply now » City: Dresden Date: Sep 28, 2026 Research Associate: Interconnect Technologies (all genders) The Fraunhofer-Gesellschaft ( www.fraunhofer.com ) is one of the world's leading organizations for application-oriented research. 74 institutes develop pioneering technologies for our economy and society – more precisely: 30 000 people from technology, science, administration and IT. They know: Anyone who comes to Fraunhofer wants to and can make a difference. For themselves, for us and for the markets of today and tomorrow. Developing innovative technology solutions and bringing them to application - that is our goal at the Fraunhofer Institute for Photonic Microsystems IPMS . Our »Center Nanoelectronic Technologies« (CNT) conducts research on 300 mm wafers for microchip manufacturers, suppliers, device manufacturers, and R&D partners. We offer process and technology developments as well as services at the ULSI (ultra-large-scale integration) level in the areas of front-end (FEoL) and back-end-of-line (BEoL) for various CMOS technology nodes. The associated Interconnect Technologies group, which is part of our Neuropmorphic Computing business unit, focuses on technologies for metallization in the BEOL (back end of line) of CMOS manufacturing and the border area to advanced packaging. The core theme of the group is the creation of copper lines through electrochemical deposition (ECD) and chemical mechanical polishing (CMP), as well as all wet chemical cleaning steps. Be part of change Research and development in the field of interconnect technologies BEOL process integration of existing UPD solutions to set up a complete BEOL metallization module Managing complex development projects in the field of metallization across different groups within the institute's division CNT Evaluation and potential development of novel metallization solutions Evaluation and responsibility for complex project ideas with regard to feasibility and the associated measures in the 300mm cleanroom Development of synergies between classic BEOL technologies and advanced packaging, in particular silicon interposer technologies Project management and acquisition for industrially and publicly funded projects Scientific exchange and presentation of research results at conferences and participation in workshops What you contribute Completed university degree (master's/diploma) in microelectronics, materials science, electrical engineering, physics, or a comparable field Three years of previous professional experience or a completed doctorate Know-how in the field of semiconductor manufacturing technologies , especially in BEOL or BE, preferably on HVM equipment platforms, e.g.: Thin film deposition (PVD) Chemical mechanical polishing (CMP) Advanced packaging BEOL process integration In-depth expertise in working with industrial partner companies Experience in project management ; ideally with responsibility for acquiring publicly funded projects and direct industrial contracts Great knowledge of common analysis and measurement methods Independent and proactive approach to work with a focus on reliability and precision Pragmatic, flexible approach to work – especially in the event of unforeseen project changes Enthusiastic and friendly personality with a strong interest in working in a research environment Strong communication skills with good German (B level) and very good English (C level) What we offer Our benefits: Attractive and international working environment in an innovative industry of the future Extensive and varied training and qualification opportunities Work-life balance thanks to flexible working hours and the option of mobile working Company pension scheme Job ticket for public transport 30 days vacation Corporate benefits An overview of all benefits and other good reasons to join us can be found here. We offer female scientists the opportunity to participate in our TALENTA program: a comprehensive career and development program that includes individually tailored qualification offers. You can find out more here. The weekly working time is 39 hours. This position is also available on a part-time basis. The position is initially limited to 2 years. Long-term employment is sought. We value and promote the diversity of our employees' skills and therefore welcome all applications – regardless of age, gender, nationality, ethnic and social origin, religion, ideology, disability, sexual orientation and identity. Severely disabled persons are given preference in the event of equal suitability. Our tasks are diverse and adaptable – for applicants with disabilities, we work together to find solutions that best prom",
       "source": "Fraunhofer careers",
-      "matchScore": 88,
+      "matchScore": 79,
       "matchedKeywords": [
         "microsystem",
         "thin film",
-        "sem",
+        "semiconductor",
         "microelectronics",
+        "wafer",
+        "cleanroom",
+        "cmos",
         "research associate",
-        "r&d",
-        "research and development"
+        "r&d"
       ],
       "warnings": [],
-      "attainabilityScore": 91,
-      "perfectFit": true,
-      "matchReason": "Direct overlap with microsystem, thin film, sem, microelectronics, research associate."
+      "attainabilityScore": 87,
+      "perfectFit": false,
+      "matchReason": "Direct CV overlap: microsystem, thin film, semiconductor, microelectronics, wafer.",
+      "employerType": "Company"
     },
     {
-      "id": "84361700bffa22ea",
-      "title": "Semiconductor Test Expert for Research and Development (m/w/d)",
-      "company": "EMFT - Microsystems and Solid State Technologies",
-      "location": "Regensburg, Germany",
-      "country": "Germany",
-      "category": "PhD / Research",
-      "type": "Research / Employment",
-      "datePosted": "",
-      "deadline": "Check official posting",
-      "url": "https://jobs.fraunhofer.de/job/Regensburg-Semiconductor-Test-Expert-for-Research-and-Development-%28mwd%29-93053/1413420633/",
-      "description": "Search by Keyword/Field of Study/Jobcode Search by Location > More Search Options Loading... Level of Experience All Job Function All Opportunity for promotion All Region All Institute All Language All Clear Select how often (in days) to receive an alert: Create Jobalert × Select how often (in days) to receive an alert: Apply now » City: Regensburg Date: Oct 4, 2026 Semiconductor Test Expert for Research and Development (m/w/d) The Fraunhofer-Gesellschaft ( www.fraunhofer.com ) is one of the world's leading organizations for application-oriented research. 74 institutes develop pioneering technologies for our economy and society – more precisely: 30 000 people from technology, science, administration and IT. They know: Anyone who comes to Fraunhofer wants to and can make a difference. For themselves, for us and for the markets of today and tomorrow. CAREER IN MICROTECHNOLOGY RESEARCH – BIG OPPORTUNITIES WITH SMALL STRUCTURES! CHANGE STARTS WITH US. Do you want to change the world through science? Then the Fraunhofer Institute for Electronic Microsystems and Solid State Technologies EMFT is the perfect place to start your career! With around 190 highly qualified employees at our locations in Munich, Oberpfaffenhofen and Regensburg, we combine many years of experience with extensive expertise in microelectronics and microsystems technology. Our wide range of technologies spans from advanced semiconductor processes and MEMS technologies to innovative 3D integration and flexible electronics. These nano and microtechnologies form the foundation of our diverse fields of expertise, which include sensor technology, circuit design, system solutions with AI, analysis and testing, as well as micropumps. Through the close collaboration of our experts, not only groundbreaking innovations arise, but also synergies that enable Fraunhofer EMFT to effectively tackle the complex challenges of our time. The Test Group is currently being set up and will be responsible for developing and operationally delivering test solutions for semiconductor devices and microelectronic systems. These devices and/or systems are developed either at the EMFT itself or in research projects in collaboration with partners, or are provided by industry as part of collaborative projects. Starting with the validation of test structures, test chips or prototypes, through to product validation and characterisation, and on to pre-series testing, test solutions are developed and implemented on the test equipment. To this end, industry-compatible test equipment is installed at the EMFT, enabling testing at wafer and component level and, where appropriate, facilitating direct transfer to industrial partners and test service providers. Be part of change Supporting the installation and maintenance of industry-standard test equipment (ATE, wafer probers, additional measurement technology) Developing test programmes for validation, characterisation and pre-production testing in close collaboration with the design teams (in-house, at research partners, and at industrial customers) Development/procurement of the associated test hardware (loadboards, probe cards, etc.) Close collaboration with internal design teams, research partners and industrial clients Collaboration with test equipment manufacturers and test service providers#Supporting our business activities with our industrial clients through your technical expertise Representing our institute and our department at scientific conferences and project meetings, presenting results at events and seeking professional exchange Participating in technical discussions with other experts and developing new ideas Publishing results in high-impact scientific publications and reports What you contribute • A successfully completed Master’s degree in Electrical Engineering, Communications Engineering, Microsystems Engineering, Semiconductor Technology or a similar field • Excellent knowledge of electrical measurement technology • Good to very good programming skills in C, C++ or Python • At least 5 years’ experience in semiconductor testing (test development, wafer testing, final testing) • High level of motivation and the ability to quickly familiarise yourself with new challenges • The ability to work independently and in a structured manner, whilst keeping an eye on the bigger picture, and excellent problem-solving skills • Very good communication skills in German and English Translated with DeepL.com (free version) What we offer A challenging and varied role offering a sense of purpose and responsibility – you will work alongside the brightest minds in the field of HF design and help shape the future of Europe as a centre of innovation! With us, you’ll have scope for commitment and creativity – you can set your own priorities and put your ideas into practice within the team and on projects. Collaboration within an interdisciplinary and international team and integration into a large scientific network Personalised and ",
-      "source": "Fraunhofer careers",
+      "title": "Senior Product Development Engineer",
+      "company": "Sonion",
+      "location": "Hoofddorp, Netherlands",
+      "country": "Netherlands",
+      "category": "Acoustic MEMS",
+      "type": "Full-time",
+      "datePosted": "2026-10-01",
+      "url": "https://www.sonion.com/career/",
+      "description": "Product development for miniature microphones, hearing-aid receivers and acoustic components in a technical organization.",
+      "source": "Sonion careers",
       "matchScore": 78,
       "matchedKeywords": [
         "mems",
-        "microsystem",
-        "sem",
-        "microelectronics",
-        "validation",
-        "python",
-        "research and development"
+        "acoustic",
+        "microphone",
+        "hearing",
+        "sensor"
       ],
-      "warnings": [],
-      "attainabilityScore": 68,
+      "warnings": [
+        "senior"
+      ],
+      "attainabilityScore": 58,
       "perfectFit": false,
-      "matchReason": "Direct overlap with mems, microsystem, sem, microelectronics, validation."
+      "matchReason": "Strong domain overlap in miniature acoustic transducers and hearing technology; seniority needs checking.",
+      "employerType": "Company",
+      "id": "e40a950681effb36"
     },
     {
-      "id": "adcb9c349f41b2c1",
-      "title": "PhD inertial MEMS wafer level test and design with a focus on stiction and robustness (w/m/div.)",
-      "company": "Bosch Group",
-      "location": "Reutlingen, BW, Germany",
-      "country": "Germany",
-      "category": "PhD / Research",
+      "id": "26cda6eeab334e41",
+      "title": "Machine Learning Engineer – Acoustic Biosignal Analysis",
+      "company": "USound",
+      "location": "Graz",
+      "country": "Austria",
+      "category": "MEMS & semiconductors",
       "type": "Full-time",
-      "datePosted": "2026-06-23",
+      "datePosted": "",
       "deadline": "Check official posting",
-      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000133548479-phd-inertial-mems-wafer-level-test-and-design-with-a-focus-on-stiction-and-robustness-w-m-div-",
-      "description": "{'title': 'Company Description', 'text': ' At Bosch, we shape the future by inventing high-quality technologies and services that spark enthusiasm and enrich people’s lives. Our promise to our associates is rock-solid: we grow together, we enjoy our work, and we inspire each other. Join in and feel the difference. The Robert Bosch GmbH is looking forward to your application! '} {'title': 'Job Description', 'text': ' As part of your doctoral research, you will be responsible for the development of test content for the characterization of inertial MEMS on wafer level. Your work will involve the design and characterization of inertial MEMS test chips in direction of Stiction and Robustness. You will also develop innovative techniques and ideas that can subsequently be transferred to real products '} {'title': 'Qualifications', 'text': \" Education: You have a master's degree with excellent grades in physics, electrical engineering, communications engineering, software engineering, or a similar field Experience: experience with FPGA systems and tools, background in analog electronics, circuit design and simulation experience (e.g. Ansys, Comsol, etc.) Knowledge: understanding of electrical measurement techniques, programming skills (required: C++, Python, Matlab) and Knowledge about Semiconductors and MEMS Personality: Strong team player and ability to work in interdisciplinary teams, self-organized way of working Languages: Good in English and German (B2) communication skills \"} {'title': 'Additional Information', 'text': ' The final PhD topic is subject to your university. Start: according to prior agreement Diversity and inclusion are not just trends for us but are firmly anchored in our corporate culture. Therefore, we welcome all applications, regardless of gender, age, disability, religion, ethnic origin or sexual identity. Need support during your application? \\nJohanna Ripple \\n+49(7121)35-34427 Need further information about the job? \\nMatthew Lewis \\n+49(7121)35-30846 '}",
-      "source": "Bosch careers / SmartRecruiters",
-      "matchScore": 76,
+      "url": "https://usound-16.odoo.com/jobs/detail/machine-learning-engineer-acoustic-biosignal-analysis-232",
+      "description": "Job Detail | My Website Sign in Jobs Machine Learning Engineer – Acoustic Biosignal Analysis Apply Now! Machine Learning Engineer – Acoustic Biosignal Analysis Graz , Austria USound is disrupting the audio industry, setting new standards in audio experience, and maximizing the degrees of freedom in manufacturing wearables and hearables. We are leaders in acoustic solutions based on MEMS speakers. Since 2018, we have been enabling our customers to bring new revolutionary audio products to the market. USound achieves this through radical miniaturization, power reduction, and increased production efficiency. At USound, we’re pioneering the future of in-ear wearables — devices that go beyond music playback to unlock real-time health insights. We’re looking for an early-career Machine Learning Engineer eager to work on AI models for acoustic biosignal processing and real-time mobile deployment. Technical Expertise Personal Evolution Autonomy Responsibilities Contribute to deep learning models (CNN, LSTM) for acoustic biosignals (e.g., APG). Implement algorithms for HR, HRV, and vascular health indicators. Assist in making models robust to motion artifacts and noise. Optimize ML pipelines for mobile deployment (TensorFlow Lite). Collaborate with senior engineers and firmware teams to bring AI into production. Experience and Qualifications Bachelor’s or Master’s degree in Computer Science, Electrical/Biomedical Engineering, or Data Science Coursework or projects in Machine Learning, Signal Processing, or Biosignal Analysis are a plus 2–3 years of experience in ML/AI, ideally with time-series or biosignal data Solid understanding of TensorFlow or PyTorch Familiarity with signal processing techniques (e.g., filtering, peak detection) Basic experience in deploying AI models on embedded or edge devices Strong collaborative mindset and eagerness to learn and grow Nice-to-have Familiarity with biosignal toolkits (NeuroKit2, HeartPy). Experience with wearable devices or healthcare applications. Home Office Development Lunch Dispent Public Transportation What we offer The opportunity to grow along with an internationally active, innovative company and a ground-breaking technology. Flexible working time and goal-oriented work environment. Collegial environment in a dynamic and dedicated team. Range of the annual gross salary from € 45,000 depending on experience, qualifications, etc.; legal minimum annual gross salary on a full-time basis: € 37,361.66. Additional incentives including bonuses and profit-sharing opportunities. Benefits: We offer a range of perks including lunch subsidies, language courses, well-being and summer childcare subsidies, future provision, and many more. At our location you will find free parking slots, a canteen and a snack buffet. Bonus Work Live Friendly Jobrad Free Refreshments Apply Now! Useful Links Home About USound Products Contact us Careers © 2024 USound Powered by - Create a free website",
+      "source": "USound careers",
+      "matchScore": 72,
       "matchedKeywords": [
         "mems",
-        "sem",
-        "matlab",
-        "python",
-        "simulation",
-        "phd",
-        "doctoral"
+        "acoustic",
+        "biomedical engineering",
+        "asic",
+        "biomedical"
       ],
       "warnings": [],
-      "attainabilityScore": 91,
+      "attainabilityScore": 63,
       "perfectFit": false,
-      "matchReason": "Direct overlap with mems, sem, matlab, python, simulation."
+      "matchReason": "Direct CV overlap: mems, acoustic, biomedical engineering, asic, biomedical.",
+      "employerType": "Startup"
     },
     {
       "id": "ef2b87e0e97ff56e",
@@ -136,50 +457,114 @@
       "company": "IPMS - Photonic Microsystems",
       "location": "Erfurt, Germany",
       "country": "Germany",
-      "category": "PhD / Research",
+      "category": "MEMS & semiconductors",
       "type": "Research / Employment",
       "datePosted": "",
       "deadline": "Check official posting",
       "url": "https://jobs.fraunhofer.de/job/Erfurt-Research-Associate-Photonic-Integrated-Circuits-%28PIC%29-%28all-genders%29-99099/1424828033/",
       "description": "Search by Keyword/Field of Study/Jobcode Search by Location > More Search Options Loading... Level of Experience All Job Function All Opportunity for promotion All Region All Institute All Language All Clear Select how often (in days) to receive an alert: Create Jobalert × Select how often (in days) to receive an alert: Apply now » City: Erfurt Date: Sep 8, 2026 Research Associate: Photonic Integrated Circuits (PIC) (all genders) The Fraunhofer-Gesellschaft ( www.fraunhofer.com ) is one of the world's leading organizations for application-oriented research. 74 institutes develop pioneering technologies for our economy and society – more precisely: 30 000 people from technology, science, administration and IT. They know: Anyone who comes to Fraunhofer wants to and can make a difference. For themselves, for us and for the markets of today and tomorrow. Change starts with us, but also with you. Developing innovative technology solutions and bringing them to application - that is our goal at the Fraunhofer Institute for Photonic Microsystems IPMS . We possess a broad and strategically relevant base of expertise for the development of silicon nitride (SiN)-based photonic integrated circuits (PICs) on 200-mm and 300-mm platforms. Our expertise covers the entire technological value chain—from device design and process technology to characterization—and encompasses key technologies such as the co-integration of MEMS and photonics, as well as innovative integration approaches like quasi-monolithic integration (QMI). We are seeking a Research Associate for our Erfurt location to start as soon as possible , in order to specifically address the growing market potential of integrated photonics—particularly in the fields of optical sensing, biosensing, and module integration—and to further develop application-oriented module solutions. Be part of change Technology Development and System Design: Conducting process development and optimization, as well as their integration, for the manufacture of PICs across various production sites Project Acquisition and Technology Transfer: Supporting the acquisition of industrial projects as well as publicly funded research and development projects Scientific Networking and Representation: Participation in international conferences and workshops for professional development, scientific exchange, and networking Cooperation: Proactive communication and serving as a liaison with cooperating Fraunhofer Institutes to ensure smooth knowledge transfer Collaboration with interdisciplinary teams at various locations consisting of engineers and scientists What you contribute Academic Qualifications: Completed graduate degree (Master’s/Diploma) in photonics, electrical engineering, physics, or a comparable field Technical Expertise and Professional Experience: Several years of relevant professional experience (at least 3 years) in the field of Photonic Integrated Circuits (PIC), as well as expertise in research and development projects; demonstrable experience in translating scientific findings into industrial applications, as well as patents and publications, is a plus Key technological expertise: In-depth knowledge in at least two of the following areas: Design and simulation of PICs Photonic components and integrated optics PIC technology platforms (e.g., InP, SiPh, SiN) Scientific approach: Strong analytical skills and a structured, independent approach to tackling complex technical problems Personality: Commitment to structured and self-directed work, as well as a strong team spirit Languages: Good command of German (at least B1 level) and English (at least C1 level) for collaboration on national and international research and development projects What we offer We are convinced that appreciation and trust are the basis for satisfaction and motivation. We also attach great importance to intensive and professional induction training and an open and collegial working environment. Through various team events, we offer the opportunity to pursue our passions together and strengthen our team spirit. Our benefits: Attractive and international working environment in an innovative industry of the future Extensive and varied training and qualification opportunities Work-life balance thanks to flexible working hours and the option of mobile working Company pension scheme Job ticket for public transport 30 days vacation Corporate benefits An overview of all benefits and other good reasons to join us can be found here. We offer female scientists the opportunity to participate in our TALENTA program: a comprehensive career and development program that includes individually tailored qualification offers. You can find out more here. Want more? Then apply and join us as soon as possible! Because change starts with us, but also with your application! The weekly working time is 39 hours. This position is also available on a part-time basis. The position is initially limited to 2 years. Long-term employment is s",
       "source": "Fraunhofer careers",
-      "matchScore": 73,
+      "matchScore": 71,
       "matchedKeywords": [
         "mems",
         "microsystem",
-        "photonics",
-        "simulation",
+        "characterization",
         "research associate",
         "research and development"
       ],
-      "warnings": [],
-      "attainabilityScore": 83,
+      "warnings": [
+        "several years"
+      ],
+      "attainabilityScore": 80,
       "perfectFit": false,
-      "matchReason": "Direct overlap with mems, microsystem, photonics, simulation, research associate."
+      "matchReason": "Direct CV overlap: mems, microsystem, characterization, research associate, research and development.",
+      "employerType": "Company"
     },
     {
-      "id": "6a95f98be7b7d545",
-      "title": "Development and Integration Engineer for MEMS & ASIC BEOL technology (f/m/div.)",
+      "id": "16773a1f97c30550",
+      "title": "PhD inertial MEMS wafer level test and design with a focus on stiction and robustness (w/m/div.)",
+      "company": "Bosch Group",
+      "location": "Reutlingen, BW, Germany",
+      "country": "Germany",
+      "category": "PhD · MEMS & semiconductors",
+      "type": "Full-time",
+      "datePosted": "2026-06-23",
+      "deadline": "Check official posting",
+      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000133548479-phd-inertial-mems-wafer-level-test-and-design-with-a-focus-on-stiction-and-robustness-w-m-div-",
+      "description": "{'title': 'Company Description', 'text': ' At Bosch, we shape the future by inventing high-quality technologies and services that spark enthusiasm and enrich people’s lives. Our promise to our associates is rock-solid: we grow together, we enjoy our work, and we inspire each other. Join in and feel the difference. The Robert Bosch GmbH is looking forward to your application! '} {'title': 'Job Description', 'text': ' As part of your doctoral research, you will be responsible for the development of test content for the characterization of inertial MEMS on wafer level. Your work will involve the design and characterization of inertial MEMS test chips in direction of Stiction and Robustness. You will also develop innovative techniques and ideas that can subsequently be transferred to real products '} {'title': 'Qualifications', 'text': \" Education: You have a master's degree with excellent grades in physics, electrical engineering, communications engineering, software engineering, or a similar field Experience: experience with FPGA systems and tools, background in analog electronics, circuit design and simulation experience (e.g. Ansys, Comsol, etc.) Knowledge: understanding of electrical measurement techniques, programming skills (required: C++, Python, Matlab) and Knowledge about Semiconductors and MEMS Personality: Strong team player and ability to work in interdisciplinary teams, self-organized way of working Languages: Good in English and German (B2) communication skills \"} {'title': 'Additional Information', 'text': ' The final PhD topic is subject to your university. Start: according to prior agreement Diversity and inclusion are not just trends for us but are firmly anchored in our corporate culture. Therefore, we welcome all applications, regardless of gender, age, disability, religion, ethnic origin or sexual identity. Need support during your application? \\nJohanna Ripple \\n+49(7121)35-34427 Need further information about the job? \\nMatthew Lewis \\n+49(7121)35-30846 '}",
+      "source": "Bosch Group careers",
+      "matchScore": 70,
+      "matchedKeywords": [
+        "mems",
+        "semiconductor",
+        "wafer",
+        "characterization",
+        "phd",
+        "doctoral"
+      ],
+      "warnings": [],
+      "attainabilityScore": 87,
+      "perfectFit": false,
+      "matchReason": "Direct CV overlap: mems, semiconductor, wafer, characterization, phd.",
+      "employerType": "Company"
+    },
+    {
+      "id": "6a2db82864bf4737",
+      "title": "Project Manager for innovative MEMS sensors (f/m/div.)",
       "company": "Bosch Group",
       "location": "Dresden, SN, Germany",
       "country": "Germany",
-      "category": "PhD / Research",
+      "category": "MEMS & semiconductors",
       "type": "Full-time",
-      "datePosted": "2026-09-18",
+      "datePosted": "2026-09-15",
       "deadline": "Check official posting",
-      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000150304129-development-and-integration-engineer-for-mems-asic-beol-technology-f-m-div-",
-      "description": "{'title': 'Company Description', 'text': ' Bosch Sensortec GmbH is a technology leader in sensing solutions based on microelectromechanical systems (MEMS) and dedicated to the consumer electronics world. We develop and market key technologies for smartphones and tablets, hearables, wearables, smartglasses, augmented and virtual reality applications, gaming devices and many more. Our sensors improve people’s well-being and lifestyle and enable consumer electronic devices to sense the world around us. MEMS sensors are therefore an essential part of the foundation for a connected world. Bosch Sensortec GmbH is a wholly owned subsidiary of Robert Bosch GmbH. Bosch Sensortec GmbH is looking forward to your application! '} {'title': 'Job Description', 'text': ' To strengthen our leading market position within the sensor products we will extend our MEMS and ASIC BEOL technology to 300 mm wafer. We are looking for a curious and technology-driven engineer (f/m/div.), who has a passion for technology and process. If you enjoy connecting the dots between different technologies, challenging technical boundaries, and turning complexity into manufacturable solutions, this role is for you. As a Development and Integration Engineer, you will drive and control innovative technology developments for complex products with a focus on integration, including scheduling and the customer interface Part of your responsibilities is implementing development goals together with a team of integrators and experts; you will achieve these goals by combining your technology know-how and manufacturing expertise with intensive, collaborative work and a high degree of personal responsibility and independence Furthermore, you will develop semiconductor processes for the manufacturing of our sensor products Driven by your passion for innovation, you will enable new technologies and materials and perform both technical and economic evaluation of the feasibility of new processes You will coordinate internal interfaces across development sections and manufacturing to develop solutions and control their implementation from the start of development until they are ready for series production With a focus on quality, you will manage quality assessments and process releases to ensure our high standards are met In addition, you will be responsible for the cooperation with research institutes for basic development, driving foundational progress in our field '} {'title': 'Qualifications', 'text': ' Personality : Self-initiated, assertive, creative, strong team player, goal-oriented Working Practice: Systematic, proactive, resilient Experience and Know-How : Multiple years of relevant professional experience; very good knowledge in sensor, micromechanics and semiconductor technology required; knowledge of relevant analytical methods beneficial; excellent understanding of physical principles and interrelationships; ability to guide a team in technical matters Language: Very good knowledge of English, proficient German Education: Completed university studies (Master/Diploma/PhD) in engineering or natural sciences, physics, chemistry, material sciences or a comparable qualification '} {'title': 'Additional Information', 'text': ' We offer flexible working models: from various part-time options to mobile working and job sharing. Feel free to contact us. Diversity and inclusion are not just trends for us but are firmly anchored in our corporate culture. Therefore, we welcome all applications, regardless of gender, age, disability, religion, ethnic origin or sexual identity. \\n Need support during your application? \\nSamuel Zinn (Human Resources) \\n+49 7121 35-33717 Need further information about the job? \\nChristina Leinenbach (Functional Department) \\n+49 712135-33480 \\n \\n Data Privacy Information \\nBy submitting your application, you acknowledge that your application documents and personal data may be accessed and reviewed by hiring managers and authorized recruitment representatives of both Bosch Sensortec GmbH and Robert Bosch GmbH where necessary for the recruitment process and the assessment of your suitability for the position. Access is limited to individuals involved in the recruitment process and is subject to applicable data protection laws. For further information on the processing of your personal data, please refer to the Bosch Applicant Privacy Notice . '} {'title': 'Videos To Watch', 'urls': ['https://www.youtube.com/watch?v=K62T_8HQ2_4']}",
-      "source": "Bosch careers / SmartRecruiters",
-      "matchScore": 69,
+      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000149608017-project-manager-for-innovative-mems-sensors-f-m-div-",
+      "description": "{'title': 'Company Description', 'text': ' Bosch Sensortec GmbH is a technology leader in sensing solutions based on microelectromechanical systems (MEMS) and dedicated to the consumer electronics world. We develop and market key technologies for smartphones and tablets, hearables, wearables, smartglasses, augmented and virtual reality applications, gaming devices and many more. Our sensors improve people’s well-being and lifestyle and enable consumer electronic devices to sense the world around us. MEMS sensors are therefore an essential part of the foundation for a connected world. Bosch Sensortec GmbH is a wholly owned subsidiary of Robert Bosch GmbH. '} {'title': 'Job Description', 'text': \" As a MEMS Chip Project Manager (f/m/div.) you lead a team of experts who are developing an innovative next-generation MEMS chip: Under your leadership, the SE team encompasses MEMS design, technology, layout, wafer-level testing, manufacturing, and quality, enabling it to develop optimal concepts and solutions for the product Moreover, effective management of the team's interfaces to system, ASIC, package, and final test development falls under your responsibility You manage the project schedule, which includes identifying interdependencies between different work packages, determining the critical path, and establishing and monitoring crucial milestones Together with the team, you do a systematic and thorough risk management to enable fast time-to-market with a good technical maturity Last but not least you continuously track the project status including quality, budget, production costs and schedule and report to stakeholders and management on a regular basis \"} {'title': 'Qualifications', 'text': ' Personality: A confident and proactive personality with strong standing and decision-making capabilities; able to motivate others; highly assertive and enthusiasm for tackling complex challenges in a dynamic and multicultural environment Working Style: Team player; resilient with the capability to adjust to changing boundary conditions; ready to take on and resolve internal conflicts; well organized and structured working style Experience: Several years of experience in MEMS development mandatory; experience in an organizational role; previous experience in management of complex project; ability to manage stakeholders from different units, including internal customers; PMP certification is a plus Languages: Full professional English proficiency; German language skills is a plus Education: Completed bachelor´s or master’s degree or comparable qualifications in physics, micro-systems, electrical engineering or a related field '} {'title': 'Additional Information', 'text': ' Diversity and inclusion are not trends for us; they are firmly embedded in our corporate culture. We therefore welcome all applications, regardless of gender, age, disability, religion, ethnic origin, or sexual identity. Do you have questions about the application process? \\nSamuel Zinn (Human Resources) \\n+49 7121 35-33717 Do you have questions about the job description? \\nFrancesco Ivaldi (Technical Department) \\n+49 173 3442183 '} {'title': 'Videos To Watch', 'urls': ['https://www.youtube.com/watch?v=K62T_8HQ2_4']}",
+      "source": "Bosch Group careers",
+      "matchScore": 67,
       "matchedKeywords": [
         "mems",
-        "sem",
-        "phd"
+        "ald",
+        "wafer",
+        "asic"
       ],
-      "warnings": [],
-      "attainabilityScore": 63,
+      "warnings": [
+        "several years"
+      ],
+      "attainabilityScore": 55,
       "perfectFit": false,
-      "matchReason": "Direct overlap with mems, sem, phd."
+      "matchReason": "Direct CV overlap: mems, ald, wafer, asic.",
+      "employerType": "Company"
+    },
+    {
+      "id": "84361700bffa22ea",
+      "title": "Semiconductor Test Expert for Research and Development (m/w/d)",
+      "company": "EMFT - Microsystems and Solid State Technologies",
+      "location": "Regensburg, Germany",
+      "country": "Germany",
+      "category": "MEMS & semiconductors",
+      "type": "Research / Employment",
+      "datePosted": "",
+      "deadline": "Check official posting",
+      "url": "https://jobs.fraunhofer.de/job/Regensburg-Semiconductor-Test-Expert-for-Research-and-Development-%28mwd%29-93053/1413420633/",
+      "description": "Search by Keyword/Field of Study/Jobcode Search by Location > More Search Options Loading... Level of Experience All Job Function All Opportunity for promotion All Region All Institute All Language All Clear Select how often (in days) to receive an alert: Create Jobalert × Select how often (in days) to receive an alert: Apply now » City: Regensburg Date: Oct 4, 2026 Semiconductor Test Expert for Research and Development (m/w/d) The Fraunhofer-Gesellschaft ( www.fraunhofer.com ) is one of the world's leading organizations for application-oriented research. 74 institutes develop pioneering technologies for our economy and society – more precisely: 30 000 people from technology, science, administration and IT. They know: Anyone who comes to Fraunhofer wants to and can make a difference. For themselves, for us and for the markets of today and tomorrow. CAREER IN MICROTECHNOLOGY RESEARCH – BIG OPPORTUNITIES WITH SMALL STRUCTURES! CHANGE STARTS WITH US. Do you want to change the world through science? Then the Fraunhofer Institute for Electronic Microsystems and Solid State Technologies EMFT is the perfect place to start your career! With around 190 highly qualified employees at our locations in Munich, Oberpfaffenhofen and Regensburg, we combine many years of experience with extensive expertise in microelectronics and microsystems technology. Our wide range of technologies spans from advanced semiconductor processes and MEMS technologies to innovative 3D integration and flexible electronics. These nano and microtechnologies form the foundation of our diverse fields of expertise, which include sensor technology, circuit design, system solutions with AI, analysis and testing, as well as micropumps. Through the close collaboration of our experts, not only groundbreaking innovations arise, but also synergies that enable Fraunhofer EMFT to effectively tackle the complex challenges of our time. The Test Group is currently being set up and will be responsible for developing and operationally delivering test solutions for semiconductor devices and microelectronic systems. These devices and/or systems are developed either at the EMFT itself or in research projects in collaboration with partners, or are provided by industry as part of collaborative projects. Starting with the validation of test structures, test chips or prototypes, through to product validation and characterisation, and on to pre-series testing, test solutions are developed and implemented on the test equipment. To this end, industry-compatible test equipment is installed at the EMFT, enabling testing at wafer and component level and, where appropriate, facilitating direct transfer to industrial partners and test service providers. Be part of change Supporting the installation and maintenance of industry-standard test equipment (ATE, wafer probers, additional measurement technology) Developing test programmes for validation, characterisation and pre-production testing in close collaboration with the design teams (in-house, at research partners, and at industrial customers) Development/procurement of the associated test hardware (loadboards, probe cards, etc.) Close collaboration with internal design teams, research partners and industrial clients Collaboration with test equipment manufacturers and test service providers#Supporting our business activities with our industrial clients through your technical expertise Representing our institute and our department at scientific conferences and project meetings, presenting results at events and seeking professional exchange Participating in technical discussions with other experts and developing new ideas Publishing results in high-impact scientific publications and reports What you contribute • A successfully completed Master’s degree in Electrical Engineering, Communications Engineering, Microsystems Engineering, Semiconductor Technology or a similar field • Excellent knowledge of electrical measurement technology • Good to very good programming skills in C, C++ or Python • At least 5 years’ experience in semiconductor testing (test development, wafer testing, final testing) • High level of motivation and the ability to quickly familiarise yourself with new challenges • The ability to work independently and in a structured manner, whilst keeping an eye on the bigger picture, and excellent problem-solving skills • Very good communication skills in German and English Translated with DeepL.com (free version) What we offer A challenging and varied role offering a sense of purpose and responsibility – you will work alongside the brightest minds in the field of HF design and help shape the future of Europe as a centre of innovation! With us, you’ll have scope for commitment and creativity – you can set your own priorities and put your ideas into practice within the team and on projects. Collaboration within an interdisciplinary and international team and integration into a large scientific network Personalised and ",
+      "source": "Fraunhofer careers",
+      "matchScore": 67,
+      "matchedKeywords": [
+        "mems",
+        "microsystem",
+        "semiconductor",
+        "microelectronics",
+        "wafer",
+        "research and development"
+      ],
+      "warnings": [
+        "5 years"
+      ],
+      "attainabilityScore": 55,
+      "perfectFit": false,
+      "matchReason": "Direct CV overlap: mems, microsystem, semiconductor, microelectronics, wafer.",
+      "employerType": "Company"
     },
     {
       "id": "2390e6cd196df46f",
@@ -187,79 +572,27 @@
       "company": "ISIT - Silicon Technology",
       "location": "Itzehoe, Germany",
       "country": "Germany",
-      "category": "PhD / Research",
+      "category": "MEMS & semiconductors",
       "type": "Research / Employment",
       "datePosted": "",
       "deadline": "Check official posting",
       "url": "https://jobs.fraunhofer.de/job/Itzehoe-Research-Associate-%E2%80%92-Characterization-of-Power-Devices-%28all-genders%29-25524/1442340633/",
       "description": "Search by Keyword/Field of Study/Jobcode Search by Location > More Search Options Loading... Level of Experience All Job Function All Opportunity for promotion All Region All Institute All Language All Clear Select how often (in days) to receive an alert: Create Jobalert × Select how often (in days) to receive an alert: Apply now » City: Itzehoe Date: Sep 29, 2026 Research Associate ‒ Characterization of Power Devices (all genders) The Fraunhofer-Gesellschaft ( www.fraunhofer.com ) is one of the world's leading organizations for application-oriented research. 74 institutes develop pioneering technologies for our economy and society – more precisely: 30 000 people from technology, science, administration and IT. They know: Anyone who comes to Fraunhofer wants to and can make a difference. For themselves, for us and for the markets of today and tomorrow. The Fraunhofer Institute for Silicon Technology ISIT, located in Itzehoe, offers a cutting-edge research and manufacturing environment of approximately 200 employees and several local partners, featuring a state-of-the-art equipment portfolio, two cleanrooms, and approximately 700 m² of laboratory space. As a bridge between research and pre-development on the one hand and commercial application on the other, Fraunhofer ISIT is an exciting employer with innovative prospects for the future. Our »Power Electronics« business area focuses on the development of gallium nitride-based processes and devices. This includes lateral AlGaN/GaN HEMTs, vertical GaN MOSFETs and diodes, as well as GaN-based MEMS, sensors and microelectronic devices, and the development and adaptation of processes for the reliable production of these. Be part of change Static and dynamic electrical characterization of power devices (Si and III-V semiconductors) at wafer level and in packages (from test structures to high-performance devices with, e.g., several 100A / 1200V) Development and establishment of new measuring techniques for the characterization of GaN and SIC devices Development, design and application of test structures and measurement specifications for the in-line characterization of novel devices during production Application of compact models to evaluate and model component properties Supervision of students during electrical and materials science characterization Independent processing of work packages within forward-looking research projects with various internal and external actors from industry and research Documentation and communication of the results internally as well as to customers and capitalization of the results through publications and patents What you contribute Completed scientific university degree (master’s degree / diploma) in physics, electrical engineering, materials science, or a comparable discipline Knowledge of semiconductor manufacturing technologies and processes Experience in the characterization of semiconductor processes and devices Knowledge of modeling electrical circuits as well as device modeling using SPICE Advantages: experience of semiconductor processes and devices, device development and process and device simulation (TCAD) Proficiency in written and spoken English and German A high degree of independence, initiative and commitment The ability to quickly familiarize yourself with new challenges and to thrive while taking on responsibility in a team environment What we offer Flexible work schedules and support for balancing work and personal life Workplace health management and a company pension plan (VBL) Corporate Benefits Subsidy for the Deutschland-Ticket Jobticket Free employee parking Internal and external training opportunities Opportunities for independent work and actively shaping the future with your own ideas Direct communication and flat hierarchies for a smooth workflow The weekly working time is 39 hours. The position is initially a two-year fixed-term position. However, we are interested in a long-term collaboration. We value and promote the diversity of our employees' skills and therefore welcome all applications – regardless of age, gender, nationality, ethnic and social origin, religion, ideology, disability, sexual orientation and identity. Severely disabled persons are given preference in the event of equal suitability. Our tasks are diverse and adaptable – for applicants with disabilities, we work together to find solutions that best promote their abilities. Appointment, remuneration and social security benefits based on the public-sector collective wage agreement (TVöD). With its focus on developing key technologies that are vital for the future and enabling the commercial utilization of this work by business and industry, Fraunhofer plays a central role in the innovation process. As a pioneer and catalyst for groundbreaking developments and scientific excellence, Fraunhofer helps shape society now and in the future. Ready for a change? Then apply now and make a difference! Once we have received your online application",
       "source": "Fraunhofer careers",
-      "matchScore": 67,
+      "matchScore": 66,
       "matchedKeywords": [
         "mems",
-        "sem",
-        "simulation",
+        "semiconductor",
+        "wafer",
+        "cleanroom",
+        "characterization",
         "research associate"
       ],
       "warnings": [],
-      "attainabilityScore": 91,
+      "attainabilityScore": 87,
       "perfectFit": false,
-      "matchReason": "Direct overlap with mems, sem, simulation, research associate."
-    },
-    {
-      "id": "31e525af278e5a2b",
-      "title": "MEMS Layout",
-      "company": "Bosch Group",
-      "location": "Milano, Lombardia, Italy",
-      "country": "Italy",
-      "category": "R&D / Industry",
-      "type": "Full-time",
-      "datePosted": "2026-10-05",
-      "deadline": "Check official posting",
-      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000153431099-mems-layout",
-      "description": "{'title': 'Company Description', 'text': ' Bosch Sensortec is the technology leader in sensing solutions based on microelectromechanical systems (MEMS) and dedicated to the consumer electronics world. Our success in MEMS sensors and solutions is built on a remarkable team driven by passion, innovation and flexibility. There is more than one good reason to join #BoschSensortec . We not only have cutting-edge product technology and an employee-oriented corporate culture, we also offer you attractive working conditions and first-class career opportunities. We offer you many different working fields and career paths — and we provide individual possibilities to enable you to turn your passion into real innovations. '} {'title': 'Job Description', 'text': ' Become part of the global market leader in MEMS! Together, we are shaping the future of MEMS sensors and enabling innovative applications in the automotive, consumer and industrial sectors. In your role as a development engineer, you will develop holistic chip designs and chip layouts for complex micromechanical sensors, always focusing on the requirements of design and technology. As part of an expert team, you will work on the agile implementation of project goals. The combination of teamwork, personal responsibility and independence will help you achieve the best possible results. We rely on you and your expertise when it comes to the technical assessment of feasibility and the verification of chip designs and layouts in accordance with technology and manufacturing specifications. You will generate mask data and manufacturing documentation for both new developments and variants, taking relevant cost-effectiveness and quality aspects into account. What is more, as a valued contact person, you will coordinate the internal interfaces between development and manufacturing in carrying out this task. The further development of implemented software solutions for the simulation and automation of workflows is also part of your responsibilities. You will also successfully develop and optimize new software concepts for verifying layouts and mask data in close collaboration with internal R&D departments. '} {'title': 'Qualifications', 'text': ' Education : completed university degree in engineering or natural sciences, electrical engineering, microsystems engineering, mathematics, physics, chemistry, materials science or a comparable field of study Experience and know-how : experience in the development of innovative MEMS/semiconductor technologies; expertise in sensor technology, micromechanics and semiconductor technology; experience in software development and programming, e.g. Python experience Personality and working style : you take initiative, focus on solving problems and are creative in your approaches; you enjoy working in a team and keep a cool head even during peak phases; you are able to represent your opinion effectively to stakeholders; your working style is systematic, methodical and goal-oriented; you are able to make decisions quickly and confidently; you succeed in bringing your enthusiasm for tasks and projects into the working environment Languages : very good written and spoken English and Italian, German is a plus '} {'title': 'Additional Information', 'text': ' In line with our compensation policies, the gross annual salary (RAL) for this position lies within the range € 40.000 - €45.000 for a 40-hour work week. The remuneration package also includes: A Company performance-related bonus Additional benefits. The salary range corresponds to the specified job grade and may vary depending on the candidate’s level of experience. We look forward to discussing the full details of our compensation package and career development opportunities with you during the application process. Bosch is proud to be an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, marital status, national origin or ancestry, age, disability or any other protected class. www.bosch.it https://www.bosch.it/lavora-con-noi/ '}",
-      "source": "Bosch careers / SmartRecruiters",
-      "matchScore": 65,
-      "matchedKeywords": [
-        "mems",
-        "microsystem",
-        "sem",
-        "verification",
-        "python",
-        "simulation",
-        "r&d"
-      ],
-      "warnings": [],
-      "attainabilityScore": 63,
-      "perfectFit": false,
-      "matchReason": "Direct overlap with mems, microsystem, sem, verification, python."
-    },
-    {
-      "id": "e56bbba67dfd30c2",
-      "title": "Model-based software engineer for MEMS sensors",
-      "company": "Bosch Group",
-      "location": "Budapest, , Hungary",
-      "country": "Hungary",
-      "category": "PhD / Research",
-      "type": "Full-time",
-      "datePosted": "2026-09-14",
-      "deadline": "Check official posting",
-      "url": "https://jobs.smartrecruiters.com/BoschGroup/744000149333084-model-based-software-engineer-for-mems-sensors",
-      "description": "{'title': 'Company Description', 'text': ' At Bosch, we shape the future by inventing high-quality technologies and services that spark enthusiasm and enrich people’s lives. Our promise to our associates is rock-solid: We grow together, we enjoy our work, and we inspire each other. Welcome to Bosch. '} {'title': 'Job Description', 'text': ' The Mobility Electronics (ME) division of Bosch covers a wide portfolio of micro-mechanical sensors (MEMS) which are essential to modern life - from applications in automotive safety and navigation to consumer devices like smartphones and hearables up to control systems in spacecrafts. Bosch sensors are everywhere. Our work is embedded in a highly dynamic, international setting involving close collaboration with in-house R&D and interfacing to world-renowned customers from the automotive industry. Your tasks ► You create Simulink based models describing the entire signal chain of a MEMS sensor. ► You implement and develop algorithms for testing and verifying model performance. ► You actively collaborate with internal customers and collect new requirements from them. ► You compile the verified models into performant low-level code. ► You are in close contact with internal stakeholders, collecting inputs for new models. ► In addition to generating new models, you also provide maintenance and continuous support for existing models. ► You evaluate hardware measurement data required for model validation. ► You carry out peer reviews with members of your team. ► You develop a deep understanding of Bosch sensor signal chains. Your chance ► You will tackle challenging problems in a highly relevant and innovative growth sector (semiconductors/MEMS) with a tangible impact on a global scale. ► As part of an eager team, you will shape how cutting-edge MEMS sensors are used in the automotive industry for safety critical applications. '} {'title': 'Qualifications', 'text': ' ► Education Mechatronics engineering, electrical engineering, mechanical engineering, mathematics, physics or similar disciplines ► Experience Experience in MATLAB and Simulink is required Experience in digital signal processing and system theory is required Experience in OOP programing is required Knowledge in micro-electro-mechanical systems (MEMS) is an advantage Experience with embedded software development is an advantage Experience with measurement technology is an advantage ► Personality Problem-solving: You like to deal with complex problems but keep your focus on finding and implementing solutions. Growth mindset: You embrace challenges and like to experiment. You value feedback. You are motivated by continuous learning in a specialized high-tech domain. Collaborative spirit: You actively engage in teamwork, communicate effectively with partners and share a positive mindset. You enjoy collaborating in an international and multidisciplinary environment. Working style: You show initiative, take responsibility for your tasks, and drive them forward independently. Adaptability & Resilience: You remain effective and can adapt when facing challenges or uncertain conditions. You naturally maintain a positive \"can-do\" attitude. ► Language Professional English in oral and written form. '} {'title': 'Additional Information', 'text': ' Get to know our #LikeABosch benefits. We would like to help you GROW , so we offer you: Financial security & recognition: We review and increase your competitive base salary annually, offer performance-, loyalty-, and referral bonus. Trainings and professional development: We believe in a Life-Long Learning approach, so you can take advantage of several technical and soft skill trainings and language courses. Career development : We have a wide range of programs to choose from, even if its leadership, expert or project development you are aiming for. We also offer mentoring and coaching opportunities, we have PhD program and we offer international assignment possibilities. We would like you to ENJOY the benefits of balancing your life and your work, so we pay attention to: Your work life-balance: You can work from our activity based offices designed for creativity and efficiency or from home while enjoying flexible working hours . We offer childcare possibilities and sabbatical option. Your health and well-being: We provide free professional consultants for any personal, legal, financial or health related issues. You can benefit from our developing onsite medical center and organized regular health checkups. We also offer you several perks and benefits: You can use your annual cafeteria allowance flexibly for family support (e.g. tax-free kindergarten and nursery allowances), health care , mobility (car sharing services) and recreation . You can enjoy our onsite canteen, we support when you work from home and if you live far, we cover your commute costs . We also appreciate your loyalty with jubilee gift and extra jubilee holiday . You could join an INSPIRING community worth to belong",
-      "source": "Bosch careers / SmartRecruiters",
-      "matchScore": 65,
-      "matchedKeywords": [
-        "mems",
-        "sem",
-        "validation",
-        "matlab",
-        "phd",
-        "r&d"
-      ],
-      "warnings": [],
-      "attainabilityScore": 63,
-      "perfectFit": false,
-      "matchReason": "Direct overlap with mems, sem, validation, matlab, phd."
+      "matchReason": "Direct CV overlap: mems, semiconductor, wafer, cleanroom, characterization.",
+      "employerType": "Company"
     }
   ]
 }

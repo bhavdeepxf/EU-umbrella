@@ -1,21 +1,17 @@
 name: Refresh jobs and deploy EU Umbrella
-
 on:
   workflow_dispatch:
   schedule:
     - cron: "17 4 * * *"
   push:
     branches: [main]
-
 permissions:
   contents: write
   pages: write
   id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: false
-
 jobs:
   collect:
     runs-on: ubuntu-latest
@@ -27,33 +23,29 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - name: Collect current vacancies
-        run: python scripts/fetch_jobs.py
-      - name: Validate output and JavaScript
+        run: python fetch_jobs.py
+      - name: Validate data and JavaScript
         run: |
-          python scripts/validate_data.py
+          python validate_data.py
           node --check app.js
           node --check jobs.js
-          node --check data/candidate-profile.js
-      - name: Commit refreshed vacancy feed
-        if: github.event_name != 'pull_request'
+          node --check candidate-profile.js
+      - name: Commit refreshed feed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/jobs.json
-          git diff --cached --quiet || git commit -m "chore: refresh vacancy feed"
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add jobs.json
+          git diff --cached --quiet || git commit -m "chore: refresh European vacancy feed"
           git push
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v5
       - name: Build Pages artifact
         run: |
-          mkdir -p _site
-          cp index.html style.css app.js jobs.js _site/
-          cp -R data _site/data
-          touch _site/.nojekyll
+          mkdir -p site
+          cp index.html style.css app.js jobs.js candidate-profile.js jobs.json site/
+          touch site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
-
+          path: site
   deploy:
     environment:
       name: github-pages

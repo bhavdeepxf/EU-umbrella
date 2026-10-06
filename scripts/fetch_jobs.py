@@ -1,382 +1,267 @@
 #!/usr/bin/env python3
-"""Collect, rank and validate relevant European vacancies from public sources."""
+"""Collect and rank CV-matched semiconductor, MEMS and biomedical jobs across Europe."""
 from __future__ import annotations
-
-import hashlib
-import html
-import json
-import os
-import re
-import sys
-import time
-from dataclasses import dataclass, asdict
+import hashlib, html, json, re, sys, time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from collections import Counter
+from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Callable
 from urllib.parse import urljoin
-
 import requests
 from bs4 import BeautifulSoup
 
-ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "data" / "jobs.json"
-HEADERS = {"User-Agent": "EU-Umbrella-Job-Collector/2.0 (+personal research dashboard)", "Accept-Language": "en,de;q=0.8"}
+ROOT = Path(__file__).resolve().parent
+OUTPUT = ROOT / "jobs.json"
 SESSION = requests.Session()
-SESSION.headers.update(HEADERS)
-TIMEOUT = 35
+SESSION.headers.update({"User-Agent": "EU-Umbrella/3.0 personal career research dashboard", "Accept-Language": "en,de;q=0.8"})
+TIMEOUT = 15
 
-SEARCH_TERMS = ["MEMS", "microsystem", "thin film", "AlN", "materials characterization", "biomedical", "medical device", "PhD", "Doktorand", "research engineer"]
-EU_CODES = {"de":"Germany","at":"Austria","ch":"Switzerland","nl":"Netherlands","be":"Belgium","dk":"Denmark","se":"Sweden","fi":"Finland","fr":"France","ie":"Ireland","lu":"Luxembourg","no":"Norway","it":"Italy","es":"Spain","pt":"Portugal","cz":"Czechia","pl":"Poland","ee":"Estonia","lv":"Latvia","lt":"Lithuania","si":"Slovenia","sk":"Slovakia","hr":"Croatia","gr":"Greece","ro":"Romania","bg":"Bulgaria","hu":"Hungary","cy":"Cyprus","mt":"Malta"}
-EU_NAMES = set(EU_CODES.values()) | {"Czech Republic", "European Union", "Remote", "India"}
-PRIORITY_PLACES = ["baden-württemberg","bavaria","saxony","berlin","brandenburg","hamburg","north rhine-westphalia","villingen-schwenningen","freiburg","stuttgart","munich","dresden"]
-DIRECT = ["mems","microsystem","aln","aluminum nitride","aluminium nitride","thin film","thin-film","ftir","ft-ir","xrd","sem","ald","atomic layer deposition","sputtering","wafer bow","acoustic sensor","ultrasonic","surface characterization","materials characterization","medical device","biomedical engineering","clinical engineering"]
+EU_CODES = {"de":"Germany","at":"Austria","ch":"Switzerland","nl":"Netherlands","fr":"France","be":"Belgium","dk":"Denmark","se":"Sweden","fi":"Finland","no":"Norway","ie":"Ireland","gb":"United Kingdom","it":"Italy","es":"Spain","pt":"Portugal","cz":"Czechia","pl":"Poland","hu":"Hungary","ro":"Romania","bg":"Bulgaria","ee":"Estonia","lv":"Latvia","lt":"Lithuania","si":"Slovenia","sk":"Slovakia","hr":"Croatia","gr":"Greece","lu":"Luxembourg","mt":"Malta","cy":"Cyprus"}
+EUROPE = set(EU_CODES.values()) | {"European Union", "Remote Europe"}
+PRIORITY_CITIES = ["heidelberg","munich","münchen","hannover","hanover","hamburg","aachen","dresden","stuttgart","reutlingen","freiburg","berlin","jena","erfurt","regensburg","itzehoe","lübeck","nuremberg","erlangen","karlsruhe","villingen-schwenningen","zurich","eindhoven","delft","enschede","grenoble","paris","graz","vienna","leuven","mechelen","innsbruck"]
+
+TITLE_TERMS = ["mems","microsystem","microfabric","semiconductor","microelectronic","sensor","thin film","thin-film","deposition","metrology","characterization","characterisation","materials","biomedical","medical device","medtech","implant","biomaterial","biointerface","microfluid","lab-on-a-chip","lab on chip","acoustic","ultrasound","ultrasonic","piezo","photonics","wafer","process engineer","validation engineer","quality engineer","research associate","scientific employee","wissenschaftlicher mitarbeiter","doctoral","phd","doktorand"]
+DOMAIN_TERMS = TITLE_TERMS + ["aln","aluminum nitride","aluminium nitride","ald","atomic layer deposition","sputter","ftir","ft-ir","xrd","sem microscopy","surface analysis","failure analysis","cleanroom","lithography","cmos","asic","saw","baw","micromachining","cochlear","orthopaedic","orthopedic","neural interface","biosensor","medical implant","iso 13485","eu mdr","verification","calibration","3d printing","additive manufacturing"]
+SEARCH_TERMS = ["MEMS","semiconductor","thin film","acoustic","biomedical","medical device","implant","PhD"]
+EXCLUDED = ["working student","werkstudent","student assistant","studentische hilfskraft","hiwi","internship"," intern ","praktikum","praktikant","trainee","apprentice","ausbildung","bachelor thesis","master thesis","masters thesis","masterarbeit","bachelorarbeit","abschlussarbeit","postdoc","postdoctoral"]
+HARD_SENIOR = ["director","head of","vice president","vp ","chief ","principal","staff engineer","lead engineer","senior manager","professor"]
+LANGUAGE_WARNINGS = ["german c1","german c2","native german","deutsch c1","deutsch c2","verhandlungssicheres deutsch","fluent german"]
+ENTRY = ["junior","graduate","entry level","early career","master's degree","masters degree","msc","m.sc","doctoral","phd position","doktorand","research associate","scientific employee","wissenschaftlicher mitarbeiter"]
+DIRECT = ["mems","microsystem","aln","aluminum nitride","aluminium nitride","thin film","thin-film","ftir","ft-ir","xrd","scanning electron","ald","atomic layer deposition","sputtering","wafer bow","acoustic","ultrasound","ultrasonic","piezoelectric","surface characterization","materials characterization","medical device","biomedical engineering","biomaterial","implant","biointerface","microfluidic"]
 GROUPS = {
- "MEMS & sensors":["mems","microsystem","microfabrication","microelectronics","sensor development","acoustic sensor","ultrasonic","piezoelectric","photonics"],
- "Thin films & characterization":["aln","aluminum nitride","aluminium nitride","thin film","ald","sputtering","ftir","ft-ir","xrd","sem","surface analysis","materials characterization","failure analysis","crystallography"],
- "Medical technology":["biomedical","medical device","medtech","clinical engineering","biomaterial","implant","biointerface","verification","validation","calibration","quality assurance","eu mdr"],
- "Data & imaging":["matlab","python","machine learning","image processing","medical imaging","computer vision","simulation","data analysis"],
- "Research":["phd","doctoral","doktorand","research associate","scientific employee","wissenschaftlicher mitarbeiter","researcher","r&d","research and development"]
+ "MEMS & semiconductors": ["mems","microsystem","microfabrication","semiconductor","microelectronics","wafer","cleanroom","lithography","cmos","asic"],
+ "Acoustic MEMS": ["acoustic","microphone","microspeaker","ultrasound","ultrasonic","piezoelectric","saw","baw","hearing"],
+ "Thin films & metrology": ["aln","thin film","ald","sputtering","ftir","xrd","sem microscopy","surface analysis","characterization","metrology","failure analysis"],
+ "Biomedical & implants": ["biomedical","medical device","medtech","biomaterial","implant","biointerface","cochlear","orthopaedic","neural","microfluidic","lab-on-a-chip","biosensor"],
+ "Research": ["phd","doctoral","doktorand","research associate","scientific employee","wissenschaftlicher mitarbeiter","research engineer","r&d","research and development"]
 }
-SENIOR = ["senior manager","principal","director","head of","staff engineer","lead engineer","10+ years","8+ years","7+ years"]
-LANGUAGE = ["german c1","german c2","native german","deutsch c1","deutsch c2","verhandlungssicheres deutsch"]
-CORE_DOMAIN = ["mems", "microsystem", "microfabrication", "lab-on-a-chip", "lab on chip", "microfluidic", "thin film", "thin-film", "aln", "aluminum nitride", "aluminium nitride", "ftir", "ft-ir", "xrd", "sem microscopy", "scanning electron", "ald", "atomic layer deposition", "sputtering", "wafer", "acoustic sensor", "ultrasonic", "biomedical", "medical device", "medtech", "clinical engineering", "medical equipment", "medical imaging", "verification and validation", "quality engineer", "spectroscopy"]
-TITLE_DOMAIN = ["mems", "microsystem", "microfluidic", "lab-on-a-chip", "lab on chip", "thin film", "thin-film", "spectroscopy", "semiconductor test", "medical device", "medtech", "biomedical", "clinical engineer", "medical imaging", "validation engineer", "quality engineer", "research associate", "wissenschaftlicher mitarbeiter", "doctoral", "phd"]
-EXCLUDED_ROLES = ["senior software", "senior manager", "principal", "director", "head of", "staff engineer", "lead engineer", "postdoc", "postdoctoral", "working student", "werkstudent", "student assistant", "studentische hilfskraft", "hiwi", "internship", "intern ", "praktikum", "praktikant", "trainee", "bachelor thesis", "master thesis", "master's thesis", "masterarbeit", "bachelorarbeit", "abschlussarbeit"]
-ENTRY_SIGNALS = ["graduate", "junior", "entry level", "early career", "master's degree", "master degree", "msc", "m.sc", "phd position", "doctoral", "doktorand", "research associate", "scientific employee", "wissenschaftlicher mitarbeiter"]
-EXPERIENCE_PENALTIES = [("10+ years", 28), ("8+ years", 24), ("7+ years", 20), ("6+ years", 16), ("5+ years", 12), ("several years", 8)]
-MAX_PER_COMPANY = 8
-MIN_TECHNICAL_FIT = 65
-MIN_ATTAINABILITY = 55
-RELEVANCE = set(DIRECT + [x for values in GROUPS.values() for x in values])
+MAX_PER_COMPANY = 6
+MIN_FIT = 65
+MIN_ATTAINABILITY = 50
+
+# Companies with public ATS endpoints. Add slugs here without changing collector logic.
+SMARTRECRUITERS = {"BoschGroup":"Bosch Group","Brainlab":"Brainlab","Eurofins":"Eurofins","Tomra":"TOMRA","Sika":"Sika","ASML":"ASML"}
+LEVER = {"alifsemi":"Alif Semiconductor","MunichElectrification":"Munich Electrification","quantummotion":"Quantum Motion","axeleraai":"Axelera AI","materialise":"Materialise"}
+GREENHOUSE = {"prophesee":"Prophesee","qblox":"Qblox","nekohealth":"Neko Health","onwardmedical":"ONWARD Medical"}
+PERSONIO = {"cortec":"CorTec","marvelfusion":"Marvel Fusion","blacksemiconductor":"Black Semiconductor","sensry":"Sensry","inbrain-neuroelectronics":"INBRAIN Neuroelectronics"}
+ODOO = {"https://usound-16.odoo.com/jobs":"USound"}
 
 @dataclass
 class Job:
-    id: str
-    title: str
-    company: str
-    location: str
-    country: str
-    category: str
-    type: str
-    datePosted: str
-    deadline: str
-    url: str
-    description: str
-    source: str
-    matchScore: int = 0
-    matchedKeywords: list[str] | None = None
-    warnings: list[str] | None = None
-    attainabilityScore: int = 0
-    perfectFit: bool = False
-    matchReason: str = ""
+ id:str; title:str; company:str; location:str; country:str; category:str; type:str; datePosted:str; deadline:str; url:str; description:str; source:str
+ matchScore:int=0; matchedKeywords:list[str]|None=None; warnings:list[str]|None=None; attainabilityScore:int=0; perfectFit:bool=False; matchReason:str=""; employerType:str="Company"
 
+def get(url, **kwargs):
+ r=SESSION.get(url, timeout=TIMEOUT, **kwargs); r.raise_for_status(); return r
 
-def get(url: str, **kwargs) -> requests.Response:
-    response = SESSION.get(url, timeout=TIMEOUT, **kwargs)
-    response.raise_for_status()
-    return response
+def clean(value):
+ if value is None: return ""
+ return re.sub(r"\s+", " ", BeautifulSoup(html.unescape(str(value)), "html.parser").get_text(" ", strip=True)).strip()
 
+def iso_date(value):
+ if not value: return ""
+ if isinstance(value,(int,float)):
+  try: return datetime.fromtimestamp(value/1000 if value>1e11 else value,timezone.utc).date().isoformat()
+  except (ValueError,OSError): return ""
+ m=re.search(r"(20\d{2})[-/.](\d{1,2})[-/.](\d{1,2})",str(value))
+ return f"{int(m.group(1)):04d}-{int(m.group(2)):02d}-{int(m.group(3)):02d}" if m else ""
 
-def clean(value) -> str:
-    if value is None: return ""
-    soup = BeautifulSoup(html.unescape(str(value)), "html.parser")
-    return re.sub(r"\s+", " ", soup.get_text(" ", strip=True)).strip()
+def make_id(source,url): return hashlib.sha256(f"{source}|{url}".encode()).hexdigest()[:16]
 
+def country_from(location="",code=""):
+ code=str(code).lower().strip()
+ if code in EU_CODES: return EU_CODES[code]
+ text=f" {location.lower()} "
+ aliases={"germany":"Germany","deutschland":"Germany","austria":"Austria","österreich":"Austria","switzerland":"Switzerland","schweiz":"Switzerland","netherlands":"Netherlands","nederland":"Netherlands","france":"France","belgium":"Belgium","denmark":"Denmark","sweden":"Sweden","finland":"Finland","norway":"Norway","ireland":"Ireland","united kingdom":"United Kingdom"," uk ":"United Kingdom","italy":"Italy","spain":"Spain","poland":"Poland","czech":"Czechia","hungary":"Hungary","romania":"Romania","portugal":"Portugal"}
+ for k,v in aliases.items():
+  if k in text:return v
+ city_country={"munich":"Germany","münchen":"Germany","berlin":"Germany","hamburg":"Germany","hannover":"Germany","hanover":"Germany","aachen":"Germany","dresden":"Germany","stuttgart":"Germany","heidelberg":"Germany","reutlingen":"Germany","freiburg":"Germany","eindhoven":"Netherlands","delft":"Netherlands","enschede":"Netherlands","amsterdam":"Netherlands","zurich":"Switzerland","zürich":"Switzerland","lausanne":"Switzerland","grenoble":"France","paris":"France","graz":"Austria","vienna":"Austria","wien":"Austria","leuven":"Belgium","mechelen":"Belgium","oulu":"Finland","copenhagen":"Denmark","stockholm":"Sweden"}
+ for k,v in city_country.items():
+  if k in text:return v
+ return ""
 
-def iso_date(value) -> str:
-    if not value: return ""
-    if isinstance(value, (int, float)):
-        try: return datetime.fromtimestamp(value, timezone.utc).date().isoformat()
-        except (ValueError, OSError): return ""
-    text = str(value).strip()
-    match = re.search(r"(20\d{2})[-/]([01]?\d)[-/]([0-3]?\d)", text)
-    if match: return f"{int(match.group(1)):04d}-{int(match.group(2)):02d}-{int(match.group(3)):02d}"
-    for fmt in ("%d %B %Y", "%d %b %Y", "%d.%m.%Y", "%m/%d/%Y"):
-        try: return datetime.strptime(text, fmt).date().isoformat()
-        except ValueError: pass
-    return ""
+def meaningful(j):
+ text=f" {j.title} {j.description} ".lower()
+ title=j.title.lower()
+ return not any(x in text for x in EXCLUDED) and any(x in title for x in TITLE_TERMS) and any(x in text for x in DOMAIN_TERMS)
 
+def category(text):
+ t=text.lower(); scores={name:sum(x in t for x in terms) for name,terms in GROUPS.items() if name!="Research"}
+ route=max(scores,key=scores.get) if scores and max(scores.values()) else "Research & development"
+ if any(x in t for x in ["phd","doctoral","doktorand"]): return f"PhD · {route}"
+ return route
 
-def country_from(location: str, code: str = "") -> str:
-    if code.lower() in EU_CODES: return EU_CODES[code.lower()]
-    lowered = location.lower()
-    aliases = {"deutschland":"Germany","germany":"Germany","österreich":"Austria","austria":"Austria","schweiz":"Switzerland","switzerland":"Switzerland","netherlands":"Netherlands","nederland":"Netherlands","belgium":"Belgium","denmark":"Denmark","sweden":"Sweden","finland":"Finland","france":"France","ireland":"Ireland"}
-    for key, value in aliases.items():
-        if key in lowered: return value
-    return ""
+def enrich(j):
+ text=f" {j.title} {j.company} {j.location} {j.description} ".lower(); title=j.title.lower()
+ matches=[]; score=18
+ for term in DIRECT:
+  if term in text: score+=5; matches.append(term)
+ group_hits={name:[x for x in terms if x in text] for name,terms in GROUPS.items()}
+ for hits in group_hits.values(): score+=min(len(hits),3)*4; matches.extend(hits)
+ if any(x in title for x in TITLE_TERMS): score+=12
+ if j.country in EUROPE: score+=4
+ if j.country=="Germany": score+=3
+ if any(x in text for x in PRIORITY_CITIES): score+=4
+ if j.employerType in {"Startup","Scale-up"}: score+=3
+ warnings=[]
+ for x in HARD_SENIOR+LANGUAGE_WARNINGS:
+  if x in text: warnings.append(x)
+ score-=sum(8 for x in warnings if x in HARD_SENIOR)
+ score-=sum(4 for x in warnings if x in LANGUAGE_WARNINGS)
+ att=58
+ if any(x in text for x in ENTRY):att+=12
+ if any(x in title for x in ["phd","doctoral","doktorand","research associate","wissenschaftlicher mitarbeiter"]):att+=8
+ if j.country=="Germany":att+=4
+ if len(set(matches))>=5:att+=5
+ for years,penalty in [("10+ years",30),("10 years",30),("8+ years",24),("8 years",24),("7+ years",20),("7 years",20),("6 years",16),("5+ years",12),("5 years",12),("several years",7)]:
+  if years in text: att-=penalty; warnings.append(years)
+ if any(x in title for x in HARD_SENIOR): att-=22
+ if any(x in text for x in LANGUAGE_WARNINGS):att-=10
+ j.matchScore=max(0,min(100,score)); j.attainabilityScore=max(0,min(100,att)); j.matchedKeywords=list(dict.fromkeys(matches))[:9]; j.warnings=list(dict.fromkeys(warnings))[:5]
+ j.category=category(text); j.perfectFit=j.matchScore>=85 and j.attainabilityScore>=68 and not any(x in title for x in HARD_SENIOR)
+ strongest=", ".join(j.matchedKeywords[:5])
+ j.matchReason=(f"Direct CV overlap: {strongest}." if strongest else "Relevant transferable research and engineering experience.")
+ return j
 
+def smartrecruiters(slug,name):
+ base=f"https://api.smartrecruiters.com/v1/companies/{slug}/postings"; found={}
+ for term in SEARCH_TERMS:
+  try: data=get(base,params={"q":term,"limit":100,"offset":0}).json()
+  except requests.RequestException: continue
+  for item in data.get("content",[]): found[str(item.get("id"))]=item
+ out=[]
+ for pid,item in found.items():
+  try:d=get(f"{base}/{pid}").json()
+  except requests.RequestException:d=item
+  loc=d.get("location") or {}; location=clean(loc.get("fullLocation") or loc.get("city")); country=country_from(location,loc.get("country",""))
+  if country not in EUROPE:continue
+  url=d.get("postingUrl") or f"https://jobs.smartrecruiters.com/{slug}/{pid}"
+  desc=clean(" ".join(map(str,(d.get("jobAd") or {}).get("sections",{}).values())))[:8000]
+  j=Job(make_id(name,url),clean(d.get("name") or item.get("name")),name,location,country,"","Full-time",iso_date(d.get("releasedDate")),"Check official posting",url,desc,f"{name} careers")
+  if meaningful(j):out.append(j)
+ return out
 
-def classify(text: str) -> str:
-    t = text.lower()
-    if re.search(r"\bphd\b|doctoral|doktorand|promotion", t): return "PhD / Research"
-    if re.search(r"medical device|medtech|biomedical|clinical engineer", t): return "Medical Devices"
-    if re.search(r"mems|microsystem|microfabrication|thin film|materials|semiconductor|photon", t): return "R&D / Industry"
-    return "Engineering / Research"
+def lever(slug,name):
+ data=get(f"https://api.lever.co/v0/postings/{slug}",params={"mode":"json"}).json(); out=[]
+ for d in data:
+  cats=d.get("categories") or {}; location=clean(cats.get("location") or d.get("workplaceType")); country=country_from(location)
+  if country not in EUROPE:continue
+  url=d.get("hostedUrl") or d.get("applyUrl"); desc=clean(" ".join([d.get("descriptionPlain",""),d.get("additionalPlain","")]))[:8000]
+  j=Job(make_id(name,url),clean(d.get("text")),name,location,country,"",clean(cats.get("commitment") or "Full-time"),iso_date(d.get("createdAt")),"Check official posting",url,desc,f"{name} careers","",None,None,0,False,"","Startup")
+  if meaningful(j):out.append(j)
+ return out
 
+def greenhouse(slug,name):
+ data=get(f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs",params={"content":"true"}).json(); out=[]
+ for d in data.get("jobs",[]):
+  location=clean((d.get("location") or {}).get("name")); country=country_from(location)
+  if country not in EUROPE:continue
+  url=d.get("absolute_url"); desc=clean(d.get("content"))[:8000]
+  j=Job(make_id(name,url),clean(d.get("title")),name,location,country,"","Full-time",iso_date(d.get("updated_at")),"Check official posting",url,desc,f"{name} careers","",None,None,0,False,"","Startup")
+  if meaningful(j):out.append(j)
+ return out
 
-def excluded_role(job: Job) -> bool:
-    text = f"{job.title} {job.type}".lower()
-    return any(term in text for term in EXCLUDED_ROLES)
+def personio(slug,name):
+ root=BeautifulSoup(get(f"https://{slug}.jobs.personio.de/xml").text,"xml");out=[]
+ for p in root.find_all("position"):
+  title=clean(p.find("name")); location=clean(p.find("office")); country=country_from(location)
+  if country not in EUROPE:continue
+  pid=clean(p.find("id")); url=f"https://{slug}.jobs.personio.de/job/{pid}"; desc=clean(p.find("jobDescriptions"))[:8000]
+  j=Job(make_id(name,url),title,name,location,country,"",clean(p.find("schedule") or "Full-time"),"","Check official posting",url,desc,f"{name} careers","",None,None,0,False,"","Startup")
+  if meaningful(j):out.append(j)
+ return out
 
+def odoo(url,name):
+ soup=BeautifulSoup(get(url).text,"html.parser");out=[]
+ for link in soup.select('a[href*="/jobs/detail/"]'):
+  job_url=urljoin(url,link.get("href")); title=clean(link.get_text(" "))
+  if not title or not any(x in title.lower() for x in TITLE_TERMS):continue
+  try:detail=BeautifulSoup(get(job_url).text,"html.parser"); text=clean(detail); title=clean(detail.select_one("h1,h2,h3") or title); loc=" ".join(x for x in PRIORITY_CITIES if x in text.lower())
+  except requests.RequestException:continue
+  country=country_from(text)
+  j=Job(make_id(name,job_url),title,name,loc.title() or country,country,"","Full-time","","Check official posting",job_url,text[:8000],f"{name} careers","",None,None,0,False,"","Startup")
+  if country in EUROPE and meaningful(j):out.append(j)
+ return out
 
-def meaningful(job: Job) -> bool:
-    t = f"{job.title} {job.description}".lower()
-    title = job.title.lower()
-    return not excluded_role(job) and any(term in title for term in TITLE_DOMAIN) and any(term in t for term in CORE_DOMAIN) and any(term in t for term in RELEVANCE)
+def arbeitnow():
+ out=[]
+ for page in range(1,4):
+  data=get("https://www.arbeitnow.com/api/job-board-api",params={"page":page}).json().get("data",[])
+  for d in data:
+   location=clean(d.get("location")); country=country_from(location)
+   if country not in EUROPE:continue
+   url=d.get("url"); desc=clean(d.get("description"))[:8000]; company=clean(d.get("company_name"))
+   j=Job(make_id("Arbeitnow",url),clean(d.get("title")),company,location,country,"",clean((d.get("job_types") or ["Full-time"])[0]),iso_date(d.get("created_at")),"Check official posting",url,desc,"Arbeitnow startup & company board","",None,None,0,False,"","Startup")
+   if meaningful(j):out.append(j)
+ return out
 
+def euraxess():
+ base="https://euraxess.ec.europa.eu";found={};out=[]
+ for page in range(4):
+  soup=BeautifulSoup(get(f"{base}/jobs/search",params={"page":page}).text,"html.parser")
+  for a in soup.select('a[href*="/jobs/"]'):
+   href=a.get("href","")
+   if re.search(r"/jobs/\d+",href):found[urljoin(base,href)]=clean(a)
+ for url,listing in list(found.items())[:50]:
+  try:soup=BeautifulSoup(get(url).text,"html.parser"); text=clean(soup.select_one("main") or soup.body)
+  except requests.RequestException:continue
+  country=next((c for c in EUROPE if c.lower() in text.lower()),"")
+  if not country:continue
+  title=clean(soup.select_one("h1")) or listing; org=clean(soup.select_one(".field--name-field-euraxess-organisation-name,.ecl-content-block__secondary")) or "European research organisation"
+  j=Job(make_id("EURAXESS",url),title,org,country,country,"","Research position","","Check official posting",url,text[:8000],"EURAXESS","",None,None,0,False,"","University / research")
+  if meaningful(j):out.append(j)
+ return out
 
-def in_scope(job: Job) -> bool:
-    return job.country in EU_NAMES or any(x in job.location.lower() for x in ["europe", "remote"])
+def dedupe(jobs):
+ best={}
+ for j in jobs:
+  if not meaningful(j):continue
+  j=enrich(j)
+  if j.matchScore<MIN_FIT or j.attainabilityScore<MIN_ATTAINABILITY:continue
+  key=re.sub(r"\W+","",f"{j.title}{j.company}{j.location}".lower())
+  if key not in best or (j.matchScore,j.attainabilityScore)>(best[key].matchScore,best[key].attainabilityScore):best[key]=j
+ ranked=sorted(best.values(),key=lambda j:(j.perfectFit,j.matchScore,j.attainabilityScore,j.datePosted),reverse=True)
+ selected=[];counts=Counter()
+ for j in ranked:
+  key=re.sub(r"\W+","",j.company.lower())
+  if counts[key]>=MAX_PER_COMPANY:continue
+  selected.append(j);counts[key]+=1
+ return selected[:240]
 
+def main():
+ collectors=[("Arbeitnow Europe",arbeitnow),("EURAXESS",euraxess)]
+ collectors += [(name,lambda s=s,n=name:smartrecruiters(s,n)) for s,name in SMARTRECRUITERS.items()]
+ collectors += [(name,lambda s=s,n=name:lever(s,n)) for s,name in LEVER.items()]
+ collectors += [(name,lambda s=s,n=name:greenhouse(s,n)) for s,name in GREENHOUSE.items()]
+ collectors += [(name,lambda s=s,n=name:personio(s,n)) for s,name in PERSONIO.items()]
+ collectors += [(name,lambda u=u,n=name:odoo(u,n)) for u,name in ODOO.items()]
+ all_jobs=[];health=[]
+ def run_source(name,collector):
+  started=time.monotonic()
+  try:
+   result=collector();return result,{"name":name,"status":"ok","count":len(result),"seconds":round(time.monotonic()-started,2)}
+  except Exception as exc:
+   return [],{"name":name,"status":"error","count":0,"error":f"{type(exc).__name__}: {str(exc)[:180]}"}
+ with ThreadPoolExecutor(max_workers=8) as pool:
+  futures=[pool.submit(run_source,name,collector) for name,collector in collectors]
+  for future in as_completed(futures):
+   result,status=future.result();all_jobs.extend(result);health.append(status);print(status["name"],status["count"],status["status"])
+ jobs=dedupe(all_jobs)
+ previous=None
+ try:previous=json.loads(OUTPUT.read_text(encoding="utf-8"))
+ except (OSError,ValueError):pass
+ failed_names={x["name"] for x in health if x["status"]=="error"}
+ if previous and previous.get("jobs") and (len(jobs)<12 or failed_names):
+  old=[]
+  for x in previous["jobs"]:
+   source_name=x.get("company","")
+   if len(jobs)<12 or source_name in failed_names:
+    old.append(Job(**{k:v for k,v in x.items() if k in Job.__dataclass_fields__}))
+  jobs=dedupe(jobs+old)
+  health.append({"name":"Last-known-good source merge","status":"stale","count":len(old),"error":"Preserved valid roles while one or more public sources were unavailable."})
+ if not jobs:return 1
+ payload={"generatedAt":datetime.now(timezone.utc).isoformat(),"jobCount":len(jobs),"sources":health,"jobs":[asdict(j) for j in jobs]}
+ OUTPUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8");print(f"Wrote {len(jobs)} jobs to {OUTPUT}");return 0
 
-def enrich(job: Job) -> Job:
-    text = f"{job.title} {job.company} {job.location} {job.description}".lower()
-    matches = []
-    score = 15
-    for term in DIRECT:
-        if term in text:
-            score += 7
-            matches.append(term)
-    for values in GROUPS.values():
-        hits = [term for term in values if term in text]
-        score += min(len(hits) * 3, 15)
-        matches.extend(hits)
-    if job.country in EU_NAMES: score += 8
-    if job.country == "Germany": score += 8
-    if any(place in text for place in PRIORITY_PLACES): score += 5
-    if re.search(r"\bphd\b|doctoral|doktorand|wissenschaftlicher mitarbeiter|research associate", text): score += 10
-    warnings = [term for term in SENIOR + LANGUAGE if term in text]
-    score -= sum(10 if term in SENIOR else 7 for term in warnings)
-    job.matchScore = max(0, min(100, score))
-    job.matchedKeywords = list(dict.fromkeys(matches))[:8]
-    job.warnings = list(dict.fromkeys(warnings))[:4]
-    job.category = classify(text)
-    attainability = 58
-    if any(term in text for term in ENTRY_SIGNALS): attainability += 15
-    if job.country == "Germany": attainability += 5
-    if job.country in {"Netherlands", "Switzerland", "Austria", "Belgium", "India"}: attainability += 3
-    if any(term in text for term in LANGUAGE): attainability -= 14
-    if any(term in text for term in ["principal", "director", "head of", "staff engineer", "lead engineer", "senior manager"]): attainability -= 25
-    for term, penalty in EXPERIENCE_PENALTIES:
-        if term in text: attainability -= penalty
-    title_text = job.title.lower()
-    if re.search(r"\bphd\b|doctoral|doktorand|research associate|wissenschaftlicher mitarbeiter", title_text): attainability += 8
-    if len(job.matchedKeywords or []) >= 4: attainability += 5
-    job.attainabilityScore = max(0, min(100, attainability))
-    senior_barrier = any(term in text for term in SENIOR)
-    job.perfectFit = job.matchScore >= 82 and job.attainabilityScore >= 70 and not senior_barrier
-    strongest = ", ".join((job.matchedKeywords or [])[:5])
-    job.matchReason = f"Direct overlap with {strongest}." if strongest else "Relevant transferable technical and research experience."
-    return job
-
-
-def make_id(source: str, url: str) -> str:
-    return hashlib.sha256(f"{source}|{url}".encode()).hexdigest()[:16]
-
-
-def collect_hahn() -> list[Job]:
-    base = "https://jobs.hahn-schickard.de"
-    soup = BeautifulSoup(get(f"{base}/public/jobs/?show=all&i18nLocale=de_DE").text, "html.parser")
-    out = []
-    for row in soup.select("table.coveto_jobs_table tbody tr"):
-        cells = row.find_all("td")
-        link = row.select_one('a[href*="/job-"]')
-        if not link or len(cells) < 3: continue
-        url = urljoin(base, link.get("href"))
-        title = clean(link.get_text(" "))
-        location = clean(cells[2].get_text(" "))
-        description = ""
-        try:
-            detail = BeautifulSoup(get(url).text, "html.parser")
-            description = clean(detail.select_one("#job_description, .job_description, main, #coveto_content") or detail.body)[:5000]
-        except requests.RequestException: pass
-        job = Job(make_id("Hahn-Schickard", url), title, "Hahn-Schickard", f"{location}, Germany", "Germany", "", "Full-time / Research", "", "Check official posting", url, description, "Hahn-Schickard careers")
-        if meaningful(job): out.append(job)
-    return out
-
-
-def collect_bosch() -> list[Job]:
-    base = "https://api.smartrecruiters.com/v1/companies/BoschGroup/postings"
-    candidates = {}
-    for term in SEARCH_TERMS:
-        payload = get(base, params={"q": term, "limit": 100, "offset": 0}).json()
-        for item in payload.get("content", []):
-            location = item.get("location") or {}
-            if location.get("country", "").lower() not in EU_CODES: continue
-            candidates[item["id"]] = item
-    out = []
-    for item in candidates.values():
-        try: detail = get(f"{base}/{item['id']}").json()
-        except requests.RequestException: detail = item
-        loc = detail.get("location") or item.get("location") or {}
-        country = country_from(loc.get("fullLocation", ""), loc.get("country", ""))
-        url = detail.get("postingUrl") or f"https://jobs.smartrecruiters.com/BoschGroup/{item['id']}"
-        description = clean(" ".join(str(v) for v in (detail.get("jobAd") or {}).get("sections", {}).values()))
-        job = Job(make_id("Bosch", url), clean(detail.get("name") or item.get("name")), "Bosch Group", clean(loc.get("fullLocation") or loc.get("city")), country, "", clean((detail.get("typeOfEmployment") or {}).get("label") or "Full-time"), iso_date(detail.get("releasedDate") or item.get("releasedDate")), "Check official posting", url, description[:5000], "Bosch careers / SmartRecruiters")
-        if in_scope(job) and meaningful(job): out.append(job)
-    return out
-
-
-
-def collect_smartrecruiters(company_slug: str, company_name: str) -> list[Job]:
-    base = f"https://api.smartrecruiters.com/v1/companies/{company_slug}/postings"
-    candidates = {}
-    for term in SEARCH_TERMS:
-        payload = get(base, params={"q": term, "limit": 100, "offset": 0}).json()
-        for item in payload.get("content", []): candidates[item["id"]] = item
-    out = []
-    for item in candidates.values():
-        try: detail = get(f"{base}/{item['id']}").json()
-        except requests.RequestException: detail = item
-        loc = detail.get("location") or item.get("location") or {}
-        code = str(loc.get("country", "")).lower()
-        country = "India" if code == "in" else country_from(loc.get("fullLocation", ""), code)
-        if not country: continue
-        url = detail.get("postingUrl") or f"https://jobs.smartrecruiters.com/{company_slug}/{item['id']}"
-        description = clean(" ".join(str(v) for v in (detail.get("jobAd") or {}).get("sections", {}).values()))
-        job = Job(make_id(company_name, url), clean(detail.get("name") or item.get("name")), company_name, clean(loc.get("fullLocation") or loc.get("city")), country, "", clean((detail.get("typeOfEmployment") or {}).get("label") or "Full-time"), iso_date(detail.get("releasedDate") or item.get("releasedDate")), "Check official posting", url, description[:5000], f"{company_name} careers")
-        if (in_scope(job) or country == "India") and meaningful(job): out.append(job)
-    return out
-
-def collect_infineon() -> list[Job]:
-    base = "https://jobs.infineon.com"
-    candidates = {}
-    for term in SEARCH_TERMS:
-        data = get(f"{base}/api/pcsx/search", params={"domain":"infineon.com","query":term,"location":"","start":0}, headers={**HEADERS,"Accept":"application/json"}).json().get("data", {})
-        for item in data.get("positions", []): candidates[str(item["id"])] = item
-    out = []
-    for item in candidates.values():
-        location = clean(", ".join(item.get("standardizedLocations") or item.get("locations") or []))
-        country = country_from(location, location.rsplit(",",1)[-1].strip().lower() if "," in location else "")
-        if not country: continue
-        try: detail = get(f"{base}/api/pcsx/position_details", params={"domain":"infineon.com","position_id":item["id"]}, headers={**HEADERS,"Accept":"application/json"}).json().get("data", {})
-        except requests.RequestException: detail = item
-        url = urljoin(base, detail.get("positionUrl") or item.get("positionUrl") or f"/careers/job/{item['id']}")
-        job = Job(make_id("Infineon", url), clean(detail.get("name") or item.get("name")), "Infineon Technologies", location, country, "", clean(detail.get("employmentType") or "Full-time"), iso_date(detail.get("postedTs") or item.get("postedTs")), iso_date(detail.get("jobEndDate")) or "Check official posting", url, clean(detail.get("jobDescription"))[:5000], "Infineon careers")
-        if in_scope(job) and meaningful(job): out.append(job)
-    return out
-
-
-def parse_successfactors_row(row, base: str, company: str, source: str) -> Job | None:
-    link = row.select_one('a[href*="/job/"]')
-    if not link: return None
-    url = urljoin(base, link.get("href"))
-    title = clean(link.get_text(" "))
-    cells = row.find_all("td")
-    location = clean(cells[1].get_text(" ")) if len(cells) > 1 else "Germany"
-    institute = clean(cells[2].get_text(" ")) if len(cells) > 2 else company
-    description = ""
-    date = ""
-    try:
-        detail = BeautifulSoup(get(url).text, "html.parser")
-        description = clean(detail.select_one(".jobdescription, .job, main, #content") or detail.body)[:5000]
-        date_match = re.search(r"(?:Date|Posted|Veröffentlicht)[:\s]+([^|]{5,30})", description, re.I)
-        date = iso_date(date_match.group(1).strip()) if date_match else ""
-    except requests.RequestException: pass
-    return Job(make_id(source, url), title, institute or company, location if "germany" in location.lower() else f"{location}, Germany", "Germany", "", "Research / Employment", date, "Check official posting", url, description, source)
-
-
-def collect_fraunhofer() -> list[Job]:
-    base = "https://jobs.fraunhofer.de"
-    rows = {}
-    for term in SEARCH_TERMS:
-        soup = BeautifulSoup(get(f"{base}/search/", params={"q":term,"locationsearch":""}).text, "html.parser")
-        for row in soup.select("table.searchResults tr.data-row"):
-            link = row.select_one('a[href*="/job/"]')
-            if link: rows[urljoin(base, link.get("href"))] = row
-    out = []
-    for row in rows.values():
-        job = parse_successfactors_row(row, base, "Fraunhofer-Gesellschaft", "Fraunhofer careers")
-        if job and meaningful(job): out.append(job)
-    return out
-
-
-def collect_euraxess() -> list[Job]:
-    base = "https://euraxess.ec.europa.eu"
-    found = {}
-    # Recent pages are intentionally bounded; detailed CV filtering removes broad noise.
-    for page in range(6):
-        soup = BeautifulSoup(get(f"{base}/jobs/search", params={"page":page}).text, "html.parser")
-        for article in soup.select("article.ecl-content-item"):
-            link = article.select_one('a[href^="/jobs/"]')
-            if not link or not re.match(r"/jobs/\d+", link.get("href", "")): continue
-            text = clean(article.get_text(" "))
-            if not any(term in text.lower() for term in RELEVANCE): continue
-            found[urljoin(base, link.get("href"))] = (link, text)
-    out = []
-    for url, (link, listing_text) in found.items():
-        title = clean(link.get_text(" "))
-        soup = BeautifulSoup(get(url).text, "html.parser")
-        full = clean(soup.select_one("main") or soup.body)[:6000]
-        combined = f"{listing_text} {full}"
-        country = next((name for name in EU_NAMES if name.lower() in combined.lower()), "")
-        if not country: continue
-        organisation = "EURAXESS research organisation"
-        org = soup.select_one('[class*="organisation"] a, [class*="organization"] a, .ecl-content-block__secondary')
-        if org: organisation = clean(org.get_text(" "))
-        posted = re.search(r"Posted on:\s*(\d{1,2}\s+\w+\s+20\d{2})", combined, re.I)
-        deadline = re.search(r"(?:Application Deadline|Deadline)[:\s]+(\d{1,2}\s+\w+\s+20\d{2})", combined, re.I)
-        location = country
-        job = Job(make_id("EURAXESS", url), title, organisation, location, country, "", "Research position", iso_date(posted.group(1)) if posted else "", iso_date(deadline.group(1)) if deadline else "Check official posting", url, full, "EURAXESS")
-        if meaningful(job): out.append(job)
-    return out
-
-
-def deduplicate(jobs: list[Job]) -> list[Job]:
-    best = {}
-    for job in jobs:
-        if excluded_role(job) or not meaningful(job): continue
-        key = re.sub(r"\W+", "", f"{job.title}{job.company}{job.location}".lower())
-        enriched = enrich(job)
-        if enriched.matchScore < MIN_TECHNICAL_FIT or enriched.attainabilityScore < MIN_ATTAINABILITY: continue
-        if key not in best or (enriched.matchScore, enriched.attainabilityScore) > (best[key].matchScore, best[key].attainabilityScore): best[key] = enriched
-    ranked = sorted(best.values(), key=lambda j: (j.perfectFit, j.matchScore, j.attainabilityScore, j.datePosted), reverse=True)
-    selected, counts = [], {}
-    for job in ranked:
-        company_key = re.sub(r"\W+", "", job.company.lower())
-        if counts.get(company_key, 0) >= MAX_PER_COMPANY: continue
-        selected.append(job)
-        counts[company_key] = counts.get(company_key, 0) + 1
-    return selected
-
-
-def main() -> int:
-    collectors: list[tuple[str, Callable[[], list[Job]]]] = [
-        ("Hahn-Schickard", collect_hahn), ("Bosch", collect_bosch), ("Infineon", collect_infineon),
-        ("Fraunhofer", collect_fraunhofer), ("EURAXESS", collect_euraxess),
-        ("Brainlab", lambda: collect_smartrecruiters("Brainlab", "Brainlab")),
-        ("Eurofins", lambda: collect_smartrecruiters("Eurofins", "Eurofins"))
-    ]
-    all_jobs, health = [], []
-    for name, collector in collectors:
-        started = time.monotonic()
-        try:
-            result = collector()
-            all_jobs.extend(result)
-            health.append({"name":name,"status":"ok","count":len(result),"seconds":round(time.monotonic()-started,2)})
-            print(f"{name}: {len(result)} relevant vacancies")
-        except Exception as exc:
-            health.append({"name":name,"status":"error","count":0,"error":f"{type(exc).__name__}: {exc}"[:240]})
-            print(f"WARNING {name}: {exc}", file=sys.stderr)
-    jobs = deduplicate(all_jobs)
-    previous = None
-    if OUTPUT.exists():
-        try: previous = json.loads(OUTPUT.read_text(encoding="utf-8"))
-        except (ValueError, OSError): pass
-    successful = sum(item["status"] == "ok" for item in health)
-    if not jobs and previous and previous.get("jobs"):
-        jobs = [Job(**{k:v for k,v in item.items() if k in Job.__dataclass_fields__}) for item in previous["jobs"]]
-        health.append({"name":"Fallback","status":"stale","count":len(jobs),"error":"All fresh results were empty; preserved last known good data."})
-    if successful < 2 and not jobs:
-        print("ERROR: fewer than two sources succeeded and no fallback data exists", file=sys.stderr)
-        return 1
-    payload = {"generatedAt":datetime.now(timezone.utc).isoformat(),"jobCount":len(jobs),"sources":health,"jobs":[asdict(job) for job in jobs[:120]]}
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    temp = OUTPUT.with_suffix(".tmp")
-    temp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    json.loads(temp.read_text(encoding="utf-8"))
-    temp.replace(OUTPUT)
-    print(f"Wrote {len(jobs[:120])} curated jobs to {OUTPUT}")
-    return 0
-
-if __name__ == "__main__": raise SystemExit(main())
+if __name__=="__main__":raise SystemExit(main())
